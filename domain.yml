@@ -1,18 +1,17 @@
 version: "3.0"
 
 intents:
+  - adopt
   - thanks
   - greet
   - goodbye
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
   - bot_challenge
 
 responses:
   utter_greet:
-  - text: "Olá, como eu posso ajudar?"
+  - text: "Olá, eu sou o assistente virtual do Abrigo dos Bichos, é um prazer te recepcionar, abaixo estão as opções com que posso auxiliar:\n1- Adotar um pet\n2- Cadastrar um pet\n3- Informações sobre pets"
 
   utter_did_that_help:
   - text: "Posso ajudar com algo mais?"
@@ -21,7 +20,7 @@ responses:
   - text: "Até mais."
 
   utter_iamabot:
-  - text: "Eu sou um bot, miau-miau."
+  - text: "Eu sou o bot do Abrigo dos Bichos."
 
 session_config:
   session_expiration_time: 60

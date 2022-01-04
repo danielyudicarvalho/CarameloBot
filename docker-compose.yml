@@ -1,0 +1,46 @@
+version: "3"
+
+services:
+  rasa_pet:
+    image: rasa/rasa:3.0.4-full
+    container_name: rasa_pet
+    ports:
+      - 5005:5005
+    networks:
+      - production
+    volumes:
+      - ./:/app
+    # Comentar o public caso venha a rodar a aplicação localmente no docker-compose
+    public: true
+    command:
+      - run 
+      - --enable-api
+      - --cors
+      - "*"
+
+  web_pet:
+    build:
+      context: ./web
+      dockerfile: web.Dockerfile
+    image: web_pet
+    container_name: web_pet
+    ports:
+      - 8080:8080
+    networks:
+      - production
+    depends_on:
+      - rasa_pet
+
+  ngrok_pet:
+    image: shkoliar/ngrok:latest
+    ports:
+      - 4551:4551
+    links:
+      - rasa_pet
+    environment:
+      - DOMAIN=rasa_pet
+      - PORT=5005
+
+networks: 
+    production:
+        driver: bridge

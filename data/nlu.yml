@@ -1,6 +1,13 @@
 version: "3.0"
 
 nlu:
+- intent: adopt
+  examples: |
+    - desejo adotar
+    - quero levar um gato
+    - me mostre os gatos
+    - quero conhecer os gatos
+
 - intent: thanks
   examples: |
     - obrigado
