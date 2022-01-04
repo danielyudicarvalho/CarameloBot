@@ -1,30 +1,172 @@
 version: "3.0"
 
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
+  - olá
+  - despedida
+  - agradecimento
+  - voluntariar
   - bot_challenge
+
+
+
+slots:
+  name:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+            requested_slot: name
+
+  phone:
+    type: number
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+           requested_slot: phone
+
+  email:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+           requested_slot: email
+  
+  address:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+           requested_slot: address
+
+  rg:
+    type: number
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+           requested_slot: rg
+
+  cpf:
+    type: number
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+           requested_slot: cpf
+
+  cep:
+    type: number
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+           requested_slot: cep
+  
+
+
+forms:
+  volunteer_form:
+    required_slots:
+      - name
+      - phone
+      - email
+      - address
+  
+  adoption_form:
+    required_slots:
+      - name
+      - rg
+      - cpf
+      - address
+      - email
+      - cep
+      - phone
+
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
+  - text: | 
+      "Oi Oi ^_^"
+  - text: | 
+      "Olá tudo bom?"
+  - text: | 
+      "Olá"
+  - text: | 
+      "Opa, tudo bom?"
+  - text: | 
+      "Olaaa"
+  
+  utter_presentation:
+  - text: | 
+      "Sou um bot à serviço da ONG abrigo dos bichos. Como poderia ajudar?"
+  - text: | 
+      "Sou um bot criado para a ONG Abrigo dos Bichos, eu ajudo nas adoções e doações para nosso amigos PET. Como posso ajudar? "
+  - text: | 
+      "Sou um bot feito para melhor te ajudar com doações e adoções na ONG amigos dos Bichos. Do que precisa?"
+  - text: | 
+      "Opa, tudo bom?"
+  - text: | 
+      "Olaaa"
+    
   utter_goodbye:
-  - text: "Bye"
+  - text: | 
+      "Adeus, bom falar com vocês. Espero ter ajudado"
+  - text: | 
+      "Até mais. Espero ter te ajudado. ^_^"
+  - text: | 
+      "Até logo, espero ter ajudado você"
+
+  utter_welcome:
+  - text: | 
+      "De nada, estou aqui para isso ^_^"
+  - text: | 
+      "Que isso, estou aqui para ajudar"
+  - text: | 
+      "De nada, estou a disposição"
+  
+  utter_gratefull:
+  - text: | 
+      "Muito feliz por você querer nos ajudar. Toda ajuda é bem vinda ^_^"
+  - text: | 
+      "Muitíssimo obrigado pela sua boa intenção, gostamos muito da ajuda de todos"
+  - text: | 
+      "Muito grato por você entrar nessa missão com a gente, sempre precisamos de boas pessoas como você"
+
+  utter_ask_name:
+  - text: "poderia informar seu nome completo por favor?"
+
+  utter_ask_phone:
+  - text: "poderia informar seu telefone pra contato por favor?"
+
+  utter_ask_email:
+  - text: "Por favor, nos envie seu melhor email para contato por gentileza"
+
+  utter_ask_rg:
+  - text: "Por favor, nos informe seu RG para o formulário de adoção"
+
+  utter_ask_cpf:
+  - text: "Por favor, nos informe seu CPF para o formulário de adoção"
+
+  utter_ask_cpf:
+  - text: "Por favor, nos informe seu CEP para o formulário de adoção"
+
+  utter_ask_address:
+  - text: "Poderia, por gentileza, nos informar seu endereço?"
+  
+  
+
+
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
