@@ -2,12 +2,60 @@ version: "3.0"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Dizer olá
   steps:
-  - intent: goodbye
+  - intent: olá
+  - action: utter_greet
+  - action: utter_presentation
+
+- rule: Dizer adeus
+  steps:
+  - intent: despedida
   - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Agradecimento
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - intent: agradecimento
+  - action: utter_welcome
+
+- rule: apresentação
+  steps:
+  - intent: apresentar
+  - action: utter_presentation
+
+- rule: voluntário
+  steps:
+  - intent: voluntariar
+  - action: utter_gratefull
+  - action: volunteer_form
+  - activate_loop: volunteer_form
+
+- rule: adotar
+  steps:
+  - intent: Adotar
+  - action: utter_gratefull
+  - action: adoption_form
+  - activate_loop: adoption_form
+
+- rule: Submit_volunteer_form
+  condition:
+  - active_loop: volunteer_form
+  steps:
+  - action: volunteer_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_slots_values
+
+
+- rule: Submit_adoption_form
+  condition:
+  - active_loop: adoption_form
+  steps:
+  - action: volunteer_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_slots_values
