@@ -1,9 +1,9 @@
 version: "3"
 
 services:
-  rasa_pet:
+  rasa-pet:
     image: rasa/rasa:3.0.4-full
-    container_name: rasa_pet
+    container_name: rasa-pet
     ports:
       - 5005:5005
     networks:
@@ -18,27 +18,27 @@ services:
       - --cors
       - "*"
 
-  web_pet:
+  web-pet:
     build:
       context: ./web
       dockerfile: web.Dockerfile
-    image: web_pet
-    container_name: web_pet
+    image: web-pet
+    container_name: web-pet
     ports:
       - 8080:8080
     networks:
       - production
     depends_on:
-      - rasa_pet
+      - rasa-pet
 
-  ngrok_pet:
+  ngrok-pet:
     image: shkoliar/ngrok:latest
     ports:
       - 4551:4551
     links:
-      - rasa_pet
+      - rasa-pet
     environment:
-      - DOMAIN=rasa_pet
+      - DOMAIN=rasa-pet
       - PORT=5005
 
 networks: 

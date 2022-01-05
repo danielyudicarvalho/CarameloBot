@@ -1,12 +1,23 @@
 version: "3.0"
 
 nlu:
+- intent: volunteer
+  examples: |
+    - gostaria de me voluntariar
+    - como faço para ser voluntário?
+    - voluntário
+    - quero ser voluntário
+    - gostaria de me candidatar para ser voluntário de vocês
+    - como posso ajudar para ser voluntário?
+
 - intent: adopt
   examples: |
     - desejo adotar
-    - quero levar um gato
-    - me mostre os gatos
-    - quero conhecer os gatos
+    - quero levar um pet
+    - me mostre os pets
+    - como faço para adotar?
+    - pode me ajudar a adotar um PET?
+    - gostaria de adotar
 
 - intent: thanks
   examples: |
@@ -15,21 +26,24 @@ nlu:
     - brigado
     - bgd
     - agradecido
-    - muito obrigado
     - grato
     - ajudou muito
+    - gratidão
+    - muitíssimo obrigado
 
 - intent: greet
   examples: |
     - olá
     - oi
     - eae
+    - hi
     - bom dia
     - boa tarde
     - boa noite
     - dia
     - tarde
     - noite
+    - tudo bom?
 
 - intent: goodbye
   examples: |
