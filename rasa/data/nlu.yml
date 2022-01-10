@@ -1,0 +1,87 @@
+version: "3.0"
+
+nlu:
+
+
+- lookup: disease
+  examples: |
+    - leishmaniose
+    - raiva
+    - sarna
+    - cinomose
+    - dermatite
+    - zoonoses
+
+
+- intent: olá
+  examples: |
+    - olá
+    - hello
+    - hi
+    - Alô
+    - Oii
+    - oi
+    - opa
+    - Eaew
+    - tudo bom?
+    - Alguém aí
+    - Bom dia
+    - Boa tarde
+    - Boa noite
+
+- intent: despedida
+  examples: |
+    - bye
+    - bye bye
+    - até mais
+    - até logo
+    - tchau
+    - xau
+    - tenha um bom dia
+    - Adeus
+    - adios
+    - até breve
+    - te vejo por aí
+
+
+- intent: Agradecimento
+  examples: |
+    - perfeito
+    - legal
+    - fantástico
+    - gostei
+    - obrigado
+    - Obrigada
+    - muito bom
+    - Grato
+    - Gratidão
+    - Thank you
+    - Gracias
+    - muitíssimo obrigado
+
+
+- intent: Voluntariar
+  examples: |
+    - gostaria de me voluntariar
+    - como faço para ser voluntário?
+    - voluntário
+    - quero ser voluntário
+    - gostaria de me candidatar para ser voluntário de vocês
+    - Como posso ajudar para ser voluntário?
+
+
+- intent: Adotar
+  examples: |
+    - gostaria de adotar
+    - adotar
+    - adoção
+    - como faço para adotar?
+    - pode me ajudar a adotar um PET?
+    - quero adotar
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?

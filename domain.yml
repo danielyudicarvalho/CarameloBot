@@ -4,9 +4,11 @@ intents:
   - olá
   - despedida
   - agradecimento
-  - voluntariar
-  - bot_challenge
+  - doenças
+  - descarte
 
+entities:
+- disease
 
 
 slots:

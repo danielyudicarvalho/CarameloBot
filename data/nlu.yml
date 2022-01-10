@@ -1,6 +1,41 @@
 version: "3.0"
 
 nlu:
+
+
+- lookup: disease
+  examples: |
+    - leishmaniose
+    - raiva
+    - sarna
+    - cinomose
+    - dermatite
+    - zoonoses
+    - doença do carrapato
+
+- intent: ask_disesase
+  examples: |
+    - me fale de [leishmaniose](disease)
+    - gostaria de mais informações sobre [leishmaniose](disease)
+    - informações sobre [doença do carrapato](disease)
+    - quero saber de [sarna](disease)
+    - fale sobre [cinomose](disease)
+    - quero saber mais sobre [raiva](disease)
+    - [raiva](disease)
+    - [leishmaniose](disease)
+    - [sarna](disease)
+    - [cinomose](disease)
+    - [dermatite](disease)
+    - [zoonoses](disease)
+    - informações sobre [zoonoses](disease)
+    - dados sobre [sarna](disease)
+    - mais informações de [doença do carrapato](disease)
+    - queria saber mais sobre [raiva](disease)
+    - quero que fale mais sobre [cinomose](disease)
+    - diga mais sobre [sarna](disease)
+    - o que vocês sabe sobre [zoonoses](disease)?
+    - pode me falar sobre [cinomose](disease)?
+
 - intent: olá
   examples: |
     - olá
