@@ -11,7 +11,7 @@ services:
     volumes:
       - ./:/app
     # Comentar o public caso venha a rodar a aplicação localmente no docker-compose
-    public: true
+    #public: true
     command:
       - run 
       - --enable-api

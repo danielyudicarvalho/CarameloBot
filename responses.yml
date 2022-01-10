@@ -1,0 +1,23 @@
+responses:
+
+  utter_greet:
+  - text: "Olá, eu sou o assistente virtual do Abrigo dos Bichos, é um prazer te recepcionar, abaixo estão as opções com que posso auxiliar:\n0- Voluntariar\n2- Adotar um pet\n3- Cadastrar um pet\n4- Informações sobre pets"
+
+  utter_goodbye:
+  - text: "Até mais, espero ter ajudado você."
+
+  utter_welcome:
+  - text: "De nada, estou a disposição."
+
+  utter_gratefull:
+  - text: "Muitíssimo obrigado pela sua boa intenção, gostamos muito da ajuda de todos."
+
+  utter_did_that_help:
+  - text: "Posso ajudar com algo mais?"
+
+  utter_iamabot:
+  - text: "Eu sou o bot do Abrigo dos Bichos."
+
+  # utter_ask 
+  utter_ask_name:
+  - text: "Poderia informar seu nome completo por favor?"
