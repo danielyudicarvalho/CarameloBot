@@ -33,3 +33,9 @@ $ rasa visualize       // Mostra um modelo visual do fluxo-conversa
 ```
 $ okteto stack deploy --build // Buildando do docker-compose
 ```
+
+### Configurando Pipeline
+```
+$ pip install spacy
+$ python3 -m spacy download pt_core_news_md
+```
