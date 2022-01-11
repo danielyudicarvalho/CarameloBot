@@ -1,175 +1,74 @@
 version: "3.0"
-
+#========== 
+# INTENTS
+#========== 
 intents:
-  - olá
-  - despedida
-  - agradecimento
-  - voluntariar
-  - bot_challenge
+  - faq
+  - goodbye_intent
+  - greet_intent
+  - deny_intent
+  - affirm_intent
+  - lost_my_pet_intent
+  - need_rescue_intent
+#============
+# ENTITIES
+#============ 
+
+#============
+# ACTIONS
+#============ 
+actions:
+  - utter_goodbye
+  - utter_greet
+  - utter_faq
+  - utter_anything_else
+  - utter_how_can_i_help
+#============ 
+# SLOTS
+#============
+# slots:
+
+#============ 
+# FORMS
+#============
+# forms:
 
 
-
-slots:
-  name:
-    type: text
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-            requested_slot: name
-
-  phone:
-    type: number
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-           requested_slot: phone
-
-  email:
-    type: text
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-           requested_slot: email
-  
-  address:
-    type: text
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-           requested_slot: address
-
-  rg:
-    type: number
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-           requested_slot: rg
-
-  cpf:
-    type: number
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-           requested_slot: cpf
-
-  cep:
-    type: number
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-           requested_slot: cep
-  
-
-
-forms:
-  volunteer_form:
-    required_slots:
-      - name
-      - phone
-      - email
-      - address
-  
-  adoption_form:
-    required_slots:
-      - name
-      - rg
-      - cpf
-      - address
-      - email
-      - cep
-      - phone
-
-
+#============
+# RESPONSES
+#============
 responses:
-  utter_greet:
-  - text: | 
-      "Oi Oi ^_^"
-  - text: | 
-      "Olá tudo bom?"
-  - text: | 
-      "Olá"
-  - text: | 
-      "Opa, tudo bom?"
-  - text: | 
-      "Olaaa"
-  
-  utter_presentation:
-  - text: | 
-      "Sou um bot à serviço da ONG abrigo dos bichos. Como poderia ajudar?"
-  - text: | 
-      "Sou um bot criado para a ONG Abrigo dos Bichos, eu ajudo nas adoções e doações para nosso amigos PET. Como posso ajudar? "
-  - text: | 
-      "Sou um bot feito para melhor te ajudar com doações e adoções na ONG amigos dos Bichos. Do que precisa?"
-  - text: | 
-      "Opa, tudo bom?"
-  - text: | 
-      "Olaaa"
-    
+##### Respostas gerais
   utter_goodbye:
-  - text: | 
-      "Adeus, bom falar com vocês. Espero ter ajudado"
-  - text: | 
-      "Até mais. Espero ter te ajudado. ^_^"
-  - text: | 
-      "Até logo, espero ter ajudado você"
+    - text: "Adeus"
+  utter_greet:
+    - text: "Alo"
+  utter_anything_else:
+    - text: "Gostaria de mais alguma coisa?"
+  utter_how_can_i_help:
+    - text: "Como posso te ajudar?"
 
-  utter_welcome:
-  - text: | 
-      "De nada, estou aqui para isso ^_^"
-  - text: | 
-      "Que isso, estou aqui para ajudar"
-  - text: | 
-      "De nada, estou a disposição"
-  
-  utter_gratefull:
-  - text: | 
-      "Muito feliz por você querer nos ajudar. Toda ajuda é bem vinda ^_^"
-  - text: | 
-      "Muitíssimo obrigado pela sua boa intenção, gostamos muito da ajuda de todos"
-  - text: | 
-      "Muito grato por você entrar nessa missão com a gente, sempre precisamos de boas pessoas como você"
+##### Respostas do fluxo voluntariado
+  utter_faq/ask_how_to_help:
+    - text: "Opa, você pode nos ajudar de duas formas, seja fazendo doações ou voluntariando. Qual você prefere?"
+  utter_faq/ask_how_to_volunteer: 
+    - text:
+        Estamos procurando por voluntários de todo o Brasil que queiram fazer parte da nossa ONG, 
+        atuando com eventuais colaborações em diversas áreas. Mesmo de longe, você poderá contribuir de 
+        alguma forma! É veterinário e ama totós? Você pode ajudar a responder dúvidas de nossos seguidores! 
+        Entende de legislação? As dicas de um advogado são muito bem-vindas! Faz fotos ou vídeos? Temos conteúdos
+        incríveis que precisam de mãos habilidosas de um editor e das lentes de um fotógrafo.
 
-  utter_ask_name:
-  - text: "poderia informar seu nome completo por favor?"
-
-  utter_ask_phone:
-  - text: "poderia informar seu telefone pra contato por favor?"
-
-  utter_ask_email:
-  - text: "Por favor, nos envie seu melhor email para contato por gentileza"
-
-  utter_ask_rg:
-  - text: "Por favor, nos informe seu RG para o formulário de adoção"
-
-  utter_ask_cpf:
-  - text: "Por favor, nos informe seu CPF para o formulário de adoção"
-
-  utter_ask_cpf:
-  - text: "Por favor, nos informe seu CEP para o formulário de adoção"
-
-  utter_ask_address:
-  - text: "Poderia, por gentileza, nos informar seu endereço?"
-  
-  
-
-
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+##### Respostas do fluxo resgate
+  utter_faq/ask_found_and_rescued:
+    - text: 
+        Quando o animal é recolhido, a primeira coisa a ser feita é levá-lo ao veterinário. Claro, você pode dar água,
+        comida, um banho, se ele estiver “sujinho”, mas, em alguns casos, os animais apresentam feridas por baixos dos 
+        pelos emaranhados, machucados, contusões e outras complicações, pois nunca sabemos quanto tempo ele passou nas 
+        ruas. Isso pode lhe render uma boa mordida/arranhada se não tiver cuidado. Ele pode estar doente e necessita de
+        exames para uma avaliação do que será melhor para o caso dele. Por isso, leve o bichinho a um Veterinário de 
+        sua confiança. JAMAIS medique um animal por conta própria, muitos medicamentos de uso humano podem intoxicar
+        e até levar o animal a óbito, só um profissional pode lhe dizer do que ele precisa.
 
 session_config:
   session_expiration_time: 60
