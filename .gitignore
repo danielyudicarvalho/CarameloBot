@@ -3,17 +3,16 @@ models/
 results/
 story_graph.dot
 graph.html
-actions/__pycache__
+docker-compose.yml
+Dockerfile
+index.html
 *.db*
-.rasa/
-tests/
-
-
+.rasa
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-
+*.pyc
 # C extensions
 *.so
 
@@ -138,6 +137,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+<<<<<<< HEAD
 
 # Node dependencies
 node_modules/

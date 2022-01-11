@@ -1,0 +1,40 @@
+version: "3.0"
+#========== 
+# INTENTS
+#========== 
+intents:
+  - faq
+  - goodbye_intent
+  - greet_intent
+  - deny_intent
+  - affirm_intent
+  - lost_my_pet_intent
+  - need_rescue_intent
+#============
+# ENTITIES
+#============ 
+  
+#============
+# ACTIONS
+#============ 
+actions:
+  - utter_goodbye
+  - utter_greet
+  - utter_faq
+  - utter_anything_else
+  - utter_how_can_i_help
+#============ 
+# SLOTS
+#============
+# slots:
+
+#============ 
+# FORMS
+#============
+# forms:
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

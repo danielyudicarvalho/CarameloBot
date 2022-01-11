@@ -1,0 +1,55 @@
+version: "3.0"
+
+nlu:
+####### intents gerais 
+- intent: greet_intent
+  examples: |
+    - Olá
+    - Oi
+    - e ae
+
+- intent: goodbye_intent
+  examples: |
+    - Adeus
+    - xau
+    - flw
+
+- intent: affirm_intent
+  examples: |
+    - Sim
+    - Correto
+    - Afirmativo
+    - S
+    
+- intent: deny_intent
+  examples: |
+    - Não
+    - N
+    - negativo
+    - Errado
+
+####### intents do voluntariado
+# - intent: wanna_help_intent
+#   examples: |
+#     - Quero ajudar
+#     - Gostaria de ajudar
+#     - Como posso ajudar vocês?
+#     - O que eu posso fazer para ajudar?
+
+# - intent: volunteer_intent
+#   examples: |
+#     - Quero ser voluntário
+#     - Gostaria de voluntariar
+#     - Voluntário
+####### intents do resgate
+- intent: lost_my_pet_intent
+  examples: |
+    - Perdi meu gato
+    - Perdi meu cachorro
+
+- intent: need_rescue_intent
+  examples: |
+    - Achei um pet que precisa de resgate
+    - Preciso que alguém resgate um Cão abandonado
+    - Tem um gato abandonado aqui, alguem pode vir resgatar?
+    

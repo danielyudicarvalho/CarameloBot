@@ -1,0 +1,19 @@
+version: "3.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye_intent
+  - action: utter_goodbye
+
+- rule: Respond to faqs 
+  steps:
+  - intent: faq
+  - action: utter_faq
+
+- rule: usuario deseja mais alguma coisa
+  steps:
+  - action: utter_anything_else
+  - intent: affirm_intent
+  - action: utter_how_can_i_help

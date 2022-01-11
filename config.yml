@@ -1,0 +1,44 @@
+recipe: default.v1
+
+language: pt
+
+pipeline:
+- name: SpacyNLP
+  model: pt_core_news_md
+- name: SpacyTokenizer
+- name: SpacyFeaturizer
+- name: RegexFeaturizer
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+- name: CountVectorsFeaturizer
+  analyzer: char_wb
+  min_ngram: 1
+  max_ngram: 4
+
+- name: DIETClassifier
+  epochs: 100
+  constrain_similarities: True
+  model_confidence: softmax
+
+- name: FallbackClassifier
+  threshold: 0.8
+  ambiguity_threshold: 0.1
+  
+- name: EntitySynonymMapper
+- name: SklearnIntentClassifier
+
+- name: ResponseSelector
+  epochs: 100
+  retrieval_intent: faq
+  constrain_similarities: True
+  
+policies:
+- name: MemoizationPolicy
+- name: RulePolicy
+  core_fallback_threshold: 0.4
+  enable_fallback_prediction: True
+- name: TEDPolicy
+  epochs: 100
+  constrain_similarities: True
+  model_confidence: softmax
+  max_history: 5
