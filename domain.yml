@@ -126,7 +126,6 @@ responses:
       "Até mais. Espero ter te ajudado. ^_^"
   - text: | 
       "Até logo, espero ter ajudado você"
-
   utter_welcome:
   - text: | 
       "De nada, estou aqui para isso ^_^"
@@ -142,7 +141,6 @@ responses:
       "Muitíssimo obrigado pela sua boa intenção, gostamos muito da ajuda de todos"
   - text: | 
       "Muito grato por você entrar nessa missão com a gente, sempre precisamos de boas pessoas como você"
-
   utter_ask_name:
   - text: "poderia informar seu nome completo por favor?"
 
@@ -164,9 +162,11 @@ responses:
   utter_ask_address:
   - text: "Poderia, por gentileza, nos informar seu endereço?"
   
-  
+  utter_castration:
+  - text: "A castração é realizada com o animal em jejum, sob efeito de anestésico, o que torna o procedimento indolor. O veterinário, então, retira os órgãos reprodutivos (útero, ovários e tubas uterinas – em fêmeas; e testículos – em machos). Ainda é comum existir a dúvida sobre o melhor momento para realizar a esterilização.  "
 
-
+  utter_veterinarian:
+  - text: "O contato do veterinario é 0000-0000"
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
@@ -174,3 +174,4 @@ responses:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
