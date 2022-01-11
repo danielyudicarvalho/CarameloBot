@@ -12,6 +12,7 @@ intents:
   - need_rescue_intent
   - faq/ask_castatration
   - faq/ask_veterinarian
+  - faq/ask_report
 #============
 # ENTITIES
 #============ 
@@ -55,6 +56,13 @@ forms:
       - cep
       - phone
 
+  report_form:
+    required_slots:
+        - name
+        - rg
+        - cpf
+        - phone
+        - complaint
 
 responses:
   utter_greet:
@@ -123,12 +131,7 @@ responses:
 
   utter_ask_address:
   - text: "Poderia, por gentileza, nos informar seu endereço?"
-  
-  utter_castration:
-  - text: "A castração é realizada com o animal em jejum, sob efeito de anestésico, o que torna o procedimento indolor. O veterinário, então, retira os órgãos reprodutivos (útero, ovários e tubas uterinas – em fêmeas; e testículos – em machos). Ainda é comum existir a dúvida sobre o melhor momento para realizar a esterilização.  "
 
-  utter_veterinarian:
-  - text: "O contato do veterinário é 67 1234-5678"
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."

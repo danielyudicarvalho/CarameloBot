@@ -39,4 +39,10 @@ nlu:
     - Onde posso conseguir o contato do veterinario ? 
     - Pode me mandar o contato do veterinario ?
 
+- intent: faq/ask_report
+  examples: |
+    - Quero fazer uma denuncia de maus tratos
+    - Quero fazer uma denuncia
+    - Gostaria de fazer uma denuncia de maus tratos
+    - Gostaria de fazer uma denuncia
 
