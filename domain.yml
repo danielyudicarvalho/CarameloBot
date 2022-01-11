@@ -1,80 +1,40 @@
 version: "3.0"
-
+#========== 
+# INTENTS
+#========== 
 intents:
-  - olá
-  - despedida
-  - agradecimento
-  - voluntariar
-  - bot_challenge
-
-
-
-slots:
-  name:
-    type: text
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-            requested_slot: name
-
-  phone:
-    type: number
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-           requested_slot: phone
-
-  email:
-    type: text
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-           requested_slot: email
+  - faq
+  - goodbye_intent
+  - greet_intent
+  - deny_intent
+  - affirm_intent
+  - lost_my_pet_intent
+  - need_rescue_intent
+#============
+# ENTITIES
+#============ 
   
-  address:
-    type: text
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-           requested_slot: address
+#============
+# ACTIONS
+#============ 
+actions:
+  - utter_goodbye
+  - utter_greet
+  - utter_faq
+  - utter_anything_else
+  - utter_how_can_i_help
+#============ 
+# SLOTS
+#============
+# slots:
 
-  rg:
-    type: number
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-           requested_slot: rg
-
-  cpf:
-    type: number
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-           requested_slot: cpf
-
-  cep:
-    type: number
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-           requested_slot: cep
-  
+#============ 
+# FORMS
+#============
+# forms:
 
 
+<<<<<<< HEAD
 forms:
   volunteer_form:
     required_slots:
@@ -170,6 +130,8 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+=======
+>>>>>>> ad979184294cdfdea07335424a8c2b7d93822b0e
 
 session_config:
   session_expiration_time: 60
