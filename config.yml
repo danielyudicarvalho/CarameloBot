@@ -8,9 +8,12 @@ pipeline:
 - name: SpacyTokenizer
 - name: SpacyFeaturizer
 - name: RegexFeaturizer
-- name: CRFEntityExtractor
 - name: LexicalSyntacticFeaturizer
 - name: CountVectorsFeaturizer
+- name: CountVectorsFeaturizer
+  analyzer: char_wb
+  min_ngram: 1
+  max_ngram: 4
 
 - name: DIETClassifier
   epochs: 100
@@ -27,7 +30,8 @@ pipeline:
 - name: ResponseSelector
   epochs: 100
   retrieval_intent: faq
-
+  constrain_similarities: True
+  
 policies:
 - name: MemoizationPolicy
 - name: RulePolicy
