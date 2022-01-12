@@ -10,11 +10,13 @@ intents:
   - affirm_intent
   - lost_my_pet_intent
   - need_rescue_intent
+  - adopt_intent
+  - inform_animal_type_intent
 #============
 # ENTITIES
 #============ 
-# entities:
-  
+entities:
+  - animal_type_entity
 #============
 # ACTIONS
 #============ 
@@ -27,9 +29,12 @@ actions:
 #============ 
 # SLOTS
 #============
-# slots:
-
-
+slots:
+  animal_type_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: animal_type_entity
 #============ 
 # FORMS
 #============
