@@ -10,13 +10,13 @@ intents:
   - affirm_intent
   - lost_my_pet_intent
   - need_rescue_intent
-  - faq/ask_castatration
-  - faq/ask_veterinarian
-  - faq/ask_report
+  - adopt_intent
+  - inform_animal_type_intent
 #============
 # ENTITIES
 #============ 
-  
+entities:
+  - animal_type_entity
 #============
 # ACTIONS
 #============ 
@@ -29,15 +29,15 @@ actions:
 #============ 
 # SLOTS
 #============
-# slots:
-
+slots:
+  animal_type_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: animal_type_entity
 #============ 
 # FORMS
 #============
-# forms:
-
-
-<<<<<<< HEAD
 forms:
   volunteer_form:
     required_slots:
@@ -64,79 +64,6 @@ forms:
         - phone
         - complaint
 
-responses:
-  utter_greet:
-  - text: | 
-      "Oi Oi ^_^"
-  - text: | 
-      "Olá tudo bom?"
-  - text: | 
-      "Olá"
-  - text: | 
-      "Opa, tudo bom?"
-  - text: | 
-      "Olaaa"
-  
-  utter_presentation:
-  - text: | 
-      "Sou um bot à serviço da ONG abrigo dos bichos. Como poderia ajudar?"
-  - text: | 
-      "Sou um bot criado para a ONG Abrigo dos Bichos, eu ajudo nas adoções e doações para nosso amigos PET. Como posso ajudar? "
-  - text: | 
-      "Sou um bot feito para melhor te ajudar com doações e adoções na ONG amigos dos Bichos. Do que precisa?"
-  - text: | 
-      "Opa, tudo bom?"
-  - text: | 
-      "Olaaa"
-    
-  utter_goodbye:
-  - text: | 
-      "Adeus, bom falar com vocês. Espero ter ajudado"
-  - text: | 
-      "Até mais. Espero ter te ajudado. ^_^"
-  - text: | 
-      "Até logo, espero ter ajudado você"
-  utter_welcome:
-  - text: | 
-      "De nada, estou aqui para isso ^_^"
-  - text: | 
-      "Que isso, estou aqui para ajudar"
-  - text: | 
-      "De nada, estou a disposição"
-  
-  utter_gratefull:
-  - text: | 
-      "Muito feliz por você querer nos ajudar. Toda ajuda é bem vinda ^_^"
-  - text: | 
-      "Muitíssimo obrigado pela sua boa intenção, gostamos muito da ajuda de todos"
-  - text: | 
-      "Muito grato por você entrar nessa missão com a gente, sempre precisamos de boas pessoas como você"
-  utter_ask_name:
-  - text: "poderia informar seu nome completo por favor?"
-
-  utter_ask_phone:
-  - text: "poderia informar seu telefone pra contato por favor?"
-
-  utter_ask_email:
-  - text: "Por favor, nos envie seu melhor email para contato por gentileza"
-
-  utter_ask_rg:
-  - text: "Por favor, nos informe seu RG para o formulário de adoção"
-
-  utter_ask_cpf:
-  - text: "Por favor, nos informe seu CPF para o formulário de adoção"
-
-  utter_ask_cpf:
-  - text: "Por favor, nos informe seu CEP para o formulário de adoção"
-
-  utter_ask_address:
-  - text: "Poderia, por gentileza, nos informar seu endereço?"
-
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-=======
->>>>>>> ad979184294cdfdea07335424a8c2b7d93822b0e
 
 session_config:
   session_expiration_time: 60

@@ -8,24 +8,6 @@ pipeline:
 - name: SpacyTokenizer
 - name: SpacyFeaturizer
 - name: RegexFeaturizer
-<<<<<<< HEAD
-- name: CRFEntityExtractor
-- name: LexicalSyntacticFeaturizer
-- name: CountVectorsFeaturizer
-
-- name: DIETClassifier
-  epochs: 100
-  constrain_similarities: True
-  model_confidence: softmax
-
-- name: FallbackClassifier
-  threshold: 0.8
-  ambiguity_threshold: 0.1
-  
-- name: EntitySynonymMapper
-- name: SklearnIntentClassifier
-
-=======
 - name: LexicalSyntacticFeaturizer
 - name: CountVectorsFeaturizer
 - name: CountVectorsFeaturizer
@@ -49,8 +31,7 @@ pipeline:
   epochs: 100
   retrieval_intent: faq
   constrain_similarities: True
-  
->>>>>>> ad979184294cdfdea07335424a8c2b7d93822b0e
+
 policies:
 - name: MemoizationPolicy
 - name: RulePolicy
@@ -60,8 +41,4 @@ policies:
   epochs: 100
   constrain_similarities: True
   model_confidence: softmax
-<<<<<<< HEAD
   max_history: 5
-=======
-  max_history: 5
->>>>>>> ad979184294cdfdea07335424a8c2b7d93822b0e

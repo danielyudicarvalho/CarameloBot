@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  rasa-pet:
+    image: rasa/rasa:3.0.4-full
+    container_name: rasa-pet
+    ports:
+      - 5005:5005
+    networks:
+      - production
+    volumes:
+      - ./:/app
+    command:
+      - run 
+      - --enable-api
+      - --cors
+      - "*"
+
+  actions-pet:
+    image: rasa/rasa-sdk:3.0.2
+    container_name: actions-pet
+    ports:
+      - 5055:5055
+    networks:
+      - production
+    volumes:
+      - ./:/app/actions
+
+networks: 
+    production:
+        driver: bridge

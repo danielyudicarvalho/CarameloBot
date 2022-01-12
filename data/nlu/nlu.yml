@@ -4,30 +4,54 @@ nlu:
 ####### intents gerais 
 - intent: greet_intent
   examples: |
-    - Olá
-    - Oi
-    - e ae
+    - oi
+    - oiiii
+    - olá
+    - eae
+    - hi
+    - bom dia
+    - boa tarde
+    - boa noite
+    - dia
+    - tarde
+    - noite
+    - tudo bom?
 
 - intent: goodbye_intent
   examples: |
-    - Adeus
+    - bye
+    - tchau
     - xau
+    - adeus
     - flw
+    - até mais
 
 - intent: affirm_intent
   examples: |
-    - Sim
-    - Correto
-    - Afirmativo
-    - S
+    - s
+    - sim
+    - confirmo
+    - afirmo
+    - claro
+    - exato
+    - isso mesmo
+    - correto
+    - afirmativo
+    - certo
     
 - intent: deny_intent
   examples: |
-    - Não
-    - N
+    - n
+    - não
+    - nao
+    - errado
+    - nenhum
+    - nunca
+    - jamais
+    - nego
+    - cancelo
     - negativo
-    - Errado
-
+    
 ####### intents do voluntariado
 # - intent: wanna_help_intent
 #   examples: |
@@ -53,6 +77,21 @@ nlu:
     - Preciso que alguém resgate um Cão abandonado
     - Tem um gato abandonado aqui, alguem pode vir resgatar?
     
+####### intents de denuncias
 - intent: complaint_intent
   examples: |
     - Meu nome é Leonardo, meu rg é 123456 321, meu cpf é 123 456 789 10 , meu telefone é 1234 5678, minha denuncia é 
+####### intents de adoção    
+- intent: adopt_intent
+  examples: |
+    - adotar
+    - adoção
+    - quero adotar 
+    - como eu adoto? 
+
+- intent: inform_animal_type_intent
+  examples: |
+    - [cachorro](animal_type_entity)
+    - [gato](animal_type_entity)
+    - é um [cachorro](animal_type_entity)
+    - é um [gato](animal_type_entity)

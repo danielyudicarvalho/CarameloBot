@@ -24,7 +24,6 @@ nlu:
     - Resgatei um animal de rua e agora?
     - Encontrei perdido e resgatei e agora?
 
-    
 - intent: faq/ask_castatration
   examples: |
     - Quero saber como funciona a castração
@@ -46,3 +45,9 @@ nlu:
     - Gostaria de fazer uma denuncia de maus tratos
     - Gostaria de fazer uma denuncia
 
+- intent: faq/ask_vaccine
+  examples: |
+    - quero saber sobre vacina
+    - como vacinar?
+    - detalhes sobre vacina
+    - como faço para vacinar
