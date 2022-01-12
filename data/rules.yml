@@ -17,3 +17,14 @@ rules:
   - action: utter_anything_else
   - intent: affirm_intent
   - action: utter_how_can_i_help
+
+  - rule: Submit_report_form
+  condition:
+  - active_loop: report_form
+  steps:
+  - action: report_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_slots_values

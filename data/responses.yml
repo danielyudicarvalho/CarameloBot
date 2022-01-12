@@ -39,6 +39,21 @@ responses:
   utter_faq/ask_lost_pet:
     - text: "Ligue para o numero 00000-0000 e forneça as seguintes informações: endereço"
 
+#### Respostas do fluxo de castração
+  utter_castration:
+    - text: "A castração é realizada com o animal em jejum, sob efeito de anestésico, o que torna o procedimento indolor. O veterinário, então, retira os órgãos reprodutivos (útero, ovários e tubas uterinas – em fêmeas; e testículos – em machos). Ainda é comum existir a dúvida sobre o melhor momento para realizar a esterilização.  "
+
+#### Respostas do fluxo de contato do veterinario
+  utter_veterinarian:
+    - text: "O contato do veterinário é 67 1234-5678"
+
+#### Respostas do fluxo de denuncias
+  utter_report:
+    - text: "As denuncias podem ser feitas tanto pelo chat de mensagens, quanto ligando para o disque "denuncia". Deseja processeguir para a denuncia no chat? "
+
+  utter_complaint:
+    - text: "Tudo bem, peço que me informe os seguintes dados: Nome, RG, CPF, Telefone para contato e sua denúncia"
+
 ##### Respostas do fluxo vacina
   utter_faq/ask_vaccine:
     - text: "A vacinação garante a imunização e segurança do seu pet, além de impedir o contágio de seus respectivos donos, por isso levar o pet para uma primeira consulta com o veterinário e seguir à risca o calendário de vacinação estabelecido por ele é essencial para que o animal fique sempre protegido.\nRessaltando que o calendário apresentado é um exemplo, contate o veterinário mais próximo para uma orientação detalhada.\nCalendário de vacinação (cachorro):\n1,5 meses - Primeira vacina (V8 ou V10)\n2 meses - Polivalente (V8 ou V10/ Gripe canina / Giardíase)\n3 meses - Reforço da polivalente (V8 ou V10)\n4 meses - Vacina da raiva\nAnualmente - Reforço da polivalente e da raiva\nCalendário de vacinação (gato):\n1,5 meses - Desparasitar o  gato para que a vacinação primária seja efetuada futuramente\n2 meses - Teste de leucemia, teste de imunodeficiência e dose da tríplice\n2,5 meses - Vacina contra a leucemia felina\n3 meses - Reforço da vacina trivalente\n3,5 meses - Reforço da vacina da leucemia.\n4 meses - Vacina da raiva.\nAnualmente - Reforço da trivalente, da leucemia  da raiva\n"
@@ -67,4 +82,4 @@ responses:
         name: animal_type_slot
         value: gato
       text: "Sobre gatos, o importante é a idade do gato. Enquanto ele é filhote, é mais agitado, divertido e naturalmente vai dar mais trabalho para o dono. Se ele for adulto no momento da adoção, trará mais tranquilidade e mostrará afeto, mas pode encontrar dificuldades de adaptação."
-        
+

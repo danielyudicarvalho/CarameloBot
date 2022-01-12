@@ -38,10 +38,34 @@ slots:
 #============ 
 # FORMS
 #============
-# forms:
+forms:
+  volunteer_form:
+    required_slots:
+      - name
+      - phone
+      - email
+      - address
+  
+  adoption_form:
+    required_slots:
+      - name
+      - rg
+      - cpf
+      - address
+      - email
+      - cep
+      - phone
 
+  report_form:
+    required_slots:
+        - name
+        - rg
+        - cpf
+        - phone
+        - complaint
 
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
