@@ -8,12 +8,13 @@ docker-compose.yml
 Dockerfile
 index.html
 *.db*
+.rasa
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-
+*.pyc
 # C extensions
 *.so
 
@@ -138,3 +139,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Node dependencies
+node_modules/
+
+# Okteto
+.stignore
+

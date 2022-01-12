@@ -2,29 +2,33 @@ version: "3.0"
 
 stories:
 
-- story: happy path
+- story: main
   steps:
-  - intent: greet
+  - intent: greet_intent
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - checkpoint: next_flow
 
-- story: sad path 1
+####### Adoção flow
+- story: usuário não deseja adotar
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
+  - checkpoint: next_flow
+  - intent: adopt_intent
+  - action: utter_preview_adopt
+  - action: utter_want_to_adopt
+  - intent: deny_intent
+  - action: utter_anything_else
+  - intent: deny_intent
   - action: utter_goodbye
+
+- story: usuário deseja adotar
+  steps:
+  - checkpoint: next_flow
+  - intent: adopt_intent
+  - action: utter_preview_adopt
+  - action: utter_want_to_adopt
+  - intent: affirm_intent 
+  - action: utter_ask_animal_type_slot
+  - intent: inform_animal_type_intent
+  - slot_was_set:
+    - animal_type_slot: cachorro
+  - action: utter_adopt_tips

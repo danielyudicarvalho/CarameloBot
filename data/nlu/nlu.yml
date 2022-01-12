@@ -1,91 +1,93 @@
 version: "3.0"
 
 nlu:
-- intent: greet
+####### intents gerais 
+- intent: greet_intent
   examples: |
-    - hey
-    - hello
+    - oi
+    - oiiii
+    - olá
+    - eae
     - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - bom dia
+    - boa tarde
+    - boa noite
+    - dia
+    - tarde
+    - noite
+    - tudo bom?
 
-- intent: goodbye
+- intent: goodbye_intent
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
     - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - tchau
+    - xau
+    - adeus
+    - flw
+    - até mais
 
-- intent: affirm
+- intent: affirm_intent
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
-- intent: deny
+    - s
+    - sim
+    - confirmo
+    - afirmo
+    - claro
+    - exato
+    - isso mesmo
+    - correto
+    - afirmativo
+    - certo
+    
+- intent: deny_intent
   examples: |
-    - no
     - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - não
+    - nao
+    - errado
+    - nenhum
+    - nunca
+    - jamais
+    - nego
+    - cancelo
+    - negativo
 
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+####### intents do voluntariado
+# - intent: wanna_help_intent
+#   examples: |
+#     - Quero ajudar
+#     - Gostaria de ajudar
+#     - Como posso ajudar vocês?
+#     - O que eu posso fazer para ajudar?
 
-- intent: mood_unhappy
+# - intent: volunteer_intent
+#   examples: |
+#     - Quero ser voluntário
+#     - Gostaria de voluntariar
+#     - Voluntário
+####### intents do resgate
+- intent: lost_my_pet_intent
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - Perdi meu gato
+    - Perdi meu cachorro
 
-- intent: bot_challenge
+- intent: need_rescue_intent
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - Achei um pet que precisa de resgate
+    - Preciso que alguém resgate um Cão abandonado
+    - Tem um gato abandonado aqui, alguem pode vir resgatar?
+    
+####### intents de adoção    
+- intent: adopt_intent
+  examples: |
+    - adotar
+    - adoção
+    - quero adotar 
+    - como eu adoto? 
+
+- intent: inform_animal_type_intent
+  examples: |
+    - [cachorro](animal_type_entity)
+    - [gato](animal_type_entity)
+    - é um [cachorro](animal_type_entity)
+    - é um [gato](animal_type_entity)

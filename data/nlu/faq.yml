@@ -1,0 +1,32 @@
+version: "3.0"
+
+# Este documento possui as intents voltadas para o FAQ
+
+nlu:
+
+- intent: faq/ask_how_to_volunteer
+  examples: |
+    - Como posso voluntariar?
+    - Quero ser voluntario
+    - voluntario
+
+- intent: faq/ask_how_to_help
+  examples: |
+    - Quero ajudar
+    - Gostaria de ajudar
+    - Como posso ajudar vocês?
+    - O que eu posso fazer para ajudar?
+    
+- intent: faq/ask_found_and_rescued
+  examples: |
+    - Peguei um cachorrinho na rua, o que eu faço?
+    - Encontrei um gato de rua e quero ficar com ele
+    - Resgatei um animal de rua e agora?
+    - Encontrei perdido e resgatei e agora?
+
+- intent: faq/ask_vaccine
+  examples: |
+    - quero saber sobre vacina
+    - como vacinar?
+    - detalhes sobre vacina
+    - como faço para vacinar
