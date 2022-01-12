@@ -18,6 +18,22 @@ rules:
   - intent: affirm_intent
   - action: utter_how_can_i_help
 
+- rule: ativar formulario de pet perdido
+  steps:
+  - action: lost_pet_form
+  - active_loop: lost_pet_form
+  
+- rule: submeter formulario de pet perdido
+  condition:
+  - active_loop: lost_pet_form
+  steps:
+  - action: lost_pet_form
+   - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+#   - action: utter_anything_else
+
   - rule: Submit_report_form
   condition:
   - active_loop: report_form
@@ -28,3 +44,4 @@ rules:
     - requested_slot: null
   - action: utter_submit
   - action: utter_slots_values
+

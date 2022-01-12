@@ -51,7 +51,7 @@ nlu:
     - nego
     - cancelo
     - negativo
-    
+
 ####### intents do voluntariado
 # - intent: wanna_help_intent
 #   examples: |
@@ -68,8 +68,14 @@ nlu:
 ####### intents do resgate
 - intent: lost_my_pet_intent
   examples: |
-    - Perdi meu gato
-    - Perdi meu cachorro
+    - Perdi meu [gato](animal_type_entity)
+    - Perdi meu [cachorro](animal_type_entity)
+    - Perdi meu pet
+    - Perdi meu [cachorro](animal_type_entity), o que eu faço?
+    - Vocês podem me ajudar a achar meu [gato](animal_type_entity)?
+    - Meu [gato](animal_type_entity) sumiu
+    - Meu pet desapareceu
+    - Meu [cachorro](animal_type_entity) sumiu, ele é vira-lata caramelo, manda uma msg para [0000-0000](contact_number_entity)
 
 - intent: need_rescue_intent
   examples: |
@@ -77,6 +83,20 @@ nlu:
     - Preciso que alguém resgate um Cão abandonado
     - Tem um gato abandonado aqui, alguem pode vir resgatar?
     
+- intent: say_contact_number_intent
+  examples: |
+    - Numero para contato é [3829-3291](contact_number_entity)
+    - [99923134](contact_number_entity)
+    - [(20) 99090-1323](contact_number_entity)
+    - [22222-2222](contact_number_entity)
+    - é [(12) 3203-4999](contact_number_entity)
+    
+- intent: say_description_intent
+  examples: |
+    - ele é isso e aquilo, tem o pelo alto e da raça tal
+    - ele é branco e preto tem uma mancha no nariz e pelo baixo
+    - ele é um vira-lata caramelo e atende pelo nome camaro amarelo
+
 ####### intents de denuncias
 - intent: complaint_intent
   examples: |

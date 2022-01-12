@@ -3,15 +3,23 @@ version: "3.0"
 # RESPONSES
 #============
 responses:
+
 ##### Respostas gerais
   utter_goodbye:
     - text: "Até mais, espero ter ajudado você!"
+    
   utter_greet:
     - text: "Olá, eu sou o assistente virtual do Abrigo dos Bichos, é um prazer te recepcionar!"
+
   utter_anything_else:
     - text: "Gostaria de mais alguma coisa?"
+    
   utter_how_can_i_help:
     - text: "Como posso te ajudar?"
+
+  utter_submit:
+    - text: "Armazenei suas informações aqui!!"
+
 
 ##### Respostas do fluxo voluntariado
   utter_faq/ask_how_to_help:
@@ -23,6 +31,8 @@ responses:
         alguma forma! É veterinário e ama totós? Você pode ajudar a responder dúvidas de nossos seguidores! 
         Entende de legislação? As dicas de um advogado são muito bem-vindas! Faz fotos ou vídeos? Temos conteúdos
         incríveis que precisam de mãos habilidosas de um editor e das lentes de um fotógrafo.
+        Gostaria de se voluntariar?
+
 
 ##### Respostas do fluxo resgate
   utter_faq/ask_found_and_rescued:
@@ -34,10 +44,20 @@ responses:
         exames para uma avaliação do que será melhor para o caso dele. Por isso, leve o bichinho a um Veterinário de 
         sua confiança. JAMAIS medique um animal por conta própria, muitos medicamentos de uso humano podem intoxicar
         e até levar o animal a óbito, só um profissional pode lhe dizer do que ele precisa.
+
   utter_faq/ask_need_rescue:
     - text: "Ligue para o numero 00000-0000 e forneça as seguintes informações: endereço"
-  utter_faq/ask_lost_pet:
-    - text: "Ligue para o numero 00000-0000 e forneça as seguintes informações: endereço"
+  
+  utter_lost_pet:
+    - text: "Sentimos muito pela perda do seu animalzinho. Podemos te ajudar a achar-lo, mas para isso precisamos de algumas inforçaões. "
+  
+##### utter para o form do pet perdido
+  utter_ask_lost_pet_form_animal_type_slot:
+    - text: "Gato ou cachorro?"
+  utter_ask_lost_pet_form_contact_number_slot:
+    - text: "Me passe um numero para contato"
+  utter_ask_lost_pet_form_description_slot:
+    - text: "Digite uma breve descrição do seu pet <3"
 
 #### Respostas do fluxo de castração
   utter_castration:
@@ -82,4 +102,3 @@ responses:
         name: animal_type_slot
         value: gato
       text: "Sobre gatos, o importante é a idade do gato. Enquanto ele é filhote, é mais agitado, divertido e naturalmente vai dar mais trabalho para o dono. Se ele for adulto no momento da adoção, trará mais tranquilidade e mostrará afeto, mas pode encontrar dificuldades de adaptação."
-
