@@ -57,6 +57,14 @@ responses:
   - text: "É um gato ou cachorro?"
 
   utter_adopt_tips:
-  - text:
-      Em questão de cachorro, o primeiro passo é identificar o porte dele. Mesmo se for um filhotinho, essa tarefa é de extrema importância, já que, quando ele crescer, vai precisar de um espaço adequado para brincar.
-      Depois de adotar um cachorro, ele vai para os seus braços com o comportamento ideal ele pode morder um móvel, por exemplo, lidar com isso exige paciência e muito, mas muito amor, ainda mais com um peludo que pode já ser adulto ou mesmo ter sofrido maus tratos.
+    - condition:
+      - type: slot
+        name: animal_type_slot
+        value: cachorro
+      text: "Em questão de cachorro, o primeiro passo é identificar o porte dele. Mesmo se for um filhotinho, essa tarefa é de extrema importância, já que, quando ele crescer, vai precisar de um espaço adequado para brincar. Depois de adotar um cachorro, ele vai para os seus braços com o comportamento ideal ele pode morder um móvel, por exemplo, lidar com isso exige paciência e muito, mas muito amor, ainda mais com um peludo que pode já ser adulto ou mesmo ter sofrido maus tratos."
+    - condition:
+      - type: slot
+        name: animal_type_slot
+        value: gato
+      text: "Sobre gatos, o importante é a idade do gato. Enquanto ele é filhote, é mais agitado, divertido e naturalmente vai dar mais trabalho para o dono. Se ele for adulto no momento da adoção, trará mais tranquilidade e mostrará afeto, mas pode encontrar dificuldades de adaptação."
+        
