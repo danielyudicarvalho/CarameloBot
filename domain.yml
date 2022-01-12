@@ -5,21 +5,18 @@ intents:
   - despedida
   - agradecimento
   - voluntariar
-  - bot_challenge
+  - bot_challenged
+  - ask_discard
+  - ask_discard_warn
+  - ask_disease
+
 
 
 entities:
 - disease
+- question
 
 slots:
-  name:
-    type: text
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-            requested_slot: name
 
   disease:
     type: text
@@ -30,73 +27,19 @@ slots:
         entity: disease
   
 
-  email:
+  question:
     type: text
     initial_value: null
     influence_conversation: false
     mappings:
-      - type: from_text
-        conditions:
-           requested_slot: email
+      - type: from_entity
+        entity: question
+
   
-  address:
-    type: text
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-           requested_slot: address
-
-  rg:
-    type: number
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-           requested_slot: rg
-
-  cpf:
-    type: number
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-           requested_slot: cpf
-
-  cep:
-    type: number
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-           requested_slot: cep
-  
-
-
-forms:
-  volunteer_form:
-    required_slots:
-      - name
-      - phone
-      - email
-      - address
-  
-  adoption_form:
-    required_slots:
-      - name
-      - rg
-      - cpf
-      - address
-      - email
-      - cep
-      - phone
 
 
 responses:
+
   utter_greet:
   - text: | 
       "Oi Oi ^_^"
@@ -160,12 +103,12 @@ responses:
   utter_ask_cpf:
   - text: "Por favor, nos informe seu CPF para o formulário de adoção"
 
-  utter_ask_cpf:
+  utter_ask_cep:
   - text: "Por favor, nos informe seu CEP para o formulário de adoção"
 
   utter_ask_address:
   - text: "Poderia, por gentileza, nos informar seu endereço?"
-  utter_answers_discard:
+  utter_answer_discard:
   - text: |
           "Sabemos como é triste a dor de perder seu pet, mas caso isso venha a acontecer você precisa dar um destino correto ao corpinho dele.
           A maneira mais segura de se fazer isso em Campo Grande é ligar para a Solurb, responsável pela higiene da cidade, através do número: 0800 6471005.
@@ -174,8 +117,8 @@ responses:
   - text: |
           "Se você infelizmente perdeu o seu bichano (cão ou gato) saiba que você precisar dar um destino correto ao corpo dele para que não haja risco as pessoas nem ao 
           meio ambiente. Aqui em Campo Grande-MS quem é responsável por isso é a Solurb(0800 6471005). Ligue para eles que eles devem te atender em até 24h.
-          Seu seu pet morreu na clínica veterinária, eles podem encaminhar ao crematório. Exitem serviços de cremação para pets também caso queira um por conta própria"
-  utter_answers_discard_warn:
+          Seu seu pet morreu na clínica veterinária, eles podem encaminhar ao crematório. Exitem serviços de cremação para pets também caso queira um por conta própria."
+  utter_answer_discard_warn:
   - text: |
         " Cuidado, pois enterrar o seu pet falecido no quintal trás riscos ambientais ao solo além de ser crime segundo o artigo 54 da Lei de Crimes Ambientais- Lei 9605/98.
           Descartar em terrenos baudios, terreiros, matas e outros locais também é crime ambiental pois pode contaminar o solo e até o lençol freático, além de ser perigoso por pode contaminar o solo e trazer doenças. A pena pode chegar a multas de
@@ -227,6 +170,10 @@ responses:
       A vacina deve ser reforçada anualmente para ter efeito. Você e seus familiares podem ser vacinados contra a raiva. Controle a área de convívio do seu pet e se certifique que outros animais estranhos não tenham acesso.
       Controle o lixo e a comida, o que pode atrair animais contaminados. Se lave bem caso seja atacado por um animal e procure imediatamente um posto de saúde, em humanos a vacina também pode ser útil pós infecção."
 
+  utter_answer_treatments_raiva:
+  - text: |
+      "Não existe tratamento para a doença, por isso é MUITO IMPORTANTE, PREVENIR!. Em caso de mordida e arranhões, lave bem com sabão e água corrente e procure ajuda em uma unidade de saúde
+      para vacinação e soroterapia."
 
   utter_answer_initial_info_leishmaniose:
   - text: |
@@ -234,7 +181,7 @@ responses:
       Ela é muito comum em áreas tropicais como o Brasil. Há dois tipo de leishmaniose: Cutânea e Visceral, para a cutânea há cura, já para visceral há apenas tratamento, mas sem cura.
       A única maneira da doença passar do seu pet para você é se o mesmo mosquito picar vocês dois, fora isso não há risco de contágio direto e vocês podem conviver normalmente.
       Vacinar o seu pet a partir de 4 meses contra leishmaniose(R$180,00 a dose em média) é altamente recomendado apesar de não ser obrigatório.
-      Se proteger do mosquito palha higienizando a casa e tratando o lixo corretamente também é recomendado"
+      Se proteger do mosquito palha higienizando a casa e tratando o lixo corretamente também é recomendado."
   - text: |
       "Então, a leishmaniose é uma das zoonoses(doenças transmissíveis de animais para pessoas) mais comuns no Brasil por ser uma região tropical.
       A doença é transmitida pela picada do mosquito palha(aparência amarelada e com antenas) e para isso o mosquito precisa picar o animal infectado e depois picar a pessoa.
@@ -251,21 +198,21 @@ responses:
   utter_answer_prevent_leishmaniose:
   - text: |
       "O meio mais seguro de proteger seu PET da leishmaniose(terceiro maior assassino parasitário do mundo) é através da vacinação.
-      Além das vacinas obrigatórias V8 e V10, que protegem os animais de mais de 7 doenças como a cinomose, hepatite canina e leptospirose. A vacinação contra leishmaniose é altamente recomendada
+      Além das vacinas V8 e V10, que protegem os animais de mais de 7 doenças como a cinomose, hepatite canina e leptospirose. A vacinação contra leishmaniose é altamente recomendada
       a partir de 4 meses de vida do seu animal. Vacinas contra leishmaniose como a Leish-tec e Leishmune são opcionais e pagas (em torno de R$180,00) e muito necessária. Outros meios de evitar a leishmaniose é combater o mosquito palha,
       muito comuns em áreas úmidas e de mata. O mosquito gosta de sair depois do pôr do sol, então evitar passear com ele esse horário também é recomendado, proteger sua casa do mosquito com telas e repelentes é um boa ideia para manter o mosquito afastado.
-      Outras soluções são as coleiras repelente(muito recomendado pela OMS); cuidar do lixo, principalmente o orgânico(favorito do mosquito), e higienizar bem o ambiente."
+      Outras soluções são as coleiras repelente(muito recomendado pela OMS); cuidar do lixo, principalmente o orgânico(favorito do mosquito), e higienizar bem o ambiente retirando folhas, troncos e restos de vegetação."
   - text: |
       "Para se prevenir da leishmaniose é sempre bom manter a vacinação dos pets em dia. Verifique se na carteirinha de vacinação constam as vacinas V8 ou V10,
       principais responsáveis pelo combate à varias doenças como cinomose, coronavirose e adenovirose (gripe em cães), se não houver tente vaciná-los o quanto antes.
       A vacina contra leishmaniose como Leish-Tec são opcionais e um pouco mais caras(R$180,00 a dose em média), mas muito necessárias e eficientes. Fora a vacina, é preciso combater o
       mosquito palha(transmissor da doença), esses mosquitos geralmente têm hábitos noturnos então é bom proteger seu pet nesses horários, evitando passeios noturnos por exemplo. O mosquito palha também se prolifera
-      em material orgânico, por isso é saudável tratar esse tipo de lixo na sua casa. As coleiras repelentes também ajudam bastante contra o mosquito palha além de outros insetos transmissores de doenças.
+      em material orgânico, por isso é saudável tratar esse tipo de lixo na sua casa(folhas, restos vegetais, troncos,etc). As coleiras repelentes também ajudam bastante contra o mosquito palha além de outros insetos transmissores de doenças.
       Também existem sprays repelentes, telas para janelas, mosquiteiros e outros vários meios de afastar o mosquito palha da sua casa e do seu pet."
   - text: |
       "A melhor prevenção contra leishmaniose é a vacinação(R$180,00 a dose) a partir de 4 meses de idade do seu animal. São 3 ou 4 doses mais o reforço anual.
       Para a doença ser transmitida do animal para você ou de outro animal para o seu é preciso que o mosquito palha(amarelado e com antenas) contaminado pique vocês.Portanto, combater o mosquito é essencial.
-      Existe a coleira repelente, muito útil para afastar o mosquito. Dar banho no pet e manter a área dele higienizada contra lixo orgânico também é muito importante. O mosquito palha sai a noite, então
+      Existe a coleira repelente, muito útil para afastar o mosquito. Dar banho no pet e manter a área dele higienizada contra lixo orgânico (folhas, restos vegetais, etc)também é muito importante. O mosquito palha sai a noite, então
       evite deixar ele exposto depois do pôr do sol. Também tente proteger a sua casa de mosquitos com telas, repelentes, mosquiteiros, etc."
 
   utter_answer_symptoms_leishmaniose:
@@ -287,16 +234,62 @@ responses:
 
   utter_answer_treatments_leishmaniose:
   - text: |
-      ""
-  utter_answer_more_info_leishmaniose:
+      "A doença tem tratamento para os humanos, que é gratuito e está disponível na rede de serviços do Sistema Único de Saúde (SUS).
+      90% dos casos, quando não tratados, evoluem para óbito, portanto, a população deve ser corretamente orientada.
+      Os animais devem ser levados ao médico veterinário para orientação da conduta a ser tomada.
+      Lembrando que não exite cura para leishmaniose visceral para animais, apenas o tratamento e eutanásia."
+
+  utter_answer_initial_info_sarna:
   - text: |
-      ""
+      "Doença de pele causada por ácaro (parasito) que é capaz de perfurar e penetrar a pele. Como a sarna é transmitida pelo ácaro, a transmissão
+      pode ser feita tanto pelo contato direto quanto por objetos contaminados. É muito comum o ácaro em tecidos como roupa e cobertores, por isso higienize bem esses tecidos se 
+      você tem um pet. Expor esses objetos ao Sol também é muito bom para se prevenir do ácaro."
+
+  utter_answer_prevent_sarna:
+  - text: |
+      "Para se prevenir da sarna é sempre bom evitar contato direto com animais com suspeita de sarna. Sempre higienize bem as roupas que você usa
+      quando está em contato com os pets(a sarna é causado pelo ácaro, portanto ele fica em roupas e tecidos).A sarna também passa de pessoa para pessoa pelo contato, então
+      se você estiver com suspeita de sarna tente se afastar da escola ou trabalho e se isole ao máximo até os sintomas desaparecerem. Se seu animal estiver com suspeita de sarna, leve
+      ao veterinário o mais rápido possível, e se você também estiver com suspeita procure ajuda médica o mais rápido possível."
+
+  utter_answer_symptoms_sarna:
+  - text: |
+        "Os sintomas da sarna são bem similares em humanos e animais. Além da coceira intensa, também aparecem feridas e lesões avermelhadas na pelo."
+
+   
+  utter_answer_treatments_sarna:
+  - text: |
+        "Depois do devido diagnóstico, o tratamento tanto para animais quanto para humanos é bem fácil. Com o auxilio de um profissional, o tratamento geralmente
+         se dá por remédios, pomadas e cremes."
+
+  utter_answer_intial_info_toxoplasmose:
+  - text: |
+      "Doença infecciosa causada por protozoário, Toxoplasma gondii. A infecção em grávidas é de grande risco, uma vez que o feto pode ter a sua formação afetada. Quanto ao tratamento, tanto a sua necessidade quanto a sua duração são determinados pelo médico após serem realizados os devidos exames.
+       A toxoplasmose pode ser transmitida por contato com fezes de animais, carne crua ou mal cozida, verduras e vegatais mal lavados, transfusão sanguínea e da mãe para o feto durante a gestação."
   
+  utter_answer_symptoms_toxoplasmose:
+  - text: |
+        "Quase 90% das pessoas não apresentam sintomas da toxoplasmose, porém alguns sintomas dela inclue: Febre alta, dores musculares, dores de cabeça, em recém-nascidos pode causar cegueira e em crianças, problemas de visão podem aparecer
+        até os 12 anos de idade, devido às lesões na retina, provocadas pelo parasito."
+  utter_answer_prevent_toxoplasmose: 
+  - text: |
+      "Eliminar e evitar o contato com fezes de animais é o melhor jeito de se prevenir da toxoplasmose. Evitar o contato de grávidas com fezes de cães e gatos também é recomendado já que a infecção em grávidas é de autíssimo risco.
+      Outras dicas são: Lavar bem os alimentos, higienizar os pratinhos dos animais e caso infelizmente o seu pet venha a falecer, dar o devido tratamento para o corpinho dele."
 
-
-
+  utter_answer_treatments_toxoplasmose: 
+  - text: |
+      "90% das pessoas que contraem toxoplasmose não demonstram sintomas, por isso procure um médico na menor suspeita. Geralmente depois de feito o diagnóstico, o tratamento é feito com antiparasitário e antibióticos"
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+
+actions:
+- action_answer_disease
+- action_answer_disease_treatment
+- action_answer_disease_symptoms
+- action_answer_disease_prevent
+- action_media_stack
+- action_remember
 
 session_config:
   session_expiration_time: 60

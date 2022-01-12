@@ -23,39 +23,19 @@ rules:
   - intent: apresentar
   - action: utter_presentation
 
-- rule: voluntário
+- rule: answer_discard
   steps:
-  - intent: voluntariar
-  - action: utter_gratefull
-  - action: volunteer_form
-  - activate_loop: volunteer_form
+  - intent: ask_discard
+  - action: utter_answer_discard
 
-- rule: adotar
-  steps:
-  - intent: Adotar
-  - action: utter_gratefull
-  - action: adoption_form
-  - activate_loop: adoption_form
+- rule: answer_discard_warn
+  steps: 
+  - intent: ask_discard_warn
+  - action: utter_answer_discard_warn
 
-- rule: Submit_volunteer_form
-  condition:
-  - active_loop: volunteer_form
-  steps:
-  - action: volunteer_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: utter_submit
-  - action: utter_slots_values
+- rule: answer_disease
+  steps: 
+  - intent: ask_disease
+  - action: action_answer_disease
 
 
-- rule: Submit_adoption_form
-  condition:
-  - active_loop: adoption_form
-  steps:
-  - action: volunteer_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: utter_submit
-  - action: utter_slots_values
