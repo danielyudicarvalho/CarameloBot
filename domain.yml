@@ -10,10 +10,14 @@ intents:
   - affirm_intent
   - lost_my_pet_intent
   - need_rescue_intent
+  - say_contact_number_intent
+  - say_description_intent
 #============
 # ENTITIES
 #============ 
-  
+entities:
+- animal_type_entity
+- contact_number_entity
 #============
 # ACTIONS
 #============ 
@@ -23,16 +27,45 @@ actions:
   - utter_faq
   - utter_anything_else
   - utter_how_can_i_help
+  - utter_lost_pet
+  - utter_ask_lost_pet_form_animal_type_slot
+  - utter_ask_lost_pet_form_description_slot
+  - utter_ask_lost_pet_form_contact_number_slot
+  - utter_submit
 #============ 
 # SLOTS
 #============
-# slots:
+slots:
+  # lost_pet_form
+  animal_type_slot: 
+    type: text
+    mappings:
+    - type: from_entity
+      entity: animal_type_entity
+  # lost_pet_form
+  description_slot:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: lost_pet_form
+        requested_slot: description_slot
+  # lost_pet_form
+  contact_number_slot:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: contact_number_entity
 
 #============ 
 # FORMS
 #============
-# forms:
-
+forms:
+  lost_pet_form:
+    required_slots:
+        - animal_type_slot
+        - description_slot
+        - contact_number_slot
 
 
 session_config:
