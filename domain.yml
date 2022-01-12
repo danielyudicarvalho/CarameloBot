@@ -12,12 +12,16 @@ intents:
   - need_rescue_intent
   - say_contact_number_intent
   - say_description_intent
+  - adopt_intent
+  - inform_animal_type_intent
+
 #============
 # ENTITIES
 #============ 
 entities:
 - animal_type_entity
 - contact_number_entity
+
 #============
 # ACTIONS
 #============ 
@@ -32,12 +36,13 @@ actions:
   - utter_ask_lost_pet_form_description_slot
   - utter_ask_lost_pet_form_contact_number_slot
   - utter_submit
+
 #============ 
 # SLOTS
 #============
 slots:
   # lost_pet_form
-  animal_type_slot: 
+  animal_type_slot:
     type: text
     mappings:
     - type: from_entity
@@ -56,7 +61,7 @@ slots:
     mappings:
     - type: from_entity
       entity: contact_number_entity
-
+      
 #============ 
 # FORMS
 #============
@@ -66,8 +71,33 @@ forms:
         - animal_type_slot
         - description_slot
         - contact_number_slot
+  
+  volunteer_form:
+    required_slots:
+      - name
+      - phone
+      - email
+      - address
+  
+  adoption_form:
+    required_slots:
+      - name
+      - rg
+      - cpf
+      - address
+      - email
+      - cep
+      - phone
 
+  report_form:
+    required_slots:
+        - name
+        - rg
+        - cpf
+        - phone
+        - complaint
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+

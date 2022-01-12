@@ -28,8 +28,20 @@ rules:
   - active_loop: lost_pet_form
   steps:
   - action: lost_pet_form
+   - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+#   - action: utter_anything_else
+
+  - rule: Submit_report_form
+  condition:
+  - active_loop: report_form
+  steps:
+  - action: report_form
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
   - action: utter_submit
-  # - action: utter_anything_else
+  - action: utter_slots_values
+
