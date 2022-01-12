@@ -38,3 +38,8 @@ responses:
     - text: "Ligue para o numero 00000-0000 e forneça as seguintes informações: endereço"
   utter_faq/ask_lost_pet:
     - text: "Ligue para o numero 00000-0000 e forneça as seguintes informações: endereço"
+
+##### Respostas do fluxo vacina
+  utter_faq/ask_vaccine:
+    - text: "A vacinação garante a imunização e segurança do seu pet, além de impedir o contágio de seus respectivos donos, por isso levar o pet para uma primeira consulta com o veterinário e seguir à risca o calendário de vacinação estabelecido por ele é essencial para que o animal fique sempre protegido.\nRessaltando que o calendário apresentado é um exemplo, contate o veterinário mais próximo para uma orientação detalhada.\nCalendário de vacinação (cachorro):\n1,5 meses - Primeira vacina (V8 ou V10)\n2 meses - Polivalente (V8 ou V10/ Gripe canina / Giardíase)\n3 meses - Reforço da polivalente (V8 ou V10)\n4 meses - Vacina da raiva\nAnualmente - Reforço da polivalente e da raiva\nCalendário de vacinação (gato):\n1,5 meses - Desparasitar o  gato para que a vacinação primária seja efetuada futuramente\n2 meses - Teste de leucemia, teste de imunodeficiência e dose da tríplice\n2,5 meses - Vacina contra a leucemia felina\n3 meses - Reforço da vacina trivalente\n3,5 meses - Reforço da vacina da leucemia.\n4 meses - Vacina da raiva.\nAnualmente - Reforço da trivalente, da leucemia  da raiva\n"
+

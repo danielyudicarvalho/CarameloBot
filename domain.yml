@@ -13,6 +13,7 @@ intents:
 #============
 # ENTITIES
 #============ 
+# entities:
   
 #============
 # ACTIONS
@@ -27,6 +28,7 @@ actions:
 # SLOTS
 #============
 # slots:
+
 
 #============ 
 # FORMS

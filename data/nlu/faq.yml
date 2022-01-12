@@ -23,3 +23,10 @@ nlu:
     - Encontrei um gato de rua e quero ficar com ele
     - Resgatei um animal de rua e agora?
     - Encontrei perdido e resgatei e agora?
+
+- intent: faq/ask_vaccine
+  examples: |
+    - quero saber sobre vacina
+    - como vacinar?
+    - detalhes sobre vacina
+    - como faço para vacinar
