@@ -3,11 +3,13 @@ models/
 results/
 story_graph.dot
 graph.html
+actions/__pycache__
 docker-compose.yml
 Dockerfile
 index.html
 *.db*
 .rasa
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -137,10 +139,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-<<<<<<< HEAD
 
 # Node dependencies
 node_modules/
 
 # Okteto
 .stignore
+
