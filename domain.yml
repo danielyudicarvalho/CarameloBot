@@ -18,7 +18,8 @@ intents:
   - say_description_intent
   - adopt_intent
   - inform_animal_type_intent
-
+  - out_of_scope_intent
+  - bot_purpose_intent
 #============
 # ENTITIES
 #============ 
@@ -42,10 +43,15 @@ actions:
   - utter_ask_lost_pet_form_description_slot
   - utter_ask_lost_pet_form_contact_number_slot
   - utter_submit
+  - utter_complaint
+  - utter_slots_values
+  - utter_bot_purpose
+  - utter_out_of_scope
   - action_answer_disease
   - action_answer_disease_treatment
   - action_answer_disease_symptoms
   - action_answer_disease_prevent
+  
 #============ 
 # SLOTS
 #============
@@ -66,7 +72,7 @@ slots:
         requested_slot: description_slot
   # lost_pet_form
   contact_number_slot:
-    type: any
+    type: text
     mappings:
     - type: from_entity
       entity: contact_number_entity

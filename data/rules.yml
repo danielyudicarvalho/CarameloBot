@@ -2,11 +2,20 @@ version: "3.0"
 
 rules:
 
+- rule: Bot diz que está fora do escopo dele
+  steps:
+  - intent: out_of_scope_intent
+  - action: utter_out_of_scope
+
+- rule: O bot se apresenta
+  steps:
+  - intent: bot_purpose_intent
+  - action: utter_bot_purpose
+
 - rule: Dizer olá
   steps:
   - intent: greet_intent
   - action: utter_greet
-  - action: utter_presentation
 
 - rule: Dizer adeus
   steps:
@@ -31,6 +40,8 @@ rules:
 
 - rule: ativar formulario de pet perdido
   steps:
+  - intent: lost_my_pet_intent
+  - action: utter_lost_pet
   - action: lost_pet_form
   - active_loop: lost_pet_form
   
@@ -39,19 +50,20 @@ rules:
   - active_loop: lost_pet_form
   steps:
   - action: lost_pet_form
-   - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: utter_submit
-#   - action: utter_anything_else
-
-  - rule: Submit_report_form
-  condition:
-  - active_loop: report_form
-  steps:
-  - action: report_form
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
   - action: utter_submit
-  - action: utter_slots_values
+# - action: utter_anything_else
+
+
+# - rule: Submit_report_form
+#   condition:
+#   - active_loop: report_form
+#   steps:
+#   - action: report_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: utter_submit
+#   - action: utter_slots_values
