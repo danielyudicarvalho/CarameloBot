@@ -42,7 +42,7 @@ nlu:
     - como [prevenir](question) a [toxoplasmose](disease)?
     - como [tratar](question) a [leishmaniose](disease)?
 
-- intent: ask_discard
+- intent: ask_collect
   examples: |
     - o que fazer quando meu cachorro morrer?
     - o que fazer quando meu gato morrer?
@@ -54,7 +54,7 @@ nlu:
     - qual número eu ligo quando meu animal morre?
     - com quem eu falor quando o bicho morre?
 
-- intent: ask_discard_warn
+- intent: ask_collect_warn
   examples: |
     - posso enterrar meu proprio cachorro quando ele morrer?
     - posso enterrar meu próprio gato quando ele morrer?

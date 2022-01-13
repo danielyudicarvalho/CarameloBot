@@ -11,7 +11,8 @@ QUESTION = {
      "sintomas":"symptoms" ,
      "sintoma":"symptoms",
      "prevenir":"prevent",
-     "tratamento":"treatments"
+     "tratamento":"treatments",
+     "tratar":"treatments"
  }
 
 DISEASE=['leishmaniose','raiva','sarna','toxoplasmose']
@@ -28,13 +29,12 @@ class ActionAnswerDisease(Action):
         disease_slot = tracker.get_slot("disease")
         question_slot = tracker.get_slot("question")
 
-        if QUESTION[question_slot]:
-            utter_response_answer = 'utter_answer_{question}_{disease}'.format(disease=disease_slot,question=QUESTION[question_slot])
+        if question_slot and QUESTION[question_slot]:
+            utter_response_answer = 'utter_askaction/ask_{question}_{disease}'.format(disease=disease_slot,question=QUESTION[question_slot])
         else:
-            utter_response_answer = 'utter_answer_initial_info_{disease}'.format(disease=disease_slot)
+            utter_response_answer = 'utter_askaction/ask_initial_info_{disease}'.format(disease=disease_slot)
         
-        print(utter_response_answer)
-        print(QUESTION[question_slot])
+        
         dispatcher.utter_message(response=utter_response_answer)
  
 

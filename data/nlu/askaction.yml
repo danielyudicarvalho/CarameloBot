@@ -1,0 +1,43 @@
+version: "3.0"
+
+nlu:
+
+
+- regex: question
+  examples: | 
+    - /([A-Z a-z])/
+
+
+- lookup: disease
+  examples: |
+    - leishmaniose
+    - raiva
+    - sarna
+    - toxoplasmose
+
+- lookup: question
+  examples: |
+    - sintomas
+    - prevenção
+    - tratamento
+    - prevenir
+    - tratar
+    - sintoma
+
+
+- intent: askaction/ask_disease
+  examples: |
+    - me fale sobre [leishmaniose](disease)
+    - me dê informações sobre [raiva](disease)
+    - fale sobre [sarna](disease)
+    - o que você sabe sobre [toxoplasmose](disease)?
+    - quais os [sintomas](question) da [leishmaniose](disease)?
+    - qual os [sintomas](question) da [raiva](disease)?
+    - quais os [tratamentos](question) para [sarna](disease)?
+    - você sabe qual a [prevenção](question) para [toxoplasmose](disease)?
+    - como se [prevenir](question) para [leishmaniose](disease)?
+    - qual o [sintoma](question) da [sarna](disease)?
+    - qual a [prevenção](question) pra [raiva](disease)?
+    - [tratamento](question) para [sarna](disease)?
+    - como [prevenir](question) a [toxoplasmose](disease)?
+    - como [tratar](question) a [leishmaniose](disease)?

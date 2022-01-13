@@ -23,19 +23,14 @@ rules:
   - intent: apresentar
   - action: utter_presentation
 
-- rule: answer_discard
+- rule: collect
   steps:
-  - intent: ask_discard
-  - action: utter_answer_discard
+  - intent: faq
+  - action: utter_faq
 
-- rule: answer_discard_warn
+- rule: ask_action
   steps: 
-  - intent: ask_discard_warn
-  - action: utter_answer_discard_warn
-
-- rule: answer_disease
-  steps: 
-  - intent: ask_disease
+  - intent: askaction
   - action: action_answer_disease
 
 
