@@ -4,6 +4,10 @@ version: "3.0"
 #========== 
 intents:
   - faq
+  - askaction
+  - ask_discard
+  - ask_discard_warn
+  - ask_disease
   - goodbye_intent
   - greet_intent
   - deny_intent
@@ -21,6 +25,8 @@ intents:
 entities:
 - animal_type_entity
 - contact_number_entity
+- disease
+- question
 
 #============
 # ACTIONS
@@ -36,7 +42,10 @@ actions:
   - utter_ask_lost_pet_form_description_slot
   - utter_ask_lost_pet_form_contact_number_slot
   - utter_submit
-
+  - action_answer_disease
+  - action_answer_disease_treatment
+  - action_answer_disease_symptoms
+  - action_answer_disease_prevent
 #============ 
 # SLOTS
 #============
@@ -61,7 +70,23 @@ slots:
     mappings:
     - type: from_entity
       entity: contact_number_entity
-      
+
+  disease:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: disease
+  
+  question:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: question
+        
 #============ 
 # FORMS
 #============

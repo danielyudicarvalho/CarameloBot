@@ -3,6 +3,7 @@ models/
 results/
 story_graph.dot
 graph.html
+.rasa/cache
 actions/__pycache__
 docker-compose.yml
 Dockerfile

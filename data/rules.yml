@@ -2,7 +2,13 @@ version: "3.0"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Dizer olá
+  steps:
+  - intent: greet_intent
+  - action: utter_greet
+  - action: utter_presentation
+
+- rule: Dizer adeus
   steps:
   - intent: goodbye_intent
   - action: utter_goodbye
@@ -12,6 +18,11 @@ rules:
   - intent: faq
   - action: utter_faq
 
+- rule: ask_action
+  steps: 
+  - intent: askaction
+  - action: action_answer_disease
+  
 - rule: usuario deseja mais alguma coisa
   steps:
   - action: utter_anything_else
@@ -44,4 +55,3 @@ rules:
     - requested_slot: null
   - action: utter_submit
   - action: utter_slots_values
-

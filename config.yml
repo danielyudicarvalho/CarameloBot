@@ -32,6 +32,7 @@ pipeline:
   retrieval_intent: faq
   constrain_similarities: True
 
+
 policies:
 - name: MemoizationPolicy
 - name: RulePolicy

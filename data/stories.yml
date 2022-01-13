@@ -55,3 +55,4 @@ stories:
   - slot_was_set:
     - animal_type_slot: cachorro
   - action: utter_adopt_tips
+

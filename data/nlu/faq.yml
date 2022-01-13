@@ -51,3 +51,25 @@ nlu:
     - como vacinar?
     - detalhes sobre vacina
     - como faço para vacinar
+
+- intent: faq/ask_collect
+  examples: |
+    - o que fazer quando meu cachorro morrer?
+    - o que fazer quando meu gato morrer?
+    - como proceder quando meu pet morre?
+    - meu pet morreu e agora?
+    - com quem eu falor quando meu cachorro morre?
+    - pra quem eu ligo quando meu gato morre?
+    - o que eu faço quando meu bichinho morre?
+    - qual número eu ligo quando meu animal morre?
+    - com quem eu falor quando o bicho morre?
+
+- intent: faq/ask_collect_warn
+  examples: |
+    - posso enterrar meu proprio cachorro quando ele morrer?
+    - posso enterrar meu próprio gato quando ele morrer?
+    - E se eu enterrar meu proprio pet no quintal
+    - posso enterrar meu cachorro no meu quintal?
+    - posso enterrar meu gato no quintal?
+    - Tem consequências se eu enterrar meu bicho por conta própria?
+ 
