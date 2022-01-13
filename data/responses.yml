@@ -243,22 +243,22 @@ responses:
   - text: |
       "90% das pessoas que contraem toxoplasmose não demonstram sintomas, por isso procure um médico na menor suspeita. Geralmente depois de feito o diagnóstico, o tratamento é feito com antiparasitário e antibióticos"
   
-  utter_askaction/ask_initial_info_fiv_felina:
+  utter_askaction/ask_initial_info_fiv:
   - text: |
       "Popularmente conhecida como aids felina, a doença é causada por um vírus da mesma família do HIV e, em seus estágios clínicos, tem sintomas semelhantes ao da imunodeficiência em humanos, embora não seja transmitida para nós.
       uma das principais formas de contágio é por meio do contato da saliva de um gato infectado com o sangue de um bichano saudável.A infecção com FIV felina é mais provável em machos e de vida livre, o que indica a transmissão eficiente por ferimentos causados por mordidas."
   
-  utter_askaction/ask_symptoms_fiv_felina:
+  utter_askaction/ask_symptoms_fiv:
   - text: |
         "Assim como ocorre no contágio do HIV, a FIV afeta os gatos de maneiras diferentes. Enquanto alguns pets apresentam mais rapidamente os sintomas após a infecção, outros podem passar anos assintomáticos.
         Na fase aguda, os gatos podem apresentar anorexia, febre e linfadenopatia (aumento dos nódulos linfáticos)”. Já a fase latente é assintomática. Por fim, conforme o avanço da doença, começam a surgir as infecções secundárias decorrentes da imunodeficiência. Nesse estágio, os sinais clínicos são variados e inespecíficos, mas o que mais se observa são gengivoestomatite crônica, doenças oculares e alterações neurológicas."
-  utter_askaction/ask_prevent_fiv_felina: 
+  utter_askaction/ask_prevent_fiv: 
   - text: |
       "Embora existam atualmente diversas pesquisas visando desenvolver uma vacina para a FIV, ela ainda não é uma realidade. Sendo assim, uma das melhores formas de prevenir a doença é a castração, que inibe tanto o comportamento agressivo quanto a tendência dos gatos de escaparem para a rua, onde podem se envolver em brigas com animais contaminados.
       gatos com FIV podem conviver com outros gatos, desde que não briguem entre si. Por isso, é fundamental  fazer o teste em todos os bichanos da casa com regularidade a fim de detectar e controlar a doença.
       Aliás, com suspeita de FIV felina ou não, nunca deixe de levar o seu amigo para um check-up completo pelo menos uma vez por ano com veterinários de confiança. Só assim você garante que qualquer alteração no organismo do pet seja identificada logo em seu estágio inicial."
 
-  utter_askaction/ask_treatments_fiv_felina: 
+  utter_askaction/ask_treatments_fiv: 
   - text: |
       "O diagnóstico da FIV felina é feito por meio de exames laboratoriais, com destaque para o ELISA — teste que se baseia na reação antígeno-anticorpo desencadeada por enzimas.
       Assim como a Felv, a FIV felina ainda não tem cura. O tratamento é o suporte, e o mais importante é manter o gato o mais saudável possível, oferecendo ração de qualidade, cuidados higiênicos, vermifugação e acompanhamento veterinário.

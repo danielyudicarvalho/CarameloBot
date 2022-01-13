@@ -42,3 +42,9 @@ nlu:
     - [tratamento](question) para [sarna](disease)?
     - como [prevenir](question) a [toxoplasmose](disease)?
     - como [tratar](question) a [leishmaniose](disease)?
+    - como se [prevenir](question) para [fiv](disease)?
+    - qual o [sintoma](question) da [fiv](disease)?
+    - qual a [prevenção](question) pra [fiv](disease)?
+    - [tratamento](question) para [fiv](disease)?
+    - como [prevenir](question) a [fiv](disease)?
+    - como [tratar](question) a [fiv](disease)?
