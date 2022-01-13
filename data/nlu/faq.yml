@@ -9,6 +9,9 @@ nlu:
     - Como posso voluntariar?
     - Quero ser voluntario
     - voluntario
+    - Como faço para me tornar um voluntario?
+    - Quero fazer parte do voluntariado
+    - Como posso me voluntariar?
 
 - intent: faq/ask_how_to_help
   examples: |
@@ -16,6 +19,8 @@ nlu:
     - Gostaria de ajudar
     - Como posso ajudar vocês?
     - O que eu posso fazer para ajudar?
+    - Como eu ajudo vocês ? 
+    - O que eu consigo fazer para ajuda-los?
     
 - intent: faq/ask_found_and_rescued
   examples: |
@@ -23,20 +28,28 @@ nlu:
     - Encontrei um gato de rua e quero ficar com ele
     - Resgatei um animal de rua e agora?
     - Encontrei perdido e resgatei e agora?
+    - Resgatei um animal, o que devo fazer?
+    - Encontrei um animal perdido, o que eu faço ?
 
 - intent: faq/ask_castration
   examples: |
     - Quero saber como funciona a castração
     - Como funciona o processo de castração?
-    - Pode me passar como funciona o processo de castração ?
+    - Pode me dizer como funciona o processo de castração ?
     - Como ocorre o processo de castração ?
+    - Conte-me como ocorre o processo de castração
+    - Processo de castração
+    - Castração
     
 - intent: faq/ask_veterinarian
   examples: |
     - Quero o contato do veterinario
-    - Pode me passar o contato do veterinario ? 
-    - Onde posso conseguir o contato do veterinario ? 
+    - Pode me passar o contato do veterinario ?
+    - Onde posso conseguir o contato do veterinario ?
     - Pode me mandar o contato do veterinario ?
+    - Quero entrar em contato com o veterinario
+    - Pode me passar o numero do veterinario ?
+    - Contato do veterinario
 
 - intent: faq/ask_report
   examples: |
@@ -44,6 +57,8 @@ nlu:
     - Quero fazer uma denuncia
     - Gostaria de fazer uma denuncia de maus tratos
     - Gostaria de fazer uma denuncia
+    - Como faço uma denuncia de maus tratos ?  
+    - Denuncia 
 
 - intent: faq/ask_vaccine
   examples: |
@@ -51,6 +66,8 @@ nlu:
     - como vacinar?
     - detalhes sobre vacina
     - como faço para vacinar
+    - pode me falar sobre as vacinas
+    - como funciona a vacinação ?
 
 - intent: faq/ask_collect
   examples: |

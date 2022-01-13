@@ -99,7 +99,7 @@ responses:
     - text: "Ligue para o numero 00000-0000 e forneça as seguintes informações: endereço"
   
   utter_lost_pet:
-    - text: "Sentimos muito pela perda do seu animalzinho. Podemos te ajudar a achar-lo, mas para isso precisamos de algumas inforçaões. "
+    - text: "Sentimos muito pela perda do seu animalzinho. Podemos te ajudar a achar-lo, mas para isso precisamos de algumas informações. "
   
 ##### utter para o form do pet perdido
   utter_ask_lost_pet_form_animal_type_slot:
