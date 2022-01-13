@@ -102,6 +102,8 @@ nlu:
 - intent: complaint_intent
   examples: |
     - Meu nome é Leonardo, meu rg é 123456 321, meu cpf é 123 456 789 10 , meu telefone é 1234 5678, minha denuncia é 
+    - Meu nome é Filipe, meu rg é 123456 321, meu cpf é 123 456 789 10 , meu telefone é 1234 5678, minha denuncia é 
+
 ####### intents de adoção    
 - intent: adopt_intent
   examples: |

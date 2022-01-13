@@ -42,6 +42,7 @@ actions:
   - utter_ask_lost_pet_form_description_slot
   - utter_ask_lost_pet_form_contact_number_slot
   - utter_submit
+  - utter_complaint
   - action_answer_disease
   - action_answer_disease_treatment
   - action_answer_disease_symptoms

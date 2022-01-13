@@ -24,7 +24,7 @@ nlu:
     - Resgatei um animal de rua e agora?
     - Encontrei perdido e resgatei e agora?
 
-- intent: faq/ask_castatration
+- intent: faq/ask_castration
   examples: |
     - Quero saber como funciona a castração
     - Como funciona o processo de castração?
