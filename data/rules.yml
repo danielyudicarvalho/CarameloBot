@@ -6,7 +6,6 @@ rules:
   steps:
   - intent: greet_intent
   - action: utter_greet
-  - action: utter_presentation
 
 - rule: Dizer adeus
   steps:

@@ -43,6 +43,7 @@ actions:
   - utter_ask_lost_pet_form_contact_number_slot
   - utter_submit
   - utter_complaint
+  - utter_slots_values
   - action_answer_disease
   - action_answer_disease_treatment
   - action_answer_disease_symptoms
@@ -67,7 +68,7 @@ slots:
         requested_slot: description_slot
   # lost_pet_form
   contact_number_slot:
-    type: any
+    type: text
     mappings:
     - type: from_entity
       entity: contact_number_entity

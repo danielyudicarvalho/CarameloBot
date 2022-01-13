@@ -77,15 +77,15 @@ nlu:
     - Meu [gato](animal_type_entity) sumiu
     - Meu pet desapareceu
     - Meu [cachorro](animal_type_entity) sumiu, ele é vira-lata caramelo, manda uma msg para [0000-0000](contact_number_entity)
-
-- intent: need_rescue_intent
-  examples: |
-    - Achei um pet que precisa de resgate
-    - Preciso que alguém resgate um cão abandonado
-    - Tem um gato abandonado aqui, alguem pode vir resgatar?
-    - Encontrei um animal que precisa de resgate
-    - Há um pet abandonado que precisa de resgate
-    - Tem um bichinho que precisa de resgate, alguem pode resgatar ?
+# precisa decidir como proceder com isso
+# - intent: need_rescue_intent
+#   examples: |
+#     - Achei um pet que precisa de resgate
+#     - Preciso que alguém resgate um cão abandonado
+#     - Tem um gato abandonado aqui, alguem pode vir resgatar?
+#     - Encontrei um animal que precisa de resgate
+#     - Há um pet abandonado que precisa de resgate
+#     - Tem um bichinho que precisa de resgate, alguem pode resgatar ?
     
 - intent: say_contact_number_intent
   examples: |
@@ -106,14 +106,15 @@ nlu:
     - ela é caramelo e tem as patas brancas, atende pelo nome de Julieta
 
 ####### intents de denuncias
-- intent: complaint_intent
-  examples: |
-    - Meu nome é Leonardo, meu rg é 123456321, meu cpf é 12345678910 , meu telefone é 1234 5678, minha denuncia é 
-    - Meu nome é Filipe, meu rg é 123456321, meu cpf é 78904125995, meu telefone é 9876 5432, minha denuncia é 
-    - Meu nome é Analia, meu rg é 312312637, meu cpf é 58237590522, meu telefone é 3678 4956, minha denuncia é 
-    - Meu nome é João, meu rg é 131231278, meu cpf é  78950127942, meu telefone é 4891 - 3421, minha denuncia é 
-    - Meu nome é Daniel, meu rg é 890382903, meu cpf é 19050131234, meu telefone é 4812 8714, minha denuncia é 
-    - Meu nome é Lucas, meu rg é 478192734, meu cpf é 45789270234, meu telefone é 2469-7040, minha denuncia é 
+#  respostas pro fluxo do report
+# - intent: complaint_intent
+#   examples: |
+#     - Meu nome é Leonardo, meu rg é 123456321, meu cpf é 12345678910 , meu telefone é 1234 5678, minha denuncia é 
+#     - Meu nome é Filipe, meu rg é 123456321, meu cpf é 78904125995, meu telefone é 9876 5432, minha denuncia é 
+#     - Meu nome é Analia, meu rg é 312312637, meu cpf é 58237590522, meu telefone é 3678 4956, minha denuncia é 
+#     - Meu nome é João, meu rg é 131231278, meu cpf é  78950127942, meu telefone é 4891 - 3421, minha denuncia é 
+#     - Meu nome é Daniel, meu rg é 890382903, meu cpf é 19050131234, meu telefone é 4812 8714, minha denuncia é 
+#     - Meu nome é Lucas, meu rg é 478192734, meu cpf é 45789270234, meu telefone é 2469-7040, minha denuncia é 
 
 
 ####### intents de adoção    

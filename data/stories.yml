@@ -7,9 +7,11 @@ stories:
   - intent: greet_intent
   - action: utter_greet
   - checkpoint: next_flow
+
 ####### Resgate flow example
 - story: Perdeu o pet e o bot pergunta por todas as informações
   steps:
+  - checkpoint: next_flow
   - intent: lost_my_pet_intent
   - action: utter_lost_pet
   - action: lost_pet_form
