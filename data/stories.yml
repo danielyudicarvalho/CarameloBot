@@ -2,3 +2,57 @@ version: "3.0"
 
 stories:
 
+- story: main
+  steps:
+  - intent: greet_intent
+  - action: utter_greet
+  - checkpoint: next_flow
+####### Resgate flow example
+- story: Perdeu o pet e o bot pergunta por todas as informações
+  steps:
+  - intent: lost_my_pet_intent
+  - action: utter_lost_pet
+  - action: lost_pet_form
+  - active_loop: lost_pet_form
+  - slot_was_set:
+    - requested_slot: animal_type_slot
+  - slot_was_set:
+    - requested_slot: gato
+  - slot_was_set:
+    - requested_slot: description_slot
+  - slot_was_set:
+    - requested_slot: Estou desecrevendo o gato nesse slot bla-bla-bla
+  - slot_was_set:
+    - requested_slot: contact_number_slot
+  - slot_was_set:
+    - requested_slot: 99999-9999
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+
+####### Adoção flow
+- story: usuário não deseja adotar
+  steps:
+  - checkpoint: next_flow
+  - intent: adopt_intent
+  - action: utter_preview_adopt
+  - action: utter_want_to_adopt
+  - intent: deny_intent
+  - action: utter_anything_else
+  - intent: deny_intent
+  - action: utter_goodbye
+
+- story: usuário deseja adotar
+  steps:
+  - checkpoint: next_flow
+  - intent: adopt_intent
+  - action: utter_preview_adopt
+  - action: utter_want_to_adopt
+  - intent: affirm_intent 
+  - action: utter_ask_animal_type_slot
+  - intent: inform_animal_type_intent
+  - slot_was_set:
+    - animal_type_slot: cachorro
+  - action: utter_adopt_tips
+

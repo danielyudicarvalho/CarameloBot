@@ -27,6 +27,12 @@ pipeline:
 - name: EntitySynonymMapper
 - name: SklearnIntentClassifier
 
+- name: ResponseSelector
+  epochs: 100
+  retrieval_intent: faq
+  constrain_similarities: True
+
+
 policies:
 - name: MemoizationPolicy
 - name: RulePolicy

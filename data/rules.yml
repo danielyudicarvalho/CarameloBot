@@ -4,26 +4,16 @@ rules:
 
 - rule: Dizer olá
   steps:
-  - intent: olá
+  - intent: greet_intent
   - action: utter_greet
   - action: utter_presentation
 
 - rule: Dizer adeus
   steps:
-  - intent: despedida
+  - intent: goodbye_intent
   - action: utter_goodbye
 
-- rule: Agradecimento
-  steps:
-  - intent: agradecimento
-  - action: utter_welcome
-
-- rule: apresentação
-  steps:
-  - intent: apresentar
-  - action: utter_presentation
-
-- rule: collect
+- rule: Respond to faqs 
   steps:
   - intent: faq
   - action: utter_faq
@@ -32,5 +22,36 @@ rules:
   steps: 
   - intent: askaction
   - action: action_answer_disease
+  
+- rule: usuario deseja mais alguma coisa
+  steps:
+  - action: utter_anything_else
+  - intent: affirm_intent
+  - action: utter_how_can_i_help
 
+- rule: ativar formulario de pet perdido
+  steps:
+  - action: lost_pet_form
+  - active_loop: lost_pet_form
+  
+- rule: submeter formulario de pet perdido
+  condition:
+  - active_loop: lost_pet_form
+  steps:
+  - action: lost_pet_form
+   - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+#   - action: utter_anything_else
 
+  - rule: Submit_report_form
+  condition:
+  - active_loop: report_form
+  steps:
+  - action: report_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_slots_values

@@ -1,29 +1,56 @@
 version: "3.0"
 
+# Este documento possui as intents voltadas para o FAQ
+
 nlu:
 
-
-- regex: question
-  examples: | 
-    - /([A-Z a-z])/
-
-
-- lookup: disease
+- intent: faq/ask_how_to_volunteer
   examples: |
-    - leishmaniose
-    - raiva
-    - sarna
-    - toxoplasmose
-    - fiv felina
+    - Como posso voluntariar?
+    - Quero ser voluntario
+    - voluntario
 
-- lookup: question
+- intent: faq/ask_how_to_help
   examples: |
-    - sintomas
-    - prevenção
-    - tratamento
-    - prevenir
-    - tratar
-    - sintoma
+    - Quero ajudar
+    - Gostaria de ajudar
+    - Como posso ajudar vocês?
+    - O que eu posso fazer para ajudar?
+    
+- intent: faq/ask_found_and_rescued
+  examples: |
+    - Peguei um cachorrinho na rua, o que eu faço?
+    - Encontrei um gato de rua e quero ficar com ele
+    - Resgatei um animal de rua e agora?
+    - Encontrei perdido e resgatei e agora?
+
+- intent: faq/ask_castatration
+  examples: |
+    - Quero saber como funciona a castração
+    - Como funciona o processo de castração?
+    - Pode me passar como funciona o processo de castração ?
+    - Como ocorre o processo de castração ?
+    
+- intent: faq/ask_veterinarian
+  examples: |
+    - Quero o contato do veterinario
+    - Pode me passar o contato do veterinario ? 
+    - Onde posso conseguir o contato do veterinario ? 
+    - Pode me mandar o contato do veterinario ?
+
+- intent: faq/ask_report
+  examples: |
+    - Quero fazer uma denuncia de maus tratos
+    - Quero fazer uma denuncia
+    - Gostaria de fazer uma denuncia de maus tratos
+    - Gostaria de fazer uma denuncia
+
+- intent: faq/ask_vaccine
+  examples: |
+    - quero saber sobre vacina
+    - como vacinar?
+    - detalhes sobre vacina
+    - como faço para vacinar
 
 - intent: faq/ask_collect
   examples: |
@@ -45,5 +72,4 @@ nlu:
     - posso enterrar meu cachorro no meu quintal?
     - posso enterrar meu gato no quintal?
     - Tem consequências se eu enterrar meu bicho por conta própria?
-  
-
+ 

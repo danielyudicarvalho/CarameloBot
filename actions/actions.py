@@ -1,9 +1,17 @@
+# This files contains your custom actions which can be used to run
+# custom Python code.
+#
+# See this guide on how to implement these action:
+# https://rasa.com/docs/rasa/custom-actions
 
+
+# This is a simple example for a custom action which utters "Hello World!"
 
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+
 
 QUESTION = {
      "prevenção": "prevent",
@@ -17,6 +25,10 @@ QUESTION = {
 
 DISEASE=['leishmaniose','raiva','sarna','toxoplasmose']
 
+#================================================================== 
+# ActionAnswerDisease - implementa uma função para falar  
+# sobre as zoonoses
+#==================================================================
 class ActionAnswerDisease(Action):
 
     def name(self) -> Text:
@@ -39,12 +51,14 @@ class ActionAnswerDisease(Action):
  
 
         return []
-
+#================================================================== 
+# ActionAnswerDiseaseSymptoms - implementa uma função para falar  
+# sobre os sintomas das zoonoses
+#==================================================================
 class ActionAnswerDiseaseSymptoms(Action):
 
     def name(self) -> Text:
         return "action_answer_disease_symptoms"
-
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
@@ -55,6 +69,11 @@ class ActionAnswerDiseaseSymptoms(Action):
  
 
         return []
+#================================================================== 
+# ActionAnswerDiseasePrevent - implementa uma função para falar  
+# sobre a prevenção das zoonoses
+#==================================================================
+
 class ActionAnswerDiseasePrevent(Action):
 
     def name(self) -> Text:
@@ -73,6 +92,11 @@ class ActionAnswerDiseasePrevent(Action):
 
         return []
 
+#================================================================== 
+# ActionAnswerDiseaseTreatment - implementa uma função para falar  
+# sobre o tratamento das zoonoses
+#==================================================================
+      
 class ActionAnswerDiseaseTreatment(Action):
 
     def name(self) -> Text:
@@ -87,3 +111,22 @@ class ActionAnswerDiseaseTreatment(Action):
         dispatcher.utter_message(response=utter_response_treatment)
 
         return []
+      
+#================================================================== 
+# Action about vaccine - implementa uma função para falar sobre 
+# as vacinas
+#==================================================================
+      
+class ActionAboutVaccine(Action):
+
+    def name(self) -> Text:
+        return "action_about_vaccine"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message(text="Entrei na vacina!")
+
+        return []
+

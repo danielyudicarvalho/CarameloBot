@@ -1,24 +1,75 @@
 version: "3.0"
-
+#========== 
+# INTENTS
+#========== 
 intents:
   - faq
   - askaction
-  - olá
-  - despedida
-  - agradecimento
-  - voluntariar
-  - bot_challenged
   - ask_discard
   - ask_discard_warn
   - ask_disease
+  - goodbye_intent
+  - greet_intent
+  - deny_intent
+  - affirm_intent
+  - lost_my_pet_intent
+  - need_rescue_intent
+  - say_contact_number_intent
+  - say_description_intent
+  - adopt_intent
+  - inform_animal_type_intent
 
-
-
+#============
+# ENTITIES
+#============ 
 entities:
+- animal_type_entity
+- contact_number_entity
 - disease
 - question
 
+#============
+# ACTIONS
+#============ 
+actions:
+  - utter_goodbye
+  - utter_greet
+  - utter_faq
+  - utter_anything_else
+  - utter_how_can_i_help
+  - utter_lost_pet
+  - utter_ask_lost_pet_form_animal_type_slot
+  - utter_ask_lost_pet_form_description_slot
+  - utter_ask_lost_pet_form_contact_number_slot
+  - utter_submit
+  - action_answer_disease
+  - action_answer_disease_treatment
+  - action_answer_disease_symptoms
+  - action_answer_disease_prevent
+#============ 
+# SLOTS
+#============
 slots:
+  # lost_pet_form
+  animal_type_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: animal_type_entity
+  # lost_pet_form
+  description_slot:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: lost_pet_form
+        requested_slot: description_slot
+  # lost_pet_form
+  contact_number_slot:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: contact_number_entity
 
   disease:
     type: text
@@ -28,7 +79,6 @@ slots:
       - type: from_entity
         entity: disease
   
-
   question:
     type: text
     initial_value: null
@@ -36,16 +86,43 @@ slots:
     mappings:
       - type: from_entity
         entity: question
+        
+#============ 
+# FORMS
+#============
+forms:
+  lost_pet_form:
+    required_slots:
+        - animal_type_slot
+        - description_slot
+        - contact_number_slot
+  
+  volunteer_form:
+    required_slots:
+      - name
+      - phone
+      - email
+      - address
+  
+  adoption_form:
+    required_slots:
+      - name
+      - rg
+      - cpf
+      - address
+      - email
+      - cep
+      - phone
 
-
-actions:
-- action_answer_disease
-- action_answer_disease_treatment
-- action_answer_disease_symptoms
-- action_answer_disease_prevent
-- utter_faq
-
+  report_form:
+    required_slots:
+        - name
+        - rg
+        - cpf
+        - phone
+        - complaint
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
