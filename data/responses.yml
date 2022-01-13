@@ -20,17 +20,13 @@ responses:
   utter_submit:
     - text: "Armazenei suas informações aqui!!"
     
-  utter_presentation:
+  utter_purpose:
   - text: | 
-      "Sou um bot à serviço da ONG abrigo dos bichos. Como poderia ajudar?"
-  - text: | 
-      "Sou um bot criado para a ONG Abrigo dos Bichos, eu ajudo nas adoções e doações para nosso amigos PET. Como posso ajudar? "
-  - text: | 
-      "Sou um bot feito para melhor te ajudar com doações e adoções na ONG amigos dos Bichos. Do que precisa?"
-  - text: | 
-      "Opa, tudo bom?"
-  - text: | 
-      "Olaaa"
+      "Sou um bot criado para a ONG Abrigo dos Bichos, eu ajudo nas adoções e doações para nosso amigos PET. Faço as seguintes opções: 1 2 3 4 5 6 "
+  
+  utter_out_of_scope:
+  - text: |
+      "Desculpa, mas isso não sou capaz de te ajudar."
     
   utter_welcome:
   - text: | 

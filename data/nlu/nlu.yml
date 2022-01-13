@@ -53,6 +53,25 @@ nlu:
     - cancelo
     - negativo
 
+- intent: bot_purpose_intent
+  examples: |
+    - O que você faz?
+    - Qual seu objetivo
+    - Pra que você serve?
+    - Quais suas opções?
+    - propósito
+    - o que posso perguntar?
+    - o que você pode fazer?
+
+- intent: out_of_scope_intent
+  examples: |
+    - Quero uma pizza
+    - Adotar um papagaio
+    - Montar numa capivara
+    - batatinha 1 2 3
+    - Assistir series
+    - Teste 123 teste 321
+
 ####### intents do voluntariado
 # - intent: wanna_help_intent
 #   examples: |

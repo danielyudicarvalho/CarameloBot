@@ -45,16 +45,18 @@ stories:
   - intent: deny_intent
   - action: utter_goodbye
 
-- story: usuário deseja adotar
-  steps:
-  - checkpoint: next_flow
-  - intent: adopt_intent
-  - action: utter_preview_adopt
-  - action: utter_want_to_adopt
-  - intent: affirm_intent 
-  - action: utter_ask_animal_type_slot
-  - intent: inform_animal_type_intent
-  - slot_was_set:
-    - animal_type_slot: cachorro
-  - action: utter_adopt_tips
+# - story: usuário deseja adotar
+#   steps:
+#   - checkpoint: next_flow
+#   - intent: adopt_intent
+#   - action: utter_preview_adopt
+#   - action: utter_want_to_adopt
+#   - intent: affirm_intent 
+#   - action: utter_ask_animal_type_slot
+#   - intent: inform_animal_type_intent
+#   - slot_was_set:
+#     - animal_type_slot: animal_type_slot
+#   - slot_was_set:
+#     - animal_type_slot: cachorro
+#   - action: utter_adopt_tips
 
