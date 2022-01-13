@@ -6,7 +6,7 @@ rules:
   steps:
   - intent: out_of_scope_intent
   - action: utter_out_of_scope
-  
+
 - rule: O bot se apresenta
   steps:
   - intent: bot_purpose_intent
@@ -54,7 +54,7 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: utter_submit
-  - action: utter_anything_else
+# - action: utter_anything_else
 
 
 # - rule: Submit_report_form
