@@ -15,6 +15,17 @@ nlu:
     - quero adotar
     - posso adotar um pet ?
 
+- intent: faq/ask_how_to_donate_animal
+  examples: |
+    - doar
+    - doacao
+    - fazer doação
+    - desejo doar um pet
+    - quero doar
+    - como faço para doar?
+    - detalhes da doação
+
+##### OUTROS
 - intent: faq/ask_how_to_volunteer
   examples: |
     - Como posso voluntariar?
