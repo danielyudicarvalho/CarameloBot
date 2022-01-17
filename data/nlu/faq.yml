@@ -34,6 +34,17 @@ nlu:
     - Resgatei um animal, o que devo fazer?
     - Encontrei um animal perdido, o que eu faço?
 
+- intent: faq/ask_lost_pet
+  examples: |
+    - Perdi meu [gato](animal_type_entity)
+    - Perdi meu [cachorro](animal_type_entity)
+    - Perdi meu pet
+    - Perdi meu [cachorro](animal_type_entity), o que eu faço?
+    - Vocês podem me ajudar a achar meu [gato](animal_type_entity)?
+    - Meu [gato](animal_type_entity) sumiu
+    - Meu pet desapareceu
+    - Meu [cachorro](animal_type_entity) sumiu, ele é vira-lata caramelo, manda uma msg para [0000-0000](contact_number_entity)
+
 ##### OUTROS
 - intent: faq/ask_how_to_volunteer
   examples: |

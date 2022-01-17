@@ -99,6 +99,14 @@ responses:
         Lembramos que o animalzinho a ser doado tem que estar saudável e sob a guarda de um responsável (não pode estar solto na rua).\n \n
         Capriche na foto! Ela é o sucesso do anúncio.\n \n
         Também caso não possa ficar com o animalzinho, pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores), veja  https://www.abrigodosbichos.com.br/eventos.aspx"
+        
+  utter_faq/ask_lost_pet:
+    - text: 
+        "Favor escolha a finalidade: 'Estou procurando meu animal perdido' no portal abrigodosbichos.com.br, clique em 'Login' no topo direito do site.\n \n
+        Não esqueça da foto. Ela é fundamental para encontrar o animal (se não tiver foto, procure no google alguma parecida com ele).\n \n
+        Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!\n \n
+        E lembre-se de contatar o Centro de Controle de Zoonoses caso eles encontrem o seu animalzinho!\n \n
+        Segue o contato do Centro de Controle de Zoonoses: Telefone: (67) 3314-5000 / (67) 3314-5001 | E-mail: ccz@sesau.campogrande.ms.gov.br"
 
 ##### Respostas do fluxo voluntariado
   utter_faq/ask_how_to_help:
@@ -114,12 +122,9 @@ responses:
 
 
 ##### Respostas do fluxo resgate
-
   utter_faq/ask_need_rescue:
     - text: "Ligue para o numero 00000-0000 e forneça as seguintes informações: endereço"
-  
-  utter_lost_pet:
-    - text: "Sentimos muito pela perda do seu animalzinho. Podemos te ajudar a achar-lo, mas para isso precisamos de algumas informações. "
+
   
 ##### utter para o form do pet perdido
   utter_ask_lost_pet_form_animal_type_slot:
