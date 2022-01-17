@@ -45,6 +45,17 @@ nlu:
     - Meu pet desapareceu
     - Meu [cachorro](animal_type_entity) sumiu, ele é vira-lata caramelo, manda uma msg para [0000-0000](contact_number_entity)
 
+- intent: faq/ask_need_rescue
+  examples: |
+    - ferido
+    - machucado
+    - machucou a pernas
+    - o gato está dolorido
+    - tem um cachorro ferido
+    - encontrei um pet ferido
+    - resgatei um animal machucado
+
+
 ##### OUTROS
 - intent: faq/ask_how_to_volunteer
   examples: |

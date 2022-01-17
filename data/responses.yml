@@ -108,6 +108,14 @@ responses:
         E lembre-se de contatar o Centro de Controle de Zoonoses caso eles encontrem o seu animalzinho!\n \n
         Segue o contato do Centro de Controle de Zoonoses: Telefone: (67) 3314-5000 / (67) 3314-5001 | E-mail: ccz@sesau.campogrande.ms.gov.br"
 
+  utter_faq/ask_need_rescue:
+    - text: 
+        "Atuamos em toda Campo Grande-MS e para casos de resgate, sempre dependemos de alguém no local da ocorrência que se disponha a ajudar e encaminhar o animalzinho a um veterinário mais próximo para os primeiros atendimentos.\n \n
+        Para resgatá-lo(s), peça ajuda em um pet próximo.\n \n
+        Após resgatar e estar saudável, pode cadastrar para doar no portal www.AbrigoDosBichos.com.br clique em 'Login' no topo direito do site, temos vários interessados em adotar animais saudáveis.\n \n
+        Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!"
+
+
 ##### Respostas do fluxo voluntariado
   utter_faq/ask_how_to_help:
     - text: "Opa, você pode nos ajudar de duas formas, seja fazendo doações ou voluntariando. Qual você prefere?"
@@ -119,12 +127,6 @@ responses:
         Entende de legislação? As dicas de um advogado são muito bem-vindas! Faz fotos ou vídeos? Temos conteúdos
         incríveis que precisam de mãos habilidosas de um editor e das lentes de um fotógrafo.
         Gostaria de se voluntariar?
-
-
-##### Respostas do fluxo resgate
-  utter_faq/ask_need_rescue:
-    - text: "Ligue para o numero 00000-0000 e forneça as seguintes informações: endereço"
-
   
 ##### utter para o form do pet perdido
   utter_ask_lost_pet_form_animal_type_slot:
