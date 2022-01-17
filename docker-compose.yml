@@ -1,31 +1,38 @@
-version: "3"
-
+version: '3'
 services:
-  rasa-pet:
-    image: rasa/rasa:3.0.4-full
+  bot-rasa:
+    build:
+      context: .
+      dockerfile: docker/bot.Dockerfile
     container_name: rasa-pet
+    networks: 
+      - all
     ports:
-      - 5005:5005
-    networks:
-      - production
+      - 5006:5005
     volumes:
       - ./:/app
+    public: true
     command:
-      - run 
+      - run
       - --enable-api
       - --cors
       - "*"
 
-  actions-pet:
-    image: rasa/rasa-sdk:3.0.2
-    container_name: actions-pet
+  server-bot-rasa:
+    build:
+      context: .
+      dockerfile: docker/server.Dockerfile
+    container_name: rasa-actions
+    networks: 
+      - all
     ports:
-      - 5055:5055
-    networks:
-      - production
+      - "5055:5055"
     volumes:
-      - ./:/app/actions
+      - "./actions:/app/actions"
+   
 
-networks: 
-    production:
-        driver: bridge
+networks:
+  all:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "true"
