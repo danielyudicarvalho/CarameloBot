@@ -135,18 +135,6 @@ nlu:
 #     - Meu nome é Daniel, meu rg é 890382903, meu cpf é 19050131234, meu telefone é 4812 8714, minha denuncia é 
 #     - Meu nome é Lucas, meu rg é 478192734, meu cpf é 45789270234, meu telefone é 2469-7040, minha denuncia é 
 
-
-####### intents de adoção    
-- intent: adopt_intent
-  examples: |
-    - adotar
-    - adoção
-    - quero adotar 
-    - como eu adoto? 
-    - como faço para adotar um animal? 
-    - quero adotar
-    - posso adotar um pet ?
-
 - intent: inform_animal_type_intent
   examples: |
     - [cachorro](animal_type_entity)
@@ -155,3 +143,17 @@ nlu:
     - é um [gato](animal_type_entity)
     - é uma [gata](animal_type_entity) 
 
+################################
+######## DESCONTINUADOS ########
+################################
+
+######## intents de adoção
+#- intent: adopt_intent
+#  examples: |
+#    - adotar
+#    - adoção
+#    - quero adotar 
+#    - como eu adoto? 
+#    - como faço para adotar um animal? 
+#    - quero adotar
+#    - posso adotar um pet ?

@@ -71,6 +71,14 @@ responses:
   utter_ask_address:
   - text: "Poderia, por gentileza, nos informar seu endereço?"
 
+##### FAQ 1
+  utter_faq/ask_how_to_adopt:
+  - text:
+      "Temos 2 opções:\n \n
+      1) Escolha um animalzinho no site www.abrigodosbichos.com.br (Clique nas fotos e veja mais detalhes e os dados de contato do responsável pelo animal)\n
+      Entre em contato diretamente com o responsável pelo animal.\n \n
+      2) Vá até uma feirinha de adoção em sua cidade, veja www.abrigodosbichos.com.br/eventos.aspx (principalmente nos fins de semana)\n \n
+      Pode nos contatar acessando o site https://abrigodosbichos.com.br/contato.aspx que podemos te orientar melhor sobre menores custos."
 
 ##### Respostas do fluxo voluntariado
   utter_faq/ask_how_to_help:

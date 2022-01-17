@@ -33,17 +33,21 @@ stories:
   - active_loop: null
   - action: utter_submit
 
-####### Adoção flow
-- story: usuário não deseja adotar
-  steps:
-  - checkpoint: next_flow
-  - intent: adopt_intent
-  - action: utter_preview_adopt
-  - action: utter_want_to_adopt
-  - intent: deny_intent
-  - action: utter_anything_else
-  - intent: deny_intent
-  - action: utter_goodbye
+################################
+######## DESCONTINUADOS ########
+################################
+
+######## Adoção flow
+#- story: usuário não deseja adotar
+#  steps:
+#  - checkpoint: next_flow
+#  - intent: adopt_intent
+#  - action: utter_preview_adopt
+#  - action: utter_want_to_adopt
+#  - intent: deny_intent
+#  - action: utter_anything_else
+#  - intent: deny_intent
+#  - action: utter_goodbye
 
 # - story: usuário deseja adotar
 #   steps:

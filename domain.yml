@@ -16,7 +16,6 @@ intents:
   - need_rescue_intent
   - say_contact_number_intent
   - say_description_intent
-  - adopt_intent
   - inform_animal_type_intent
   - out_of_scope_intent
   - bot_purpose_intent
