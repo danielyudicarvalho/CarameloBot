@@ -7,6 +7,11 @@ rules:
   - intent: out_of_scope_intent
   - action: utter_out_of_scope
 
+- rule: Bot solicita para o usuário repetir quando estiver low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase
+
 - rule: O bot se apresenta
   steps:
   - intent: bot_purpose_intent

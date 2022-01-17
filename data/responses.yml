@@ -21,27 +21,32 @@ responses:
     - text: "Armazenei suas informações aqui!!"
     
   utter_purpose:
-  - text: | 
+  - text: |
       "Sou um bot criado para a ONG Abrigo dos Bichos, eu ajudo nas adoções e doações para nosso amigos PET. Faço as seguintes opções: 1 2 3 4 5 6 "
   
   utter_out_of_scope:
-  - text: |
-      "Desculpa, mas isso não sou capaz de te ajudar."
-    
+  - text: "Nesse caso peço que entre em contato com a instituição através do número 0000-000, envie um email para abrigo@outlook.com ou acesse a rede social."
+
+  utter_please_rephrase:
+  - text: "Desculpa, não consegui compreender peço que seja mais preciso na solicitação." 
+
+  utter_default:
+  - text: "Nesse caso peço que entre em contato com a instituição através do número 0000-000, envie um email para abrigo@outlook.com ou acesse a rede social." 
+
   utter_welcome:
-  - text: | 
+  - text: |
       "De nada, estou aqui para isso ^_^"
-  - text: | 
+  - text: |
       "Que isso, estou aqui para ajudar"
-  - text: | 
+  - text: |
       "De nada, estou a disposição"
   
   utter_gratefull:
-  - text: | 
+  - text: |
       "Muito feliz por você querer nos ajudar. Toda ajuda é bem vinda ^_^"
-  - text: | 
+  - text: |
       "Muitíssimo obrigado pela sua boa intenção, gostamos muito da ajuda de todos"
-  - text: | 
+  - text: |
       "Muito grato por você entrar nessa missão com a gente, sempre precisamos de boas pessoas como você"
 
 #### utters para os forms
