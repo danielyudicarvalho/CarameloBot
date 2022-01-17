@@ -74,7 +74,7 @@ responses:
 ##### FAQ 1
   utter_faq/ask_how_to_adopt:
   - text:
-      " Temos 2 opções:\n \n
+      "Temos 2 opções:\n \n
       1) Escolha um animalzinho no site www.abrigodosbichos.com.br (Clique nas fotos e veja mais detalhes e os dados de contato do responsável pelo animal)\n
       Entre em contato diretamente com o responsável pelo animal.\n \n
       2) Vá até uma feirinha de adoção em sua cidade, veja www.abrigodosbichos.com.br/eventos.aspx (principalmente nos fins de semana)\n \n
@@ -82,13 +82,23 @@ responses:
 
   utter_faq/ask_how_to_donate_animal:
   - text:
-      " Temos vários interessados em adotar!\n \n
+      "Temos vários interessados em adotar!\n \n
       Faça boas fotos do(s) animalzinho(s) (nítida, na altura do animal e que mostre o sentimento do animalzinho)\n \n
       Escolha como finalidade: 'Quero DOAR um Animal' no portal www.abrigodosbichos.com.br, clique em 'Login' no topo direito do site
       Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!\n \n
       Lembramos que o animalzinho (cão ou gato) a ser doado tem que estar saudável e sob a guarda de um responsável (não pode estar solto na rua).\n \n
       Também pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores) https://abrigodosbichos.com.br/eventos.aspx\n \n
       E não se esqueça, CAPRICHE NA FOTO ! Se possível coloque fitinha colorida no pescoço do animalzinho. A FOTO É O SUCESSO DA DOAÇÃO."
+
+  utter_faq/ask_found_and_rescued:
+    - text: 
+        "Se quer apenas tentar encontrar o verdadeiro dono, favor escolha a finalidade: 'Encontrei um animal e procuro o dono' no portal abrigodosbichos.com.br clique em 'Login' no topo direito do site.\n \n
+        Caso não encontrar o verdadeiro dono, não queira ou não possa ficar com o animalzinho, temos vários interessados em adotar!\n
+        Favor cadastra-lo também para doar no portal abrigodosbichos.com.br (clique em “Login” no topo direito do site).\n \n
+        Aguardamos o(s) cadastro(s) para enviarmos às nossas listas !\n \n
+        Lembramos que o animalzinho a ser doado tem que estar saudável e sob a guarda de um responsável (não pode estar solto na rua).\n \n
+        Capriche na foto! Ela é o sucesso do anúncio.\n \n
+        Também caso não possa ficar com o animalzinho, pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores), veja  https://www.abrigodosbichos.com.br/eventos.aspx"
 
 ##### Respostas do fluxo voluntariado
   utter_faq/ask_how_to_help:
@@ -104,15 +114,6 @@ responses:
 
 
 ##### Respostas do fluxo resgate
-  utter_faq/ask_found_and_rescued:
-    - text: 
-        Quando o animal é recolhido, a primeira coisa a ser feita é levá-lo ao veterinário. Claro, você pode dar água,
-        comida, um banho, se ele estiver “sujinho”, mas, em alguns casos, os animais apresentam feridas por baixos dos 
-        pelos emaranhados, machucados, contusões e outras complicações, pois nunca sabemos quanto tempo ele passou nas 
-        ruas. Isso pode lhe render uma boa mordida/arranhada se não tiver cuidado. Ele pode estar doente e necessita de
-        exames para uma avaliação do que será melhor para o caso dele. Por isso, leve o bichinho a um Veterinário de 
-        sua confiança. JAMAIS medique um animal por conta própria, muitos medicamentos de uso humano podem intoxicar
-        e até levar o animal a óbito, só um profissional pode lhe dizer do que ele precisa.
 
   utter_faq/ask_need_rescue:
     - text: "Ligue para o numero 00000-0000 e forneça as seguintes informações: endereço"

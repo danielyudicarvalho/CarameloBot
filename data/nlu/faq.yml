@@ -25,6 +25,15 @@ nlu:
     - como faço para doar?
     - detalhes da doação
 
+- intent: faq/ask_found_and_rescued
+  examples: |
+    - Peguei um cachorrinho na rua, o que eu faço?
+    - Encontrei um gato de rua e quero ficar com ele
+    - Resgatei um animal de rua e agora?
+    - Encontrei perdido e resgatei e agora?
+    - Resgatei um animal, o que devo fazer?
+    - Encontrei um animal perdido, o que eu faço?
+
 ##### OUTROS
 - intent: faq/ask_how_to_volunteer
   examples: |
@@ -43,15 +52,6 @@ nlu:
     - O que eu posso fazer para ajudar?
     - Como eu ajudo vocês ? 
     - O que eu consigo fazer para ajuda-los?
-    
-- intent: faq/ask_found_and_rescued
-  examples: |
-    - Peguei um cachorrinho na rua, o que eu faço?
-    - Encontrei um gato de rua e quero ficar com ele
-    - Resgatei um animal de rua e agora?
-    - Encontrei perdido e resgatei e agora?
-    - Resgatei um animal, o que devo fazer?
-    - Encontrei um animal perdido, o que eu faço ?
 
 - intent: faq/ask_castration
   examples: |
