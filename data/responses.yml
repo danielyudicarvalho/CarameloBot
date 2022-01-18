@@ -75,44 +75,64 @@ responses:
   utter_faq/ask_how_to_adopt:
   - text:
       "Temos 2 opções:\n \n
-      1) Escolha um animalzinho no site www.abrigodosbichos.com.br (Clique nas fotos e veja mais detalhes e os dados de contato do responsável pelo animal)\n
+
+      1) Escolha um animalzinho no site www.abrigodosbichos.com.br (Clique nas fotos e veja mais detalhes e os dados de contato do responsável pelo animal)
       Entre em contato diretamente com o responsável pelo animal.\n \n
-      2) Vá até uma feirinha de adoção em sua cidade, veja www.abrigodosbichos.com.br/eventos.aspx (principalmente nos fins de semana)\n \n
+
+      2) Vá até uma feirinha de adoção em sua cidade, veja www.abrigodosbichos.com.br/eventos.aspx (principalmente nos fins de semana)
       Pode nos contatar acessando o site https://abrigodosbichos.com.br/contato.aspx que podemos te orientar melhor sobre menores custos."
 
   utter_faq/ask_how_to_donate_animal:
   - text:
       "Temos vários interessados em adotar!\n \n
+       
       Faça boas fotos do(s) animalzinho(s) (nítida, na altura do animal e que mostre o sentimento do animalzinho)\n \n
+       
       Escolha como finalidade: 'Quero DOAR um Animal' no portal www.abrigodosbichos.com.br, clique em 'Login' no topo direito do site
       Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!\n \n
+       
       Lembramos que o animalzinho (cão ou gato) a ser doado tem que estar saudável e sob a guarda de um responsável (não pode estar solto na rua).\n \n
+       
       Também pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores) https://abrigodosbichos.com.br/eventos.aspx\n \n
+       
       E não se esqueça, CAPRICHE NA FOTO ! Se possível coloque fitinha colorida no pescoço do animalzinho. A FOTO É O SUCESSO DA DOAÇÃO."
 
   utter_faq/ask_found_and_rescued:
     - text: 
         "Se quer apenas tentar encontrar o verdadeiro dono, favor escolha a finalidade: 'Encontrei um animal e procuro o dono' no portal abrigodosbichos.com.br clique em 'Login' no topo direito do site.\n \n
-        Caso não encontrar o verdadeiro dono, não queira ou não possa ficar com o animalzinho, temos vários interessados em adotar!\n
+         
+        Caso não encontrar o verdadeiro dono, não queira ou não possa ficar com o animalzinho, temos vários interessados em adotar!\n \n
+         
         Favor cadastra-lo também para doar no portal abrigodosbichos.com.br (clique em “Login” no topo direito do site).\n \n
-        Aguardamos o(s) cadastro(s) para enviarmos às nossas listas !\n \n
+         
+        Aguardamos o(s) cadastro(s) para enviarmos às nossas listas!\n \n
+         
         Lembramos que o animalzinho a ser doado tem que estar saudável e sob a guarda de um responsável (não pode estar solto na rua).\n \n
+         
         Capriche na foto! Ela é o sucesso do anúncio.\n \n
+         
         Também caso não possa ficar com o animalzinho, pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores), veja  https://www.abrigodosbichos.com.br/eventos.aspx"
         
   utter_faq/ask_lost_pet:
     - text: 
         "Favor escolha a finalidade: 'Estou procurando meu animal perdido' no portal abrigodosbichos.com.br, clique em 'Login' no topo direito do site.\n \n
+         
         Não esqueça da foto. Ela é fundamental para encontrar o animal (se não tiver foto, procure no google alguma parecida com ele).\n \n
+         
         Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!\n \n
+         
         E lembre-se de contatar o Centro de Controle de Zoonoses caso eles encontrem o seu animalzinho!\n \n
+         
         Segue o contato do Centro de Controle de Zoonoses: Telefone: (67) 3314-5000 / (67) 3314-5001 | E-mail: ccz@sesau.campogrande.ms.gov.br"
 
   utter_faq/ask_need_rescue:
     - text: 
         "Atuamos em toda Campo Grande-MS e para casos de resgate, sempre dependemos de alguém no local da ocorrência que se disponha a ajudar e encaminhar o animalzinho a um veterinário mais próximo para os primeiros atendimentos.\n \n
+         
         Para resgatá-lo(s), peça ajuda em um pet próximo.\n \n
+         
         Após resgatar e estar saudável, pode cadastrar para doar no portal www.AbrigoDosBichos.com.br clique em 'Login' no topo direito do site, temos vários interessados em adotar animais saudáveis.\n \n
+         
         Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!"
 
 
