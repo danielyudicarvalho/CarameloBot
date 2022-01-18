@@ -17,11 +17,6 @@ rules:
   - intent: bot_purpose_intent
   - action: utter_bot_purpose
 
-- rule: Dizer olá
-  steps:
-  - intent: greet_intent
-  - action: utter_greet
-
 - rule: Dizer adeus
   steps:
   - intent: goodbye_intent

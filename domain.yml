@@ -48,6 +48,7 @@ actions:
   - utter_slots_values
   - utter_bot_purpose
   - utter_out_of_scope
+  - action_utter_greet
   - action_answer_disease
   - action_answer_disease_treatment
   - action_answer_disease_symptoms

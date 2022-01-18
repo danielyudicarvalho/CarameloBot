@@ -7,6 +7,7 @@
 
 # This is a simple example for a custom action which utters "Hello World!"
 
+from cgitb import text
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
@@ -25,6 +26,40 @@ QUESTION = {
 
 DISEASE=['leishmaniose','raiva','sarna','toxoplasmose']
 
+#================================================================== 
+# ActionUtterGreet - implementa uma função para cumprimentar
+# cumprimentos personalizados 
+#==================================================================
+from datetime import datetime
+import pytz
+
+timezone = pytz.timezone('America/Campo_Grande')
+hoje = datetime.now(timezone)
+hora_atual = hoje.hour
+
+utter_bom_dia = "Bom dia! Meu nome é Caramelo, eu e o Abrigo dos bichos  vamos te ajudar com as suas dúvidas."
+
+utter_boa_tarde = "Boa tarde! Meu nome é Caramelo, eu e o Abrigo dos bichos  vamos te ajudar com as suas dúvidas."
+
+utter_boa_noite = "Boa noite! Meu nome é Caramelo, eu e o Abrigo dos bichos  vamos te ajudar com as suas dúvidas."
+
+class ActionUtterGreet(Action):
+
+    def name(self) -> Text:
+        return "action_utter_greet"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        if hora_atual < 12:
+            dispatcher.utter_message(text=utter_bom_dia)
+        elif hora_atual < 19:
+            dispatcher.utter_message(text=utter_boa_tarde)
+        else:
+            dispatcher.utter_message(text=utter_boa_noite)
+
+        return []
 #================================================================== 
 # ActionAnswerDisease - implementa uma função para falar  
 # sobre as zoonoses

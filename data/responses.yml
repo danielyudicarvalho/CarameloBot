@@ -21,9 +21,11 @@ responses:
     - text: "Armazenei suas informações aqui!!"
     
   utter_purpose:
-  - text: |
-      "Sou um bot criado para a ONG Abrigo dos Bichos, eu ajudo nas adoções e doações para nosso amigos PET. Faço as seguintes opções: 1 2 3 4 5 6 "
-  
+  - text:
+      "Só para te alertar, eu posso falar sobre adoções, doenças, veterinários/castração, denúncias, também posso falar sobre resgate de pets ou te ajudar a achar o seu pet.
+
+      Caso eu não consiga resolver sua dúvida, posso chamar um humano para nos ajudar!"
+
   utter_out_of_scope:
   - text: "Nesse caso peço que entre em contato com a instituição através do número 0000-000, envie um email para abrigo@outlook.com ou acesse a rede social."
 
