@@ -19,6 +19,7 @@ intents:
   - inform_animal_type_intent
   - out_of_scope_intent
   - bot_purpose_intent
+
 #============
 # ENTITIES
 #============ 
@@ -27,6 +28,7 @@ entities:
 - contact_number_entity
 - disease
 - question
+
 
 #============
 # ACTIONS
@@ -51,6 +53,7 @@ actions:
   - action_answer_disease_symptoms
   - action_answer_disease_prevent
   
+
 #============ 
 # SLOTS
 #============
@@ -126,6 +129,7 @@ forms:
         - cpf
         - phone
         - complaint
+
 
 session_config:
   session_expiration_time: 60

@@ -51,10 +51,10 @@ responses:
 
 #### utters para os forms
   utter_ask_name:
-  - text: "poderia informar seu nome completo por favor?"
+  - text: "Poderia informar seu nome completo por favor?"
 
   utter_ask_phone:
-  - text: "poderia informar seu telefone pra contato por favor?"
+  - text: "Poderia informar seu telefone pra contato por favor?"
 
   utter_ask_email:
   - text: "Por favor, nos envie seu melhor email para contato por gentileza"
@@ -79,7 +79,8 @@ responses:
       1) Escolha um animalzinho no site www.abrigodosbichos.com.br (Clique nas fotos e veja mais detalhes e os dados de contato do responsável pelo animal)
       Entre em contato diretamente com o responsável pelo animal.\n \n
 
-      2) Vá até uma feirinha de adoção em sua cidade, veja www.abrigodosbichos.com.br/eventos.aspx (principalmente nos fins de semana)
+      2) Vá até uma feirinha de adoção em sua cidade, veja www.abrigodosbichos.com.br/eventos.aspx (principalmente nos fins de semana)\n \n
+
       Pode nos contatar acessando o site https://abrigodosbichos.com.br/contato.aspx que podemos te orientar melhor sobre menores custos."
 
   utter_faq/ask_how_to_donate_animal:
@@ -394,3 +395,4 @@ responses:
       Assim como a Felv, a FIV felina ainda não tem cura. O tratamento é o suporte, e o mais importante é manter o gato o mais saudável possível, oferecendo ração de qualidade, cuidados higiênicos, vermifugação e acompanhamento veterinário.
       É sempre bom lembrar, quanto antes for diagnosticada a doença e maiores forem os cuidados, mais chances o bichano terá de responder bem ao tratamento, ainda que isso não elimine a infecção. Não tem como prever a expectativa de vida de um gato com FIV, mas com cuidados adequados e sob condições ideais, eles podem viver por muitos anos."
 
+        

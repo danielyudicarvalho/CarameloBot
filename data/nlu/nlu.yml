@@ -1,7 +1,6 @@
 version: "3.0"
 
 nlu:
-
 ####### intents gerais 
 - intent: greet_intent
   examples: |
@@ -124,6 +123,7 @@ nlu:
 #     - Meu nome é João, meu rg é 131231278, meu cpf é  78950127942, meu telefone é 4891 - 3421, minha denuncia é 
 #     - Meu nome é Daniel, meu rg é 890382903, meu cpf é 19050131234, meu telefone é 4812 8714, minha denuncia é 
 #     - Meu nome é Lucas, meu rg é 478192734, meu cpf é 45789270234, meu telefone é 2469-7040, minha denuncia é 
+
 
 - intent: inform_animal_type_intent
   examples: |

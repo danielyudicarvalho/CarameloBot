@@ -13,6 +13,7 @@
 action_endpoint:
   url: "https://server-bot-rasa-danielyudicarvalho.cloud.okteto.net/webhook"
 
+
 # Tracker store which is used to store the conversations.
 # By default the conversations are stored in memory.
 # https://rasa.com/docs/rasa/tracker-stores
