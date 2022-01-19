@@ -14,6 +14,8 @@ nlu:
     - como faço para adotar um animal? 
     - quero adotar
     - posso adotar um pet ?
+    - gostaria de fazer uma adocao
+    - tenho interesse em adotar
 
 - intent: faq/ask_how_to_donate_animal
   examples: |
@@ -24,6 +26,8 @@ nlu:
     - quero doar
     - como faço para doar?
     - detalhes da doação
+    - procedimento de doacao
+    - resgatei e quero doar
 
 - intent: faq/ask_found_and_rescued
   examples: |
@@ -33,6 +37,11 @@ nlu:
     - Encontrei perdido e resgatei e agora?
     - Resgatei um animal, o que devo fazer?
     - Encontrei um animal perdido, o que eu faço?
+    - Eu encontrei um animal na rua, o que eu faço?
+    - Resgatei um cachorro de rua e agora? 
+    - Encontrei um gato perdido na rua, o que devo fazer?
+    - O que eu faço? Encontrei um animal perdido na rua
+    - Encontrei um cachorro na rua, o que devo fazer ?
 
 - intent: faq/ask_lost_pet
   examples: |
@@ -49,11 +58,13 @@ nlu:
   examples: |
     - ferido
     - machucado
-    - machucou a pernas
+    - machucou a perna
     - o gato está dolorido
     - tem um cachorro ferido
     - encontrei um pet ferido
     - resgatei um animal machucado
+    - cachorrinho atropelado
+    - gatinho atropelado 
 
 
 ##### OUTROS
