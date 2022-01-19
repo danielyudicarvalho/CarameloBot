@@ -25,6 +25,10 @@ nlu:
     - adeus
     - flw
     - até mais
+    - ate
+    - bjs
+    - se cuida
+    - te vejo dps
 
 - intent: affirm_intent
   examples: |
@@ -38,6 +42,7 @@ nlu:
     - correto
     - afirmativo
     - certo
+    - ok
     
 - intent: deny_intent
   examples: |

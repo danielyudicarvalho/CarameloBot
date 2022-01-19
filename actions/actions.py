@@ -37,11 +37,11 @@ timezone = pytz.timezone('America/Campo_Grande')
 hoje = datetime.now(timezone)
 hora_atual = hoje.hour
 
-utter_bom_dia = "Bom dia! Meu nome é Caramelo, eu e o Abrigo dos bichos  vamos te ajudar com as suas dúvidas."
+utter_bom_dia = "Bom dia! Meu nome é Caramelo, eu e o Abrigo dos Bichos  vamos ajudá-lo(a) a solucionar suas dúvidas."
 
-utter_boa_tarde = "Boa tarde! Meu nome é Caramelo, eu e o Abrigo dos bichos  vamos te ajudar com as suas dúvidas."
+utter_boa_tarde = "Boa tarde! Meu nome é Caramelo, eu e o Abrigo dos Bichos  vamos ajudá-lo(a) a solucionar suas dúvidas."
 
-utter_boa_noite = "Boa noite! Meu nome é Caramelo, eu e o Abrigo dos bichos  vamos te ajudar com as suas dúvidas."
+utter_boa_noite = "Boa noite! Meu nome é Caramelo, eu e o Abrigo dos Bichos  vamos ajudá-lo(a) a solucionar suas dúvidas."
 
 class ActionUtterGreet(Action):
 

@@ -22,7 +22,7 @@ responses:
     
   utter_purpose:
   - text:
-      "Só para te alertar, eu posso falar sobre adoções, doenças, veterinários/castração, denúncias, também posso falar sobre resgate de pets ou te ajudar a achar o seu pet.
+      "Eu posso te informar sobre questões de adoção, doação, doenças, veterinário, castração e denúncias. Posso também esclarecer dúvidas com relação a resgate de animais ou te ajudar a encontrar seu pet perdido.
 
       Caso eu não consiga resolver sua dúvida, posso chamar um humano para nos ajudar!"
 
