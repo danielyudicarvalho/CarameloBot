@@ -1,134 +1,140 @@
 version: "3.0"
-#========== 
-# INTENTS
-#========== 
-intents:
-  - faq
-  - askaction
-  - ask_discard
-  - ask_discard_warn
-  - ask_disease
-  - goodbye_intent
-  - greet_intent
-  - deny_intent
-  - affirm_intent
-  - lost_my_pet_intent
-  - need_rescue_intent
-  - say_contact_number_intent
-  - say_description_intent
-  - adopt_intent
-  - inform_animal_type_intent
-  - out_of_scope_intent
-  - bot_purpose_intent
-#============
-# ENTITIES
-#============ 
-entities:
-- animal_type_entity
-- contact_number_entity
-- disease
-- question
 
-#============
-# ACTIONS
-#============ 
-actions:
-  - utter_goodbye
-  - utter_greet
-  - utter_faq
-  - utter_anything_else
-  - utter_how_can_i_help
-  - utter_lost_pet
-  - utter_ask_lost_pet_form_animal_type_slot
-  - utter_ask_lost_pet_form_description_slot
-  - utter_ask_lost_pet_form_contact_number_slot
-  - utter_submit
-  - utter_complaint
-  - utter_slots_values
-  - utter_bot_purpose
-  - utter_out_of_scope
-  - action_answer_disease
-  - action_answer_disease_treatment
-  - action_answer_disease_symptoms
-  - action_answer_disease_prevent
-  
-#============ 
-# SLOTS
-#============
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - adopt
+  - inform_type
+  - inform_gender
+  - inform_age
+  - inform_size
+
+entities:
+  - size
+  - animal_type
+  - age
+  - gender
+
 slots:
   # lost_pet_form
-  animal_type_slot:
+  animal_type:
     type: text
     mappings:
     - type: from_entity
-      entity: animal_type_entity
-  # lost_pet_form
-  description_slot:
-    type: text
-    mappings:
-    - type: from_text
-      conditions:
-      - active_loop: lost_pet_form
-        requested_slot: description_slot
-  # lost_pet_form
-  contact_number_slot:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: contact_number_entity
-
-  disease:
-    type: text
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_entity
-        entity: disease
+      entity: animal_type
   
-  question:
+  size:
     type: text
-    initial_value: null
-    influence_conversation: false
     mappings:
-      - type: from_entity
-        entity: question
-        
-#============ 
-# FORMS
-#============
+    - type: from_entity
+      entity: size
+
+  age:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: age
+  
+  gender:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: gender
+  
 forms:
-  lost_pet_form:
+  pet_form:
     required_slots:
-        - animal_type_slot
-        - description_slot
-        - contact_number_slot
-  
-  volunteer_form:
-    required_slots:
-      - name
-      - phone
-      - email
-      - address
-  
-  adoption_form:
-    required_slots:
-      - name
-      - rg
-      - cpf
-      - address
-      - email
-      - cep
-      - phone
+        - animal_type
+        - size
+        - age
+        - gender
 
-  report_form:
-    required_slots:
-        - name
-        - rg
-        - cpf
-        - phone
-        - complaint
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+    buttons:
+    - title: "great"
+      payload: "/mood_great"
+    - title: "super sad"
+      payload: "/mood_sad"
+  
+  utter_ask_animal_type:
+  - text: "Gostaria de adotar gato ou cachorro?"
+    buttons:
+    - title: "Gato"
+      payload: '/inform_type{{"animal_type":"Gato"}}'
+    - title: "Cão"
+      payload: '/inform_type{{"animal_type":"Cao"}}'
+  
+  utter_ask_size:
+  - text: "Qual o porte ideal que você gostaria de adotar?"
+    buttons:
+    - title: "pequeno"
+      payload: '/inform_size{{"size":"Pequeno"}}'
+    - title: "médio"
+      payload: '/inform_size{{"size":"Medio"}}'
+    - title: "grande"
+      payload: '/inform_size{{"size":"Grande"}}'
+  
+  utter_ask_gender:
+  - text: "Você prefere macho ou fêmea?"
+    buttons:
+    - title: "macho"
+      payload: '/inform_gender{{"gender":"Macho"}}'
+    - title: "fêmea"
+      payload: '/inform_gender{{"gender":"Femea"}}'
+    
+  
+  utter_ask_age:
+  - text: "Qual idade do pet que gostaria de adotar?"
+    buttons:
+    - title: "menos de 2 meses"
+      payload: '/inform_age{{"age":"ageOne"}}'
+    - title: "de 2 a 6 meses"
+      payload: '/inform_age{{"age":"ageTwo"}}'
+    - title: "de 7 a 11 meses"
+      payload: '/inform_age{{"age":"ageThree"}}'
+    - title: "1 ano"
+      payload: '/inform_age{{"age":"ageFour"}}'
+    - title: "2 anos"
+      payload: '/inform_age{{"age":"ageFive"}}'
+    - title: "3 anos"
+      payload: '/inform_age{{"age":"ageSix"}}'
+    - title: "4 anos"
+      payload: '/inform_age{{"age":"ageSeven"}}'
+    - title: "5 anos"
+      payload: '/inform_age{{"age":"ageEight"}}'
+    - title: "Acima de 6 anos"
+      payload: '/inform_age{{"age":"ageNine"}}'
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_submit:
+  - text: Ok. Obrigado
+
+actions:
+- action_scrapping
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
