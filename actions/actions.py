@@ -25,7 +25,62 @@ QUESTION = {
  }
 
 DISEASE=['leishmaniose','raiva','sarna','toxoplasmose']
+#================================================================== 
+# ActionSendEmail - implementa uma função para enviar email
+# email personalizado
+#==================================================================
+import smtplib 
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
+def send_email(name, email, phone, how_to_help):
+    port = 587
+    sender_email = "testpythontoday@gmail.com"
+    receiver_email = "jokerwakugawa@outlook.com"
+    password = "testpython3@" 
+
+    text = f"""
+    Mais um voluntário para a causa :)
+
+    Nome: {name}
+    Email: {email}
+    Telefone: {phone}
+    Descrição: {how_to_help}
+    """
+    text = MIMEText(text, 'plain')
+
+    msg = MIMEMultipart()
+    msg['From'] = sender_email
+    msg['To'] = receiver_email
+    msg['Subject'] = "Voluntário - Abrigo dos Bichos"
+
+    msg.attach(text)        # É possível colocar outros formatos
+    msg = msg.as_string()   # Importante enviar no formato string
+
+    s = smtplib.SMTP('smtp.gmail.com', port)
+    s.starttls() 
+    s.login(sender_email, password)
+    s.sendmail(sender_email, receiver_email, msg)
+    s.quit()
+
+class ActionSubmit(Action):
+
+    def name(self) -> Text:
+        return "action_send_email"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        name = tracker.get_slot("name")
+        email = tracker.get_slot("email")
+        phone = tracker.get_slot("phone")
+        how_to_help = tracker.get_slot("how_to_help")
+
+        send_email(name, email, phone, how_to_help)
+        dispatcher.utter_message(text="Enviado!")
+
+        return []
 #================================================================== 
 # ActionUtterGreet - implementa uma função para cumprimentar
 # cumprimentos personalizados 

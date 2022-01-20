@@ -53,12 +53,51 @@ actions:
   - action_answer_disease_treatment
   - action_answer_disease_symptoms
   - action_answer_disease_prevent
-  
+  - action_send_email
 
 #============ 
 # SLOTS
 #============
 slots:
+  #===============
+  # help_form 
+  #===============
+  name:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: help_form
+           requested_slot: name
+  email:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: help_form
+           requested_slot: email
+  phone:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: help_form
+           requested_slot: phone
+  how_to_help:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: help_form
+           requested_slot: how_to_help
   # lost_pet_form
   animal_type_slot:
     type: text
@@ -106,12 +145,12 @@ forms:
         - description_slot
         - contact_number_slot
   
-  volunteer_form:
+  help_form:
     required_slots:
       - name
-      - phone
       - email
-      - address
+      - phone
+      - how_to_help
   
   adoption_form:
     required_slots:

@@ -68,15 +68,6 @@ nlu:
 
 
 ##### OUTROS
-- intent: faq/ask_how_to_volunteer
-  examples: |
-    - Como posso voluntariar?
-    - Quero ser voluntario
-    - voluntario
-    - Como faço para me tornar um voluntario?
-    - Quero fazer parte do voluntariado
-    - Como posso me voluntariar?
-
 - intent: faq/ask_how_to_help
   examples: |
     - Quero ajudar

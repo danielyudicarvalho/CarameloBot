@@ -2,6 +2,22 @@ version: "3.0"
 
 rules:
 
+- rule: Ativar Help Form 
+  steps:
+  - intent: volunteer_intent
+  - action: help_form
+  - active_loop: help_form
+
+- rule: Submeter Help Form 
+  condition:
+  - active_loop: help_form
+  steps:
+  - action: help_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_send_email
+
 - rule: Bot diz que está fora do escopo dele
   steps:
   - intent: out_of_scope_intent

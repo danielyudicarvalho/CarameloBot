@@ -77,18 +77,23 @@ nlu:
     - Teste 123 teste 321
 
 ####### intents do voluntariado
-# - intent: wanna_help_intent
-#   examples: |
-#     - Quero ajudar
-#     - Gostaria de ajudar
-#     - Como posso ajudar vocês?
-#     - O que eu posso fazer para ajudar?
+- intent: wanna_help_intent
+  examples: |
+    - Quero ajudar
+    - Gostaria de ajudar
+    - Como posso ajudar vocês?
+    - O que eu posso fazer para ajudar?
 
-# - intent: volunteer_intent
-#   examples: |
-#     - Quero ser voluntário
-#     - Gostaria de voluntariar
-#     - Voluntário
+- intent: volunteer_intent
+  examples: |
+    - Voluntário
+    - voluntario
+    - Quero ser voluntário
+    - Gostaria de voluntariar
+    - Como faço para voluntariar
+    - Como posso me voluntariar?
+    - Quero auxiliar com meu tempo
+    - Quero fazer parte do voluntariado
 
 # precisa decidir como proceder com isso
 # - intent: need_rescue_intent

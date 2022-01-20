@@ -73,6 +73,9 @@ responses:
   utter_ask_address:
   - text: "Poderia, por gentileza, nos informar seu endereço?"
 
+  utter_ask_how_to_help:
+  - text: "Escreva como você pretende ajudar: "
+
 ##### FAQ 1
   utter_faq/ask_how_to_adopt:
   - text:
@@ -142,14 +145,14 @@ responses:
 ##### Respostas do fluxo voluntariado
   utter_faq/ask_how_to_help:
     - text: "Opa, você pode nos ajudar de duas formas, seja fazendo doações ou voluntariando. Qual você prefere?"
-  utter_faq/ask_how_to_volunteer: 
+  utter_about_volunteering: 
     - text:
         Estamos procurando por voluntários de todo o Brasil que queiram fazer parte da nossa ONG, 
         atuando com eventuais colaborações em diversas áreas. Mesmo de longe, você poderá contribuir de 
         alguma forma! É veterinário e ama totós? Você pode ajudar a responder dúvidas de nossos seguidores! 
         Entende de legislação? As dicas de um advogado são muito bem-vindas! Faz fotos ou vídeos? Temos conteúdos
         incríveis que precisam de mãos habilidosas de um editor e das lentes de um fotógrafo.
-        Gostaria de se voluntariar?
+        Preciso apenas que confirme algumas informações.
   
 ##### utter para o form do pet perdido
   utter_ask_lost_pet_form_animal_type_slot:
