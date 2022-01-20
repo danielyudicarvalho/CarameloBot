@@ -19,6 +19,7 @@ intents:
   - inform_animal_type_intent
   - out_of_scope_intent
   - bot_purpose_intent
+  - volunteer_intent
 
 #============
 # ENTITIES
@@ -39,7 +40,6 @@ actions:
   - utter_faq
   - utter_anything_else
   - utter_how_can_i_help
-  - utter_lost_pet
   - utter_ask_lost_pet_form_animal_type_slot
   - utter_ask_lost_pet_form_description_slot
   - utter_ask_lost_pet_form_contact_number_slot
@@ -59,10 +59,7 @@ actions:
 # SLOTS
 #============
 slots:
-  #===============
-  # help_form 
-  #===============
-  name:
+  name_slot:
     type: text
     initial_value: null
     influence_conversation: false
@@ -70,8 +67,8 @@ slots:
       - type: from_text
         conditions:
          - active_loop: help_form
-           requested_slot: name
-  email:
+           requested_slot: name_slot
+  email_slot:
     type: text
     initial_value: null
     influence_conversation: false
@@ -79,8 +76,8 @@ slots:
       - type: from_text
         conditions:
          - active_loop: help_form
-           requested_slot: email
-  phone:
+           requested_slot: email_slot
+  how_to_help_slot:
     type: text
     initial_value: null
     influence_conversation: false
@@ -88,16 +85,7 @@ slots:
       - type: from_text
         conditions:
          - active_loop: help_form
-           requested_slot: phone
-  how_to_help:
-    type: text
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-         - active_loop: help_form
-           requested_slot: how_to_help
+           requested_slot: how_to_help_slot
   # lost_pet_form
   animal_type_slot:
     type: text
@@ -147,10 +135,10 @@ forms:
   
   help_form:
     required_slots:
-      - name
-      - email
-      - phone
-      - how_to_help
+      - name_slot
+      - email_slot
+      - contact_number_slot
+      - how_to_help_slot
   
   adoption_form:
     required_slots:

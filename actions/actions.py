@@ -36,7 +36,7 @@ from email.mime.text import MIMEText
 def send_email(name, email, phone, how_to_help):
     port = 587
     sender_email = "testpythontoday@gmail.com"
-    receiver_email = "jokerwakugawa@outlook.com"
+    receiver_email = "testpythontoday@gmail.com"
     password = "testpython3@" 
 
     text = f"""
@@ -72,13 +72,13 @@ class ActionSubmit(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        name = tracker.get_slot("name")
-        email = tracker.get_slot("email")
-        phone = tracker.get_slot("phone")
-        how_to_help = tracker.get_slot("how_to_help")
+        name = tracker.get_slot("name_slot")
+        email = tracker.get_slot("email_slot")
+        phone = tracker.get_slot("contact_number_slot")
+        how_to_help = tracker.get_slot("how_to_help_slot")
 
         send_email(name, email, phone, how_to_help)
-        dispatcher.utter_message(text="Enviado!")
+        dispatcher.utter_message(text=f"Email enviado com sucesso!")
 
         return []
 #================================================================== 

@@ -20,7 +20,7 @@ responses:
   utter_submit:
     - text: "Armazenei suas informações aqui!!"
     
-  utter_purpose:
+  utter_bot_purpose:
   - text:
       "Eu posso te informar sobre questões de adoção, doação, doenças, veterinário, castração e denúncias. Posso também esclarecer dúvidas com relação a resgate de animais ou te ajudar a encontrar seu pet perdido.
 
@@ -52,14 +52,14 @@ responses:
       "Muito grato por você entrar nessa missão com a gente, sempre precisamos de boas pessoas como você"
 
 #### utters para os forms
-  utter_ask_name:
+  utter_ask_name_slot:
   - text: "Poderia informar seu nome completo por favor?"
 
-  utter_ask_phone:
+  utter_ask_contact_number_slot:
   - text: "Poderia informar seu telefone pra contato por favor?"
 
-  utter_ask_email:
-  - text: "Por favor, nos envie seu melhor email para contato por gentileza"
+  utter_ask_email_slot:
+  - text: "Por favor, nos envie seu melhor email para contato por gentileza."
 
   utter_ask_rg:
   - text: "Por favor, nos informe seu RG para o formulário de adoção"
@@ -73,8 +73,8 @@ responses:
   utter_ask_address:
   - text: "Poderia, por gentileza, nos informar seu endereço?"
 
-  utter_ask_how_to_help:
-  - text: "Escreva como você pretende ajudar: "
+  utter_ask_how_to_help_slot:
+  - text: "Escreva como você pretende ajudar abaixo. "
 
 ##### FAQ 1
   utter_faq/ask_how_to_adopt:
@@ -152,7 +152,7 @@ responses:
         alguma forma! É veterinário e ama totós? Você pode ajudar a responder dúvidas de nossos seguidores! 
         Entende de legislação? As dicas de um advogado são muito bem-vindas! Faz fotos ou vídeos? Temos conteúdos
         incríveis que precisam de mãos habilidosas de um editor e das lentes de um fotógrafo.
-        Preciso apenas que confirme algumas informações.
+        Preciso apenas que confirme algumas informações...
   
 ##### utter para o form do pet perdido
   utter_ask_lost_pet_form_animal_type_slot:
