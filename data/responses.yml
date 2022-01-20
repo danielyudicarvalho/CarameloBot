@@ -56,10 +56,13 @@ responses:
   - text: "Poderia informar seu nome completo por favor?"
 
   utter_ask_contact_number_slot:
-  - text: "Poderia informar seu telefone pra contato por favor?"
+  - text: "Poderia informar seu telefone de contato por favor?"
 
   utter_ask_email_slot:
-  - text: "Por favor, nos envie seu melhor email para contato por gentileza."
+  - text: "Digite seu melhor email para contato por gentileza."
+
+  utter_ask_how_to_help_slot:
+  - text: "Escreva como você pretende nos ajudar, não deixe passar nenhum detalhe :)"
 
   utter_ask_rg:
   - text: "Por favor, nos informe seu RG para o formulário de adoção"
@@ -73,8 +76,6 @@ responses:
   utter_ask_address:
   - text: "Poderia, por gentileza, nos informar seu endereço?"
 
-  utter_ask_how_to_help_slot:
-  - text: "Escreva como você pretende ajudar abaixo. "
 
 ##### FAQ 1
   utter_faq/ask_how_to_adopt:
@@ -153,14 +154,7 @@ responses:
         Entende de legislação? As dicas de um advogado são muito bem-vindas! Faz fotos ou vídeos? Temos conteúdos
         incríveis que precisam de mãos habilidosas de um editor e das lentes de um fotógrafo.
         Preciso apenas que confirme algumas informações...
-  
-##### utter para o form do pet perdido
-  utter_ask_lost_pet_form_animal_type_slot:
-    - text: "Gato ou cachorro?"
-  utter_ask_lost_pet_form_contact_number_slot:
-    - text: "Me passe um numero para contato"
-  utter_ask_lost_pet_form_description_slot:
-    - text: "Digite uma breve descrição do seu pet <3"
+
 
 #### Respostas do fluxo de castração
   utter_faq/ask_castration:

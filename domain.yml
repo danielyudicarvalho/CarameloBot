@@ -21,6 +21,7 @@ intents:
   - bot_purpose_intent
   - volunteer_intent
 
+
 #============
 # ENTITIES
 #============ 
@@ -40,9 +41,6 @@ actions:
   - utter_faq
   - utter_anything_else
   - utter_how_can_i_help
-  - utter_ask_lost_pet_form_animal_type_slot
-  - utter_ask_lost_pet_form_description_slot
-  - utter_ask_lost_pet_form_contact_number_slot
   - utter_submit
   - utter_complaint
   - utter_slots_values
@@ -54,6 +52,7 @@ actions:
   - action_answer_disease_symptoms
   - action_answer_disease_prevent
   - action_send_email
+
 
 #============ 
 # SLOTS
@@ -68,6 +67,7 @@ slots:
         conditions:
          - active_loop: help_form
            requested_slot: name_slot
+
   email_slot:
     type: text
     initial_value: null
@@ -77,6 +77,7 @@ slots:
         conditions:
          - active_loop: help_form
            requested_slot: email_slot
+
   how_to_help_slot:
     type: text
     initial_value: null
@@ -86,26 +87,18 @@ slots:
         conditions:
          - active_loop: help_form
            requested_slot: how_to_help_slot
-  # lost_pet_form
-  animal_type_slot:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: animal_type_entity
-  # lost_pet_form
-  description_slot:
-    type: text
-    mappings:
-    - type: from_text
-      conditions:
-      - active_loop: lost_pet_form
-        requested_slot: description_slot
-  # lost_pet_form
+
   contact_number_slot:
     type: text
     mappings:
     - type: from_entity
       entity: contact_number_entity
+
+  animal_type_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: animal_type_entity
 
   disease:
     type: text
@@ -123,16 +116,11 @@ slots:
       - type: from_entity
         entity: question
         
+
 #============ 
 # FORMS
 #============
 forms:
-  lost_pet_form:
-    required_slots:
-        - animal_type_slot
-        - description_slot
-        - contact_number_slot
-  
   help_form:
     required_slots:
       - name_slot
@@ -149,14 +137,6 @@ forms:
       - email
       - cep
       - phone
-
-  report_form:
-    required_slots:
-        - name
-        - rg
-        - cpf
-        - phone
-        - complaint
 
 
 session_config:

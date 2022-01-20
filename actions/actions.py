@@ -34,10 +34,11 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 def send_email(name, email, phone, how_to_help):
-    port = 587
-    sender_email = "testpythontoday@gmail.com"
-    receiver_email = "testpythontoday@gmail.com"
-    password = "testpython3@" 
+    port = 587                                       # Porta na qual é feita a comunicação
+
+    sender_email = "testpythontoday@gmail.com"       # Email do Remetente
+    password = "testpython3@"                        # Senha do Remetente
+    receiver_email = "testpythontoday@gmail.com"     # Email do Destinatário
 
     text = f"""
     Mais um voluntário para a causa :)
@@ -54,7 +55,7 @@ def send_email(name, email, phone, how_to_help):
     msg['To'] = receiver_email
     msg['Subject'] = "Voluntário - Abrigo dos Bichos"
 
-    msg.attach(text)        # É possível colocar outros formatos
+    msg.attach(text)        # É possível colocar outros formatos ex: html, csv, etc
     msg = msg.as_string()   # Importante enviar no formato string
 
     s = smtplib.SMTP('smtp.gmail.com', port)
@@ -76,9 +77,18 @@ class ActionSubmit(Action):
         email = tracker.get_slot("email_slot")
         phone = tracker.get_slot("contact_number_slot")
         how_to_help = tracker.get_slot("how_to_help_slot")
+        
+        reception_number = "" # Número da pessoa responsável por recepcionar o cliente
+        reception_text = f"""
+        Olá, meu nome é {name}, desejo me voluntariar, auxiliando com:
+        {how_to_help}"""      # Texto receptivo
+        reception_text = reception_text.replace(" ", "%20")
 
         send_email(name, email, phone, how_to_help)
-        dispatcher.utter_message(text=f"Email enviado com sucesso!")
+
+        dispatcher.utter_message(text=f"""
+        Obrigado pelas informações {name}, encaminhei um email para o abrigo com seus dados, clique no link abaixo para continuar a conversa com um humano :)\nhttps://api.whatsapp.com/send?phone={reception_number}&text={reception_text}
+        """)
 
         return []
 #================================================================== 
