@@ -5,6 +5,56 @@ version: "3.0"
 responses:
 
 ##### Respostas gerais
+
+  utter_ask_animal_type:
+  - text: "Gostaria de adotar gato ou cachorro?"
+    buttons:
+    - title: "Gato"
+      payload: '/inform_type{{"animal_type":"Gato"}}'
+    - title: "Cão"
+      payload: '/inform_type{{"animal_type":"Cao"}}'
+  
+  utter_ask_size:
+  - text: "Qual o porte ideal que você gostaria de adotar?"
+    buttons:
+    - title: "pequeno"
+      payload: '/inform_size{{"size":"Pequeno"}}'
+    - title: "médio"
+      payload: '/inform_size{{"size":"Medio"}}'
+    - title: "grande"
+      payload: '/inform_size{{"size":"Grande"}}'
+  
+  utter_ask_gender:
+  - text: "Você prefere macho ou fêmea?"
+    buttons:
+    - title: "macho"
+      payload: '/inform_gender{{"gender":"Macho"}}'
+    - title: "fêmea"
+      payload: '/inform_gender{{"gender":"Femea"}}'
+    
+  
+  utter_ask_age:
+  - text: "Qual idade do pet que gostaria de adotar?"
+    buttons:
+    - title: "até 6 meses"
+      payload: '/inform_age{{"age":"baby"}}'
+    - title: "6 meses a 1 ano"
+      payload: '/inform_age{{"age":"children"}}'
+    - title: "mais de um ano"
+      payload: '/inform_age{{"age":"adult"}}'
+    # - title: "1 ano"
+    #   payload: '/inform_age{{"age":"ageFour"}}'
+    # - title: "2 anos"
+    #   payload: '/inform_age{{"age":"ageFive"}}'
+    # - title: "3 anos"
+    #   payload: '/inform_age{{"age":"ageSix"}}'
+    # - title: "4 anos"
+    #   payload: '/inform_age{{"age":"ageSeven"}}'
+    # - title: "5 anos"
+    #   payload: '/inform_age{{"age":"ageEight"}}'
+    # - title: "Acima de 6 anos"
+    #   payload: '/inform_age{{"age":"ageNine"}}'
+
   utter_goodbye:
     - text: "Até mais, espero ter ajudado você!"
     
@@ -392,4 +442,26 @@ responses:
       "O diagnóstico da FIV felina é feito por meio de exames laboratoriais, com destaque para o ELISA — teste que se baseia na reação antígeno-anticorpo desencadeada por enzimas.
       Assim como a Felv, a FIV felina ainda não tem cura. O tratamento é o suporte, e o mais importante é manter o gato o mais saudável possível, oferecendo ração de qualidade, cuidados higiênicos, vermifugação e acompanhamento veterinário.
       É sempre bom lembrar, quanto antes for diagnosticada a doença e maiores forem os cuidados, mais chances o bichano terá de responder bem ao tratamento, ainda que isso não elimine a infecção. Não tem como prever a expectativa de vida de um gato com FIV, mas com cuidados adequados e sob condições ideais, eles podem viver por muitos anos."
+  
+  utter_askaction/ask_initial_info_carrapato:
+  - text: |
+      "A doença do carrapato é uma infecção grave causada por hemoparasitas que atacam o sangue do cachorro e pode levar à morte. O carrapato raramente contamina gatos e seres humanos, mas não é impossível.
+      Existem duas principais doenças do carrapato, as que atacam os glóbulos brancos(erliquiose) e a que ataca os glóbulos vermelhos(babesiose).
+      Embora não exista vacina para a doença do carrapato, existe cura e tratamento e quanto antes um veterinário qualificado der o diagnóstico mais fácil é a recuperação do animal.
+      "
+  utter_askaction/ask_symptoms_carrapato:
+  - text: |
+        "Em estágio inicial, a doença do carrapato pode apresentar sintomas como: hematomas, sangramento nas fezes, febre, apatia, perda de peso e pontinhos vermelhos pelo corpo.
+         Já em estágio avançado a o cachorro pode apresentar sinais como: febre, anorexia e convulsões.
+         Mas lembre-se de que apenas um veterinário pode confirmar um diagnóstico confiável."
+  utter_askaction/ask_prevent_carrapato: 
+  - text: |
+      "Como não exite vacina a melhor forma de prevenir a doença é evitando o contato com o carrapato. Para isso, uma dica é evitar áreas onde sabidamente há a presença desses ectoparasitas e sempre fazer uso de produtos contra pulgas e carrapatos no pet.
+      O uso coleiras contra os parasitas é uma ótima opção, além de realizar limpezas dos locais externos com produtos contra pulga e carrapatos também é importante"
+
+  utter_askaction/ask_treatments_carrapat: 
+  - text: |
+      "O tratamento é feito com antibióticos e outros medicamentos que vão combater o agente causador da doença, e pode durar de 15 a 30 dias, sempre conduzido por um veterinário.
+      Em casos mais graves, pode ser necessário uma transfusão de sangue e outros cuidados para ajudar o cachorro a se recuperar. Nesses casos, o pet deve ficar internado e ter acompanhamento constante de profissionais.
+      Vale lembrar que a doença do carrapato é uma zoonose e que tanto a Babesiose quanto Erliquiose já foram detectadas em humanos, mas a transmissão ocorre somente pela picada do carrapato infectado e não pelo contato com o cão."
 

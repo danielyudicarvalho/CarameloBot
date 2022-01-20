@@ -23,18 +23,18 @@ QUESTION = {
      "tratar":"treatments"
  }
 
-DISEASE=['leishmaniose','raiva','sarna','toxoplasmose']
-AGE = {
-     "ageOne": "Abaixo-de-2-meses",
-     "ageTwo":"2-a-6-meses",
-     "ageThree":"7-a-11-meses" ,
-     "ageFour":"1-ano",
-     "ageFive":"2-anos",
-     "ageSix":"3-anos",
-     "ageSeven":"4-anos",
-     "ageEight":"5-anos",
-     "ageNine":"6-anos-Acima",
- }
+
+#AGE = {
+#      "ageOne": "Abaixo-de-2-meses",
+#      "ageTwo":"2-a-6-meses",
+#      "ageThree":"7-a-11-meses" ,
+#      "ageFour":"1-ano",
+#      "ageFive":"2-anos",
+#      "ageSix":"3-anos",
+#      "ageSeven":"4-anos",
+#      "ageEight":"5-anos",
+#      "ageNine":"6-anos-Acima",
+#  }
 
 AGE3 = ('Abaixo-de-2-meses','2-a-6-meses','7-a-11-meses','1-ano','2-anos','3-anos','4-anos','5-anos','6-anos-Acima')
 

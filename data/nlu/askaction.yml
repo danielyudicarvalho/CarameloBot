@@ -16,6 +16,7 @@ nlu:
     - parvovirose
     - cinomose
     - fiv
+    - carrapato
 
 - lookup: question
   examples: |
@@ -57,3 +58,9 @@ nlu:
     - [tratamento](question) para [parvovirose](disease)?
     - como [prevenir](question) a [parvovirose](disease)?
     - como [tratar](question) a [parvovirose](disease)?
+    - qual os [sintomas](question) da doença do [carrapato](disease)?
+    - quais os [tratamentos](question) para [carrapato](disease)?
+    - você sabe qual a [prevenção](question) para [carrapato](disease)?
+    - como se [prevenir](question) da doença do [carrapato](disease)?
+    - qual o [sintoma](question) da doença do [carrapato](disease)?
+    - qual a [prevenção](question) pra [carrapato](disease)?
