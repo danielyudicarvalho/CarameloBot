@@ -64,9 +64,9 @@ class ActionScrapping(Action):
             link = 'https://adotar.com.br'+link
             print(link)
             dispatcher.utter_message(text=link)
-            # photo = 'https://'+item.find('img')['src'][2:]
-            # print(photo)
-            # dispatcher.utter_message(image=photo)
+            photo = 'https://'+item.find('img')['src'][2:]
+            print(photo)
+            dispatcher.utter_message(image=photo)
             name = item.find('div',{'class':'listaAnimaisDados'})
             name = name.get_text().split()
             print(name[0])

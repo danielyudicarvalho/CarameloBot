@@ -1,24 +1,39 @@
 version: "3.0"
 
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - faq
+  - askaction
+  - ask_discard
+  - ask_discard_warn
+  - ask_disease
+  - goodbye_intent
+  - greet_intent
+  - deny_intent
+  - affirm_intent
+  - lost_my_pet_intent
+  - need_rescue_intent
+  - say_contact_number_intent
+  - say_description_intent
+  - adopt_intent
+  - inform_animal_type_intent
+  - out_of_scope_intent
+  - bot_purpose_intent
   - adopt
   - inform_type
   - inform_gender
   - inform_age
   - inform_size
+  - inform_gender_macho
+  - inform_gender_female
 
 entities:
   - size
   - animal_type
   - age
   - gender
+  - contact_number_entity
+  - disease
+  - question
 
 slots:
   # lost_pet_form
@@ -46,13 +61,53 @@ slots:
     - type: from_entity
       entity: gender
   
+  description_slot:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: lost_pet_form
+        requested_slot: description_slot
+  # lost_pet_form
+  contact_number_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: contact_number_entity
+
+  disease:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: disease
+  
+  question:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: question
+  
 forms:
   pet_form:
     required_slots:
-        - animal_type
-        - size
-        - age
-        - gender
+      - animal_type
+      - size
+      - age
+      - gender
+
+  help_form:
+    required_slots:
+      - name
+      - phone
+      - email
+      - help
+
+
+
 
 responses:
   utter_greet:
@@ -133,7 +188,25 @@ responses:
   - text: Ok. Obrigado
 
 actions:
-- action_scrapping
+  - utter_goodbye
+  - utter_greet
+  - utter_faq
+  - utter_anything_else
+  - utter_how_can_i_help
+  - utter_lost_pet
+  - utter_ask_lost_pet_form_animal_type_slot
+  - utter_ask_lost_pet_form_description_slot
+  - utter_ask_lost_pet_form_contact_number_slot
+  - utter_submit
+  - utter_complaint
+  - utter_slots_values
+  - utter_bot_purpose
+  - utter_out_of_scope
+  - action_answer_disease
+  - action_answer_disease_treatment
+  - action_answer_disease_symptoms
+  - action_answer_disease_prevent
+  - action_scrapping
 
 session_config:
   session_expiration_time: 60

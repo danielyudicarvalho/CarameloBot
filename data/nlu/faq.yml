@@ -13,6 +13,16 @@ nlu:
     - Quero fazer parte do voluntariado
     - Como posso me voluntariar?
 
+- intent: faq/ask_when_castration
+  examples: |
+    - Quando castrar?
+    - Qual a idade ideal para castrar
+    - Quando devo castrar?
+    - Qual a melhor época para castrar
+    - Que época é melhor para castrar
+    - Com que idade devo castrar meu cachorro?
+    - Com que idade devo castrar meu gato?
+
 - intent: faq/ask_how_to_help
   examples: |
     - Quero ajudar
