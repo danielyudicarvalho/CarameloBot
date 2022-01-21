@@ -109,7 +109,15 @@ responses:
       payload: '/inform_age{{"age":"children"}}'
     - title: "mais de um ano"
       payload: '/inform_age{{"age":"adult"}}'
-
+      
+  utter_show_more_results:
+  - text: "Gostaria de ver mais resultados?"
+    buttons:
+    - title: "mostrar mais"
+      payload: '/show_more{{"age":"baby"}}'
+    - title: "mostrar menos"
+      payload: '/exit{{"age":"children"}}'
+      
 ##### FAQ 1
   utter_faq/ask_how_to_adopt:
   - text:

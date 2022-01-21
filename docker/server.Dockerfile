@@ -5,7 +5,8 @@ WORKDIR /app
 
 # Utiliza o root user para instalar as dependências
 USER root
-
+COPY actions/requirements-actions.txt ./
+RUN pip install -r requirements-actions.txt
 
 # Copia as actions para o workdir
 COPY ./actions /app/actions
