@@ -1,4 +1,5 @@
 
+from cgitb import text
 from typing import Any, Text, Dict, List
 from urllib import response
 from numpy import extract
@@ -23,6 +24,8 @@ QUESTION = {
      "tratar":"treatments"
  }
 
+
+DISEASE=['leishmaniose','raiva','sarna','toxoplasmose']
 
 #AGE = {
 #      "ageOne": "Abaixo-de-2-meses",
@@ -119,7 +122,96 @@ class ActionScrapping(Action):
         urls =[]
         return [AllSlotsReset()]
 
+#================================================================== 
+# ActionSendEmail - implementa uma função para enviar email
+# email personalizado
+#==================================================================
+import smtplib 
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
+def send_email(name, email, phone, how_to_help):
+    port = 587
+    sender_email = "testpythontoday@gmail.com"
+    receiver_email = "testpythontoday@gmail.com"
+    password = "testpython3@" 
+
+    text = f"""
+    Mais um voluntário para a causa :)
+
+    Nome: {name}
+    Email: {email}
+    Telefone: {phone}
+    Descrição: {how_to_help}
+    """
+    text = MIMEText(text, 'plain')
+
+    msg = MIMEMultipart()
+    msg['From'] = sender_email
+    msg['To'] = receiver_email
+    msg['Subject'] = "Voluntário - Abrigo dos Bichos"
+
+    msg.attach(text)        # É possível colocar outros formatos
+    msg = msg.as_string()   # Importante enviar no formato string
+
+    s = smtplib.SMTP('smtp.gmail.com', port)
+    s.starttls() 
+    s.login(sender_email, password)
+    s.sendmail(sender_email, receiver_email, msg)
+    s.quit()
+
+class ActionSubmit(Action):
+
+    def name(self) -> Text:
+        return "action_send_email"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        name = tracker.get_slot("name_slot")
+        email = tracker.get_slot("email_slot")
+        phone = tracker.get_slot("contact_number_slot")
+        how_to_help = tracker.get_slot("how_to_help_slot")
+
+        send_email(name, email, phone, how_to_help)
+        dispatcher.utter_message(text=f"Email enviado com sucesso!")
+
+        return []
+#================================================================== 
+# ActionUtterGreet - implementa uma função para cumprimentar
+# cumprimentos personalizados 
+#==================================================================
+from datetime import datetime
+import pytz
+
+timezone = pytz.timezone('America/Campo_Grande')
+hoje = datetime.now(timezone)
+hora_atual = hoje.hour
+
+utter_bom_dia = "Bom dia! Meu nome é Caramelo, eu e o Abrigo dos Bichos  vamos ajudá-lo(a) a solucionar suas dúvidas."
+
+utter_boa_tarde = "Boa tarde! Meu nome é Caramelo, eu e o Abrigo dos Bichos  vamos ajudá-lo(a) a solucionar suas dúvidas."
+
+utter_boa_noite = "Boa noite! Meu nome é Caramelo, eu e o Abrigo dos Bichos  vamos ajudá-lo(a) a solucionar suas dúvidas."
+
+class ActionUtterGreet(Action):
+
+    def name(self) -> Text:
+        return "action_utter_greet"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        if hora_atual < 12:
+            dispatcher.utter_message(text=utter_bom_dia)
+        elif hora_atual < 19:
+            dispatcher.utter_message(text=utter_boa_tarde)
+        else:
+            dispatcher.utter_message(text=utter_boa_noite)
+
+        return []
 #================================================================== 
 # ActionAnswerDisease - implementa uma função para falar  
 # sobre as zoonoses

@@ -70,39 +70,46 @@ responses:
   utter_submit:
     - text: "Armazenei suas informações aqui!!"
     
-  utter_purpose:
-  - text: | 
-      "Sou um bot criado para a ONG Abrigo dos Bichos, eu ajudo nas adoções e doações para nosso amigos PET. Faço as seguintes opções: 1 2 3 4 5 6 "
-  
+  utter_bot_purpose:
+  - text:
+      "Eu posso te informar sobre questões de adoção, doação, doenças, veterinário, castração e denúncias. Posso também esclarecer dúvidas com relação a resgate de animais ou te ajudar a encontrar seu pet perdido.
+
+      Caso eu não consiga resolver sua dúvida, posso chamar um humano para nos ajudar!"
+
   utter_out_of_scope:
-  - text: |
-      "Desculpa, mas isso não sou capaz de te ajudar."
-    
+  - text: "Nesse caso peço que entre em contato com a instituição através do número 0000-000, envie um email para abrigo@outlook.com ou acesse a rede social."
+
+  utter_please_rephrase:
+  - text: "Desculpa, não consegui compreender peço que seja mais preciso na solicitação." 
+
+  utter_default:
+  - text: "Nesse caso peço que entre em contato com a instituição através do número 0000-000, envie um email para abrigo@outlook.com ou acesse a rede social." 
+
   utter_welcome:
-  - text: | 
+  - text: |
       "De nada, estou aqui para isso ^_^"
-  - text: | 
+  - text: |
       "Que isso, estou aqui para ajudar"
-  - text: | 
+  - text: |
       "De nada, estou a disposição"
   
   utter_gratefull:
-  - text: | 
+  - text: |
       "Muito feliz por você querer nos ajudar. Toda ajuda é bem vinda ^_^"
-  - text: | 
+  - text: |
       "Muitíssimo obrigado pela sua boa intenção, gostamos muito da ajuda de todos"
-  - text: | 
+  - text: |
       "Muito grato por você entrar nessa missão com a gente, sempre precisamos de boas pessoas como você"
 
 #### utters para os forms
-  utter_ask_name:
-  - text: "poderia informar seu nome completo por favor?"
+  utter_ask_name_slot:
+  - text: "Poderia informar seu nome completo por favor?"
 
-  utter_ask_phone:
-  - text: "poderia informar seu telefone pra contato por favor?"
+  utter_ask_contact_number_slot:
+  - text: "Poderia informar seu telefone pra contato por favor?"
 
-  utter_ask_email:
-  - text: "Por favor, nos envie seu melhor email para contato por gentileza"
+  utter_ask_email_slot:
+  - text: "Por favor, nos envie seu melhor email para contato por gentileza."
 
   utter_ask_rg:
   - text: "Por favor, nos informe seu RG para o formulário de adoção"
@@ -116,39 +123,92 @@ responses:
   utter_ask_address:
   - text: "Poderia, por gentileza, nos informar seu endereço?"
 
+  utter_ask_how_to_help_slot:
+  - text: "Escreva como você pretende ajudar abaixo. "
+
+##### FAQ 1
+  utter_faq/ask_how_to_adopt:
+  - text:
+      "Temos 2 opções:\n \n
+
+      1) Escolha um animalzinho no site www.abrigodosbichos.com.br (Clique nas fotos e veja mais detalhes e os dados de contato do responsável pelo animal)
+      Entre em contato diretamente com o responsável pelo animal.\n \n
+
+      2) Vá até uma feirinha de adoção em sua cidade, veja www.abrigodosbichos.com.br/eventos.aspx (principalmente nos fins de semana)\n \n
+
+      Pode nos contatar acessando o site https://abrigodosbichos.com.br/contato.aspx que podemos te orientar melhor sobre menores custos."
+
+  utter_faq/ask_how_to_donate_animal:
+  - text:
+      "Temos vários interessados em adotar!\n \n
+       
+      Faça boas fotos do(s) animalzinho(s) (nítida, na altura do animal e que mostre o sentimento do animalzinho)\n \n
+       
+      Escolha como finalidade: 'Quero DOAR um Animal' no portal www.abrigodosbichos.com.br, clique em 'Login' no topo direito do site
+      Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!\n \n
+       
+      Lembramos que o animalzinho (cão ou gato) a ser doado tem que estar saudável e sob a guarda de um responsável (não pode estar solto na rua).\n \n
+       
+      Também pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores) https://abrigodosbichos.com.br/eventos.aspx\n \n
+       
+      E não se esqueça, CAPRICHE NA FOTO ! Se possível coloque fitinha colorida no pescoço do animalzinho. A FOTO É O SUCESSO DA DOAÇÃO."
+
+  utter_faq/ask_found_and_rescued:
+    - text: 
+        "Se quer apenas tentar encontrar o verdadeiro dono, favor escolha a finalidade: 'Encontrei um animal e procuro o dono' no portal abrigodosbichos.com.br clique em 'Login' no topo direito do site.\n \n
+         
+        Caso não encontrar o verdadeiro dono, não queira ou não possa ficar com o animalzinho, temos vários interessados em adotar!\n \n
+         
+        Favor cadastra-lo também para doar no portal abrigodosbichos.com.br (clique em “Login” no topo direito do site).\n \n
+         
+        Aguardamos o(s) cadastro(s) para enviarmos às nossas listas!\n \n
+         
+        Lembramos que o animalzinho a ser doado tem que estar saudável e sob a guarda de um responsável (não pode estar solto na rua).\n \n
+         
+        Capriche na foto! Ela é o sucesso do anúncio.\n \n
+         
+        Também caso não possa ficar com o animalzinho, pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores), veja  https://www.abrigodosbichos.com.br/eventos.aspx"
+        
+  utter_faq/ask_lost_pet:
+    - text: 
+        "Favor escolha a finalidade: 'Estou procurando meu animal perdido' no portal abrigodosbichos.com.br, clique em 'Login' no topo direito do site.\n \n
+         
+        Não esqueça da foto. Ela é fundamental para encontrar o animal (se não tiver foto, procure no google alguma parecida com ele).\n \n
+         
+        Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!\n \n
+         
+        E lembre-se de contatar o Centro de Controle de Zoonoses caso eles encontrem o seu animalzinho!\n \n
+         
+        Segue o contato do Centro de Controle de Zoonoses: Telefone: (67) 3314-5000 / (67) 3314-5001 | E-mail: ccz@sesau.campogrande.ms.gov.br"
+
+  utter_faq/ask_need_rescue:
+    - text: 
+        "Atuamos em toda Campo Grande-MS e para casos de resgate, sempre dependemos de alguém no local da ocorrência que se disponha a ajudar e encaminhar o animalzinho a um veterinário mais próximo para os primeiros atendimentos.\n \n
+         
+        Para resgatá-lo(s), peça ajuda em um pet próximo.\n \n
+         
+        Após resgatar e estar saudável, pode cadastrar para doar no portal www.AbrigoDosBichos.com.br clique em 'Login' no topo direito do site, temos vários interessados em adotar animais saudáveis.\n \n
+         
+        Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!"
+
 
 ##### Respostas do fluxo voluntariado
   utter_faq/ask_how_to_help:
+    - text: "Opa, você pode nos ajudar de duas formas, seja fazendo doações ou voluntariando. Qual você prefere?"
+
+  utter_faq/ask_how_to_volunteer: 
     - text: "Quer no ajudar? Cadastre-se nesse site: https://abrigodosbichos.com.br/contato.aspx Nós lhe retornaremos
              o mais breve possível. Sua ajuda é muito importante para os animaizinhos que tanto precisam da sua ajuda ^_^.
             Sempre a seu dispor."
 
-  utter_faq/ask_how_to_volunteer: 
+  utter_about_volunteering: 
     - text:
         Estamos procurando por voluntários de todo o Brasil que queiram fazer parte da nossa ONG, 
         atuando com eventuais colaborações em diversas áreas. Mesmo de longe, você poderá contribuir de 
         alguma forma! É veterinário e ama totós? Você pode ajudar a responder dúvidas de nossos seguidores! 
         Entende de legislação? As dicas de um advogado são muito bem-vindas! Faz fotos ou vídeos? Temos conteúdos
         incríveis que precisam de mãos habilidosas de um editor e das lentes de um fotógrafo.
-        Gostaria de se voluntariar?
-
-
-##### Respostas do fluxo resgate
-  utter_faq/ask_found_and_rescued:
-    - text: 
-        Quando o animal é recolhido, a primeira coisa a ser feita é levá-lo ao veterinário. Claro, você pode dar água,
-        comida, um banho, se ele estiver “sujinho”, mas, em alguns casos, os animais apresentam feridas por baixos dos 
-        pelos emaranhados, machucados, contusões e outras complicações, pois nunca sabemos quanto tempo ele passou nas 
-        ruas. Isso pode lhe render uma boa mordida/arranhada se não tiver cuidado. Ele pode estar doente e necessita de
-        exames para uma avaliação do que será melhor para o caso dele. Por isso, leve o bichinho a um Veterinário de 
-        sua confiança. JAMAIS medique um animal por conta própria, muitos medicamentos de uso humano podem intoxicar
-        e até levar o animal a óbito, só um profissional pode lhe dizer do que ele precisa.
-
-  utter_faq/ask_need_rescue:
-    - text: "Ligue para o numero 00000-0000 e forneça as seguintes informações: endereço"
-  
-  utter_lost_pet:
-    - text: "Sentimos muito pela perda do seu animalzinho. Podemos te ajudar a achar-lo, mas para isso precisamos de algumas informações. "
+        Preciso apenas que confirme algumas informações...
   
 ##### utter para o form do pet perdido
   utter_ask_lost_pet_form_animal_type_slot:
@@ -465,3 +525,4 @@ responses:
       Em casos mais graves, pode ser necessário uma transfusão de sangue e outros cuidados para ajudar o cachorro a se recuperar. Nesses casos, o pet deve ficar internado e ter acompanhamento constante de profissionais.
       Vale lembrar que a doença do carrapato é uma zoonose e que tanto a Babesiose quanto Erliquiose já foram detectadas em humanos, mas a transmissão ocorre somente pela picada do carrapato infectado e não pelo contato com o cão."
 
+        

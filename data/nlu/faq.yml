@@ -4,14 +4,30 @@ version: "3.0"
 
 nlu:
 
-- intent: faq/ask_how_to_volunteer
+##### FAQ 1
+- intent: faq/ask_how_to_adopt
   examples: |
-    - Como posso voluntariar?
-    - Quero ser voluntario
-    - voluntario
-    - Como faço para me tornar um voluntario?
-    - Quero fazer parte do voluntariado
-    - Como posso me voluntariar?
+    - adotar
+    - adoção
+    - quero adotar 
+    - como eu adoto? 
+    - como faço para adotar um animal? 
+    - quero adotar
+    - posso adotar um pet ?
+    - gostaria de fazer uma adocao
+    - tenho interesse em adotar
+
+- intent: faq/ask_how_to_donate_animal
+  examples: |
+    - doar
+    - doacao
+    - fazer doação
+    - desejo doar um pet
+    - quero doar
+    - como faço para doar?
+    - detalhes da doação
+    - procedimento de doacao
+    - resgatei e quero doar
 
 - intent: faq/ask_when_castration
   examples: |
@@ -23,6 +39,45 @@ nlu:
     - Com que idade devo castrar meu cachorro?
     - Com que idade devo castrar meu gato?
 
+- intent: faq/ask_found_and_rescued
+  examples: |
+    - Peguei um cachorrinho na rua, o que eu faço?
+    - Encontrei um gato de rua e quero ficar com ele
+    - Resgatei um animal de rua e agora?
+    - Encontrei perdido e resgatei e agora?
+    - Resgatei um animal, o que devo fazer?
+    - Encontrei um animal perdido, o que eu faço?
+    - Eu encontrei um animal na rua, o que eu faço?
+    - Resgatei um cachorro de rua e agora? 
+    - Encontrei um gato perdido na rua, o que devo fazer?
+    - O que eu faço? Encontrei um animal perdido na rua
+    - Encontrei um cachorro na rua, o que devo fazer ?
+
+- intent: faq/ask_lost_pet
+  examples: |
+    - Perdi meu [gato](animal_type_entity)
+    - Perdi meu [cachorro](animal_type_entity)
+    - Perdi meu pet
+    - Perdi meu [cachorro](animal_type_entity), o que eu faço?
+    - Vocês podem me ajudar a achar meu [gato](animal_type_entity)?
+    - Meu [gato](animal_type_entity) sumiu
+    - Meu pet desapareceu
+    - Meu [cachorro](animal_type_entity) sumiu, ele é vira-lata caramelo, manda uma msg para [0000-0000](contact_number_entity)
+
+- intent: faq/ask_need_rescue
+  examples: |
+    - ferido
+    - machucado
+    - machucou a perna
+    - o gato está dolorido
+    - tem um cachorro ferido
+    - encontrei um pet ferido
+    - resgatei um animal machucado
+    - cachorrinho atropelado
+    - gatinho atropelado 
+
+
+##### OUTROS
 - intent: faq/ask_how_to_help
   examples: |
     - Quero ajudar
@@ -31,15 +86,6 @@ nlu:
     - O que eu posso fazer para ajudar?
     - Como eu ajudo vocês ? 
     - O que eu consigo fazer para ajuda-los?
-    
-- intent: faq/ask_found_and_rescued
-  examples: |
-    - Peguei um cachorrinho na rua, o que eu faço?
-    - Encontrei um gato de rua e quero ficar com ele
-    - Resgatei um animal de rua e agora?
-    - Encontrei perdido e resgatei e agora?
-    - Resgatei um animal, o que devo fazer?
-    - Encontrei um animal perdido, o que eu faço ?
 
 - intent: faq/ask_castration
   examples: |
