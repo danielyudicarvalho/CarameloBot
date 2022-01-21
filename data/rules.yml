@@ -29,7 +29,7 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
-  - action: action_send_email
+  - action: utter_verify_information
 
 - rule: Bot diz que está fora do escopo dele
   steps:

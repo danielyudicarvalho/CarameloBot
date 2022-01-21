@@ -60,6 +60,7 @@ actions:
   - action_answer_disease_symptoms
   - action_answer_disease_prevent
   - action_send_email
+  - action_reset_help_slots
 
 
 #============ 

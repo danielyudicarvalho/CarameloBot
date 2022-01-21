@@ -7,7 +7,40 @@ stories:
   - intent: greet_intent
   - action: action_utter_greet
   - action: utter_bot_purpose
-#  - checkpoint: next_flow
+  - checkpoint: next_flow
+
+- story: Fluxo feliz do Voluntariado 
+  steps:
+  - checkpoint: next_flow
+  - intent: wanna_help_intent
+  - action: utter_type_of_help
+  - intent: volunteer_intent
+  - action: utter_about_volunteering
+  - action: help_form
+  - active_loop: help_form
+  - slot_was_set:
+    - requested_slot: name_slot
+  - slot_was_set:
+    - name_slot: Diego
+  - slot_was_set:
+    - requested_slot: email_slot
+  - slot_was_set:
+    - email_slot: email@email.com
+  - slot_was_set:
+    - requested_slot: contact_number_slot
+  - slot_was_set:
+    - contact_number_slot: '3311'
+  - slot_was_set:
+    - requested_slot: how_to_help_slot
+  - slot_was_set:
+    - how_to_help_slot: Eu pretendo ajudar tirando fotos
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_verify_information
+  - intent: affirm_intent
+  - action: action_send_email
+
 
 ################################
 ######## DESCONTINUADOS ########
@@ -64,3 +97,4 @@ stories:
 #    - requested_slot: null
 #  - active_loop: null
 #  - action: utter_submit
+

@@ -165,6 +165,18 @@ responses:
   - text:
       Você pode nos ajudar de várias maneiras com dinheiro, ração, areia para gato.
       Preciso apenas que confirme algumas informações...
+  
+  utter_verify_information:
+  - text:
+      "Suas informações estão corretas?\n \n
+      
+      Nome: {name_slot}
+
+      Email: {email_slot}
+
+      Telefone: {contact_number_slot}
+
+      Descrição: {how_to_help_slot}"
 
 
 #### Respostas do fluxo de castração

@@ -12,6 +12,9 @@ from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from sqlalchemy import null
+from rasa_sdk.events import AllSlotsReset
+from rasa_sdk.events import SlotSet
 
 
 QUESTION = {
@@ -36,9 +39,9 @@ from email.mime.text import MIMEText
 def send_email(name, email, phone, how_to_help):
     port = 587                                       # Porta na qual é feita a comunicação
 
-    sender_email = "testpythontoday@gmail.com"       # Email do Remetente
-    password = "testpython3@"                        # Senha do Remetente
-    receiver_email = "testpythontoday@gmail.com"     # Email do Destinatário
+    sender_email = "abrigo.do.bicho.bot@gmail.com"       # Email do Remetente
+    password = "Abrigo@bicho"                            # Senha do Remetente
+    receiver_email = "abrigo.do.bicho.bot@gmail.com"     # Email do Destinatário
 
     text = f"""
     Mais um voluntário para a causa :)
@@ -64,7 +67,7 @@ def send_email(name, email, phone, how_to_help):
     s.sendmail(sender_email, receiver_email, msg)
     s.quit()
 
-class ActionSubmit(Action):
+class ActionSendEmail(Action):
 
     def name(self) -> Text:
         return "action_send_email"
@@ -91,6 +94,18 @@ class ActionSubmit(Action):
         """)
 
         return []
+
+class ActionResetHelpSlots(Action):
+
+    def name(self) -> Text:
+        return "action_reset_help_slots"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        return [AllSlotsReset()]
+ 
 #================================================================== 
 # ActionUtterGreet - implementa uma função para cumprimentar
 # cumprimentos personalizados 
