@@ -144,16 +144,18 @@ class ActionUtterGreet(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-    
+        # pega a ultima mensagem e alcança o nome publico do usuário no telegram
+        input_data=tracker.latest_message
+        user_name=input_data["metadata"]["message"]["from"]["first_name"]
+
         timezone = pytz.timezone('America/Campo_Grande')
         hoje = datetime.now(timezone)
         hora_atual = hoje.hour
+        utter_bom_dia = "Oláá "+ user_name +" um bom dia! Como posso te ajudar?"
 
-        utter_bom_dia = "Oláá"+ user_name +"um bom dia! Como posso te ajudar?"
+        utter_boa_tarde = "Oláá "+ user_name +" uma boa tarde! Como posso te ajudar?"
 
-        utter_boa_tarde = "Oláá"+ user_name +"uma boa tarde! Como posso te ajudar?"
-
-        utter_boa_noite = "Oláá"+ user_name +"uma boa noite! Como posso te ajudar?"    
+        utter_boa_noite = "Oláá "+ user_name +" uma boa noite! Como posso te ajudar?"    
         
         if hora_atual < 12:
             dispatcher.utter_message(text=utter_bom_dia)
