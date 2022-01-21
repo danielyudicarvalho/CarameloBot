@@ -29,16 +29,6 @@ nlu:
     - procedimento de doacao
     - resgatei e quero doar
 
-- intent: faq/ask_when_castration
-  examples: |
-    - Quando castrar?
-    - Qual a idade ideal para castrar
-    - Quando devo castrar?
-    - Qual a melhor época para castrar
-    - Que época é melhor para castrar
-    - Com que idade devo castrar meu cachorro?
-    - Com que idade devo castrar meu gato?
-
 - intent: faq/ask_found_and_rescued
   examples: |
     - Peguei um cachorrinho na rua, o que eu faço?
@@ -76,8 +66,7 @@ nlu:
     - cachorrinho atropelado
     - gatinho atropelado 
 
-
-##### OUTROS
+##### FAQ 2
 - intent: faq/ask_how_to_help
   examples: |
     - Quero ajudar
@@ -96,7 +85,18 @@ nlu:
     - Conte-me como ocorre o processo de castração
     - Processo de castração
     - Castração
-    
+
+- intent: faq/ask_when_castration
+  examples: |
+    - Quando castrar?
+    - Qual a idade ideal para castrar
+    - Quando devo castrar?
+    - Qual a melhor época para castrar
+    - Que época é melhor para castrar
+    - Com que idade devo castrar meu cachorro?
+    - Com que idade devo castrar meu gato?
+
+
 - intent: faq/ask_veterinarian
   examples: |
     - Quero o contato do veterinario
@@ -116,15 +116,7 @@ nlu:
     - Como faço uma denuncia de maus tratos ?  
     - Denuncia 
 
-- intent: faq/ask_vaccine
-  examples: |
-    - quero saber sobre vacina
-    - como vacinar?
-    - detalhes sobre vacina
-    - como faço para vacinar
-    - pode me falar sobre as vacinas
-    - como funciona a vacinação ?
-
+##### OUTROS
 - intent: faq/ask_collect
   examples: |
     - o que fazer quando meu cachorro morrer?
