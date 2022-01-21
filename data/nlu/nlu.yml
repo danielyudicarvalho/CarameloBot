@@ -84,8 +84,11 @@ nlu:
     - Gostaria de ajudar
     - Como posso ajudar vocês?
     - O que eu posso fazer para ajudar?
-    - Como eu ajudo vocês ? 
+    - Como eu ajudo vocês? 
     - O que eu consigo fazer para ajuda-los?
+    - Como ajudo o abrigo? 
+    - Como posso auxiliar? 
+    - O que posso fazer para ajudar a ong?
 
 - intent: volunteer_intent
   examples: |

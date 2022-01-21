@@ -78,6 +78,8 @@ nlu:
     - Conte-me como ocorre o processo de castração
     - Processo de castração
     - Castração
+    - Como acontece a castração? 
+    - Pode me falar como funciona a castração?
     
 - intent: faq/ask_veterinarian
   examples: |
@@ -88,6 +90,11 @@ nlu:
     - Quero entrar em contato com o veterinario
     - Pode me passar o numero do veterinario ?
     - Contato do veterinario
+    - Qual o telefone do veterinário? 
+    - Pode me passar o telefone do veterinario ?
+    - Quero o telefone do veterinario
+    - Me manda o numero do veterinario
+
 
 - intent: faq/ask_report
   examples: |
@@ -96,7 +103,10 @@ nlu:
     - Gostaria de fazer uma denuncia de maus tratos
     - Gostaria de fazer uma denuncia
     - Como faço uma denuncia de maus tratos ?  
-    - Denuncia 
+    - Denuncia
+    - Como faço uma denuncia?
+    - Quero denunciar maus tratos a um animal
+    - Preciso fazer uma denuncia de maus tratos
 
 - intent: faq/ask_collect
   examples: |
@@ -109,13 +119,19 @@ nlu:
     - o que eu faço quando meu bichinho morre?
     - qual número eu ligo quando meu animal morre?
     - com quem eu falor quando o bicho morre?
+    - o que devo fazer quando meu pet vir a falecer?
+    - o que devo fazer quando meu cachorro vir a falecer?
+    - o que devo fazer quando meu gato vir a falecer?
+    - como devo proceder quando meu animalzinho vir a falecer ? 
 
 - intent: faq/ask_collect_warn
   examples: |
-    - posso enterrar meu proprio cachorro quando ele morrer?
-    - posso enterrar meu próprio gato quando ele morrer?
-    - E se eu enterrar meu proprio pet no quintal
+    - posso enterrar meu  cachorro quando ele morrer?
+    - posso enterrar meu  gato quando ele morrer?
+    - E se eu enterrar meu  pet no quintal
     - posso enterrar meu cachorro no meu quintal?
     - posso enterrar meu gato no quintal?
-    - Tem consequências se eu enterrar meu bicho por conta própria?
+    - quais as consequências se eu enterrar meu bicho por conta própria?
+    - eu posso fazer o enterro do pet por conta própria ?
+    - há consequências se eu mesmo enterrar meu animal ? 
  
