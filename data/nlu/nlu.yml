@@ -79,10 +79,13 @@ nlu:
 ####### intents do voluntariado
 - intent: wanna_help_intent
   examples: |
+    - Eu quero ajudar
     - Quero ajudar
     - Gostaria de ajudar
     - Como posso ajudar vocês?
     - O que eu posso fazer para ajudar?
+    - Como eu ajudo vocês ? 
+    - O que eu consigo fazer para ajuda-los?
 
 - intent: volunteer_intent
   examples: |
@@ -94,6 +97,16 @@ nlu:
     - Como posso me voluntariar?
     - Quero auxiliar com meu tempo
     - Quero fazer parte do voluntariado
+
+- intent: donation_intent
+  examples: |
+    - quero doar dinheiro
+    - doacao de areia
+    - doar ração para cachorro
+    - dar dinheiro para ONG
+    - doar medicamento
+    - ajudar com areia
+    - ajudar com dinheiro
 
 # precisa decidir como proceder com isso
 # - intent: need_rescue_intent

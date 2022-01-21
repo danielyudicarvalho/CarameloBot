@@ -143,9 +143,15 @@ responses:
         Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!"
 
 
-##### Respostas do fluxo voluntariado
-  utter_faq/ask_how_to_help:
-    - text: "Opa, você pode nos ajudar de duas formas, seja fazendo doações ou voluntariando. Qual você prefere?"
+##### wanna_help_flow 
+  utter_type_of_help:
+    - text: "Como você gostaria de nos ajudar? Fazendo uma doação ou se voluntariando?"
+      buttons:
+      - title: "Voluntário"
+        payload: "/volunteer_intent"
+      - title: "Doação"
+        payload: "/donation_intent"
+
   utter_about_volunteering: 
     - text:
         Estamos procurando por voluntários de todo o Brasil que queiram fazer parte da nossa ONG, 
@@ -154,6 +160,11 @@ responses:
         Entende de legislação? As dicas de um advogado são muito bem-vindas! Faz fotos ou vídeos? Temos conteúdos
         incríveis que precisam de mãos habilidosas de um editor e das lentes de um fotógrafo.
         Preciso apenas que confirme algumas informações...
+  
+  utter_what_to_donate:
+  - text:
+      Você pode nos ajudar de várias maneiras com dinheiro, ração, areia para gato.
+      Preciso apenas que confirme algumas informações...
 
 
 #### Respostas do fluxo de castração

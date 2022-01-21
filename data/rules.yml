@@ -2,10 +2,22 @@ version: "3.0"
 
 rules:
 
-- rule: Ativar Help Form 
+- rule: Usuário deseja ajudar
+  steps:
+  - intent: wanna_help_intent
+  - action: utter_type_of_help
+
+- rule: Ativar volunteer_intent 
   steps:
   - intent: volunteer_intent
   - action: utter_about_volunteering
+  - action: help_form
+  - active_loop: help_form
+
+- rule: Ativar donation_intent
+  steps:
+  - intent: donation_intent
+  - action: utter_what_to_donate
   - action: help_form
   - active_loop: help_form
 

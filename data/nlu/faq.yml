@@ -68,15 +68,6 @@ nlu:
 
 
 ##### OUTROS
-- intent: faq/ask_how_to_help
-  examples: |
-    - Quero ajudar
-    - Gostaria de ajudar
-    - Como posso ajudar vocês?
-    - O que eu posso fazer para ajudar?
-    - Como eu ajudo vocês ? 
-    - O que eu consigo fazer para ajuda-los?
-
 - intent: faq/ask_castration
   examples: |
     - Quero saber como funciona a castração
@@ -105,15 +96,6 @@ nlu:
     - Gostaria de fazer uma denuncia
     - Como faço uma denuncia de maus tratos ?  
     - Denuncia 
-
-- intent: faq/ask_vaccine
-  examples: |
-    - quero saber sobre vacina
-    - como vacinar?
-    - detalhes sobre vacina
-    - como faço para vacinar
-    - pode me falar sobre as vacinas
-    - como funciona a vacinação ?
 
 - intent: faq/ask_collect
   examples: |
