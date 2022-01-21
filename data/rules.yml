@@ -2,20 +2,43 @@ version: "3.0"
 
 rules:
 
+- rule: chatbot começa com o /start
+  steps: 
+  - intent: start
+  - action: utter_greet
+  - action: utter_bot_purpose
+
+- rule: Ativar Help Form 
+  steps:
+  - intent: volunteer_intent
+  - action: utter_about_volunteering
+  - action: help_form
+  - active_loop: help_form
+
+- rule: Submeter Help Form 
+  condition:
+  - active_loop: help_form
+  steps:
+  - action: help_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_send_email
+
 - rule: Bot diz que está fora do escopo dele
   steps:
   - intent: out_of_scope_intent
   - action: utter_out_of_scope
 
-- rule: O bot se apresenta
+- rule: Bot solicita para o usuário repetir quando estiver low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase
+
+- rule: O bot explica seu propósito 
   steps:
   - intent: bot_purpose_intent
   - action: utter_bot_purpose
-
-- rule: Dizer olá
-  steps:
-  - intent: greet_intent
-  - action: utter_greet
 
 - rule: Dizer adeus
   steps:
@@ -37,66 +60,3 @@ rules:
   - action: utter_anything_else
   - intent: affirm_intent
   - action: utter_how_can_i_help
-
-- rule: ativar formulario de pet perdido
-  steps:
-  - intent: lost_my_pet_intent
-  - action: utter_lost_pet
-  - action: lost_pet_form
-  - active_loop: lost_pet_form
-
-# - rule: adopt form
-#   steps:
-#   - intent: adopt_intent
-#   - action: utter_about_adopt
-#   - action: utter_want_to_adopt
-#   - or:
-#       - intent: affirm_intent
-#         - action: utter_need_information
-#         - action: pet_form
-#         - active_loop: pet_form
-#       - intent: deny_intent
-#         - action: utter_anything_else
-#         - or:
-#             - intent: affirm_intent
-#               - action: utter_what_do_you_need
-
-#             - intent: deny_intent
-#               - action: utter_goodbye
-
-  
-  
-
-- rule: submeter formulario de pet adoção
-  condition:
-  - active_loop: pet_form
-  steps:
-  - action: pet_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: utter_submit
-  - action: action_scrapping
-  
-- rule: submeter formulario de pet perdido
-  condition:
-  - active_loop: lost_pet_form
-  steps:
-  - action: lost_pet_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: utter_submit
-# - action: utter_anything_else
-
-
-# - rule: Submit_report_form
-#   condition:
-#   - active_loop: report_form
-#   steps:
-#   - action: report_form
-#   - active_loop: null
-#   - slot_was_set:
-#     - requested_slot: null
-#   - action: utter_submit
-#   - action: utter_slots_values

@@ -14,6 +14,7 @@ index.html
 *.csv
 *.db*
 .rasa
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -150,3 +151,4 @@ node_modules/
 
 # Okteto
 .stignore
+

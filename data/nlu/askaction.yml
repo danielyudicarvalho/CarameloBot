@@ -1,12 +1,12 @@
 version: "3.0"
 
-nlu:
+# Este documento possui as intents voltadas para o askAction
 
+nlu:
 
 - regex: question
   examples: | 
     - /([A-Z a-z])/
-
 
 - lookup: disease
   examples: |
@@ -26,7 +26,6 @@ nlu:
     - prevenir
     - tratar
     - sintoma
-
 
 - intent: askaction/ask_disease
   examples: |

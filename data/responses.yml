@@ -5,6 +5,73 @@ version: "3.0"
 responses:
 
 ##### Respostas gerais
+  utter_goodbye:
+    - text: "Até mais, espero ter ajudado você!"
+    
+  utter_greet:
+    - text: "Olá, meu nome é Caramelinho, eu e o Abrigo dos Bichos vamos ajudá-lo(a) a solucionar suas dúvidas."
+
+  utter_anything_else:
+    - text: "Gostaria de mais alguma coisa?"
+    
+  utter_how_can_i_help:
+    - text: "Como posso te ajudar?"
+
+  utter_submit:
+    - text: "Armazenei suas informações aqui!!"
+    
+  utter_bot_purpose:
+    - text:
+        "Eu posso responder sobre as seguintes questões: \n
+        - adoção \n
+        - doação \n
+        - doenças \n
+        - veterinário \n
+        - castração \n
+        - denúncias. \n
+        Também posso esclarecer dúvidas com relação ao resgate de animais ou te ajudar a encontrar seu pet perdido.\n\n
+        
+        Ah...e se quiser se voluntariar ou ajudar de alguma maneira, só me falar!!\n\n
+      
+        E caso eu não consiga resolver sua dúvida, posso chamar um humano para nos ajudar!"
+
+  utter_out_of_scope:
+    - text: "Nesse caso peço que entre em contato com a instituição através do número 0000-000, envie um email para abrigo@outlook.com ou acesse a rede social."
+
+  utter_please_rephrase:
+    - text: "Desculpa, não consegui compreender peço que seja mais preciso na solicitação." 
+
+  utter_default:
+    - text: "Nesse caso peço que entre em contato com a instituição através do número (67) 98406-2288, envie um email para abrigodosbichos@abrigodosbichos.com.br ou acesse a rede social." 
+
+  utter_welcome:
+    - text: |
+        "De nada, estou aqui para isso ^_^"
+    - text: |
+        "Que isso, estou aqui para ajudar"
+    - text: |
+        "De nada, estou a disposição"
+  
+  utter_gratefull:
+    - text: |
+        "Muito feliz por você querer nos ajudar. Toda ajuda é bem vinda ^_^"
+    - text: |
+        "Muitíssimo obrigado pela sua boa intenção, gostamos muito da ajuda de todos"
+    - text: |
+        "Muito grato por você entrar nessa missão com a gente, sempre precisamos de boas pessoas como você"
+
+#### utters para os forms
+  utter_ask_name_slot:
+  - text: "Poderia me informar seu nome completo por favor?"
+
+  utter_ask_contact_number_slot:
+  - text: "Poderia informar seu telefone pra contato por favor?"
+
+  utter_ask_email_slot:
+  - text: "Por favor, me envie seu melhor email para contato por gentileza."
+
+  utter_ask_how_to_help_slot:
+  - text: "Escreva como você pretende ajudar abaixo. "
 
   utter_ask_animal_type:
   - text: "Gostaria de adotar gato ou cachorro?"
@@ -32,14 +99,7 @@ responses:
     - title: "fêmea"
       payload: '/inform_gender{{"gender":"Femea"}}'
     
-  utter_show_more_results:
-  - text: "Gostaria de ver mais resultados?"
-    buttons:
-    - title: "mostrar mais"
-      payload: '/show_more{{"age":"baby"}}'
-    - title: "mostrar menos"
-      payload: '/exit{{"age":"children"}}'
-
+  
   utter_ask_age:
   - text: "Qual idade do pet que gostaria de adotar?"
     buttons:
@@ -49,192 +109,129 @@ responses:
       payload: '/inform_age{{"age":"children"}}'
     - title: "mais de um ano"
       payload: '/inform_age{{"age":"adult"}}'
-    # - title: "1 ano"
-    #   payload: '/inform_age{{"age":"ageFour"}}'
-    # - title: "2 anos"
-    #   payload: '/inform_age{{"age":"ageFive"}}'
-    # - title: "3 anos"
-    #   payload: '/inform_age{{"age":"ageSix"}}'
-    # - title: "4 anos"
-    #   payload: '/inform_age{{"age":"ageSeven"}}'
-    # - title: "5 anos"
-    #   payload: '/inform_age{{"age":"ageEight"}}'
-    # - title: "Acima de 6 anos"
-    #   payload: '/inform_age{{"age":"ageNine"}}'
+      
+  utter_show_more_results:
+  - text: "Gostaria de ver mais resultados?"
+    buttons:
+    - title: "mostrar mais"
+      payload: '/show_more{{"age":"baby"}}'
+    - title: "mostrar menos"
+      payload: '/exit{{"age":"children"}}'
+      
+##### FAQ 1
+  utter_faq/ask_how_to_adopt:
+  - text:
+      "Temos 2 opções:\n \n
 
-  utter_goodbye:
-    - text: Adeus amiguinho, espero ter te ajudado :D qualquer coisa é só me chamar que estou pronto para te atender
-    
-  utter_greet:
-    - text: "Olá, eu sou o assistente virtual do Abrigo dos Bichos, é um prazer te recepcionar!"
+      1) Escolha um animalzinho no site www.abrigodosbichos.com.br (Clique nas fotos e veja mais detalhes e os dados de contato do responsável pelo animal)
+      Entre em contato diretamente com o responsável pelo animal.\n \n
 
-  utter_anything_else:
-    - text: "Gostaria de mais alguma coisa?"
-    
-  utter_how_can_i_help:
-    - text: "Como posso te ajudar?"
+      2) Vá até uma feirinha de adoção em sua cidade, veja www.abrigodosbichos.com.br/eventos.aspx (principalmente nos fins de semana)\n \n
 
-  utter_submit:
-    - text: "Armazenei suas informações aqui!!"
-    
-  utter_purpose:
-  - text: | 
-      "Sou um bot criado para a ONG Abrigo dos Bichos, eu ajudo nas adoções e doações para nosso amigos PET. Faço as seguintes opções: 1 2 3 4 5 6 "
-  
-  utter_out_of_scope:
-  - text: |
-      "Desculpa, mas isso não sou capaz de te ajudar."
-  
-  utter_what_do_you_need:
-  - text: |
-        sobre o que gostaria de saber?
-    
-  utter_welcome:
-  - text: | 
-      "De nada, estou aqui para isso ^_^"
-  - text: | 
-      "Que isso, estou aqui para ajudar"
-  - text: | 
-      "De nada, estou a disposição"
-  
-  utter_gratefull:
-  - text: | 
-      "Muito feliz por você querer nos ajudar. Toda ajuda é bem vinda ^_^"
-  - text: | 
-      "Muitíssimo obrigado pela sua boa intenção, gostamos muito da ajuda de todos"
-  - text: | 
-      "Muito grato por você entrar nessa missão com a gente, sempre precisamos de boas pessoas como você"
+      Pode nos contatar acessando o site https://abrigodosbichos.com.br/contato.aspx que podemos te orientar melhor sobre menores custos."
 
-#### utters para os forms
-  utter_ask_name:
-  - text: "poderia informar seu nome completo por favor?"
+  utter_faq/ask_how_to_donate_animal:
+  - text:
+      "Temos vários interessados em adotar!\n \n
+       
+      Faça boas fotos do(s) animalzinho(s) (nítida, na altura do animal e que mostre o sentimento do animalzinho)\n \n
+       
+      Escolha como finalidade: 'Quero DOAR um Animal' no portal www.abrigodosbichos.com.br, clique em 'Login' no topo direito do site
+      Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!\n \n
+       
+      Lembramos que o animalzinho (cão ou gato) a ser doado tem que estar saudável e sob a guarda de um responsável (não pode estar solto na rua).\n \n
+       
+      Também pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores) https://abrigodosbichos.com.br/eventos.aspx\n \n
+       
+      E não se esqueça, CAPRICHE NA FOTO ! Se possível coloque fitinha colorida no pescoço do animalzinho. A FOTO É O SUCESSO DA DOAÇÃO."
 
-  utter_ask_phone:
-  - text: "poderia informar seu telefone pra contato por favor?"
+  utter_faq/ask_found_and_rescued:
+    - text: 
+        "Se quer apenas tentar encontrar o verdadeiro dono, favor escolha a finalidade: 'Encontrei um animal e procuro o dono' no portal abrigodosbichos.com.br clique em 'Login' no topo direito do site.\n \n
+         
+        Caso não encontrar o verdadeiro dono, não queira ou não possa ficar com o animalzinho, temos vários interessados em adotar!\n \n
+         
+        Favor cadastra-lo também para doar no portal abrigodosbichos.com.br (clique em “Login” no topo direito do site).\n \n
+         
+        Aguardamos o(s) cadastro(s) para enviarmos às nossas listas!\n \n
+         
+        Lembramos que o animalzinho a ser doado tem que estar saudável e sob a guarda de um responsável (não pode estar solto na rua).\n \n
+         
+        Capriche na foto! Ela é o sucesso do anúncio.\n \n
+         
+        Também caso não possa ficar com o animalzinho, pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores), veja  https://www.abrigodosbichos.com.br/eventos.aspx"
+        
+  utter_faq/ask_lost_pet:
+    - text: 
+        "Favor escolha a finalidade: 'Estou procurando meu animal perdido' no portal abrigodosbichos.com.br, clique em 'Login' no topo direito do site.\n \n
+         
+        Não esqueça da foto. Ela é fundamental para encontrar o animal (se não tiver foto, procure no google alguma parecida com ele).\n \n
+         
+        Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!\n \n
+         
+        E lembre-se de contatar o Centro de Controle de Zoonoses caso eles encontrem o seu animalzinho!\n \n
+         
+        Segue o contato do Centro de Controle de Zoonoses: Telefone: (67) 3314-5000 / (67) 3314-5001 | E-mail: ccz@sesau.campogrande.ms.gov.br"
 
-  utter_ask_email:
-  - text: "Por favor, nos envie seu melhor email para contato por gentileza"
-
-  utter_ask_rg:
-  - text: "Por favor, nos informe seu RG para o formulário de adoção"
-
-  utter_ask_cpf:
-  - text: "Por favor, nos informe seu CPF para o formulário de adoção"
-
-  utter_ask_cep:
-  - text: "Por favor, nos informe seu CEP para o formulário de adoção"
-
-  utter_ask_address:
-  - text: "Poderia, por gentileza, nos informar seu endereço?"
+  utter_faq/ask_need_rescue:
+    - text: 
+        "Atuamos em toda Campo Grande-MS e para casos de resgate, sempre dependemos de alguém no local da ocorrência que se disponha a ajudar e encaminhar o animalzinho a um veterinário mais próximo para os primeiros atendimentos.\n \n
+         
+        Para resgatá-lo(s), peça ajuda em um pet próximo.\n \n
+         
+        Após resgatar e estar saudável, pode cadastrar para doar no portal www.AbrigoDosBichos.com.br clique em 'Login' no topo direito do site, temos vários interessados em adotar animais saudáveis.\n \n
+         
+        Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!"
 
 
-##### Respostas do fluxo voluntariado
+##### FAQ 2
+
   utter_faq/ask_how_to_help:
-    - text: "Quer no ajudar? Cadastre-se nesse site: https://abrigodosbichos.com.br/contato.aspx Nós lhe retornaremos
-             o mais breve possível. Sua ajuda é muito importante para os animaizinhos que tanto precisam da sua ajuda ^_^.
-            Sempre ao seu dispor."
+    - text: "Opa, você pode nos ajudar de duas formas, seja fazendo doações ou voluntariando. Qual você prefere?"
 
   utter_faq/ask_how_to_volunteer: 
+    - text: "Quer no ajudar? Cadastre-se nesse site: https://abrigodosbichos.com.br/contato.aspx Nós lhe retornaremos
+             o mais breve possível. Sua ajuda é muito importante para os animaizinhos que tanto precisam da sua ajuda ^_^.
+            Sempre a seu dispor."
+
+  utter_about_volunteering: 
     - text:
         Estamos procurando por voluntários de todo o Brasil que queiram fazer parte da nossa ONG, 
         atuando com eventuais colaborações em diversas áreas. Mesmo de longe, você poderá contribuir de 
         alguma forma! É veterinário e ama totós? Você pode ajudar a responder dúvidas de nossos seguidores! 
         Entende de legislação? As dicas de um advogado são muito bem-vindas! Faz fotos ou vídeos? Temos conteúdos
         incríveis que precisam de mãos habilidosas de um editor e das lentes de um fotógrafo.
-        Gostaria de se voluntariar?
-
-
-##### Respostas do fluxo resgate
-  utter_faq/ask_found_and_rescued:
-    - text: 
-        Quando o animal é recolhido, a primeira coisa a ser feita é levá-lo ao veterinário. Claro, você pode dar água,
-        comida, um banho, se ele estiver “sujinho”, mas, em alguns casos, os animais apresentam feridas por baixos dos 
-        pelos emaranhados, machucados, contusões e outras complicações, pois nunca sabemos quanto tempo ele passou nas 
-        ruas. Isso pode lhe render uma boa mordida/arranhada se não tiver cuidado. Ele pode estar doente e necessita de
-        exames para uma avaliação do que será melhor para o caso dele. Por isso, leve o bichinho a um Veterinário de 
-        sua confiança. JAMAIS medique um animal por conta própria, muitos medicamentos de uso humano podem intoxicar
-        e até levar o animal a óbito, só um profissional pode lhe dizer do que ele precisa.
-
-  utter_faq/ask_need_rescue:
-    - text: "Ligue para o numero 00000-0000 e forneça as seguintes informações: endereço"
+        Preciso apenas que confirme algumas informações...
+  #### Respostas do fluxo de denuncias
+  utter_faq/ask_report:
+    - text: "Denuncie, dependemos de sua participação !
+            Para fazer uma denúncia de maus tratos, ligue: DECAT, 190 ou 181, ou 193 bombeiros
+            Vamos juntos diminuir o sofrimento animal. PARTICIPE!"
   
-  utter_lost_pet:
-    - text: "Sentimos muito pela perda do seu animalzinho. Podemos te ajudar a achar-lo, mas para isso precisamos de algumas informações. "
-  
-##### utter para o form do pet perdido
-  utter_ask_lost_pet_form_animal_type_slot:
-    - text: "Gato ou cachorro?"
-  utter_ask_lost_pet_form_contact_number_slot:
-    - text: "Me passe um numero para contato"
-  utter_ask_lost_pet_form_description_slot:
-    - text: "Digite uma breve descrição do seu pet <3"
-
-
-
-
-#### Respostas do fluxo de castração
-  utter_faq/ask_castration:
-    - text: "Bom, primeiro precisamos saber se o seu bichinho é macho ou fêmea."
-    buttons:
-    - title: "Macho"
-      payload: 'faq/ask_macho_castration'
-    - title: "Fêmea"
-      payload: 'faq/ask_female_castration'
-    
-  utter_faq/ask_macho_castration:
-    - text: "Nos machos, tanto em cães quanto em gatos, a operação é menos invasiva. Consiste na retirada dos testículos – o que implica numa redução expressiva de testosterona.
-            É comum que após a castração o animal fique um pouco mais calmo e menos agitado que antes."
-  utter_faq/ask_female_castration:
-    - text: "Já nas fêmeas – de ambas as espécies – é necessário realizar uma incisão no abdome para remoção do útero e dos ovários. O procedimento que reduz a produção de estrógeno e progesterona."
-
-   
-  utter_faq/ask_when_castration:
-    - text: "Em alguns casos, a castração pode ser feita ainda na fase de filhotes. Contudo, é interessante que o seu cão ou o gato já tenha tomado todas as vacinas. Este cuidado visa reduzir o risco de contaminação no ambiente hospitalar.
-              Buscar orientação do médico veterinário de confiança sobre o seu caso é a melhor estratégia."
-#### Respostas do fluxo de contato do veterinario
   utter_faq/ask_veterinarian:
     - text: "Se você está procurando atendimento veterinário com preços acessíveis te recomendamos os hospitais veterinários das Universidades.
             Atualmente as que mais indicamos são os da UCDB  (Seminário, Campo Grande - MS (67) 3312-3809) e da UFMS(Av. Sen. Filinto Müler, 2443 - Pioneiros, Campo Grande - MS, 79070-900(67) 3345-3610).
             Eles atendem na parte da manhã até 11h e na parte da tarde até às 17h.
             Se tiver mais dúvidas pode nos contatar."
+ 
+ #### Respostas do fluxo de castração
+  utter_faq/ask_castration:
+    - text: "Bom, primeiro precisamos saber se o seu bichinho é macho ou fêmea."
+      buttons:
+      - title: "Macho"
+        payload: 'faq/ask_macho_castration'
+      - title: "Fêmea"
+        payload: 'faq/ask_female_castration'
+  utter_faq/ask_macho_castration:
+    - text: "Nos machos, tanto em cães quanto em gatos, a operação é menos invasiva. Consiste na retirada dos testículos – o que implica numa redução expressiva de testosterona.
+            É comum que após a castração o animal fique um pouco mais calmo e menos agitado que antes."
+  utter_faq/ask_female_castration:
+    - text: "Já nas fêmeas – de ambas as espécies – é necessário realizar uma incisão no abdome para remoção do útero e dos ovários. O procedimento que reduz a produção de estrógeno e progesterona."
+  utter_faq/ask_when_castration:
+    - text: "Em alguns casos, a castração pode ser feita ainda na fase de filhotes. Contudo, é interessante que o seu cão ou o gato já tenha tomado todas as vacinas. Este cuidado visa reduzir o risco de contaminação no ambiente hospitalar.
+              Buscar orientação do médico veterinário de confiança sobre o seu caso é a melhor estratégia."
 
-#### Respostas do fluxo de denuncias
-  utter_faq/ask_report:
-    - text: "Denuncie, dependemos de sua participação !
-            Para fazer uma denúncia de maus tratos, ligue: DECAT, 190 ou 181, ou 193 bombeiros
-            Vamos juntos diminuir o sofrimento animal. Denuncie!"
-
-##### Respostas do fluxo vacina
-  utter_faq/ask_vaccine:
-    - text: "A vacinação garante a imunização e segurança do seu pet, além de impedir o contágio de seus respectivos donos, por isso levar o pet para uma primeira consulta com o veterinário e seguir à risca o calendário de vacinação estabelecido por ele é essencial para que o animal fique sempre protegido.\nRessaltando que o calendário apresentado é um exemplo, contate o veterinário mais próximo para uma orientação detalhada.\nCalendário de vacinação (cachorro):\n1,5 meses - Primeira vacina (V8 ou V10)\n2 meses - Polivalente (V8 ou V10/ Gripe canina / Giardíase)\n3 meses - Reforço da polivalente (V8 ou V10)\n4 meses - Vacina da raiva\nAnualmente - Reforço da polivalente e da raiva\nCalendário de vacinação (gato):\n1,5 meses - Desparasitar o  gato para que a vacinação primária seja efetuada futuramente\n2 meses - Teste de leucemia, teste de imunodeficiência e dose da tríplice\n2,5 meses - Vacina contra a leucemia felina\n3 meses - Reforço da vacina trivalente\n3,5 meses - Reforço da vacina da leucemia.\n4 meses - Vacina da raiva.\nAnualmente - Reforço da trivalente, da leucemia  da raiva\n"
-
-#### Respostas do fluxo adoção
-  utter_about_adopt:
-   - text:
-      Caso você esteja sério sobre a adoção, posso te ajudar a achar um pet com as caracteristicas que você escoher..
-  
-  utter_want_to_adopt:
-  - text: "Você tem interesse em adotar um pet?"
-
-  utter_need_information:
-  - text: Ótimo, vamos precisar de algumas informações
-
-  utter_ask_animal_type_slot:
-  - text: "É um gato ou cachorro?"
-
-  utter_adopt_tips:
-    - condition:
-      - type: slot
-        name: animal_type_slot
-        value: cachorro
-      text: "Em questão de cachorro, o primeiro passo é identificar o porte dele. Mesmo se for um filhotinho, essa tarefa é de extrema importância, já que, quando ele crescer, vai precisar de um espaço adequado para brincar. Depois de adotar um cachorro, ele vai para os seus braços com o comportamento ideal ele pode morder um móvel, por exemplo, lidar com isso exige paciência e muito, mas muito amor, ainda mais com um peludo que pode já ser adulto ou mesmo ter sofrido maus tratos."
-    - condition:
-      - type: slot
-        name: animal_type_slot
-        value: gato
-      text: "Sobre gatos, o importante é a idade do gato. Enquanto ele é filhote, é mais agitado, divertido e naturalmente vai dar mais trabalho para o dono. Se ele for adulto no momento da adoção, trará mais tranquilidade e mostrará afeto, mas pode encontrar dificuldades de adaptação."
-
-#### Respostas do fluxo de zoonoses
+##### OUTROS
   utter_faq/ask_collect:
   - text: |
           "Sabemos como é triste a dor de perder seu pet, mas caso isso venha a acontecer você precisa dar um destino correto ao corpinho dele.
@@ -254,6 +251,33 @@ responses:
         "Evite descartar o corpo do seu pet falecido por conta própria, isso pode geral multas de R$500 a R$13 mil e pode dar até prisão. Isso porque o artigo 54 da Lei de Crimes Ambientais- Lei 9605/98 considera
         isso crime ambiental. Descartar em terrenos baudios, matas, terreiros ou qualquer outro terreno também é crime além de você estar podendo contaminar o solo e atrair doenças.
         Ligue para a Solurb ou para a prefeitura que eles te atenderão em até 24h, se seu pet vier a falecer em um clínica veterinária eles podem dar o devido tratamento ao corpo do bichano."
+ 
+#### Respostas do fluxo adoção
+  utter_preview_adopt:
+   - text:
+      Pesquise antes sobre o animal que você pretende fazer adoção, saber um pouco sobre seus hábitos e tempo de vida, isso auxilia na tomada de decisão.
+      Para o processo de adoção é necessário apresentar cópia de RG, CPF, comprovante de residência, em alguns é preciso passar por entrevista.
+      O adotante também deve preencher e assinar (por um maior de 18 ou 21 anos, dependendo da exigência) um termo de posse responsável, assumindo a responsabilidade pelo bem-estar do animal.
+  
+  utter_want_to_adopt:
+  - text: "Você tem interesse em adotar um pet?"
+
+  utter_ask_animal_type_slot:
+  - text: "É um gato ou cachorro?"
+
+  utter_adopt_tips:
+    - condition:
+      - type: slot
+        name: animal_type_slot
+        value: cachorro
+      text: "Em questão de cachorro, o primeiro passo é identificar o porte dele. Mesmo se for um filhotinho, essa tarefa é de extrema importância, já que, quando ele crescer, vai precisar de um espaço adequado para brincar. Depois de adotar um cachorro, ele vai para os seus braços com o comportamento ideal ele pode morder um móvel, por exemplo, lidar com isso exige paciência e muito, mas muito amor, ainda mais com um peludo que pode já ser adulto ou mesmo ter sofrido maus tratos."
+    - condition:
+      - type: slot
+        name: animal_type_slot
+        value: gato
+      text: "Sobre gatos, o importante é a idade do gato. Enquanto ele é filhote, é mais agitado, divertido e naturalmente vai dar mais trabalho para o dono. Se ele for adulto no momento da adoção, trará mais tranquilidade e mostrará afeto, mas pode encontrar dificuldades de adaptação."
+
+#### Respostas do fluxo de zoonoses
   utter_askaction/ask_initial_info_raiva:
   - text: |
       "A raiva canina é uma doença perigosíssima por ter alta taxa de letalidade e não possuir cura. Geralmente o diagnóstico é feito depois da morte, e mesmo se feito antes não há cura nem tratamento.
@@ -471,14 +495,10 @@ responses:
       "Como não exite vacina a melhor forma de prevenir a doença é evitando o contato com o carrapato. Para isso, uma dica é evitar áreas onde sabidamente há a presença desses ectoparasitas e sempre fazer uso de produtos contra pulgas e carrapatos no pet.
       O uso coleiras contra os parasitas é uma ótima opção, além de realizar limpezas dos locais externos com produtos contra pulga e carrapatos também é importante"
 
-  utter_askaction/ask_treatments_carrapato: 
+  utter_askaction/ask_treatments_carrapat: 
   - text: |
       "O tratamento é feito com antibióticos e outros medicamentos que vão combater o agente causador da doença, e pode durar de 15 a 30 dias, sempre conduzido por um veterinário.
       Em casos mais graves, pode ser necessário uma transfusão de sangue e outros cuidados para ajudar o cachorro a se recuperar. Nesses casos, o pet deve ficar internado e ter acompanhamento constante de profissionais.
       Vale lembrar que a doença do carrapato é uma zoonose e que tanto a Babesiose quanto Erliquiose já foram detectadas em humanos, mas a transmissão ocorre somente pela picada do carrapato infectado e não pelo contato com o cão."
 
-      "Injustiça de reconhecimentos é fato consumado em qualquer ambiente corporativo pelo simples fato de todos serem
-      seres humanos falhos e mesquinhos. Os lambe botas e puxa sacos sempre vão receber todo os reconhecimento pelo menor esforço
-      que fizerem enquanto que os de verdade vão receber no máximo um tapinha nas costas mesmo se descobrirem a cura pra AIDS.
-      Se importar muito com isso é o caminho certo pra decepção e desalento, o negócio mesmo é fazer o trabalho bem feito e se contentar apenas
-      com o orgulho de si mesmo por poder subir na vida sem babar ovo de ninguém diferente dos medíocres."
+        
