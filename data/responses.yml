@@ -9,7 +9,7 @@ responses:
     - text: "Até mais, espero ter ajudado você!"
     
   utter_greet:
-    - text: "Olá, eu sou o assistente virtual do Abrigo dos Bichos, é um prazer te recepcionar!"
+    - text: "Olá, meu nome é Caramelinho, eu e o Abrigo dos Bichos vamos ajudá-lo(a) a solucionar suas dúvidas."
 
   utter_anything_else:
     - text: "Gostaria de mais alguma coisa?"
@@ -22,9 +22,18 @@ responses:
     
   utter_bot_purpose:
     - text:
-        "Eu posso te informar sobre questões de adoção, doação, doenças, veterinário, castração e denúncias. Posso também esclarecer dúvidas com relação a resgate de animais ou te ajudar a encontrar seu pet perdido.
-
-        Caso eu não consiga resolver sua dúvida, posso chamar um humano para nos ajudar!"
+        "Eu posso responder sobre as seguintes questões: \n
+        - adoção \n
+        - doação \n
+        - doenças \n
+        - veterinário \n
+        - castração \n
+        - denúncias. \n
+        Também posso esclarecer dúvidas com relação ao resgate de animais ou te ajudar a encontrar seu pet perdido.\n\n
+        
+        Ah...e se quiser se voluntariar ou ajudar de alguma maneira, só me falar!!\n\n
+      
+        E caso eu não consiga resolver sua dúvida, posso chamar um humano para nos ajudar!"
 
   utter_out_of_scope:
     - text: "Nesse caso peço que entre em contato com a instituição através do número 0000-000, envie um email para abrigo@outlook.com ou acesse a rede social."

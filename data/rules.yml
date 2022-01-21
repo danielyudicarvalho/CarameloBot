@@ -2,6 +2,12 @@ version: "3.0"
 
 rules:
 
+- rule: chatbot começa com o /start
+  steps: 
+  - intent: start
+  - action: utter_greet
+  - action: utter_bot_purpose
+
 - rule: Ativar Help Form 
   steps:
   - intent: volunteer_intent

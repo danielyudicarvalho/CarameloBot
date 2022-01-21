@@ -1,8 +1,10 @@
 version: "3.0"
 
 intents:
+
   - faq
   - askaction
+  - start
   - ask_discard
   - ask_discard_warn
   - ask_disease
@@ -25,11 +27,13 @@ intents:
   - inform_size_intent
   - inform_gender_macho_intent
   - inform_gender_female_intent
+  - wanna_help_intent
   
 #============
 # ENTITIES
 #============ 
 entities:
+
   - animal_type_entity
   - contact_number_entity
   - disease
@@ -42,17 +46,13 @@ entities:
 # ACTIONS
 #============ 
 actions:
+
   - utter_goodbye
   - utter_greet
   - utter_faq
   - utter_anything_else
   - utter_how_can_i_help
-  - utter_ask_lost_pet_form_animal_type_slot
-  - utter_ask_lost_pet_form_description_slot
-  - utter_ask_lost_pet_form_contact_number_slot
   - utter_submit
-  - utter_complaint
-  - utter_slots_values
   - utter_bot_purpose
   - utter_out_of_scope
   - action_utter_greet
@@ -62,11 +62,13 @@ actions:
   - action_answer_disease_prevent
   - action_send_email
   - action_scrapping
+
 #============ 
 # SLOTS
 #============
 
 slots:
+
   name_slot:
     type: text
     initial_value: null
@@ -74,8 +76,9 @@ slots:
     mappings:
       - type: from_text
         conditions:
-         - active_loop: help_form
-           requested_slot: name_slot
+          - active_loop: help_form
+            requested_slot: name_slot
+
   email_slot:
     type: text
     initial_value: null
@@ -83,8 +86,18 @@ slots:
     mappings:
       - type: from_text
         conditions:
-         - active_loop: help_form
-           requested_slot: email_slot
+          - active_loop: help_form
+            requested_slot: email_slot
+
+  contact_number_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: contact_number_entity
+      conditions:
+        - active_loop: help_form
+          requested_slot: contact_number_slot
+
   how_to_help_slot:
     type: text
     initial_value: null
@@ -92,10 +105,11 @@ slots:
     mappings:
       - type: from_text
         conditions:
-         - active_loop: help_form
-           requested_slot: how_to_help_slot
+          - active_loop: help_form
+            requested_slot: how_to_help_slot
+
   # lost_pet_form
-  animal_type:
+  animal_type_slot:
     type: text
     mappings:
     - type: from_entity
@@ -144,15 +158,17 @@ slots:
         entity: question
 
 #======= 
-# SLOTS
+# FORMS
 #======= 
 forms:
+
   pet_form:
     required_slots:
       - animal_type_slot
       - size
       - age
       - gender 
+
   help_form:
     required_slots:
       - name_slot

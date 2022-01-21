@@ -86,9 +86,9 @@ class ActionScrapping(Action):
 
 def send_email(name, email, phone, how_to_help):
     port = 587
-    sender_email = "testpythontoday@gmail.com"
-    receiver_email = "testpythontoday@gmail.com"
-    password = "testpython3@" 
+    sender_email = "abrigo.do.bicho.bot@outlook.com"
+    receiver_email = "abrigo.do.bicho.bot@outlook.com"
+    password = "Abrigo@bicho" 
 
     text = f"""
     Mais um voluntário para a causa :)
@@ -136,18 +136,6 @@ class ActionSubmit(Action):
 # ActionUtterGreet - implementa uma função para cumprimentar
 # cumprimentos personalizados 
 #==================================================================
-
-
-timezone = pytz.timezone('America/Campo_Grande')
-hoje = datetime.now(timezone)
-hora_atual = hoje.hour
-
-utter_bom_dia = "Bom dia! Meu nome é Caramelo, eu e o Abrigo dos Bichos  vamos ajudá-lo(a) a solucionar suas dúvidas."
-
-utter_boa_tarde = "Boa tarde! Meu nome é Caramelo, eu e o Abrigo dos Bichos  vamos ajudá-lo(a) a solucionar suas dúvidas."
-
-utter_boa_noite = "Boa noite! Meu nome é Caramelo, eu e o Abrigo dos Bichos  vamos ajudá-lo(a) a solucionar suas dúvidas."
-
 class ActionUtterGreet(Action):
 
     def name(self) -> Text:
@@ -156,6 +144,16 @@ class ActionUtterGreet(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+    
+        timezone = pytz.timezone('America/Campo_Grande')
+        hoje = datetime.now(timezone)
+        hora_atual = hoje.hour
+
+        utter_bom_dia = "Oláá"+ user_name +"um bom dia! Como posso te ajudar?"
+
+        utter_boa_tarde = "Oláá"+ user_name +"uma boa tarde! Como posso te ajudar?"
+
+        utter_boa_noite = "Oláá"+ user_name +"uma boa noite! Como posso te ajudar?"    
         
         if hora_atual < 12:
             dispatcher.utter_message(text=utter_bom_dia)

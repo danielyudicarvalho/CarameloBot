@@ -1,7 +1,7 @@
 version: "3.0"
 
 nlu:
-####### intents gerais 
+####### intents gerais
 - intent: greet_intent
   examples: |
     - oi
@@ -93,6 +93,8 @@ nlu:
     - Gostaria de ajudar
     - Como posso ajudar vocês?
     - O que eu posso fazer para ajudar?
+    - Como eu poderia ajudar?
+    - Desejo ajudar de alguma maneira
 
 - intent: volunteer_intent
   examples: |
