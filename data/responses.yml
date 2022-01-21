@@ -5,6 +5,56 @@ version: "3.0"
 responses:
 
 ##### Respostas gerais
+
+  utter_ask_animal_type:
+  - text: "Gostaria de adotar gato ou cachorro?"
+    buttons:
+    - title: "Gato"
+      payload: '/inform_type{{"animal_type":"Gato"}}'
+    - title: "Cão"
+      payload: '/inform_type{{"animal_type":"Cao"}}'
+  
+  utter_ask_size:
+  - text: "Qual o porte ideal que você gostaria de adotar?"
+    buttons:
+    - title: "pequeno"
+      payload: '/inform_size{{"size":"Pequeno"}}'
+    - title: "médio"
+      payload: '/inform_size{{"size":"Medio"}}'
+    - title: "grande"
+      payload: '/inform_size{{"size":"Grande"}}'
+  
+  utter_ask_gender:
+  - text: "Você prefere macho ou fêmea?"
+    buttons:
+    - title: "macho"
+      payload: '/inform_gender{{"gender":"Macho"}}'
+    - title: "fêmea"
+      payload: '/inform_gender{{"gender":"Femea"}}'
+    
+  
+  utter_ask_age:
+  - text: "Qual idade do pet que gostaria de adotar?"
+    buttons:
+    - title: "até 6 meses"
+      payload: '/inform_age{{"age":"baby"}}'
+    - title: "6 meses a 1 ano"
+      payload: '/inform_age{{"age":"children"}}'
+    - title: "mais de um ano"
+      payload: '/inform_age{{"age":"adult"}}'
+    # - title: "1 ano"
+    #   payload: '/inform_age{{"age":"ageFour"}}'
+    # - title: "2 anos"
+    #   payload: '/inform_age{{"age":"ageFive"}}'
+    # - title: "3 anos"
+    #   payload: '/inform_age{{"age":"ageSix"}}'
+    # - title: "4 anos"
+    #   payload: '/inform_age{{"age":"ageSeven"}}'
+    # - title: "5 anos"
+    #   payload: '/inform_age{{"age":"ageEight"}}'
+    # - title: "Acima de 6 anos"
+    #   payload: '/inform_age{{"age":"ageNine"}}'
+
   utter_goodbye:
     - text: "Até mais, espero ter ajudado você!"
     
@@ -69,7 +119,10 @@ responses:
 
 ##### Respostas do fluxo voluntariado
   utter_faq/ask_how_to_help:
-    - text: "Opa, você pode nos ajudar de duas formas, seja fazendo doações ou voluntariando. Qual você prefere?"
+    - text: "Quer no ajudar? Cadastre-se nesse site: https://abrigodosbichos.com.br/contato.aspx Nós lhe retornaremos
+             o mais breve possível. Sua ajuda é muito importante para os animaizinhos que tanto precisam da sua ajuda ^_^.
+            Sempre a seu dispor."
+
   utter_faq/ask_how_to_volunteer: 
     - text:
         Estamos procurando por voluntários de todo o Brasil que queiram fazer parte da nossa ONG, 
@@ -105,20 +158,40 @@ responses:
   utter_ask_lost_pet_form_description_slot:
     - text: "Digite uma breve descrição do seu pet <3"
 
+
+
+
 #### Respostas do fluxo de castração
   utter_faq/ask_castration:
-    - text: "A castração é realizada com o animal em jejum, sob efeito de anestésico, o que torna o procedimento indolor. O veterinário, então, retira os órgãos reprodutivos (útero, ovários e tubas uterinas – em fêmeas; e testículos – em machos). Ainda é comum existir a dúvida sobre o melhor momento para realizar a esterilização.  "
+    - text: "Bom, primeiro precisamos saber se o seu bichinho é macho ou fêmea."
+    buttons:
+    - title: "Macho"
+      payload: 'faq/ask_macho_castration'
+    - title: "Fêmea"
+      payload: 'faq/ask_female_castration'
+    
+  utter_faq/ask_macho_castration:
+    - text: "Nos machos, tanto em cães quanto em gatos, a operação é menos invasiva. Consiste na retirada dos testículos – o que implica numa redução expressiva de testosterona.
+            É comum que após a castração o animal fique um pouco mais calmo e menos agitado que antes."
+  utter_faq/ask_female_castration:
+    - text: "Já nas fêmeas – de ambas as espécies – é necessário realizar uma incisão no abdome para remoção do útero e dos ovários. O procedimento que reduz a produção de estrógeno e progesterona."
 
+   
+  utter_faq/ask_when_castration:
+    - text: "Em alguns casos, a castração pode ser feita ainda na fase de filhotes. Contudo, é interessante que o seu cão ou o gato já tenha tomado todas as vacinas. Este cuidado visa reduzir o risco de contaminação no ambiente hospitalar.
+              Buscar orientação do médico veterinário de confiança sobre o seu caso é a melhor estratégia."
 #### Respostas do fluxo de contato do veterinario
   utter_faq/ask_veterinarian:
-    - text: "O contato do veterinário é 67 1234-5678"
+    - text: "Se você está procurando atendimento veterinário com preços acessíveis te recomendamos os hospitais veterinários das Universidades.
+            Atualmente as que mais indicamos são os da UCDB  (Seminário, Campo Grande - MS (67) 3312-3809) e da UFMS(Av. Sen. Filinto Müler, 2443 - Pioneiros, Campo Grande - MS, 79070-900(67) 3345-3610).
+            Eles atendem na parte da manhã até 11h e na parte da tarde até às 17h.
+            Se tiver mais dúvidas pode nos contatar."
 
 #### Respostas do fluxo de denuncias
   utter_faq/ask_report:
-    - text: "As denuncias podem ser feitas tanto pelo chat de mensagens, quanto ligando para o disque denuncia. Deseja processeguir para a denuncia no chat? "
-
-  utter_complaint:
-    - text: "Tudo bem, peço que me informe os seguintes dados: Nome, RG, CPF, Telefone para contato e sua denúncia"
+    - text: "Denuncie, dependemos de sua participação !
+            Para fazer uma denúncia de maus tratos, ligue: DECAT, 190 ou 181, ou 193 bombeiros
+            Vamos juntos diminuir o sofrimento animal. PARTICIPE!"
 
 ##### Respostas do fluxo vacina
   utter_faq/ask_vaccine:
@@ -304,24 +377,51 @@ responses:
         "Depois do devido diagnóstico, o tratamento tanto para animais quanto para humanos é bem fácil. Com o auxilio de um profissional, o tratamento geralmente
          se dá por remédios, pomadas e cremes."
 
-  utter_askaction/ask_initial_info_toxoplasmose:
+  utter_askaction/ask_initial_info_cinomose:
   - text: |
-      "Doença infecciosa causada por protozoário, Toxoplasma gondii. A infecção em grávidas é de grande risco, uma vez que o feto pode ter a sua formação afetada. Quanto ao tratamento, tanto a sua necessidade quanto a sua duração são determinados pelo médico após serem realizados os devidos exames.
-       A toxoplasmose pode ser transmitida por contato com fezes de animais, carne crua ou mal cozida, verduras e vegatais mal lavados, transfusão sanguínea e da mãe para o feto durante a gestação."
-  
-  utter_askaction/ask_symptoms_toxoplasmose:
+      " A cinomose é uma doença causada por vírus e com baixa chance de cura.Ela afeta somente cachorros, principalmente os não vacinados.
+        Essa é uma doença altamente contagiosa e se transmite por secreções como espirros e contato com nariz, boca, fezes e urina.
+        Ela pode ser transmitida por contato direto e indireto com secreções de outros animais. A cinomose afeta o sistema nervoso central podendo causar
+        paralisia e dificuldade para andar no cachorro, em estágio inicial ela causa diarreia e febre. Essa doença é gravíssima e possui baixa taxa de cura, por isso busque vacinar o seu cachorro
+        com as vacinas V8 e V10 enquanto ainda são filhotes. Lembre-se de que apenas o veterinário pode dar o diagnótico e tratamento para a doença, por isso consulte um o quanto antes caso suspeite que
+        se cão está com cinomose."
+  utter_askaction/ask_symptoms_cinomose:
   - text: |
-        "Quase 90% das pessoas não apresentam sintomas da toxoplasmose, porém alguns sintomas dela inclue: Febre alta, dores musculares, dores de cabeça, em recém-nascidos pode causar cegueira e em crianças, problemas de visão podem aparecer
-        até os 12 anos de idade, devido às lesões na retina, provocadas pelo parasito."
-  utter_askaction/ask_prevent_toxoplasmose: 
+        "Os sintomas iniciais da cinomose são muito parecidos com os de outras doenças: Febre, diarreia, apatia, falta de apetite. Porém, quando a doença atinge a fase nervosa os sintomas
+        costumam ser mais preocupantes como: paralisia, dificuldade de andar, tremores, falta de coordenação e convulsões.Lembre-se de que apenas o veterinário pode dar o diagnótico e tratamento para a doença, por isso consulte um o quanto antes caso suspeite que
+        se cão está com cinomose."
+  utter_askaction/ask_prevent_cinomose: 
   - text: |
-      "Eliminar e evitar o contato com fezes de animais é o melhor jeito de se prevenir da toxoplasmose. Evitar o contato de grávidas com fezes de cães e gatos também é recomendado já que a infecção em grávidas é de autíssimo risco.
-      Outras dicas são: Lavar bem os alimentos, higienizar os pratinhos dos animais e caso infelizmente o seu pet venha a falecer, dar o devido tratamento para o corpinho dele."
+      "Felizmente já existe vacina eficiente para a cinomose. Confira se a carteirinha de vacinação do seu cachorro têm as vacinas V8 ou V10, principais responsáveis por combater a cinomose.
+      Essa vacinas são dadas com o cachorro ainda filhote e contam com o reforço anual, mas caso você tenha esquecido, é perfeitamente possível vacinar seu cão já adulto. Nunca é tarde para se combater a cinomose."
 
-  utter_askaction/ask_treatments_toxoplasmose: 
+  utter_askaction/ask_treatments_cinomose: 
   - text: |
-      "90% das pessoas que contraem toxoplasmose não demonstram sintomas, por isso procure um médico na menor suspeita. Geralmente depois de feito o diagnóstico, o tratamento é feito com antiparasitário e antibióticos"
+      "A cinomose tem pouquíssima chance de cura, mas caso o seu veterinário tenha diagnosticado seu cão com cinomose não se desespere pois ainda há tratamento.
+      Geralmente o tratamento é feito com medicamentos acompanhados para fortalecer o organismo dos cães e ajudá-los a combater a infecção e sobreviver à doença.
+      Ao identificar a presença do vírus nos cães, os veterinários podem solicitar alguns exames para avaliar os problemas e os tratamentos adequados para fortalecer o sistema imunológico dos cachorros, impedindo o desenvolvimento da doença."
   
+  utter_askaction/ask_initial_info_parvovirose:
+  - text: |
+      " A parvovirose é uma doença viral causada pelo parvovírus, que acomete principalmente os cães filhotes e adultos não vacinados e debilitados.
+      Uma vez no organismo do cachorro, o vírus se reproduz e afeta principalmente as células do intestino. 
+      Isso provoca quadros severos de vômitos e de diarreia. A depender do estado de saúde do paciente, se não tratada, a parvovirose pode até mesmo levar o indivíduo a óbito.
+      A doença é causa principalmente pelo contato com as fezes de um animal doente."
+  utter_askaction/ask_symptoms_parvovirose:
+  - text: |
+        "Alguns sintoma de cães com parvovirose são: diarreia, vômito, apatia, falta de apetite e perda de peso. Mas lembre-se que apenas o veterinário pode dar o diagnóstico da doença.
+        Ao suspeitar que seu amigo está com parvovirose, não perca tempo e procure imediatamente um veterinário. Por conta do ataque às células intestinais, com fortes vômitos e diarreias, a doença pode provocar uma rápida desidratação que pode, inclusive, levar o pet a óbito."
+  utter_askaction/ask_prevent_parvovirose: 
+  - text: |
+      "A melhor prevenção contra a parvovirose é a vacinação.A vacinação deve ser iniciada quanto antes, com o cachorro ainda filhote.
+      Antes de terminar o protocolo vacinal, devemos evitar sair de casa com o cãozinho, evitar o contato dele com outros animais e realizar a limpeza e desinfecção adequada do ambiente e das superfícies com os quais ele terá contato.
+      Nessa fase e ao longo de toda a vida do cachorro, também é muito importante mantê-lo saudável, com dieta balanceada, vacinação, vermifugação e proteção contra ectoparasitas, rotina adequada, visitas regulares ao veterinário, entre outros cuidados."
+
+  utter_askaction/ask_treatments_parvovirose: 
+  - text: |
+      "O tratamento é iniciado antes mesmo de os exames definitivos ficarem prontos. Como se trata de um vírus, não há tratamentos específicos, mas é feito um tratamento de suporte, com a finalidade de reverter a desidratação, infecção, inflamação, etc.
+      A parvovirose possui uma alta taxa de letalidade. Quanto antes você levar seu amigo ao veterinário, maior a chance de ele se recuperar, já que a parvovirose canina tem cura."
+
   utter_askaction/ask_initial_info_fiv:
   - text: |
       "Popularmente conhecida como aids felina, a doença é causada por um vírus da mesma família do HIV e, em seus estágios clínicos, tem sintomas semelhantes ao da imunodeficiência em humanos, embora não seja transmitida para nós.
@@ -342,4 +442,26 @@ responses:
       "O diagnóstico da FIV felina é feito por meio de exames laboratoriais, com destaque para o ELISA — teste que se baseia na reação antígeno-anticorpo desencadeada por enzimas.
       Assim como a Felv, a FIV felina ainda não tem cura. O tratamento é o suporte, e o mais importante é manter o gato o mais saudável possível, oferecendo ração de qualidade, cuidados higiênicos, vermifugação e acompanhamento veterinário.
       É sempre bom lembrar, quanto antes for diagnosticada a doença e maiores forem os cuidados, mais chances o bichano terá de responder bem ao tratamento, ainda que isso não elimine a infecção. Não tem como prever a expectativa de vida de um gato com FIV, mas com cuidados adequados e sob condições ideais, eles podem viver por muitos anos."
+  
+  utter_askaction/ask_initial_info_carrapato:
+  - text: |
+      "A doença do carrapato é uma infecção grave causada por hemoparasitas que atacam o sangue do cachorro e pode levar à morte. O carrapato raramente contamina gatos e seres humanos, mas não é impossível.
+      Existem duas principais doenças do carrapato, as que atacam os glóbulos brancos(erliquiose) e a que ataca os glóbulos vermelhos(babesiose).
+      Embora não exista vacina para a doença do carrapato, existe cura e tratamento e quanto antes um veterinário qualificado der o diagnóstico mais fácil é a recuperação do animal.
+      "
+  utter_askaction/ask_symptoms_carrapato:
+  - text: |
+        "Em estágio inicial, a doença do carrapato pode apresentar sintomas como: hematomas, sangramento nas fezes, febre, apatia, perda de peso e pontinhos vermelhos pelo corpo.
+         Já em estágio avançado a o cachorro pode apresentar sinais como: febre, anorexia e convulsões.
+         Mas lembre-se de que apenas um veterinário pode confirmar um diagnóstico confiável."
+  utter_askaction/ask_prevent_carrapato: 
+  - text: |
+      "Como não exite vacina a melhor forma de prevenir a doença é evitando o contato com o carrapato. Para isso, uma dica é evitar áreas onde sabidamente há a presença desses ectoparasitas e sempre fazer uso de produtos contra pulgas e carrapatos no pet.
+      O uso coleiras contra os parasitas é uma ótima opção, além de realizar limpezas dos locais externos com produtos contra pulga e carrapatos também é importante"
+
+  utter_askaction/ask_treatments_carrapat: 
+  - text: |
+      "O tratamento é feito com antibióticos e outros medicamentos que vão combater o agente causador da doença, e pode durar de 15 a 30 dias, sempre conduzido por um veterinário.
+      Em casos mais graves, pode ser necessário uma transfusão de sangue e outros cuidados para ajudar o cachorro a se recuperar. Nesses casos, o pet deve ficar internado e ter acompanhamento constante de profissionais.
+      Vale lembrar que a doença do carrapato é uma zoonose e que tanto a Babesiose quanto Erliquiose já foram detectadas em humanos, mas a transmissão ocorre somente pela picada do carrapato infectado e não pelo contato com o cão."
 

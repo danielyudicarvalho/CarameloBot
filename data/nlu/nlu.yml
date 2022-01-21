@@ -1,157 +1,100 @@
 version: "3.0"
 
 nlu:
-
-####### intents gerais 
-- intent: greet_intent
+- intent: greet
   examples: |
-    - oi
-    - oiiii
-    - olá
-    - eae
+    - hey
+    - hello
     - hi
-    - bom dia
-    - boa tarde
-    - boa noite
-    - dia
-    - tarde
-    - noite
-    - tudo bom?
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    
 
-- intent: goodbye_intent
+
+- intent: goodbye
   examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
     - bye
-    - tchau
-    - xau
-    - adeus
-    - flw
-    - até mais
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
 
-- intent: affirm_intent
+- intent: affirm
   examples: |
-    - s
-    - sim
-    - confirmo
-    - afirmo
-    - claro
-    - exato
-    - isso mesmo
-    - correto
-    - afirmativo
-    - certo
-    
-- intent: deny_intent
-  examples: |
-    - n
-    - não
-    - nao
-    - errado
-    - nenhum
-    - nunca
-    - jamais
-    - nego
-    - cancelo
-    - negativo
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
 
-- intent: bot_purpose_intent
+- intent: adopt
   examples: |
-    - O que você faz?
-    - Qual seu objetivo
-    - Pra que você serve?
-    - Quais suas opções?
-    - propósito
-    - o que posso perguntar?
-    - o que você pode fazer?
-
-- intent: out_of_scope_intent
-  examples: |
-    - Quero uma pizza
-    - Adotar um papagaio
-    - Montar numa capivara
-    - batatinha 1 2 3
-    - Assistir series
-    - Teste 123 teste 321
-
-####### intents do voluntariado
-# - intent: wanna_help_intent
-#   examples: |
-#     - Quero ajudar
-#     - Gostaria de ajudar
-#     - Como posso ajudar vocês?
-#     - O que eu posso fazer para ajudar?
-
-# - intent: volunteer_intent
-#   examples: |
-#     - Quero ser voluntário
-#     - Gostaria de voluntariar
-#     - Voluntário
-####### intents do resgate
-- intent: lost_my_pet_intent
-  examples: |
-    - Perdi meu [gato](animal_type_entity)
-    - Perdi meu [cachorro](animal_type_entity)
-    - Perdi meu pet
-    - Perdi meu [cachorro](animal_type_entity), o que eu faço?
-    - Vocês podem me ajudar a achar meu [gato](animal_type_entity)?
-    - Meu [gato](animal_type_entity) sumiu
-    - Meu pet desapareceu
-    - Meu [cachorro](animal_type_entity) sumiu, ele é vira-lata caramelo, manda uma msg para [0000-0000](contact_number_entity)
-# precisa decidir como proceder com isso
-# - intent: need_rescue_intent
-#   examples: |
-#     - Achei um pet que precisa de resgate
-#     - Preciso que alguém resgate um cão abandonado
-#     - Tem um gato abandonado aqui, alguem pode vir resgatar?
-#     - Encontrei um animal que precisa de resgate
-#     - Há um pet abandonado que precisa de resgate
-#     - Tem um bichinho que precisa de resgate, alguem pode resgatar ?
-    
-- intent: say_contact_number_intent
-  examples: |
-    - Numero para contato é [3829-3291](contact_number_entity)
-    - [99923134](contact_number_entity)
-    - [(20) 99090-1323](contact_number_entity)
-    - [22222-2222](contact_number_entity)
-    - é [(12) 3203-4999](contact_number_entity)
-    - [67 12345-6789](contact_number_entity)
-    
-- intent: say_description_intent
-  examples: |
-    - ele é isso e aquilo, tem o pelo alto e da raça tal
-    - ele é branco e preto tem uma mancha no nariz e pelo baixo
-    - ele é um vira-lata caramelo e atende pelo nome camaro amarelo
-    - ela é branca e marrom, tem as orelhas cinzas e pelo longo e atende pelo nome de Matilda
-    - ela é preta tem os olhos azuis e pelo baixo
-    - ela é caramelo e tem as patas brancas, atende pelo nome de Julieta
-
-####### intents de denuncias
-#  respostas pro fluxo do report
-# - intent: complaint_intent
-#   examples: |
-#     - Meu nome é Leonardo, meu rg é 123456321, meu cpf é 12345678910 , meu telefone é 1234 5678, minha denuncia é 
-#     - Meu nome é Filipe, meu rg é 123456321, meu cpf é 78904125995, meu telefone é 9876 5432, minha denuncia é 
-#     - Meu nome é Analia, meu rg é 312312637, meu cpf é 58237590522, meu telefone é 3678 4956, minha denuncia é 
-#     - Meu nome é João, meu rg é 131231278, meu cpf é  78950127942, meu telefone é 4891 - 3421, minha denuncia é 
-#     - Meu nome é Daniel, meu rg é 890382903, meu cpf é 19050131234, meu telefone é 4812 8714, minha denuncia é 
-#     - Meu nome é Lucas, meu rg é 478192734, meu cpf é 45789270234, meu telefone é 2469-7040, minha denuncia é 
-
-
-####### intents de adoção    
-- intent: adopt_intent
-  examples: |
-    - adotar
-    - adoção
-    - quero adotar 
-    - como eu adoto? 
-    - como faço para adotar um animal? 
+    - gostaria de adotar
     - quero adotar
-    - posso adotar um pet ?
+    - como eu faço para adotar?
+    - adotar
 
-- intent: inform_animal_type_intent
+- intent: deny
   examples: |
-    - [cachorro](animal_type_entity)
-    - [gato](animal_type_entity)
-    - é um [cachorro](animal_type_entity)
-    - é um [gato](animal_type_entity)
-    - é uma [gata](animal_type_entity) 
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
 
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
