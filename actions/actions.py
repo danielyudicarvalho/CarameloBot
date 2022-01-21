@@ -1,18 +1,19 @@
-
 from cgitb import text
 from typing import Any, Text, Dict, List
 from urllib import response
 from numpy import extract
 from pydantic import UrlSchemeError
-
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import AllSlotsReset
-import bs4
 import urllib.request as urllib_request
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
-
+from datetime import datetime
+import pytz
+import smtplib 
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 QUESTION = {
      "prevenção": "prevent",
@@ -24,36 +25,9 @@ QUESTION = {
      "tratar":"treatments"
  }
 
-
 DISEASE=['leishmaniose','raiva','sarna','toxoplasmose']
 
-#AGE = {
-#      "ageOne": "Abaixo-de-2-meses",
-#      "ageTwo":"2-a-6-meses",
-#      "ageThree":"7-a-11-meses" ,
-#      "ageFour":"1-ano",
-#      "ageFive":"2-anos",
-#      "ageSix":"3-anos",
-#      "ageSeven":"4-anos",
-#      "ageEight":"5-anos",
-#      "ageNine":"6-anos-Acima",
-#  }
-
-AGE3 = ('Abaixo-de-2-meses','2-a-6-meses','7-a-11-meses','1-ano','2-anos','3-anos','4-anos','5-anos','6-anos-Acima')
-
-# async def extractOne(url):
-#     response = urlopen(url)
-#     html = response.read()
-#     soup = BeautifulSoup(html, 'html.parser')
-#     res = soup.findAll('div', class_="listaAnimais")
-#     return res
-
-async def extractTwo(url):
-    responseLink = urlopen(url)
-    htmlLink = responseLink.read()
-    soupLink = BeautifulSoup(htmlLink, 'html.parser')
-    return soupLink
-
+AGE = ('Abaixo-de-2-meses','2-a-6-meses','7-a-11-meses','1-ano','2-anos','3-anos','4-anos','5-anos','6-anos-Acima')
 class ActionScrapping(Action):
 
     def name(self) -> Text:
@@ -70,16 +44,15 @@ class ActionScrapping(Action):
         urls = []
         
         if age_slot == 'baby':
-            urls = ['https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE3[0],porte=size_slot,sexo=gender_slot),
-                    'https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE3[1],porte=size_slot,sexo=gender_slot)]
+            urls = ['https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE[0],porte=size_slot,sexo=gender_slot),
+                    'https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE[1],porte=size_slot,sexo=gender_slot)]
         elif age_slot == 'children':
-            urls = ['https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE3[2],porte=size_slot,sexo=gender_slot),
-                    'https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE3[3],porte=size_slot,sexo=gender_slot)]
+            urls = ['https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE[2],porte=size_slot,sexo=gender_slot),
+                    'https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE[3],porte=size_slot,sexo=gender_slot)]
         else:
-            for i in AGE3[4:]:
+            for i in AGE[4:]:
                 urls.append('https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=i,porte=size_slot,sexo=gender_slot))
 
-        #url_response = 'https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE2[1],porte=size_slot,sexo=gender_slot)
         print(urls)
 
         for i in urls:
@@ -102,39 +75,20 @@ class ActionScrapping(Action):
                     print(name[0])
                     dispatcher.utter_message(text=name[0])
 
-            # responseLink = urlopen(link)
-            # htmlLink = responseLink.read()
-            # soupLink = BeautifulSoup(htmlLink, 'html.parser')
-
-            #soupLink = await extractTwo(link)
-            #contact = soupLink.find('a',{"id":"mailprop"})
-            # email = contact['href']
-            # phone = contact.findNextSibling().find('a').getText()
-            # print(str(email[7:]))
-            # print(str(phone))
-            # dispatcher.utter_message(text='email: {mail}'.format(mail=email[6:]))
-            # dispatcher.utter_message(text='telefone: {telefone}'.format(telefone=phone))
-        
-            
-
-        
-      
         urls =[]
         return [AllSlotsReset()]
 
 #================================================================== 
-# ActionSendEmail - implementa uma função para enviar email
+# ActionSubmit - implementa uma função para enviar email
 # email personalizado
 #==================================================================
-import smtplib 
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
+
 
 def send_email(name, email, phone, how_to_help):
     port = 587
-    sender_email = "testpythontoday@gmail.com"
-    receiver_email = "testpythontoday@gmail.com"
-    password = "testpython3@" 
+    sender_email = "abrigo.do.bicho.bot@outlook.com"
+    receiver_email = "abrigo.do.bicho.bot@outlook.com"
+    password = "Abrigo@bicho" 
 
     text = f"""
     Mais um voluntário para a causa :)
@@ -182,19 +136,6 @@ class ActionSubmit(Action):
 # ActionUtterGreet - implementa uma função para cumprimentar
 # cumprimentos personalizados 
 #==================================================================
-from datetime import datetime
-import pytz
-
-timezone = pytz.timezone('America/Campo_Grande')
-hoje = datetime.now(timezone)
-hora_atual = hoje.hour
-
-utter_bom_dia = "Bom dia! Meu nome é Caramelo, eu e o Abrigo dos Bichos  vamos ajudá-lo(a) a solucionar suas dúvidas."
-
-utter_boa_tarde = "Boa tarde! Meu nome é Caramelo, eu e o Abrigo dos Bichos  vamos ajudá-lo(a) a solucionar suas dúvidas."
-
-utter_boa_noite = "Boa noite! Meu nome é Caramelo, eu e o Abrigo dos Bichos  vamos ajudá-lo(a) a solucionar suas dúvidas."
-
 class ActionUtterGreet(Action):
 
     def name(self) -> Text:
@@ -203,6 +144,16 @@ class ActionUtterGreet(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+    
+        timezone = pytz.timezone('America/Campo_Grande')
+        hoje = datetime.now(timezone)
+        hora_atual = hoje.hour
+
+        utter_bom_dia = "Oláá"+ user_name +"um bom dia! Como posso te ajudar?"
+
+        utter_boa_tarde = "Oláá"+ user_name +"uma boa tarde! Como posso te ajudar?"
+
+        utter_boa_noite = "Oláá"+ user_name +"uma boa noite! Como posso te ajudar?"    
         
         if hora_atual < 12:
             dispatcher.utter_message(text=utter_bom_dia)
@@ -299,20 +250,3 @@ class ActionAnswerDiseaseTreatment(Action):
 
         return []
       
-#================================================================== 
-# Action about vaccine - implementa uma função para falar sobre 
-# as vacinas
-#==================================================================
-      
-class ActionAboutVaccine(Action):
-
-    def name(self) -> Text:
-        return "action_about_vaccine"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        dispatcher.utter_message(text="Entrei na vacina!")
-
-        return []
