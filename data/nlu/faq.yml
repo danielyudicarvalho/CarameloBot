@@ -5,17 +5,6 @@ version: "3.0"
 nlu:
 
 ##### FAQ 1
-  - intent: faq/ask_how_to_adopt
-    examples: |
-      - adotar
-      - adoção
-      - quero adotar 
-      - como eu adoto? 
-      - como faço para adotar um animal? 
-      - quero adotar
-      - posso adotar um pet ?
-      - gostaria de fazer uma adocao
-      - tenho interesse em adotar
 
   - intent: faq/ask_how_to_donate_animal
     examples: |

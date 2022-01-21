@@ -2,8 +2,29 @@ version: "3.0"
 
 stories:
 
-- story: main
+- story: Usuário gostaria de adotar um pet
   steps:
   - intent: greet_intent
   - action: action_utter_greet
-#  - checkpoint: next_flow
+  - intent: adopt_intent
+  - action: utter_about_adopt
+  - intent: affirm_intent 
+  - action: utter_need_information 
+  - action: pet_form
+  - active_loop: pet_form
+
+- story: Usuário não gostaria de adotar um pet
+  steps:
+  - intent: greet_intent
+  - action: action_utter_greet
+  - intent: adopt_intent
+  - action: utter_about_adopt
+  - intent: deny_intent 
+  - action: utter_anything_else
+
+- story: Usuário não gostaria de adotar um pet
+  steps:
+  - action: action_scrapping
+  - action: action_reset_pet_slots 
+  - action: utter_about_adopt_with_diseases
+  - action: utter_anything_else

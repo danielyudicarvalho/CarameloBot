@@ -8,6 +8,27 @@ rules:
   - action: utter_greet
   - action: utter_bot_purpose
 
+- rule: Ativar pet form
+  steps:
+  - intent: affirm_intent 
+  - action: utter_need_information 
+  - action: pet_form
+  - active_loop: pet_form
+
+
+- rule: Submeter pet Form 
+  condition:
+  - active_loop: pet_form
+  steps:
+  - action: pet_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_searching
+  - action: action_scrapping
+  - action: action_reset_pet_slots 
+  - action: utter_anything_else
+  
 - rule: Ativar Help Form 
   steps:
   - intent: volunteer_intent
@@ -60,3 +81,9 @@ rules:
   - action: utter_anything_else
   - intent: affirm_intent
   - action: utter_how_can_i_help
+
+- rule: usuario não deseja mais alguma coisa
+  steps:
+  - action: utter_anything_else
+  - intent: deny_intent
+  - action: utter_goodbye

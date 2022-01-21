@@ -30,7 +30,6 @@ QUESTION = {
      "tratar":"treatments"
  }
 
-
 class ActionScrapping(Action):
 
     def name(self) -> Text:
@@ -40,10 +39,10 @@ class ActionScrapping(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
 
-        size_slot = tracker.get_slot("size")
-        age_slot = tracker.get_slot("age")
-        animal_type_slot = tracker.get_slot("animal_type")
-        gender_slot = tracker.get_slot("gender")
+        size_slot = tracker.get_slot("size_slot")
+        age_slot = tracker.get_slot("age_slot")
+        animal_type_slot = tracker.get_slot("animal_type_slot")
+        gender_slot = tracker.get_slot("gender_slot")
         urls = []
 
         cluster = MongoClient("mongodb+srv://danielyudi:elysium4@cluster0.catne.mongodb.net/mydatabase?retryWrites=true&w=majority")
@@ -80,59 +79,58 @@ class ActionScrapping(Action):
         
       
         urls =[]
-        return [AllSlotsReset()]
+        return []
 
 
-AGE = ('Abaixo-de-2-meses','2-a-6-meses','7-a-11-meses','1-ano','2-anos','3-anos','4-anos','5-anos','6-anos-Acima')
-class ActionScrapping(Action):
+# class ActionScrapping(Action):
 
-    def name(self) -> Text:
-        return "action_scrapping"
+#     def name(self) -> Text:
+#         return "action_scrapping"
 
-    async def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
+#     async def run(self, dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
 
-        size_slot = tracker.get_slot("size")
-        age_slot = tracker.get_slot("age")
-        animal_type_slot = tracker.get_slot("animal_type")
-        gender_slot = tracker.get_slot("gender")
-        urls = []
+#         size_slot = tracker.get_slot("size")
+#         age_slot = tracker.get_slot("age")
+#         animal_type_slot = tracker.get_slot("animal_type")
+#         gender_slot = tracker.get_slot("gender")
+#         urls = []
         
-        if age_slot == 'baby':
-            urls = ['https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE[0],porte=size_slot,sexo=gender_slot),
-                    'https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE[1],porte=size_slot,sexo=gender_slot)]
-        elif age_slot == 'children':
-            urls = ['https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE[2],porte=size_slot,sexo=gender_slot),
-                    'https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE[3],porte=size_slot,sexo=gender_slot)]
-        else:
-            for i in AGE[4:]:
-                urls.append('https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=i,porte=size_slot,sexo=gender_slot))
+#         if age_slot == 'baby':
+#             urls = ['https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE[0],porte=size_slot,sexo=gender_slot),
+#                     'https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE[1],porte=size_slot,sexo=gender_slot)]
+#         elif age_slot == 'children':
+#             urls = ['https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE[2],porte=size_slot,sexo=gender_slot),
+#                     'https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE[3],porte=size_slot,sexo=gender_slot)]
+#         else:
+#             for i in AGE[4:]:
+#                 urls.append('https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=i,porte=size_slot,sexo=gender_slot))
 
-        print(urls)
+#         print(urls)
 
-        for i in urls:
-            response = urlopen(i)
-            html = response.read()
-            soup = BeautifulSoup(html, 'html.parser')
-            res = soup.findAll('div', class_="listaAnimais")
-            print(len(res))
-            if len(res)>0:
-                for item in res:
-                    link = item.find('a')['href']
-                    link = 'https://adotar.com.br'+link
-                    print(link)
-                    dispatcher.utter_message(text=link)
-                    photo = 'https://'+item.find('img')['src'][2:]
-                    print(photo)
-                    dispatcher.utter_message(image=photo)
-                    name = item.find('div',{'class':'listaAnimaisDados'})
-                    name = name.get_text().split()
-                    print(name[0])
-                    dispatcher.utter_message(text=name[0])
+#         for i in urls:
+#             response = urlopen(i)
+#             html = response.read()
+#             soup = BeautifulSoup(html, 'html.parser')
+#             res = soup.findAll('div', class_="listaAnimais")
+#             print(len(res))
+#             if len(res)>0:
+#                 for item in res:
+#                     link = item.find('a')['href']
+#                     link = 'https://adotar.com.br'+link
+#                     print(link)
+#                     dispatcher.utter_message(text=link)
+#                     photo = 'https://'+item.find('img')['src'][2:]
+#                     print(photo)
+#                     dispatcher.utter_message(image=photo)
+#                     name = item.find('div',{'class':'listaAnimaisDados'})
+#                     name = name.get_text().split()
+#                     print(name[0])
+#                     dispatcher.utter_message(text=name[0])
 
-        urls =[]
-        return [AllSlotsReset()]
+#         urls =[]
+#         return []
 
 #================================================================== 
 # ActionSubmit - implementa uma função para enviar email
@@ -201,17 +199,17 @@ class ActionUtterGreet(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         # pega a ultima mensagem e alcança o nome publico do usuário no telegram
-        input_data=tracker.latest_message
-        user_name=input_data["metadata"]["message"]["from"]["first_name"]
-
+        # input_data=tracker.latest_message
+        # user_name=input_data["metadata"]["message"]["from"]["first_name"]
+        user_name = 'filipe'
         timezone = pytz.timezone('America/Campo_Grande')
         hoje = datetime.now(timezone)
         hora_atual = hoje.hour
-        utter_bom_dia = "Oláá "+ user_name +" um bom dia! Como posso te ajudar?"
+        utter_bom_dia = "Oláá "+ user_name +" um bom dia ! 🌞 Como posso te ajudar? 😁"
 
-        utter_boa_tarde = "Oláá "+ user_name +" uma boa tarde! Como posso te ajudar?"
+        utter_boa_tarde = "Oláá "+ user_name +" uma boa tarde! 🌞 Como posso te ajudar? 😁"
 
-        utter_boa_noite = "Oláá "+ user_name +" uma boa noite! Como posso te ajudar?"    
+        utter_boa_noite = "Oláá "+ user_name +" uma boa noite! 🌚 Como posso te ajudar? 😁"    
         
         if hora_atual < 12:
             dispatcher.utter_message(text=utter_bom_dia)
@@ -262,12 +260,12 @@ class ActionResetHelpSlots(Action):
 class ActionResetPetSlots(Action):
 
      def name(self) -> Text:
-        return "action_reset_all_slots"
+        return "action_reset_pet_slots"
 
      def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        return [SlotSet("animal_type_slot", None), SlotSet("size", None), SlotSet("age", None), SlotSet("gender", None)]
+        return [SlotSet("animal_type_slot", None), SlotSet("size_slot", None), SlotSet("age_slot", None), SlotSet("gender_slot", None)]
 
 class ActionResetNameSlot(Action):
 
