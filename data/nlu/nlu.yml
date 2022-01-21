@@ -56,7 +56,17 @@ nlu:
     - nego
     - cancelo
     - negativo
-
+    
+- intent: adopt_intent
+  examples: |
+    - adotar
+    - adoção
+    - quero adotar 
+    - como eu adoto? 
+    - como faço para adotar um animal? 
+    - quero adotar
+    - posso adotar um pet ?
+    
 - intent: bot_purpose_intent
   examples: |
     - O que você faz?

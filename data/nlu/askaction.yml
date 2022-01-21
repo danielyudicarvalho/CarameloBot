@@ -13,8 +13,10 @@ nlu:
     - leishmaniose
     - raiva
     - sarna
-    - toxoplasmose
+    - parvovirose
+    - cinomose
     - fiv
+    - carrapato
 
 - lookup: question
   examples: |
@@ -31,16 +33,16 @@ nlu:
     - me fale sobre [leishmaniose](disease)
     - me dê informações sobre [raiva](disease)
     - fale sobre [sarna](disease)
-    - o que você sabe sobre [toxoplasmose](disease)?
+    - o que você sabe sobre [cinomose](disease)?
     - quais os [sintomas](question) da [leishmaniose](disease)?
     - qual os [sintomas](question) da [raiva](disease)?
     - quais os [tratamentos](question) para [sarna](disease)?
-    - você sabe qual a [prevenção](question) para [toxoplasmose](disease)?
+    - você sabe qual a [prevenção](question) para [cinomose](disease)?
     - como se [prevenir](question) para [leishmaniose](disease)?
     - qual o [sintoma](question) da [sarna](disease)?
     - qual a [prevenção](question) pra [raiva](disease)?
     - [tratamento](question) para [sarna](disease)?
-    - como [prevenir](question) a [toxoplasmose](disease)?
+    - como [prevenir](question) a [cinomose](disease)?
     - como [tratar](question) a [leishmaniose](disease)?
     - como se [prevenir](question) para [fiv](disease)?
     - qual o [sintoma](question) da [fiv](disease)?
@@ -48,3 +50,17 @@ nlu:
     - [tratamento](question) para [fiv](disease)?
     - como [prevenir](question) a [fiv](disease)?
     - como [tratar](question) a [fiv](disease)?
+    - como [prevenir](question) a [cinomose](disease)?
+    - como [tratar](question) a [parvovirose](disease)?
+    - como se [prevenir](question) para [parvovirose](disease)?
+    - qual o [sintoma](question) da [parvovirose](disease)?
+    - qual a [prevenção](question) pra [parvovirose](disease)?
+    - [tratamento](question) para [parvovirose](disease)?
+    - como [prevenir](question) a [parvovirose](disease)?
+    - como [tratar](question) a [parvovirose](disease)?
+    - qual os [sintomas](question) da doença do [carrapato](disease)?
+    - quais os [tratamentos](question) para [carrapato](disease)?
+    - você sabe qual a [prevenção](question) para [carrapato](disease)?
+    - como se [prevenir](question) da doença do [carrapato](disease)?
+    - qual o [sintoma](question) da doença do [carrapato](disease)?
+    - qual a [prevenção](question) pra [carrapato](disease)?

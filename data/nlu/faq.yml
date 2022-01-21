@@ -29,6 +29,16 @@ nlu:
     - procedimento de doacao
     - resgatei e quero doar
 
+- intent: faq/ask_when_castration
+  examples: |
+    - Quando castrar?
+    - Qual a idade ideal para castrar
+    - Quando devo castrar?
+    - Qual a melhor época para castrar
+    - Que época é melhor para castrar
+    - Com que idade devo castrar meu cachorro?
+    - Com que idade devo castrar meu gato?
+
 - intent: faq/ask_found_and_rescued
   examples: |
     - Peguei um cachorrinho na rua, o que eu faço?
