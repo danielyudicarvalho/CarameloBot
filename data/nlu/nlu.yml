@@ -76,7 +76,7 @@ nlu:
     - Assistir series
     - Teste 123 teste 321
 
-####### intents do voluntariado
+####### intents do wanna_help_flow 
 - intent: wanna_help_intent
   examples: |
     - Eu quero ajudar

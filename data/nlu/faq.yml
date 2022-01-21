@@ -45,26 +45,27 @@ nlu:
 
 - intent: faq/ask_lost_pet
   examples: |
-    - Perdi meu [gato](animal_type_entity)
-    - Perdi meu [cachorro](animal_type_entity)
+    - Perdi meu gato
+    - Perdi meu cachorro
     - Perdi meu pet
-    - Perdi meu [cachorro](animal_type_entity), o que eu faço?
-    - Vocês podem me ajudar a achar meu [gato](animal_type_entity)?
-    - Meu [gato](animal_type_entity) sumiu
+    - Perdi meu cachorro, o que eu faço?
+    - Vocês podem me ajudar a achar meu gato?
+    - Meu gato sumiu
     - Meu pet desapareceu
-    - Meu [cachorro](animal_type_entity) sumiu, ele é vira-lata caramelo, manda uma msg para [0000-0000](contact_number_entity)
+    - Meu cachorro sumiu, ele é vira-lata caramelo, manda uma msg para [0000-0000](contact_number_entity)
 
 - intent: faq/ask_need_rescue
   examples: |
-    - ferido
-    - machucado
-    - machucou a perna
-    - o gato está dolorido
-    - tem um cachorro ferido
-    - encontrei um pet ferido
-    - resgatei um animal machucado
-    - cachorrinho atropelado
-    - gatinho atropelado 
+    - Preciso urgente de um resgate
+    - Resgatei um animal ferido
+    - Resgatei um gato machucado
+    - Encontrei um cachorro machucado
+    - Encontrei um pet ferido, e agora?
+    - Cachorro ferido precisa de ajuda
+    - Cachorrinho atropelado, como proceder?
+    - Achei um gato com perna quebrada 
+    - Gato sangrando, socorro 
+    - Pet com ferimento grave, urgente
 
 
 ##### OUTROS

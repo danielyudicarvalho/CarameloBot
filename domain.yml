@@ -19,9 +19,11 @@ intents:
   - inform_animal_type_intent
   - out_of_scope_intent
   - bot_purpose_intent
+  # wanna_help_flow
   - wanna_help_intent
   - volunteer_intent
   - donation_intent
+  # -----------------
 
 
 #============
@@ -51,6 +53,7 @@ actions:
   - utter_type_of_help
   - utter_about_volunteering
   - utter_what_to_donate
+  # -----------------
   - action_utter_greet
   - action_answer_disease
   - action_answer_disease_treatment
