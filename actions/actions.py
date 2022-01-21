@@ -11,6 +11,9 @@ import bs4
 import urllib.request as urllib_request
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
+import pymongo
+from pymongo import MongoClient
+from sklearn.feature_extraction import image
 
 
 QUESTION = {
@@ -65,52 +68,64 @@ class ActionScrapping(Action):
         animal_type_slot = tracker.get_slot("animal_type")
         gender_slot = tracker.get_slot("gender")
         urls = []
-        
-        if age_slot == 'baby':
-            urls = ['https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE3[0],porte=size_slot,sexo=gender_slot),
-                    'https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE3[1],porte=size_slot,sexo=gender_slot)]
-        elif age_slot == 'children':
-            urls = ['https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE3[2],porte=size_slot,sexo=gender_slot),
-                    'https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE3[3],porte=size_slot,sexo=gender_slot)]
-        else:
-            for i in AGE3[4:]:
-                urls.append('https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=i,porte=size_slot,sexo=gender_slot))
 
-        #url_response = 'https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE2[1],porte=size_slot,sexo=gender_slot)
-        print(urls)
+        cluster = MongoClient("mongodb+srv://danielyudi:elysium4@cluster0.catne.mongodb.net/mydatabase?retryWrites=true&w=majority")
+        db = cluster["mydatabase"]
+        mycol = db["pets"]
+        pets = mycol.find({"size":size_slot,"age":age_slot,"animal_type":animal_type_slot,"gender":gender_slot})
 
-        for i in urls:
-            response = urlopen(i)
-            html = response.read()
-            soup = BeautifulSoup(html, 'html.parser')
-            res = soup.findAll('div', class_="listaAnimais")
-            print(len(res))
-            if len(res)>0:
-                for item in res:
-                    link = item.find('a')['href']
-                    link = 'https://adotar.com.br'+link
-                    print(link)
-                    dispatcher.utter_message(text=link)
-                    photo = 'https://'+item.find('img')['src'][2:]
-                    print(photo)
-                    dispatcher.utter_message(image=photo)
-                    name = item.find('div',{'class':'listaAnimaisDados'})
-                    name = name.get_text().split()
-                    print(name[0])
-                    dispatcher.utter_message(text=name[0])
+        for pet in pets:
+            dispatcher.utter_message(text=pet['link'])
+            dispatcher.utter_message(text=pet['name'])
+            dispatcher.utter_message(image=pet['photo'])
+            dispatcher.utter_message(text=pet['phone'])
+            dispatcher.utter_message(text=pet['email'])
 
-            # responseLink = urlopen(link)
-            # htmlLink = responseLink.read()
-            # soupLink = BeautifulSoup(htmlLink, 'html.parser')
+        # if age_slot == 'baby':
+        #     urls = ['https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE3[0],porte=size_slot,sexo=gender_slot),
+        #             'https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE3[1],porte=size_slot,sexo=gender_slot)]
+        # elif age_slot == 'children':
+        #     urls = ['https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE3[2],porte=size_slot,sexo=gender_slot),
+        #             'https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE3[3],porte=size_slot,sexo=gender_slot)]
+        # else:
+        #     for i in AGE3[4:]:
+        #         urls.append('https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=i,porte=size_slot,sexo=gender_slot))
 
-            #soupLink = await extractTwo(link)
-            #contact = soupLink.find('a',{"id":"mailprop"})
-            # email = contact['href']
-            # phone = contact.findNextSibling().find('a').getText()
-            # print(str(email[7:]))
-            # print(str(phone))
-            # dispatcher.utter_message(text='email: {mail}'.format(mail=email[6:]))
-            # dispatcher.utter_message(text='telefone: {telefone}'.format(telefone=phone))
+        # #url_response = 'https://adotar.com.br/animais.aspx?cc=1484&cn=ms-campo-grande&finalidade=Adocao&tipo={tipo}&porte={porte}&idade={idade}&sexo={sexo}'.format(tipo=animal_type_slot,idade=AGE2[1],porte=size_slot,sexo=gender_slot)
+        # print(urls)
+
+        # for i in urls:
+        #     response = urlopen(i)
+        #     html = response.read()
+        #     soup = BeautifulSoup(html, 'html.parser')
+        #     res = soup.findAll('div', class_="listaAnimais")
+        #     print(len(res))
+        #     if len(res)>0:
+        #         for item in res:
+        #             link = item.find('a')['href']
+        #             link = 'https://adotar.com.br'+link
+        #             print(link)
+        #             dispatcher.utter_message(text=link)
+        #             photo = 'https://'+item.find('img')['src'][2:]
+        #             print(photo)
+        #             dispatcher.utter_message(image=photo)
+        #             name = item.find('div',{'class':'listaAnimaisDados'})
+        #             name = name.get_text().split()
+        #             print(name[0])
+        #             dispatcher.utter_message(text=name[0])
+
+        #     # responseLink = urlopen(link)
+        #     # htmlLink = responseLink.read()
+        #     # soupLink = BeautifulSoup(htmlLink, 'html.parser')
+
+        #     #soupLink = await extractTwo(link)
+        #     #contact = soupLink.find('a',{"id":"mailprop"})
+        #     # email = contact['href']
+        #     # phone = contact.findNextSibling().find('a').getText()
+        #     # print(str(email[7:]))
+        #     # print(str(phone))
+        #     # dispatcher.utter_message(text='email: {mail}'.format(mail=email[6:]))
+        #     # dispatcher.utter_message(text='telefone: {telefone}'.format(telefone=phone))
         
             
 

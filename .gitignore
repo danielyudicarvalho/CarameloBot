@@ -8,6 +8,8 @@ actions/__pycache__
 docker-compose.yml
 Dockerfile
 index.html
+*.ipynb
+*.csv
 *.db*
 .rasa
 # Byte-compiled / optimized / DLL files

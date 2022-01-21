@@ -56,7 +56,7 @@ responses:
     #   payload: '/inform_age{{"age":"ageNine"}}'
 
   utter_goodbye:
-    - text: "Até mais, espero ter ajudado você!"
+    - text: Adeus amiguinho, espero ter te ajudado :D qualquer coisa é só me chamar que estou pronto para te atender
     
   utter_greet:
     - text: "Olá, eu sou o assistente virtual do Abrigo dos Bichos, é um prazer te recepcionar!"
@@ -77,6 +77,10 @@ responses:
   utter_out_of_scope:
   - text: |
       "Desculpa, mas isso não sou capaz de te ajudar."
+  
+  utter_what_do_you_need:
+  - text: |
+        sobre o que gostaria de saber?
     
   utter_welcome:
   - text: | 
@@ -121,7 +125,7 @@ responses:
   utter_faq/ask_how_to_help:
     - text: "Quer no ajudar? Cadastre-se nesse site: https://abrigodosbichos.com.br/contato.aspx Nós lhe retornaremos
              o mais breve possível. Sua ajuda é muito importante para os animaizinhos que tanto precisam da sua ajuda ^_^.
-            Sempre a seu dispor."
+            Sempre ao seu dispor."
 
   utter_faq/ask_how_to_volunteer: 
     - text:
@@ -191,21 +195,22 @@ responses:
   utter_faq/ask_report:
     - text: "Denuncie, dependemos de sua participação !
             Para fazer uma denúncia de maus tratos, ligue: DECAT, 190 ou 181, ou 193 bombeiros
-            Vamos juntos diminuir o sofrimento animal. PARTICIPE!"
+            Vamos juntos diminuir o sofrimento animal. Denuncie!"
 
 ##### Respostas do fluxo vacina
   utter_faq/ask_vaccine:
     - text: "A vacinação garante a imunização e segurança do seu pet, além de impedir o contágio de seus respectivos donos, por isso levar o pet para uma primeira consulta com o veterinário e seguir à risca o calendário de vacinação estabelecido por ele é essencial para que o animal fique sempre protegido.\nRessaltando que o calendário apresentado é um exemplo, contate o veterinário mais próximo para uma orientação detalhada.\nCalendário de vacinação (cachorro):\n1,5 meses - Primeira vacina (V8 ou V10)\n2 meses - Polivalente (V8 ou V10/ Gripe canina / Giardíase)\n3 meses - Reforço da polivalente (V8 ou V10)\n4 meses - Vacina da raiva\nAnualmente - Reforço da polivalente e da raiva\nCalendário de vacinação (gato):\n1,5 meses - Desparasitar o  gato para que a vacinação primária seja efetuada futuramente\n2 meses - Teste de leucemia, teste de imunodeficiência e dose da tríplice\n2,5 meses - Vacina contra a leucemia felina\n3 meses - Reforço da vacina trivalente\n3,5 meses - Reforço da vacina da leucemia.\n4 meses - Vacina da raiva.\nAnualmente - Reforço da trivalente, da leucemia  da raiva\n"
 
 #### Respostas do fluxo adoção
-  utter_preview_adopt:
+  utter_about_adopt:
    - text:
-      Pesquise antes sobre o animal que você pretende fazer adoção, saber um pouco sobre seus hábitos e tempo de vida, isso auxilia na tomada de decisão.
-      Para o processo de adoção é necessário apresentar cópia de RG, CPF, comprovante de residência, em alguns é preciso passar por entrevista.
-      O adotante também deve preencher e assinar (por um maior de 18 ou 21 anos, dependendo da exigência) um termo de posse responsável, assumindo a responsabilidade pelo bem-estar do animal.
+      Caso você esteja sério sobre a adoção, posso te ajudar a achar um pet com as caracteristicas que você escoher..
   
   utter_want_to_adopt:
   - text: "Você tem interesse em adotar um pet?"
+
+  utter_need_information:
+  - text: Ótimo, vamos precisar de algumas informações
 
   utter_ask_animal_type_slot:
   - text: "É um gato ou cachorro?"
@@ -459,9 +464,14 @@ responses:
       "Como não exite vacina a melhor forma de prevenir a doença é evitando o contato com o carrapato. Para isso, uma dica é evitar áreas onde sabidamente há a presença desses ectoparasitas e sempre fazer uso de produtos contra pulgas e carrapatos no pet.
       O uso coleiras contra os parasitas é uma ótima opção, além de realizar limpezas dos locais externos com produtos contra pulga e carrapatos também é importante"
 
-  utter_askaction/ask_treatments_carrapat: 
+  utter_askaction/ask_treatments_carrapato: 
   - text: |
       "O tratamento é feito com antibióticos e outros medicamentos que vão combater o agente causador da doença, e pode durar de 15 a 30 dias, sempre conduzido por um veterinário.
       Em casos mais graves, pode ser necessário uma transfusão de sangue e outros cuidados para ajudar o cachorro a se recuperar. Nesses casos, o pet deve ficar internado e ter acompanhamento constante de profissionais.
       Vale lembrar que a doença do carrapato é uma zoonose e que tanto a Babesiose quanto Erliquiose já foram detectadas em humanos, mas a transmissão ocorre somente pela picada do carrapato infectado e não pelo contato com o cão."
 
+      "Injustiça de reconhecimentos é fato consumado em qualquer ambiente corporativo pelo simples fato de todos serem
+      seres humanos falhos e mesquinhos. Os lambe botas e puxa sacos sempre vão receber todo os reconhecimento pelo menor esforço
+      que fizerem enquanto que os de verdade vão receber no máximo um tapinha nas costas mesmo se descobrirem a cura pra AIDS.
+      Se importar muito com isso é o caminho certo pra decepção e desalento, o negócio mesmo é fazer o trabalho bem feito e se contentar apenas
+      com o orgulho de si mesmo por poder subir na vida sem babar ovo de ninguém diferente dos medíocres."

@@ -44,6 +44,39 @@ rules:
   - action: utter_lost_pet
   - action: lost_pet_form
   - active_loop: lost_pet_form
+
+# - rule: adopt form
+#   steps:
+#   - intent: adopt_intent
+#   - action: utter_about_adopt
+#   - action: utter_want_to_adopt
+#   - or:
+#       - intent: affirm_intent
+#         - action: utter_need_information
+#         - action: pet_form
+#         - active_loop: pet_form
+#       - intent: deny_intent
+#         - action: utter_anything_else
+#         - or:
+#             - intent: affirm_intent
+#               - action: utter_what_do_you_need
+
+#             - intent: deny_intent
+#               - action: utter_goodbye
+
+  
+  
+
+- rule: submeter formulario de pet adoção
+  condition:
+  - active_loop: pet_form
+  steps:
+  - action: pet_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - action: action_scrapping
   
 - rule: submeter formulario de pet perdido
   condition:

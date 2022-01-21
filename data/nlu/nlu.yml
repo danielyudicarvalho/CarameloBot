@@ -41,7 +41,7 @@ nlu:
     - that sounds good
     - correct
 
-- intent: adopt
+- intent: adopt_intent
   examples: |
     - gostaria de adotar
     - quero adotar
