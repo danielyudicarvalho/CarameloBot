@@ -94,18 +94,30 @@ class ActionSendEmail(Action):
         """)
 
         return []
+ 
 
-class ActionResetHelpSlots(Action):
+class ActionSendWhats(Action):
 
     def name(self) -> Text:
-        return "action_reset_help_slots"
+        return "action_send_whats"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        return [AllSlotsReset()]
- 
+        name = tracker.get_slot("name_slot")
+        what_to_donate = tracker.get_slot("what_to_donate_slot")
+
+        reception_number = "" # Número da pessoa responsável por recepcionar o cliente
+        reception_text = f"""
+        Olá, meu nome é {name}, desejo ajudar doando:
+        {what_to_donate}"""      # Texto receptivo
+        reception_text = reception_text.replace(" ", "%20")
+
+        dispatcher.utter_message(text=f"""
+        Obrigado pelas informações {name}, clique no link abaixo para continuar a conversa com um humano :)\nhttps://api.whatsapp.com/send?phone={reception_number}&text={reception_text}
+        """)
+
 #================================================================== 
 # ActionUtterGreet - implementa uma função para cumprimentar
 # cumprimentos personalizados 

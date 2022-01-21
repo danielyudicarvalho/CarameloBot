@@ -60,7 +60,7 @@ actions:
   - action_answer_disease_symptoms
   - action_answer_disease_prevent
   - action_send_email
-  - action_reset_help_slots
+  - action_send_whats
 
 
 #============ 
@@ -74,7 +74,7 @@ slots:
     mappings:
       - type: from_text
         conditions:
-         - active_loop: help_form
+         - active_loop: volunteer_form
            requested_slot: name_slot
 
   email_slot:
@@ -84,7 +84,7 @@ slots:
     mappings:
       - type: from_text
         conditions:
-         - active_loop: help_form
+         - active_loop: volunteer_form
            requested_slot: email_slot
 
   how_to_help_slot:
@@ -94,8 +94,18 @@ slots:
     mappings:
       - type: from_text
         conditions:
-         - active_loop: help_form
+         - active_loop: volunteer_form
            requested_slot: how_to_help_slot
+ 
+  what_to_donate_slot:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: donate_form
+           requested_slot: what_to_donate_slot
 
   contact_number_slot:
     type: text
@@ -130,12 +140,16 @@ slots:
 # FORMS
 #============
 forms:
-  help_form:
+  volunteer_form:
     required_slots:
       - name_slot
       - email_slot
       - contact_number_slot
       - how_to_help_slot
+  
+  donate_form:
+    required_slots:
+      - what_to_donate_slot
   
   adoption_form:
     required_slots:

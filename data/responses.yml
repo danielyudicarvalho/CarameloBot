@@ -64,6 +64,9 @@ responses:
   utter_ask_how_to_help_slot:
   - text: "Escreva como você pretende nos ajudar, não deixe passar nenhum detalhe :)"
 
+  utter_ask_what_to_donate_slot:
+  - text: "O que deseja doar?"
+
   utter_ask_rg:
   - text: "Por favor, nos informe seu RG para o formulário de adoção"
 
