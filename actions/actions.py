@@ -1,4 +1,3 @@
-
 from cgitb import text
 from typing import Any, Text, Dict, List
 from urllib import response
@@ -19,6 +18,7 @@ from email.mime.text import MIMEText
 import pymongo
 from pymongo import MongoClient
 from sklearn.feature_extraction import image
+from rasa_sdk.events import SlotSet
 
 QUESTION = {
      "prevenção": "prevent",
@@ -247,3 +247,34 @@ class ActionAnswerDisease(Action):
  
 
         return [AllSlotsReset()]
+
+
+class ActionResetHelpSlots(Action):
+
+     def name(self) -> Text:
+        return "action_reset_help_slots"
+
+     def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        return [SlotSet("email_slot", None), SlotSet("contact_number_slot", None), SlotSet("how_to_help_slot", None)]
+
+class ActionResetPetSlots(Action):
+
+     def name(self) -> Text:
+        return "action_reset_all_slots"
+
+     def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        return [SlotSet("animal_type_slot", None), SlotSet("size", None), SlotSet("age", None), SlotSet("gender", None)]
+
+class ActionResetNameSlot(Action):
+
+     def name(self) -> Text:
+        return "action_reset_name_slot"
+
+     def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        return [SlotSet("name_slot", None)]

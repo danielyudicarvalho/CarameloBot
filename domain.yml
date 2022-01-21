@@ -62,7 +62,9 @@ actions:
   - action_answer_disease_prevent
   - action_send_email
   - action_scrapping
-
+  - action_reset_help_slots
+  - action_reset_pet_slots
+  - action_reset_name_slot
 #============ 
 # SLOTS
 #============
