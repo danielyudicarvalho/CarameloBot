@@ -235,9 +235,10 @@ class ActionUtterGreet(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         # pega a ultima mensagem e alcança o nome publico do usuário no telegram
-        # input_data=tracker.latest_message
-        # user_name=input_data["metadata"]["message"]["from"]["first_name"]
-        user_name = 'filipe'
+        user_name = tracker.get_slot("name_slot")
+        if not user_name:
+            input_data=tracker.latest_message
+            user_name=input_data["metadata"]["message"]["from"]["first_name"]
         timezone = pytz.timezone('America/Campo_Grande')
         hoje = datetime.now(timezone)
         hora_atual = hoje.hour
@@ -283,10 +284,10 @@ class ActionAnswerDisease(Action):
         return []
 
 
-class ActionResetHelpSlots(Action):
+class ActionResetVolunteerSlots(Action):
 
      def name(self) -> Text:
-        return "action_reset_help_slots"
+        return "action_reset_volunteer_slots"
 
      def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -302,6 +303,16 @@ class ActionResetPetSlots(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         return [SlotSet("animal_type_slot", None), SlotSet("size_slot", None), SlotSet("age_slot", None), SlotSet("gender_slot", None)]
+
+class ActionResetDonateSlot(Action):
+
+     def name(self) -> Text:
+        return "action_reset_donate_slot"
+
+     def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        return [SlotSet("what_to_donate_slot", None)]
 
 class ActionResetNameSlot(Action):
 

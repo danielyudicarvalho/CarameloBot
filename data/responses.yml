@@ -45,7 +45,10 @@ responses:
         E caso eu não consiga resolver sua dúvida, posso chamar um humano para nos ajudar!"
 
   utter_out_of_scope:
-    - text: "Infelizmente não posso te ajudar com isso 😞"
+    - text: "Infelizmente não posso te ajudar com isso 😞\n \n
+
+        Nesse caso peço que entre em contato com a instituição através do número 📞 (67) 98406-2288, envie um email 📧 para abrigodosbichos@abrigodosbichos.com.br ou acesse as nossas redes sociais."
+    
 
   utter_please_rephrase:
     - text: "Desculpa, não consegui compreender peço que seja mais preciso na solicitação. 😵" 
@@ -60,16 +63,12 @@ responses:
         "Que isso, estou aqui para ajudar 😊"
     - text: |
         "De nada, estou a disposição 😊"
-  
-  utter_gratefull:
-    - text: |
-        "Muito feliz por você querer nos ajudar. Toda ajuda é bem vinda 😊"
-    - text: |
-        "Muitíssimo obrigado pela sua boa intenção, gostamos muito da ajuda de todos 😊"
-    - text: |
-        "Muito grato por você entrar nessa missão com a gente, sempre precisamos de boas pessoas como você 😊"
 
 #### utters para os forms
+ 
+  utter_ask_what_to_donate_slot:
+  - text: "O que deseja doar?"
+
   utter_ask_name_slot:
   - text: "Poderia me informar seu nome completo por favor?"
 
@@ -193,15 +192,6 @@ responses:
       - title: "Doação"
         payload: "/donation_intent"
 
-  utter_faq/ask_how_to_help:
-    - text: "Opa, você pode nos ajudar de duas formas, seja fazendo doações ou voluntariando. Qual você prefere? ♥♥"
-
-  utter_faq/ask_how_to_volunteer: 
-    - text: "Quer no ajudar? Cadastre-se nesse site: https://abrigodosbichos.com.br/contato.aspx Nós lhe retornaremos
-            o mais breve possível. Sua ajuda é muito importante para os animaizinhos que tanto precisam da sua ajuda 😍. \n \n
-
-            Sempre a seu dispor!!"
-
   utter_about_volunteering: 
     - text:
         Estamos procurando por voluntários que queiram fazer parte da nossa ONG, 
@@ -214,7 +204,6 @@ responses:
   utter_what_to_donate:
   - text:
       Você pode nos ajudar de várias maneiras com dinheiro, ração, areia para gato.
-      Preciso apenas que confirme algumas informações...
   
   utter_verify_information:
   - text:
