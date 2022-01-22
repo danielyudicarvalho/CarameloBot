@@ -8,6 +8,10 @@ actions/__pycache__
 docker-compose.yml
 Dockerfile
 index.html
+.ipynb
+.csv
+*.ipynb
+*.csv
 *.db*
 .rasa
 
@@ -21,6 +25,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+notebooks/
 build/
 develop-eggs/
 dist/

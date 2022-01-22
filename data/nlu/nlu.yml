@@ -1,7 +1,7 @@
 version: "3.0"
 
 nlu:
-####### intents gerais 
+####### intents gerais
 - intent: greet_intent
   examples: |
     - oi
@@ -56,7 +56,17 @@ nlu:
     - nego
     - cancelo
     - negativo
-
+    
+- intent: adopt_intent
+  examples: |
+    - adotar
+    - adoção
+    - quero adotar 
+    - como eu adoto? 
+    - como faço para adotar um animal? 
+    - quero adotar
+    - posso adotar um pet ?
+    
 - intent: bot_purpose_intent
   examples: |
     - O que você faz?
@@ -76,6 +86,7 @@ nlu:
     - Assistir series
     - Teste 123 teste 321
 
+
 ####### intents do wanna_help_flow 
 - intent: wanna_help_intent
   examples: |
@@ -89,7 +100,9 @@ nlu:
     - Como ajudo o abrigo? 
     - Como posso auxiliar? 
     - O que posso fazer para ajudar a ong?
-
+    - Como eu poderia ajudar?
+    - Desejo ajudar de alguma maneira
+    
 - intent: volunteer_intent
   examples: |
     - Voluntário
@@ -111,16 +124,6 @@ nlu:
     - ajudar com areia
     - ajudar com dinheiro
 
-# precisa decidir como proceder com isso
-# - intent: need_rescue_intent
-#   examples: |
-#     - Achei um pet que precisa de resgate
-#     - Preciso que alguém resgate um cão abandonado
-#     - Tem um gato abandonado aqui, alguem pode vir resgatar?
-#     - Encontrei um animal que precisa de resgate
-#     - Há um pet abandonado que precisa de resgate
-#     - Tem um bichinho que precisa de resgate, alguem pode resgatar ?
-    
 - intent: say_contact_number_intent
   examples: |
     - Numero para contato é [3829-3291](contact_number_entity)
@@ -139,18 +142,6 @@ nlu:
     - ela é preta tem os olhos azuis e pelo baixo
     - ela é caramelo e tem as patas brancas, atende pelo nome de Julieta
 
-####### intents de denuncias
-#  respostas pro fluxo do report
-# - intent: complaint_intent
-#   examples: |
-#     - Meu nome é Leonardo, meu rg é 123456321, meu cpf é 12345678910 , meu telefone é 1234 5678, minha denuncia é 
-#     - Meu nome é Filipe, meu rg é 123456321, meu cpf é 78904125995, meu telefone é 9876 5432, minha denuncia é 
-#     - Meu nome é Analia, meu rg é 312312637, meu cpf é 58237590522, meu telefone é 3678 4956, minha denuncia é 
-#     - Meu nome é João, meu rg é 131231278, meu cpf é  78950127942, meu telefone é 4891 - 3421, minha denuncia é 
-#     - Meu nome é Daniel, meu rg é 890382903, meu cpf é 19050131234, meu telefone é 4812 8714, minha denuncia é 
-#     - Meu nome é Lucas, meu rg é 478192734, meu cpf é 45789270234, meu telefone é 2469-7040, minha denuncia é 
-
-
 - intent: inform_animal_type_intent
   examples: |
     - [cachorro](animal_type_entity)
@@ -158,18 +149,3 @@ nlu:
     - é um [cachorro](animal_type_entity)
     - é um [gato](animal_type_entity)
     - é uma [gata](animal_type_entity) 
-
-################################
-######## DESCONTINUADOS ########
-################################
-
-######## intents de adoção
-#- intent: adopt_intent
-#  examples: |
-#    - adotar
-#    - adoção
-#    - quero adotar 
-#    - como eu adoto? 
-#    - como faço para adotar um animal? 
-#    - quero adotar
-#    - posso adotar um pet ?

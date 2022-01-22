@@ -5,133 +5,135 @@ version: "3.0"
 nlu:
 
 ##### FAQ 1
-- intent: faq/ask_how_to_adopt
-  examples: |
-    - adotar
-    - adoção
-    - quero adotar 
-    - como eu adoto? 
-    - como faço para adotar um animal? 
-    - quero adotar
-    - posso adotar um pet ?
-    - gostaria de fazer uma adocao
-    - tenho interesse em adotar
+  - intent: faq/ask_how_to_adopt
+    examples: |
+      - adotar
+      - adoção
+      - quero adotar 
+      - como eu adoto? 
+      - como faço para adotar um animal? 
+      - quero adotar
+      - posso adotar um pet ?
+      - gostaria de fazer uma adocao
+      - tenho interesse em adotar
 
-- intent: faq/ask_how_to_donate_animal
-  examples: |
-    - doar
-    - doacao
-    - fazer doação
-    - desejo doar um pet
-    - quero doar
-    - como faço para doar?
-    - detalhes da doação
-    - procedimento de doacao
-    - resgatei e quero doar
+  - intent: faq/ask_how_to_donate_animal
+    examples: |
+      - doar
+      - doacao
+      - fazer doação
+      - desejo doar um pet
+      - quero doar
+      - como faço para doar?
+      - detalhes da doação
+      - procedimento de doacao
+      - resgatei e quero doar
 
-- intent: faq/ask_found_and_rescued
-  examples: |
-    - Peguei um cachorrinho na rua, o que eu faço?
-    - Encontrei um gato de rua e quero ficar com ele
-    - Resgatei um animal de rua e agora?
-    - Encontrei perdido e resgatei e agora?
-    - Resgatei um animal, o que devo fazer?
-    - Encontrei um animal perdido, o que eu faço?
-    - Eu encontrei um animal na rua, o que eu faço?
-    - Resgatei um cachorro de rua e agora? 
-    - Encontrei um gato perdido na rua, o que devo fazer?
-    - O que eu faço? Encontrei um animal perdido na rua
-    - Encontrei um cachorro na rua, o que devo fazer ?
+  - intent: faq/ask_found_and_rescued
+    examples: |
+      - Peguei um cachorrinho na rua, o que eu faço?
+      - Encontrei um gato de rua e quero ficar com ele
+      - Resgatei um animal de rua e agora?
+      - Encontrei perdido e resgatei e agora?
+      - Resgatei um animal, o que devo fazer?
+      - Encontrei um animal perdido, o que eu faço?
+      - Eu encontrei um animal na rua, o que eu faço?
+      - Resgatei um cachorro de rua e agora? 
+      - Encontrei um gato perdido na rua, o que devo fazer?
+      - O que eu faço? Encontrei um animal perdido na rua
+      - Encontrei um cachorro na rua, o que devo fazer ?
 
-- intent: faq/ask_lost_pet
-  examples: |
-    - Perdi meu gato
-    - Perdi meu cachorro
-    - Perdi meu pet
-    - Perdi meu cachorro, o que eu faço?
-    - Vocês podem me ajudar a achar meu gato?
-    - Meu gato sumiu
-    - Meu pet desapareceu
-    - Meu cachorro sumiu, ele é vira-lata caramelo, manda uma msg para [0000-0000](contact_number_entity)
+  - intent: faq/ask_lost_pet
+    examples: |
+      - Perdi meu gato
+      - Perdi meu cachorro
+      - Perdi meu pet
+      - Perdi meu cachorro, o que eu faço?
+      - Vocês podem me ajudar a achar meu gato?
+      - Meu gato sumiu
+      - Meu pet desapareceu
+      - Meu cachorro sumiu, ele é vira-lata caramelo, manda uma msg para mim
 
-- intent: faq/ask_need_rescue
-  examples: |
-    - Preciso urgente de um resgate
-    - Resgatei um animal ferido
-    - Resgatei um gato machucado
-    - Encontrei um cachorro machucado
-    - Encontrei um pet ferido, e agora?
-    - Cachorro ferido precisa de ajuda
-    - Cachorrinho atropelado, como proceder?
-    - Achei um gato com perna quebrada 
-    - Gato sangrando, socorro 
-    - Pet com ferimento grave, urgente
+  - intent: faq/ask_need_rescue
+    examples: |
+      - ferido
+      - machucado
+      - machucou a perna
+      - o gato está dolorido
+      - tem um cachorro ferido
+      - encontrei um pet ferido
+      - resgatei um animal machucado
+      - cachorrinho atropelado
+      - gatinho atropelado 
 
+##### FAQ 2
+  - intent: faq/ask_how_to_help
+    examples: |
+      - Quero ajudar
+      - Gostaria de ajudar
+      - Como posso ajudar vocês?
+      - O que eu posso fazer para ajudar?
+      - Como eu ajudo vocês ? 
+      - O que eu consigo fazer para ajuda-los?
+
+  - intent: faq/ask_castration
+    examples: |
+      - Quero saber como funciona a castração
+      - Como funciona o processo de castração?
+      - Pode me dizer como funciona o processo de castração ?
+      - Como ocorre o processo de castração ?
+      - Conte-me como ocorre o processo de castração
+      - Processo de castração
+      - Castração
+
+  - intent: faq/ask_when_castration
+    examples: |
+      - Quando castrar?
+      - Qual a idade ideal para castrar
+      - Quando devo castrar?
+      - Qual a melhor época para castrar
+      - Que época é melhor para castrar
+      - Com que idade devo castrar meu cachorro?
+      - Com que idade devo castrar meu gato?
+
+
+  - intent: faq/ask_veterinarian
+    examples: |
+      - Quero o contato do veterinario
+      - Pode me passar o contato do veterinario ?
+      - Onde posso conseguir o contato do veterinario ?
+      - Pode me mandar o contato do veterinario ?
+      - Quero entrar em contato com o veterinario
+      - Pode me passar o numero do veterinario ?
+      - Contato do veterinario
+
+  - intent: faq/ask_report
+    examples: |
+      - Quero fazer uma denuncia de maus tratos
+      - Quero fazer uma denuncia
+      - Gostaria de fazer uma denuncia de maus tratos
+      - Gostaria de fazer uma denuncia
+      - Como faço uma denuncia de maus tratos ?  
+      - Denuncia 
 
 ##### OUTROS
-- intent: faq/ask_castration
-  examples: |
-    - Quero saber como funciona a castração
-    - Como funciona o processo de castração?
-    - Pode me dizer como funciona o processo de castração ?
-    - Como ocorre o processo de castração ?
-    - Conte-me como ocorre o processo de castração
-    - Processo de castração
-    - Castração
-    - Como acontece a castração? 
-    - Pode me falar como funciona a castração?
-    
-- intent: faq/ask_veterinarian
-  examples: |
-    - Quero o contato do veterinario
-    - Pode me passar o contato do veterinario ?
-    - Onde posso conseguir o contato do veterinario ?
-    - Pode me mandar o contato do veterinario ?
-    - Quero entrar em contato com o veterinario
-    - Pode me passar o numero do veterinario ?
-    - Contato do veterinario
-    - Qual o telefone do veterinário? 
-    - Pode me passar o telefone do veterinario ?
-    - Quero o telefone do veterinario
-    - Me manda o numero do veterinario
+  - intent: faq/ask_collect
+    examples: |
+      - o que fazer quando meu cachorro morrer?
+      - o que fazer quando meu gato morrer?
+      - como proceder quando meu pet morre?
+      - meu pet morreu e agora?
+      - com quem eu falor quando meu cachorro morre?
+      - pra quem eu ligo quando meu gato morre?
+      - o que eu faço quando meu bichinho morre?
+      - qual número eu ligo quando meu animal morre?
+      - com quem eu falor quando o bicho morre?
 
-
-- intent: faq/ask_report
-  examples: |
-    - Quero fazer uma denuncia de maus tratos
-    - Quero fazer uma denuncia
-    - Gostaria de fazer uma denuncia de maus tratos
-    - Gostaria de fazer uma denuncia
-    - Como faço uma denuncia de maus tratos ?  
-    - Denuncia
-    - Como faço uma denuncia?
-    - Quero denunciar maus tratos a um animal
-    - Preciso fazer uma denuncia de maus tratos
-
-- intent: faq/ask_collect
-  examples: |
-    - o que fazer quando meu cachorro morrer?
-    - o que fazer quando meu gato morrer?
-    - como proceder quando meu pet morre?
-    - meu pet morreu e agora?
-    - com quem eu falor quando meu cachorro morre?
-    - pra quem eu ligo quando meu gato morre?
-    - o que eu faço quando meu bichinho morre?
-    - qual número eu ligo quando meu animal morre?
-    - com quem eu falor quando o bicho morre?
-    - o que devo fazer quando meu pet vir a falecer?
-    - o que devo fazer quando meu cachorro vir a falecer?
-    - o que devo fazer quando meu gato vir a falecer?
-    - como devo proceder quando meu animalzinho vir a falecer ? 
-
-- intent: faq/ask_collect_warn
-  examples: |
-    - posso enterrar meu  cachorro quando ele morrer?
-    - posso enterrar meu  gato quando ele morrer?
-    - E se eu enterrar meu  pet no quintal
-    - posso enterrar meu cachorro no meu quintal?
-    - posso enterrar meu gato no quintal?
-    - quais as consequências se eu enterrar meu bicho por conta própria?
-    - eu posso fazer o enterro do pet por conta própria ?
-    - há consequências se eu mesmo enterrar meu animal ? 
- 
+  - intent: faq/ask_collect_warn
+    examples: |
+      - posso enterrar meu proprio cachorro quando ele morrer?
+      - posso enterrar meu próprio gato quando ele morrer?
+      - E se eu enterrar meu proprio pet no quintal
+      - posso enterrar meu cachorro no meu quintal?
+      - posso enterrar meu gato no quintal?
+      - Tem consequências se eu enterrar meu bicho por conta própria?

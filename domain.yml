@@ -1,10 +1,10 @@
 version: "3.0"
-#========== 
-# INTENTS
-#========== 
+
 intents:
+
   - faq
   - askaction
+  - start
   - ask_discard
   - ask_discard_warn
   - ask_disease
@@ -19,27 +19,36 @@ intents:
   - inform_animal_type_intent
   - out_of_scope_intent
   - bot_purpose_intent
-  # wanna_help_flow
   - wanna_help_intent
   - volunteer_intent
   - donation_intent
-  # -----------------
-
+  - adopt_intent
+  - inform_type_intent
+  - inform_gender_intent
+  - inform_age_intent
+  - inform_size_intent
+  - inform_gender_macho_intent
+  - inform_gender_female_intent
 
 #============
 # ENTITIES
 #============ 
 entities:
-- animal_type_entity
-- contact_number_entity
-- disease
-- question
+
+  - animal_type_entity
+  - contact_number_entity
+  - disease
+  - question
+  - size
+  - age
+  - gender
 
 
 #============
 # ACTIONS
 #============ 
 actions:
+
   - utter_goodbye
   - utter_greet
   - utter_faq
@@ -49,11 +58,9 @@ actions:
   - utter_complaint
   - utter_bot_purpose
   - utter_out_of_scope
-  # wanna_help_flow
   - utter_type_of_help
   - utter_about_volunteering
   - utter_what_to_donate
-  # -----------------
   - action_utter_greet
   - action_answer_disease
   - action_answer_disease_treatment
@@ -61,11 +68,14 @@ actions:
   - action_answer_disease_prevent
   - action_send_email
   - action_send_whats
-
-
+  - action_scrapping
+  - action_reset_help_slots
+  - action_reset_pet_slots
+  - action_reset_name_slot
 #============ 
 # SLOTS
 #============
+
 slots:
   name_slot:
     type: text
@@ -106,18 +116,44 @@ slots:
         conditions:
          - active_loop: donate_form
            requested_slot: what_to_donate_slot
-
-  contact_number_slot:
+ 
+ contact_number_slot:
     type: text
     mappings:
     - type: from_entity
       entity: contact_number_entity
-
+ # lost_pet_form
   animal_type_slot:
     type: text
     mappings:
     - type: from_entity
       entity: animal_type_entity
+  
+  size_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: size_entity
+
+  age_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: age_entity
+  
+  gender_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: gender_entity
+  
+  description_slot:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: lost_pet_form
+        requested_slot: description_slot
 
   disease:
     type: text
@@ -134,11 +170,9 @@ slots:
     mappings:
       - type: from_entity
         entity: question
-        
-
-#============ 
+#=======
 # FORMS
-#============
+#======= 
 forms:
   volunteer_form:
     required_slots:
@@ -150,19 +184,15 @@ forms:
   donate_form:
     required_slots:
       - what_to_donate_slot
-  
-  adoption_form:
+      
+  pet_form:
     required_slots:
-      - name
-      - rg
-      - cpf
-      - address
-      - email
-      - cep
-      - phone
+      - animal_type_slot
+      - size
+      - age
+      - gender 
 
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
