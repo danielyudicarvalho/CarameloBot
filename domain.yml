@@ -1,5 +1,8 @@
 version: "3.0"
 
+#=========
+# INTENTS
+#========= 
 intents:
 
   - faq
@@ -53,7 +56,6 @@ actions:
   - utter_anything_else
   - utter_how_can_i_help
   - utter_submit
-  - utter_complaint
   - utter_bot_purpose
   - utter_out_of_scope
   - utter_type_of_help
@@ -67,9 +69,10 @@ actions:
   - action_send_email
   - action_send_whats
   - action_scrapping
-  - action_reset_help_slots
+  - action_reset_volunteer_slots
   - action_reset_pet_slots
   - action_reset_name_slot
+  - action_reset_donate_slot
 #============ 
 # SLOTS
 #============
@@ -115,12 +118,12 @@ slots:
          - active_loop: donate_form
            requested_slot: what_to_donate_slot
  
- contact_number_slot:
+  contact_number_slot:
     type: text
     mappings:
     - type: from_entity
       entity: contact_number_entity
- # lost_pet_form
+# lost_pet_form
   animal_type_slot:
     type: text
     mappings:

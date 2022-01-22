@@ -56,14 +56,6 @@ nlu:
       - gatinho atropelado 
 
 ##### FAQ 2
-  - intent: faq/ask_how_to_help
-    examples: |
-      - Quero ajudar
-      - Gostaria de ajudar
-      - Como posso ajudar vocês?
-      - O que eu posso fazer para ajudar?
-      - Como eu ajudo vocês ? 
-      - O que eu consigo fazer para ajuda-los?
 
   - intent: faq/ask_castration
     examples: |

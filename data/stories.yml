@@ -22,9 +22,24 @@ stories:
   - intent: deny_intent 
   - action: utter_anything_else
 
-- story: Usuário não gostaria de adotar um pet
+- story: Usuário gostaria de doar
   steps:
-  - action: action_scrapping
-  - action: action_reset_pet_slots 
-  - action: utter_about_adopt_with_diseases
-  - action: utter_anything_else
+  - intent: greet_intent
+  - action: action_utter_greet
+  - intent: wanna_help_intent
+  - action: utter_type_of_help
+  - intent: donation_intent
+  - action: utter_what_to_donate
+  - action: donate_form
+  - active_loop: donate_form
+  
+- story: Usuário gostaria de voluntariar
+  steps:
+  - intent: greet_intent
+  - action: action_utter_greet
+  - intent: wanna_help_intent
+  - action: utter_type_of_help
+  - intent: volunteer_intent
+  - action: utter_about_volunteering
+  - action: volunteer_form
+  - active_loop: volunteer_form

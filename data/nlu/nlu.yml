@@ -85,8 +85,13 @@ nlu:
     - batatinha 1 2 3
     - Assistir series
     - Teste 123 teste 321
-
-
+    - Atendimento humano
+    - Eu quero atendimento humano
+    - Me passa para uma pessoa
+    - Quero falar com um atendente
+    - Quero um humano
+    - Quero falar com uma pessoa
+  
 ####### intents do wanna_help_flow 
 - intent: wanna_help_intent
   examples: |

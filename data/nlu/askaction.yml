@@ -30,26 +30,37 @@ nlu:
 - intent: askaction/ask_disease
   examples: |
     - me fale sobre [leishmaniose](disease)
-    - me dê informações sobre [raiva](disease)
-    - fale sobre [sarna](disease)
-    - o que você sabe sobre [cinomose](disease)?
+    - o que é [leishmaniose](disease)
     - quais os [sintomas](question) da [leishmaniose](disease)?
+    - qual a [prevenção](question) para [leishmaniose](disease) ?
+    - qual o [tratamento](question) disponivel para [leishmaniose](disease) ?
+    - como se [prevenir](question) da [leishmaniose](disease)?
+    - como [tratar](question) o animal com [leishmaniose](disease)?
+    - me dê informações sobre [raiva](disease)
     - qual os [sintomas](question) da [raiva](disease)?
-    - quais os [tratamentos](question) para [sarna](disease)?
-    - você sabe qual a [prevenção](question) para [cinomose](disease)?
-    - como se [prevenir](question) para [leishmaniose](disease)?
-    - qual o [sintoma](question) da [sarna](disease)?
     - qual a [prevenção](question) pra [raiva](disease)?
+    - como é feito o [tratamento](question) da [raiva](disease)?
+    - como [previnir](question) a [raiva](disease)? 
+    - qual o procedimento para [tratar](question) a [raiva](question)?
+    - qual o [sintoma] presente no vírus da [raiva](question) ?
+    - fale sobre [sarna](disease)
+    - como [tratar](question) a [sarna](disease)?
+    - qual o [sintoma](question) presente na [sarna](disease)?
     - [tratamento](question) para [sarna](disease)?
+    - como se [prevenir](question) para [sarna](disease)?
+    - o que devo fazer como [prevenção](question) meu animal com [sarna](disease)?
+    - o que você sabe sobre [cinomose](disease)?
+    - quais são os [sintomas](question) que meu animal pode sentir se estiver com [cinomose](disease)?
+    - você sabe qual a [prevenção](question) para [cinomose](disease)?
     - como [prevenir](question) a [cinomose](disease)?
-    - como [tratar](question) a [leishmaniose](disease)?
+    - o que devo fazer para [tratar](question) da [cinomose](disease)?
+    - como posso o [tratamento](question) do meu animal para que ele não tenha [cinomose](disease)?
     - como se [prevenir](question) para [fiv](disease)?
     - qual o [sintoma](question) da [fiv](disease)?
     - qual a [prevenção](question) pra [fiv](disease)?
     - [tratamento](question) para [fiv](disease)?
     - como [prevenir](question) a [fiv](disease)?
     - como [tratar](question) a [fiv](disease)?
-    - como [prevenir](question) a [cinomose](disease)?
     - como [tratar](question) a [parvovirose](disease)?
     - como se [prevenir](question) para [parvovirose](disease)?
     - qual o [sintoma](question) da [parvovirose](disease)?

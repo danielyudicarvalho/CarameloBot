@@ -7,7 +7,12 @@ rules:
   - intent: start
   - action: utter_greet
   - action: utter_bot_purpose
-  
+
+- rule: Usuário deseja ajudar
+  steps:
+  - intent: wanna_help_intent
+  - action: utter_type_of_help
+
 - rule: Ativar Volunteer Form 
   steps:
   - intent: volunteer_intent
@@ -24,6 +29,8 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: action_send_email
+  - action: action_reset_volunteer_slots
+  - action: utter_anything_else
 
 - rule: Ativar Donate Form 
   steps:
@@ -41,6 +48,8 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: action_send_whats
+  - action: action_reset_donate_slot
+  - action: utter_anything_else
 
 - rule: Ativar pet form
   steps:
