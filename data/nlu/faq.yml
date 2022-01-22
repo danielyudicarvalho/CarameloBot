@@ -54,29 +54,9 @@ nlu:
       - resgatei um animal machucado
       - cachorrinho atropelado
       - gatinho atropelado 
+      - Preciso que alguém resgate um gato abandonado
 
 ##### FAQ 2
-
-  - intent: faq/ask_castration
-    examples: |
-      - Quero saber como funciona a castração
-      - Como funciona o processo de castração?
-      - Pode me dizer como funciona o processo de castração ?
-      - Como ocorre o processo de castração ?
-      - Conte-me como ocorre o processo de castração
-      - Processo de castração
-      - Castração
-
-  - intent: faq/ask_when_castration
-    examples: |
-      - Quando castrar?
-      - Qual a idade ideal para castrar
-      - Quando devo castrar?
-      - Qual a melhor época para castrar
-      - Que época é melhor para castrar
-      - Com que idade devo castrar meu cachorro?
-      - Com que idade devo castrar meu gato?
-
 
   - intent: faq/ask_veterinarian
     examples: |
@@ -87,6 +67,7 @@ nlu:
       - Quero entrar em contato com o veterinario
       - Pode me passar o numero do veterinario ?
       - Contato do veterinario
+      - atendimento veterinário
 
   - intent: faq/ask_report
     examples: |

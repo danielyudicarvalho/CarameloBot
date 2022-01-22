@@ -3,27 +3,36 @@ version: "3.0"
 #=========
 # INTENTS
 #========= 
+
 intents:
 
+# intents de faq/askaction ou /
   - faq
   - askaction
-  - start
-  - ask_discard
-  - ask_discard_warn
   - ask_disease
+  - start
+
+# intents gerais
   - goodbye_intent
   - greet_intent
   - deny_intent
   - affirm_intent
-  - lost_my_pet_intent
-  - need_rescue_intent
-  - say_contact_number_intent
-  - say_description_intent
+  - thank_you_intent
   - out_of_scope_intent
   - bot_purpose_intent
+  
+# complemento da castração
+  - ask_castration_intent
+  - ask_macho_castration
+  - ask_female_castration
+
+# wanna_help_flow
   - wanna_help_intent
   - volunteer_intent
   - donation_intent
+  - say_contact_number_intent
+  
+# adoption_flow
   - adopt_intent
   - inform_animal_type_intent
   - inform_gender_intent
@@ -31,25 +40,35 @@ intents:
   - inform_size_intent
   - inform_gender_macho_intent
   - inform_gender_female_intent
+
+
 #============
 # ENTITIES
 #============ 
+
 entities:
 
+# pet_form
   - animal_type_entity
-  - contact_number_entity
-  - disease
-  - question
   - size_entity
   - age_entity
   - gender_entity
+  
+# volunteer_form
+  - contact_number_entity
+  
+# entidades do ask_disease 
+  - disease
+  - question
 
 
 #============
 # ACTIONS
 #============ 
+
 actions:
 
+# Utters
   - utter_goodbye
   - utter_greet
   - utter_faq
@@ -61,23 +80,37 @@ actions:
   - utter_type_of_help
   - utter_about_volunteering
   - utter_what_to_donate
+  - utter_ask_castration
+
+# Action para utter customizada
   - action_utter_greet
+  
+# Actions do askaction
   - action_answer_disease
   - action_answer_disease_treatment
   - action_answer_disease_symptoms
   - action_answer_disease_prevent
+  
+# Actions do voluntariado e doação
   - action_send_email
   - action_send_whats
+
+# Actions da adoção
   - action_scrapping
+
+# Actions que resetam slots
   - action_reset_volunteer_slots
   - action_reset_pet_slots
   - action_reset_name_slot
   - action_reset_donate_slot
+
 #============ 
 # SLOTS
 #============
 
 slots:
+
+# volunteer_form
   name_slot:
     type: text
     initial_value: null
@@ -107,7 +140,14 @@ slots:
         conditions:
          - active_loop: volunteer_form
            requested_slot: how_to_help_slot
- 
+
+  contact_number_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: contact_number_entity
+
+# donate_form
   what_to_donate_slot:
     type: text
     initial_value: null
@@ -118,11 +158,6 @@ slots:
          - active_loop: donate_form
            requested_slot: what_to_donate_slot
  
-  contact_number_slot:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: contact_number_entity
 # lost_pet_form
   animal_type_slot:
     type: text
@@ -147,15 +182,8 @@ slots:
     mappings:
     - type: from_entity
       entity: gender_entity
-  
-  description_slot:
-    type: text
-    mappings:
-    - type: from_text
-      conditions:
-      - active_loop: lost_pet_form
-        requested_slot: description_slot
 
+# slots para askaction
   disease:
     type: text
     initial_value: null
@@ -171,10 +199,14 @@ slots:
     mappings:
       - type: from_entity
         entity: question
+
+
 #=======
 # FORMS
 #======= 
+
 forms:
+  
   volunteer_form:
     required_slots:
       - name_slot
