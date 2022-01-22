@@ -6,4 +6,3 @@ stories:
   steps:
   - intent: greet_intent
   - action: action_utter_greet
-#  - checkpoint: next_flow

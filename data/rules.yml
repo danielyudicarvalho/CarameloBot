@@ -2,6 +2,25 @@ version: "3.0"
 
 rules:
 
+
+- rule: Usuário deseja ajudar
+  steps:
+  - intent: wanna_help_intent
+  - action: utter_type_of_help
+
+- rule: Ativar Volunteer Form 
+  steps:
+  - intent: volunteer_intent
+  - action: utter_about_volunteering
+  - action: volunteer_form
+  - active_loop: volunteer_form
+
+- rule: Submeter Volunteer Form 
+  condition:
+  - active_loop: volunteer_form
+  steps:
+  - action: volunteer_form
+
 - rule: chatbot começa com o /start
   steps: 
   - intent: start
@@ -24,6 +43,24 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: action_send_email
+
+
+- rule: Ativar Donate Form 
+  steps:
+  - intent: donation_intent
+  - action: utter_what_to_donate
+  - action: donate_form
+  - active_loop: donate_form
+
+- rule: Submeter Donate Form 
+  condition:
+  - active_loop: donate_form
+  steps:
+  - action: donate_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_send_whats
 
 - rule: Bot diz que está fora do escopo dele
   steps:

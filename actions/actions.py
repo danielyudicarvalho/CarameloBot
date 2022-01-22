@@ -5,7 +5,9 @@ from numpy import extract
 from pydantic import UrlSchemeError
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from sqlalchemy import null
 from rasa_sdk.events import AllSlotsReset
+from rasa_sdk.events import SlotSet
 import urllib.request as urllib_request
 from urllib.request import urlopen
 import bs4
@@ -18,7 +20,6 @@ from email.mime.text import MIMEText
 import pymongo
 from pymongo import MongoClient
 from sklearn.feature_extraction import image
-from rasa_sdk.events import SlotSet
 
 QUESTION = {
      "prevenção": "prevent",
@@ -30,9 +31,98 @@ QUESTION = {
      "tratar":"treatments"
  }
 
+DISEASE=['leishmaniose','raiva','sarna','toxoplasmose']
+#================================================================== 
+# ActionSendEmail - implementa uma função para enviar email
+# email personalizado
+#==================================================================
+import smtplib 
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
+def send_email(name, email, phone, how_to_help):
+    port = 587                                       # Porta na qual é feita a comunicação
+
+    sender_email = "abrigo.do.bicho.bot@gmail.com"       # Email do Remetente
+    password = "Abrigo@bicho"                            # Senha do Remetente
+    receiver_email = "abrigo.do.bicho.bot@gmail.com"     # Email do Destinatário
+
+    text = f"""
+    Mais um voluntário para a causa :)
+
+    Nome: {name}
+    Email: {email}
+    Telefone: {phone}
+    Descrição: {how_to_help}
+    """
+    text = MIMEText(text, 'plain')
+
+    msg = MIMEMultipart()
+    msg['From'] = sender_email
+    msg['To'] = receiver_email
+    msg['Subject'] = "Voluntário - Abrigo dos Bichos"
+
+    msg.attach(text)        # É possível colocar outros formatos ex: html, csv, etc
+    msg = msg.as_string()   # Importante enviar no formato string
+
+    s = smtplib.SMTP('smtp.gmail.com', port)
+    s.starttls() 
+    s.login(sender_email, password)
+    s.sendmail(sender_email, receiver_email, msg)
+    s.quit()
+
+class ActionSendEmail(Action):
+
+    def name(self) -> Text:
+        return "action_send_email"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        name = tracker.get_slot("name_slot")
+        email = tracker.get_slot("email_slot")
+        phone = tracker.get_slot("contact_number_slot")
+        how_to_help = tracker.get_slot("how_to_help_slot")
+        
+        reception_number = "" # Número da pessoa responsável por recepcionar o cliente
+        reception_text = f"""
+        Olá, meu nome é {name}, desejo me voluntariar, auxiliando com:
+        {how_to_help}"""      # Texto receptivo
+        reception_text = reception_text.replace(" ", "%20")
+
+        send_email(name, email, phone, how_to_help)
+
+        dispatcher.utter_message(text=f"""
+        Obrigado pelas informações {name}, encaminhei um email para o abrigo com seus dados, clique no link abaixo para continuar a conversa com um humano :)\nhttps://api.whatsapp.com/send?phone={reception_number}&text={reception_text}
+        """)
+
+        return []
+ 
+
+class ActionSendWhats(Action):
+
+    def name(self) -> Text:
+        return "action_send_whats"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        name = tracker.get_slot("name_slot")
+        what_to_donate = tracker.get_slot("what_to_donate_slot")
+
+        reception_number = "" # Número da pessoa responsável por recepcionar o cliente
+        reception_text = f"""
+        Olá, meu nome é {name}, desejo ajudar doando:
+        {what_to_donate}"""      # Texto receptivo
+        reception_text = reception_text.replace(" ", "%20")
+
+        dispatcher.utter_message(text=f"""
+        Obrigado pelas informações {name}, clique no link abaixo para continuar a conversa com um humano :)\nhttps://api.whatsapp.com/send?phone={reception_number}&text={reception_text}
+        """)
 
 class ActionScrapping(Action):
-
     def name(self) -> Text:
         return "action_scrapping"
 
@@ -134,60 +224,6 @@ class ActionScrapping(Action):
         urls =[]
         return [AllSlotsReset()]
 
-#================================================================== 
-# ActionSubmit - implementa uma função para enviar email
-# email personalizado
-#==================================================================
-
-
-def send_email(name, email, phone, how_to_help):
-    port = 587
-    sender_email = "abrigo.do.bicho.bot@outlook.com"
-    receiver_email = "abrigo.do.bicho.bot@outlook.com"
-    password = "Abrigo@bicho" 
-
-    text = f"""
-    Mais um voluntário para a causa :)
-
-    Nome: {name}
-    Email: {email}
-    Telefone: {phone}
-    Descrição: {how_to_help}
-    """
-    text = MIMEText(text, 'plain')
-
-    msg = MIMEMultipart()
-    msg['From'] = sender_email
-    msg['To'] = receiver_email
-    msg['Subject'] = "Voluntário - Abrigo dos Bichos"
-
-    msg.attach(text)        # É possível colocar outros formatos
-    msg = msg.as_string()   # Importante enviar no formato string
-
-    s = smtplib.SMTP('smtp.gmail.com', port)
-    s.starttls() 
-    s.login(sender_email, password)
-    s.sendmail(sender_email, receiver_email, msg)
-    s.quit()
-
-class ActionSubmit(Action):
-
-    def name(self) -> Text:
-        return "action_send_email"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        name = tracker.get_slot("name_slot")
-        email = tracker.get_slot("email_slot")
-        phone = tracker.get_slot("contact_number_slot")
-        how_to_help = tracker.get_slot("how_to_help_slot")
-
-        send_email(name, email, phone, how_to_help)
-        dispatcher.utter_message(text=f"Email enviado com sucesso!")
-
-        return []
 #================================================================== 
 # ActionUtterGreet - implementa uma função para cumprimentar
 # cumprimentos personalizados 
