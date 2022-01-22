@@ -7,6 +7,40 @@ rules:
   - intent: start
   - action: utter_greet
   - action: utter_bot_purpose
+  
+- rule: Ativar Volunteer Form 
+  steps:
+  - intent: volunteer_intent
+  - action: utter_about_volunteering
+  - action: volunteer_form
+  - active_loop: volunteer_form
+
+- rule: Submeter Volunteer Form 
+  condition:
+  - active_loop: volunteer_form
+  steps:
+  - action: volunteer_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_send_email
+
+- rule: Ativar Donate Form 
+  steps:
+  - intent: donation_intent
+  - action: utter_what_to_donate
+  - action: donate_form
+  - active_loop: donate_form
+
+- rule: Submeter Donate Form 
+  condition:
+  - active_loop: donate_form
+  steps:
+  - action: donate_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_send_whats
 
 - rule: Ativar pet form
   steps:
@@ -28,23 +62,6 @@ rules:
   - action: action_scrapping
   - action: action_reset_pet_slots 
   - action: utter_anything_else
-  
-- rule: Ativar Help Form 
-  steps:
-  - intent: volunteer_intent
-  - action: utter_about_volunteering
-  - action: help_form
-  - active_loop: help_form
-
-- rule: Submeter Help Form 
-  condition:
-  - active_loop: help_form
-  steps:
-  - action: help_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: action_send_email
 
 - rule: Bot diz que está fora do escopo dele
   steps:

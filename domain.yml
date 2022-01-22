@@ -18,7 +18,9 @@ intents:
   - say_description_intent
   - out_of_scope_intent
   - bot_purpose_intent
+  - wanna_help_intent
   - volunteer_intent
+  - donation_intent
   - adopt_intent
   - inform_animal_type_intent
   - inform_gender_intent
@@ -26,7 +28,6 @@ intents:
   - inform_size_intent
   - inform_gender_macho_intent
   - inform_gender_female_intent
-  - wanna_help_intent
 #============
 # ENTITIES
 #============ 
@@ -40,6 +41,7 @@ entities:
   - age_entity
   - gender_entity
 
+
 #============
 # ACTIONS
 #============ 
@@ -51,14 +53,19 @@ actions:
   - utter_anything_else
   - utter_how_can_i_help
   - utter_submit
+  - utter_complaint
   - utter_bot_purpose
   - utter_out_of_scope
+  - utter_type_of_help
+  - utter_about_volunteering
+  - utter_what_to_donate
   - action_utter_greet
   - action_answer_disease
   - action_answer_disease_treatment
   - action_answer_disease_symptoms
   - action_answer_disease_prevent
   - action_send_email
+  - action_send_whats
   - action_scrapping
   - action_reset_help_slots
   - action_reset_pet_slots
@@ -68,7 +75,6 @@ actions:
 #============
 
 slots:
-
   name_slot:
     type: text
     initial_value: null
@@ -76,8 +82,8 @@ slots:
     mappings:
       - type: from_text
         conditions:
-          - active_loop: help_form
-            requested_slot: name_slot
+         - active_loop: volunteer_form
+           requested_slot: name_slot
 
   email_slot:
     type: text
@@ -86,17 +92,8 @@ slots:
     mappings:
       - type: from_text
         conditions:
-          - active_loop: help_form
-            requested_slot: email_slot
-
-  contact_number_slot:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: contact_number_entity
-      conditions:
-        - active_loop: help_form
-          requested_slot: contact_number_slot
+         - active_loop: volunteer_form
+           requested_slot: email_slot
 
   how_to_help_slot:
     type: text
@@ -105,10 +102,25 @@ slots:
     mappings:
       - type: from_text
         conditions:
-          - active_loop: help_form
-            requested_slot: how_to_help_slot
-
-  # lost_pet_form
+         - active_loop: volunteer_form
+           requested_slot: how_to_help_slot
+ 
+  what_to_donate_slot:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: donate_form
+           requested_slot: what_to_donate_slot
+ 
+ contact_number_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: contact_number_entity
+ # lost_pet_form
   animal_type_slot:
     type: text
     mappings:
@@ -156,12 +168,21 @@ slots:
     mappings:
       - type: from_entity
         entity: question
-
-#======= 
+#=======
 # FORMS
 #======= 
 forms:
-
+  volunteer_form:
+    required_slots:
+      - name_slot
+      - email_slot
+      - contact_number_slot
+      - how_to_help_slot
+  
+  donate_form:
+    required_slots:
+      - what_to_donate_slot
+      
   pet_form:
     required_slots:
       - animal_type_slot
@@ -169,12 +190,6 @@ forms:
       - age_slot
       - gender_slot
 
-  help_form:
-    required_slots:
-      - name_slot
-      - email_slot
-      - contact_number_slot
-      - how_to_help_slot
 
 session_config:
   session_expiration_time: 60

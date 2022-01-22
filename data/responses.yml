@@ -184,6 +184,15 @@ responses:
 
 ##### FAQ 2
 
+##### wanna_help_flow 
+  utter_type_of_help:
+    - text: "Como você gostaria de nos ajudar? Fazendo uma doação ou se voluntariando?"
+      buttons:
+      - title: "Voluntário"
+        payload: "/volunteer_intent"
+      - title: "Doação"
+        payload: "/donation_intent"
+
   utter_faq/ask_how_to_help:
     - text: "Opa, você pode nos ajudar de duas formas, seja fazendo doações ou voluntariando. Qual você prefere? ♥♥"
 
@@ -200,7 +209,25 @@ responses:
         alguma forma! É veterinário e ama cachorros? Você pode ajudar a responder dúvidas de nossos seguidores! 
         Entende de legislação? As dicas de um advogado são muito bem-vindas! Faz fotos ou vídeos? Temos conteúdos
         incríveis que precisam de mãos habilidosas de um editor e das lentes de um fotógrafo.
-        Preciso apenas que confirme algumas informações... 
+        Preciso apenas que confirme algumas informações...
+
+  utter_what_to_donate:
+  - text:
+      Você pode nos ajudar de várias maneiras com dinheiro, ração, areia para gato.
+      Preciso apenas que confirme algumas informações...
+  
+  utter_verify_information:
+  - text:
+      "Suas informações estão corretas?\n \n
+      
+      Nome: {name_slot}
+
+      Email: {email_slot}
+
+      Telefone: {contact_number_slot}
+
+      Descrição: {how_to_help_slot}"
+
   #### Respostas do fluxo de denuncias
   utter_faq/ask_report:
     - text: "Denuncie ⛔, dependemos de sua participação ! \n \n
