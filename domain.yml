@@ -16,20 +16,18 @@ intents:
   - need_rescue_intent
   - say_contact_number_intent
   - say_description_intent
-  - inform_animal_type_intent
   - out_of_scope_intent
   - bot_purpose_intent
   - wanna_help_intent
   - volunteer_intent
   - donation_intent
   - adopt_intent
-  - inform_type_intent
+  - inform_animal_type_intent
   - inform_gender_intent
   - inform_age_intent
   - inform_size_intent
   - inform_gender_macho_intent
   - inform_gender_female_intent
-
 #============
 # ENTITIES
 #============ 
@@ -39,9 +37,9 @@ entities:
   - contact_number_entity
   - disease
   - question
-  - size
-  - age
-  - gender
+  - size_entity
+  - age_entity
+  - gender_entity
 
 
 #============
@@ -188,9 +186,9 @@ forms:
   pet_form:
     required_slots:
       - animal_type_slot
-      - size
-      - age
-      - gender 
+      - size_slot
+      - age_slot
+      - gender_slot
 
 
 session_config:
