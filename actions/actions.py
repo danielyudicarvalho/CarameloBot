@@ -154,18 +154,25 @@ class ActionScrapping(Action):
         age_slot = tracker.get_slot("age_slot")
         animal_type_slot = tracker.get_slot("animal_type_slot")
         gender_slot = tracker.get_slot("gender_slot")
+        
+        # Normalização do animal do slot para fazer a busca no db
+        dog = ['cão','cachorro', 'Cão', 'caozinho','cadela', 'cachorra','Cachorro',"Cao",'Cadela','Cachorra','Caos','Cachorros','Cães']
+        cat = ['Gato','Gata', 'gatos','gatas','Gatos','Gatas','gatinhos','gatinhas','gatinha','gatinho','gato','gata']
+
+        if animal_type_slot in dog:
+            animal_type_slot = 'Cao'
+        elif animal_type_slot in cat:
+            animal_type_slot = 'Gato'
+
         # Acesso ao bd 
         cluster = MongoClient("mongodb+srv://danielyudi:elysium4@cluster0.catne.mongodb.net/mydatabase?retryWrites=true&w=majority")
         db = cluster["mydatabase"]
         mycol = db["pets"]
         # busca pela lista com as informações dos slots
         pets = list(mycol.find({"goal":"Adocao","size":size_slot,"age":age_slot,"animal_type":animal_type_slot,"gender":gender_slot}))
-        
         # lógica dos utters baseado na quantidade de pets encontrados
         if 0 < len(pets) <= 3 :
-            index=0
             for pet in pets:
-                index+=1
                 dispatcher.utter_message(text='nome do pet: '+pet['name'])
                 dispatcher.utter_message(image=pet['photo'])
                 dispatcher.utter_message(text='LINK PARA ADOÇÃO: '+pet['link'])
@@ -174,11 +181,11 @@ class ActionScrapping(Action):
 
         elif len(pets) > 3:
             for i in range(0,3):
-                dispatcher.utter_message(text='nome do pet: '+pet['name'])
-                dispatcher.utter_message(image=pet['photo'])
-                dispatcher.utter_message(text='LINK PARA ADOÇÃO: '+pet['link'])
-                dispatcher.utter_message(text='telefone para contato: '+pet['phone'])
-                dispatcher.utter_message(text='email para contato: '+pet['email'][7:])
+                dispatcher.utter_message(text='nome do pet: '+pets[i]['name'])
+                dispatcher.utter_message(image=pets[i]['photo'])
+                dispatcher.utter_message(text='LINK PARA ADOÇÃO: '+pets[i]['link'])
+                dispatcher.utter_message(text='telefone para contato: '+pets[i]['phone'])
+                dispatcher.utter_message(text='email para contato: '+pets[i]['email'][7:])
             dispatcher.utter_message(text="Existem mais opções de pets, você pode procurar no site: ")
             dispatcher.utter_message(text="https://adotar.com.br/busca.aspx?cc=1484&cn=ms-campo-grande") 
         else:

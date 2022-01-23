@@ -16,6 +16,9 @@ nlu:
       - tarde
       - noite
       - tudo bom?
+      - e ae
+      - oioi
+      - salve
 
   - intent: thank_you_intent
     examples: |
@@ -39,6 +42,7 @@ nlu:
       - bjs
       - se cuida
       - te vejo dps
+      - até uma proxima
 
   - intent: affirm_intent
     examples: |
@@ -75,10 +79,10 @@ nlu:
       - como eu adoto? 
       - como faço para adotar um animal? 
       - posso adotar um pet ?
-      - Como adotar um cão
-      - quero um cachorro
-      - quero um gato
-      - desejo adotar um gatinho
+      - Como adotar um [cão](animal_type_entity)
+      - quero um [cachorro](animal_type_entity)
+      - quero um [gato](animal_type_entity)
+      - desejo adotar um [gatinho](animal_type_entity)
 
   - intent: human_service_intent
     examples: |

@@ -3,17 +3,13 @@ services:
   bot-rasa:
     build:
       context: .
-
       dockerfile: images/bot.Dockerfile
-
-
     networks: 
       - all
     ports:
       - 5005:5005
     volumes:
       - ./:/app
-     
     public: true
     command:
       - run
@@ -22,20 +18,16 @@ services:
       - "*"
     depends_on:
       - server-bot-rasa
-
   server-bot-rasa:
     build:
       context: .
-
       dockerfile: images/server.Dockerfile
-
     networks: 
       - all
     ports:
       - "5055:5055"
     volumes:
       - "./actions:/app/actions"
-  
 networks:
   all:
     driver: bridge

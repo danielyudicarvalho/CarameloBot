@@ -31,51 +31,52 @@ responses:
         - Encontrei perdido e resgatei e agora? 
         - Perdi meu cão/gato
         - Preciso que alguém resgate um Cão/Gato abandonado
-        - calendário de vacinação
         - Como posso ajudar?
         
         Também posso esclarecer dúvidas sobre as doenças 🦟 mais comuns nos pets, indicar veterinários 👩‍⚕️ ou falar sobre castrações 😵.
         Tem uma denúncia, eu te digo para quem ligar. E caso eu não consiga resolver sua dúvida, posso te encaminhar para a equipe de atendimento.
 
   utter_out_of_scope:
-    - text: "Infelizmente não posso te ajudar com isso 😞\n \n
-
-        Nesse caso peço que entre em contato com a instituição através do número 📞 (67) 98406-2288, envie um email 📧 para abrigodosbichos@abrigodosbichos.com.br ou acesse as nossas redes sociais."
+    - text: "Infelizmente não posso te ajudar com isso 😞"
     
+  utter_human_service:
+    - text: "Nesse caso peço que entre em contato com a instituição através do número 📞 (67) 98406-2288, envie um email 📧 para abrigodosbichos@abrigodosbichos.com.br ou acesse as nossas redes sociais." 
 
   utter_please_rephrase:
-    - text: "Desculpa, não consegui compreender peço que seja mais preciso na solicitação. 😵" 
-
-  utter_default:
-    - text: "Nesse caso peço que entre em contato com a instituição através do número 📞 (67) 98406-2288, envie um email 📧 para abrigodosbichos@abrigodosbichos.com.br ou acesse as nossas redes sociais." 
+    - text: "Desculpa, não consegui compreender peço que seja mais preciso na mensagem. 😅" 
 
   utter_welcome:
     - text: |
-        "De nada, estou aqui para isso 😊"
+        De nada, estou aqui para isso 😊
     - text: |
-        "Que isso, estou aqui para ajudar 😊"
+        Que isso, estou aqui para ajudar 😊
     - text: |
-        "De nada, estou a disposição 😊"
+        De nada, estou a disposição 😊
+ 
+  utter_gratefull: 
+    - text: |
+        O abrigo dos bichos agradece ❤
+    - text: |
+        Qualquer coisa estou a disposição 😊
 
 #### utters para os forms
- 
   utter_ask_what_to_donate_slot:
   - text: "O que deseja doar?"
 
   utter_ask_name_slot:
-  - text: "Poderia me informar seu nome completo por favor?"
+  - text: "Poderia me informar seu nome completo, por favor?"
 
   utter_ask_contact_number_slot:
-  - text: "Poderia informar seu telefone pra contato por favor?"
+  - text: "Poderia informar seu telefone  pra contato 📞, por favor?"
 
   utter_ask_email_slot:
-  - text: "Por favor, me envie seu melhor email para contato por gentileza."
+  - text: "Por favor, me envie seu email para contato 📧, por gentileza."
 
   utter_ask_how_to_help_slot:
-  - text: "Escreva como você pretende ajudar abaixo. "
+  - text: "Escreva abaixo como você pretende ajudar."
 
   utter_ask_animal_type_slot:
-  - text: "Gostaria de adotar gato 🐱 ou cachorro 🐶?"
+  - text: "Gostaria de adotar um gato 🐱 ou um cachorro 🐶?"
     buttons:
     - title: Gato
       payload: /inform_animal_type_intent{{"animal_type_entity":"Gato"}}
@@ -83,103 +84,85 @@ responses:
       payload: /inform_animal_type_intent{{"animal_type_entity":"Cao"}}
   
   utter_ask_size_slot:
-  - text: "Qual o porte ideal que você gostaria de adotar? 📏"
+  - text: "Qual porte do animal você gostaria ? 📏"
     buttons:
-    - title: "pequeno"
-      payload: '/inform_size_intent{{"size_entity":"Pequeno"}}'
-    - title: "médio"
-      payload: '/inform_size_intent{{"size_entity":"Medio"}}'
-    - title: "grande"
-      payload: '/inform_size_intent{{"size_entity":"Grande"}}'
-  
+    - title: pequeno
+      payload: /inform_size_intent{{"size_entity":"Pequeno"}}
+    - title: médio
+      payload: /inform_size_intent{{"size_entity":"Medio"}}
+    - title: grande
+      payload: /inform_size_intent{{"size_entity":"Grande"}}
+
   utter_ask_gender_slot:
-  - text: "Você prefere macho ou fêmea?"
+  - text: "Você deseja um macho ♂ ou uma fêmea ♀ ? " 
     buttons:
-    - title: "macho"
-      payload: '/inform_gender_intent{{"gender_entity":"Macho"}}'
-    - title: "fêmea"
-      payload: '/inform_gender_intent{{"gender_entity":"Femea"}}'
+    - title: macho
+      payload: /inform_gender_intent{{"gender_entity":"Macho"}}
+    - title: fêmea
+      payload: /inform_gender_intent{{"gender_entity":"Femea"}}
     
   
   utter_ask_age_slot:
-  - text: "Qual idade do pet que gostaria de adotar?"
+  - text: "Qual idade do pet que gostaria de adotar? 📅"
     buttons:
     - title: "até 6 meses"
       payload: '/inform_age_intent{{"age_entity":"baby"}}'
-    - title: "6 meses a 1 ano"
+    - title: "6 meses a 1 ano"  
       payload: '/inform_age_intent{{"age_entity":"children"}}'
     - title: "mais de um ano"
-
       payload: '/inform_age_intent{{"age_entity":"adult"}}'
-      
-  # utter_show_more_results:
-  # - text: "Gostaria de ver mais resultados?"
-  #   buttons:
-  #   - title: "mostrar mais"
-  #     payload: '/show_more{{"age":"baby"}}'
-  #   - title: "mostrar menos"
-  #     payload: '/exit{{"age":"children"}}'
       
 ##### FAQ 1
      
   utter_faq/ask_how_to_donate_animal:
-  - text:
-      "Temos vários interessados em adotar!\n \n
-       
-      Faça boas fotos do(s) animalzinho(s) (nítida, na altura do animal e que mostre o sentimento do animalzinho)\n \n
-       
+  - text: |
+      Temos vários interessados em adotar!
+      Faça boas fotos do(s) animalzinho(s) (nítida, na altura do animal e que mostre o sentimento do animalzinho) 
       Escolha como finalidade: 'Quero DOAR um Animal' no portal www.abrigodosbichos.com.br, clique em 'Login' no topo direito do site
-      Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!\n \n
+      Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!
        
-      Lembramos que o animalzinho (cão ou gato) a ser doado tem que estar saudável e sob a guarda de um responsável (não pode estar solto na rua).\n \n
-       
-      Também pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores) https://abrigodosbichos.com.br/eventos.aspx\n \n
-       
-      E não se esqueça, CAPRICHE NA FOTO ! Se possível coloque fitinha colorida no pescoço do animalzinho. A FOTO É O SUCESSO DA DOAÇÃO."
+      Lembramos que o animalzinho 🐱🐶 a ser doado tem que estar saudável e sob a guarda de um responsável (não pode estar solto na rua).
+      Também pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores) https://abrigodosbichos.com.br/eventos.aspx
+      E não se esqueça, CAPRICHE NA FOTO ! Se possível coloque fitinha colorida no pescoço do animalzinho. 📷📷
+      A FOTO É O SUCESSO DA DOAÇÃO.
 
   utter_faq/ask_found_and_rescued:
-    - text: 
-        "Se quer apenas tentar encontrar o verdadeiro dono, favor escolha a finalidade: 'Encontrei um animal e procuro o dono' no portal abrigodosbichos.com.br clique em 'Login' no topo direito do site.\n \n
+    - text: | 
+        Se quer apenas tentar encontrar o verdadeiro dono, favor escolha a finalidade: 'Encontrei um animal e procuro o dono' no portal abrigodosbichos.com.br clique em 'Login' no topo direito do site.
+        Caso não encontrar o verdadeiro dono, não queira ou não possa ficar com o animalzinho, temos vários interessados em adotar!       
+        Favor cadastra-lo também para doar no portal abrigodosbichos.com.br (clique em “Login” no topo direito do site).
          
-        Caso não encontrar o verdadeiro dono, não queira ou não possa ficar com o animalzinho, temos vários interessados em adotar!\n \n
+        Aguardamos o(s) cadastro(s) para enviarmos às nossas listas !
          
-        Favor cadastra-lo também para doar no portal abrigodosbichos.com.br (clique em “Login” no topo direito do site).\n \n
-         
-        Aguardamos o(s) cadastro(s) para enviarmos às nossas listas!\n \n
-         
-        Lembramos que o animalzinho a ser doado tem que estar saudável e sob a guarda de um responsável (não pode estar solto na rua).\n \n
-         
-        Capriche na foto! Ela é o sucesso do anúncio.\n \n
-         
-        Também caso não possa ficar com o animalzinho, pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores), veja  https://www.abrigodosbichos.com.br/eventos.aspx"
+        Lembramos que o animalzinho a ser doado tem que estar saudável e sob a guarda de um responsável (não pode estar solto na rua).         
+        Capriche na foto! Ela é o sucesso do anúncio. 📷📷
+        Também caso não possa ficar com o animalzinho, pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores), veja  https://www.abrigodosbichos.com.br/eventos.aspx
         
   utter_faq/ask_lost_pet:
-    - text: 
-        "Favor escolha a finalidade: 'Estou procurando meu animal perdido' no portal abrigodosbichos.com.br, clique em 'Login' no topo direito do site.\n \n
+    - text: |
+        Favor escolha a finalidade: 'Estou procurando meu animal perdido' no portal abrigodosbichos.com.br, clique em 'Login' no topo direito do site.
+        Não esqueça da foto. Ela é fundamental para encontrar o animal (se não tiver foto, procure no google alguma parecida com ele).
          
-        Não esqueça da foto. Ela é fundamental para encontrar o animal (se não tiver foto, procure no google alguma parecida com ele).\n \n
+        Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!
          
-        Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!\n \n
-         
-        E lembre-se de contatar o Centro de Controle de Zoonoses caso eles encontrem o seu animalzinho!\n \n
-         
-        Segue o contato do Centro de Controle de Zoonoses: Telefone: (67) 3314-5000 / (67) 3314-5001 | E-mail: ccz@sesau.campogrande.ms.gov.br"
+        E lembre-se de contatar o Centro de Controle de Zoonoses caso eles encontrem o seu animalzinho!
+        Segue o contato do Centro de Controle de Zoonoses: 📞 Telefone : (67) 3314-5000 / (67) 3314-5001 | 📧 E-mail: ccz@sesau.campogrande.ms.gov.br
 
   utter_faq/ask_need_rescue:
-    - text: 
-        "Atuamos em toda Campo Grande-MS e para casos de resgate, sempre dependemos de alguém no local da ocorrência que se disponha a ajudar e encaminhar o animalzinho a um veterinário mais próximo para os primeiros atendimentos.\n \n
+    - text: |
+        Atuamos em toda Campo Grande-MS e para casos de resgate, sempre dependemos de alguém no local da ocorrência que se disponha a ajudar e encaminhar o animalzinho a um veterinário mais próximo para os primeiros atendimentos.
          
-        Para resgatá-lo(s), peça ajuda em um pet próximo.\n \n
+        Para resgatá-lo(s), peça ajuda em um pet próximo.
          
-        Após resgatar e estar saudável, pode cadastrar para doar no portal www.AbrigoDosBichos.com.br clique em 'Login' no topo direito do site, temos vários interessados em adotar animais saudáveis.\n \n
+        Após resgatar e estar saudável, pode cadastrar para doar no portal www.abrigodosbichos.com.br clique em 'Login' no topo direito do site, temos vários interessados em adotar animais saudáveis.
          
-        Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!"
+        Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!
 
 ##### FAQ 2
 
 ##### wanna_help_flow 
   utter_type_of_help:
-    - text: "Como você gostaria de nos ajudar? Fazendo uma doação ou se voluntariando?"
+    - text: "Como você gostaria de nos ajudar, fazendo uma doação ou se voluntariando?"
       buttons:
       - title: "Voluntário"
         payload: "/volunteer_intent"
@@ -187,7 +170,7 @@ responses:
         payload: "/donation_intent"
 
   utter_about_volunteering: 
-    - text:
+    - text: |
         Estamos procurando por voluntários que queiram fazer parte da nossa ONG, 
         atuando com colaborações em diversas áreas. Mesmo de longe, você pode contribuir de 
         alguma forma! É veterinário e ama cachorros? Você pode ajudar a responder dúvidas de nossos seguidores! 
@@ -199,35 +182,45 @@ responses:
   - text:
       Você pode nos ajudar de várias maneiras com dinheiro, ração, areia para gato.
   
-  utter_verify_information:
-  - text:
-      "Suas informações estão corretas?\n \n
-      
-      Nome: {name_slot}
-
-      Email: {email_slot}
-
-      Telefone: {contact_number_slot}
-
-      Descrição: {how_to_help_slot}"
-
   #### Respostas do fluxo de denuncias
   utter_faq/ask_report:
     - text: "Denuncie ⛔, dependemos de sua participação ! \n \n
             
-            Para fazer uma denúncia de maus tratos, ligue: DECAT, 190 ou 181, ou 193 bombeiros
+            Para fazer uma denúncia de maus tratos,📞 ligue : DECAT, 190 ou 181, ou 193 bombeiros
             
-            Vamos juntos diminuir o sofrimento animal. Denuncie!!"
+            Vamos juntos diminuir o sofrimento animal. Denuncie !"
   
   utter_faq/ask_veterinarian:
-    - text: "Se você está procurando atendimento veterinário com preços acessíveis te recomendamos os hospitais veterinários das Universidades.
-            Atualmente as que mais indicamos são os da UCDB  (Seminário, Campo Grande - MS (67) 3312-3809) e da UFMS(Av. Sen. Filinto Müler, 2443 - Pioneiros, Campo Grande - MS, 79070-900(67) 3345-3610).
-            Eles atendem na parte da manhã até 11h e na parte da tarde até às 17h.
-            Se tiver mais dúvidas pode nos contatar."
+    - text: |
+        Se você está procurando atendimento veterinário com preços acessíveis te recomendamos os hospitais veterinários das Universidades.
+
+        Atualmente as que mais indicamos são os da UCDB (Seminário, Campo Grande - MS 📞 (67) 3312-3809) e da UFMS(Av. Sen. Filinto Müler, 2443 - Pioneiros, Campo Grande - MS, 79070-900 📞 (67) 3345-3610).
+        Eles atendem na parte da manhã até 11h e na parte da tarde até às 17h.
+            
+        Se tiver mais dúvidas pode nos contatar.
+ 
+ #### Respostas do fluxo de castração
+  utter_ask_castration:
+    - text: "Bom, primeiro precisamos saber se o seu bichinho é macho ou fêmea."
+      buttons:
+      - title: "Macho"
+        payload: '/ask_macho_castration'
+      - title: "Fêmea"
+        payload: '/ask_female_castration'
+        
+  utter_ask_macho_castration:
+    - text: "Nos machos, tanto em cães quanto em gatos, a operação é menos invasiva. Consiste na retirada dos testículos – o que implica numa redução expressiva de testosterona.
+            É comum que após a castração o animal fique um pouco mais calmo e menos agitado que antes."
+            
+  utter_ask_female_castration:
+    - text: "Já nas fêmeas – de ambas as espécies – é necessário realizar uma incisão no abdome para remoção do útero e dos ovários. O procedimento que reduz a produção de estrógeno e progesterona."
+    
+##### OUTROS
+
   ### respostas para vacinação
   utter_faq/ask_vaccine_cat:
     - text: |
-        "Esse é o calendário para vacinação de gatos:
+        Esse é o calendário para vacinação de gatos:
             V3, V4 ou V5
                 3 doses(de 3 meses)
                 A partir de 45 dias
@@ -236,11 +229,11 @@ responses:
                 Dose única
                 A partir de 4 meses de vica
                 R$50,00 ou gratuita nas campanhas de vacinação
-                Obrigatória"
+                Obrigatória
 
   utter_faq/ask_vaccine_dog:
     - text: |
-        "Esse é o calendário para vacinação de cachorros:
+        Esse é o calendário para vacinação de cachorros:
             V8 ou V10
                 4 a 6 doses(de 3 a 4 semanas de intervalo)
                 A partir de 45 dias de vida do cão
@@ -261,46 +254,27 @@ responses:
             Para gripe Canina
                 1 ou 2 doses (dependendo do tipo de vacina aplicada)
                 A partir de R$100,00 a dose
-                A partir de 80 dias de vida"
+                A partir de 80 dias de vida
  
- #### Respostas do fluxo de castração
-  utter_faq/ask_castration:
-    - text: "Bom, primeiro precisamos saber se o seu bichinho é macho ou fêmea."
-      buttons:
-      - title: "Macho"
-        payload: 'ask_macho_castration'
-      - title: "Fêmea"
-        payload: 'ask_female_castration'
-
-  utter_ask_macho_castration:
-    - text: "Nos machos, tanto em cães quanto em gatos, a operação é menos invasiva. Consiste na retirada dos testículos – o que implica numa redução expressiva de testosterona.
-            É comum que após a castração o animal fique um pouco mais calmo e menos agitado que antes."
-  utter_ask_female_castration:
-    - text: "Já nas fêmeas – de ambas as espécies – é necessário realizar uma incisão no abdome para remoção do útero e dos ovários. O procedimento que reduz a produção de estrógeno e progesterona."
-  utter_ask_when_castration:
-    - text: "Em alguns casos, a castração pode ser feita ainda na fase de filhotes. Contudo, é interessante que o seu cão ou o gato já tenha tomado todas as vacinas. Este cuidado visa reduzir o risco de contaminação no ambiente hospitalar.
-              Buscar orientação do médico veterinário de confiança sobre o seu caso é a melhor estratégia."
-
-##### OUTROS
   utter_faq/ask_collect:
   - text: |
-          "Sabemos como é triste a dor de perder seu pet, mas caso isso venha a acontecer você precisa dar um destino correto ao corpinho dele.
+          Sabemos como é triste a dor de perder seu pet, mas caso isso venha a acontecer você precisa dar um destino correto ao corpinho dele.
           A maneira mais segura de se fazer isso em Campo Grande é ligar para a Solurb, responsável pela higiene da cidade, através do número: 0800 6471005.
           Eles darão o devido tratamento ao seu pet, mas lembre-se de que você precisa ensacar o corpinho dele antes. Você também pode ligar para a prefeitura e eles
-          encaminharão à Solurb."
+          encaminharão à Solurb.
   - text: |
-          "Se você infelizmente perdeu o seu bichano (cão ou gato) saiba que você precisar dar um destino correto ao corpo dele para que não haja risco as pessoas nem ao 
+          Se você infelizmente perdeu o seu bichano (cão ou gato) saiba que você precisar dar um destino correto ao corpo dele para que não haja risco as pessoas nem ao 
           meio ambiente. Aqui em Campo Grande-MS quem é responsável por isso é a Solurb(0800 6471005). Ligue para eles que eles devem te atender em até 24h.
-          Seu seu pet morreu na clínica veterinária, eles podem encaminhar ao crematório. Exitem serviços de cremação para pets também caso queira um por conta própria."
+          Seu seu pet morreu na clínica veterinária, eles podem encaminhar ao crematório. Exitem serviços de cremação para pets também caso queira um por conta própria.
   utter_faq/ask_collect_warn:
   - text: |
-        " Cuidado, pois enterrar o seu pet falecido no quintal trás riscos ambientais ao solo além de ser crime segundo o artigo 54 da Lei de Crimes Ambientais- Lei 9605/98.
+          Cuidado, pois enterrar o seu pet falecido no quintal trás riscos ambientais ao solo além de ser crime segundo o artigo 54 da Lei de Crimes Ambientais- Lei 9605/98.
           Descartar em terrenos baudios, terreiros, matas e outros locais também é crime ambiental pois pode contaminar o solo e até o lençol freático, além de ser perigoso por pode contaminar o solo e trazer doenças. A pena pode chegar a multas de
-          R$500 a R$13 mil e até 4 anos de prisão. É muito mais fácil e seguro ligar para a Solurb ou para a prefeitura. Você também pode recorrer à serviços particulares de cremação caso queira."
+          R$500 a R$13 mil e até 4 anos de prisão. É muito mais fácil e seguro ligar para a Solurb ou para a prefeitura. Você também pode recorrer à serviços particulares de cremação caso queira.
   - text: |
-        "Evite descartar o corpo do seu pet falecido por conta própria, isso pode geral multas de R$500 a R$13 mil e pode dar até prisão. Isso porque o artigo 54 da Lei de Crimes Ambientais- Lei 9605/98 considera
-        isso crime ambiental. Descartar em terrenos baudios, matas, terreiros ou qualquer outro terreno também é crime além de você estar podendo contaminar o solo e atrair doenças.
-        Ligue para a Solurb ou para a prefeitura que eles te atenderão em até 24h, se seu pet vier a falecer em um clínica veterinária eles podem dar o devido tratamento ao corpo do bichano."
+          Evite descartar o corpo do seu pet falecido por conta própria, isso pode geral multas de R$500 a R$13 mil e pode dar até prisão. Isso porque o artigo 54 da Lei de Crimes Ambientais- Lei 9605/98 considera
+          isso crime ambiental. Descartar em terrenos baudios, matas, terreiros ou qualquer outro terreno também é crime além de você estar podendo contaminar o solo e atrair doenças.
+          Ligue para a Solurb ou para a prefeitura que eles te atenderão em até 24h, se seu pet vier a falecer em um clínica veterinária eles podem dar o devido tratamento ao corpo do bichano.
  
 #### Respostas do fluxo adoção
 
@@ -314,237 +288,230 @@ responses:
 
   ### adopt_intent 
   utter_need_information:
-  - text: "Ótimo 😍, vamos precisar de algumas informações:"
-
-
-  utter_confirm:
-  - text: "Suas informações estão corretas?"
+  - text: "Que ótimo 😍, vamos precisar de algumas informações"
   
   utter_about_adopt_with_diseases:
-  - text: "Apenas um aviso: alguns pets podem apresentar doenças como fiv felina ou leishmaniose, esses pets precisam de cuidados especiais 💕 para saber mais, só me perguntar, ok?"
+  - text: "Apenas um aviso: alguns pets podem apresentar doenças como fiv felina ou leishmaniose, esses pets precisam de cuidados especiais 💕 para saber mais, basta me perguntar, ok?"
  
 #### Respostas do fluxo de zoonoses
   utter_askaction/ask_initial_info_raiva:
   - text: |
-      "A raiva canina é uma doença perigosíssima por ter alta taxa de letalidade e não possuir cura. Geralmente o diagnóstico é feito depois da morte, e mesmo se feito antes não há cura nem tratamento.
+      A raiva canina é uma doença perigosíssima por ter alta taxa de letalidade e não possuir cura. Geralmente o diagnóstico é feito depois da morte, e mesmo se feito antes não há cura nem tratamento.
       Muito comum no mês de agosto, o principal sintoma dessa doença é a salivação excessiva na boca dos cachorros e a agressividade. Também pode haver febre, náuseas, agressividade, espasmos e convulsões. O principal meio de contágio
       é pela mordida, por isso sempre lave e limpe bem a ferida caso seja mordido. Felizmente, para humanos a raiva tem cura, já para cachorros contaminados a única saída é a eutanásia. A doença afeta o sistem nervoso debilitando o bichano radicalmente.
-      O único meio de se segurar contra a raiva é com a vacina anual antirrábica, geralmente distribuída gratuitamente durante campanhas de vacinação no mês de agosto. Também existe vacina antirrábica para humanos e é altamente recomendada, principalmente em crianças."
+      O único meio de se segurar contra a raiva é com a vacina anual antirrábica, geralmente distribuída gratuitamente durante campanhas de vacinação no mês de agosto. Também existe vacina antirrábica para humanos e é altamente recomendada, principalmente em crianças.
   - text: |
-      "A raiva é um vírus transmitido principalmente por mordida, arranhões e saliva de animais e que afeta o sistema nervoso periférico de cães e gatos. Ao ser contaminado, o bichano fica agressivo podendo morder e arranhar quem estiver ao redor aumentando o contágio.
+      A raiva é um vírus transmitido principalmente por mordida, arranhões e saliva de animais e que afeta o sistema nervoso periférico de cães e gatos. Ao ser contaminado, o bichano fica agressivo podendo morder e arranhar quem estiver ao redor aumentando o contágio.
       Importante dizer que ainda não há cura nem tratamento para a raiva e que a única saída é a prevenção com a vacina anual antirrábica. A vacina antirrábica em animais pode ser gratuita, principalmente no mês de agosto. Também é
-      preciso tomar a antirrábica em humanos. Ao ser mordido ou arranhando por um animal conhecido ou não é extremamente importante lavar e higienizar bem a ferida. Os principais sintomas da raiva é a salivação e agressividade, bem como convulsões e espasmos por atingir o sistema nervoso."
+      preciso tomar a antirrábica em humanos. Ao ser mordido ou arranhando por um animal conhecido ou não é extremamente importante lavar e higienizar bem a ferida. Os principais sintomas da raiva é a salivação e agressividade, bem como convulsões e espasmos por atingir o sistema nervoso.
   - text: |
-      "Sobre a raiva, essa é uma doença contagiosa sem cura e sem tratamento. A única saída para você e seu bichano é a vacinação anual antirrábica. Para cães e gatos, há campanhas de vacinação gratuita no mês de agosto. Também existe vacina antirrábica para humanos e é recomendável tomá-las.
+      Sobre a raiva, essa é uma doença contagiosa sem cura e sem tratamento. A única saída para você e seu bichano é a vacinação anual antirrábica. Para cães e gatos, há campanhas de vacinação gratuita no mês de agosto. Também existe vacina antirrábica para humanos e é recomendável tomá-las.
       O contágio se da normamente por meio de mordidas e arranhões ou qualquer outra troca de secremento. Os sintomas da raiva são fáceis de se identificar: salivação, agressividade, apatia, confusão, espasmos, paralisia e convulsões; procure ajuda profissional se identificar esses sintomas no seu pet.
-      Também cuide de lavar bem e higienizar bem a ferida caso seja atacado por um animal."
+      Também cuide de lavar bem e higienizar bem a ferida caso seja atacado por um animal.
 
   utter_askaction/ask_prevent_raiva:
   - text: |
-      "O meio mais seguro de proteger seu PET da raiva é a vacinação. Além da V8 ou V10, também é preciso tomar a vacina antirrábica que é obrigatória e encontrada gratuitamente nos centros de zoonoses, principalmente no mês de agosto. Seu pet já pode tomar a 
+      O meio mais seguro de proteger seu PET da raiva é a vacinação. Além da V8 ou V10, também é preciso tomar a vacina antirrábica que é obrigatória e encontrada gratuitamente nos centros de zoonoses, principalmente no mês de agosto. Seu pet já pode tomar a 
       antirrábica a partir de 3 meses de vida, depois disso é preciso reforçar a vacinação antirrábida todo ano. Também é necessário que você e outras pessoas também tome a antirrábica, geralmente disponibilizando nos posto de saúde, verifique a sua carteira de vacinação para se manter seguro.
-      Qualquer mamífero pode contrair e transmitir raiva, por isso, além de cães e gatos, fique atento também a outros animais como morcegos e outros silvestres no geral. E caso seja ferido por uma animal, lave e limpe a ferida o melhor que puder e procure um posto para tomar o soro antirrábico."
+      Qualquer mamífero pode contrair e transmitir raiva, por isso, além de cães e gatos, fique atento também a outros animais como morcegos e outros silvestres no geral. E caso seja ferido por uma animal, lave e limpe a ferida o melhor que puder e procure um posto para tomar o soro antirrábico.
   - text: |
-      "A partir de 3 meses de vida você já pode vacinar seu bichano contra a raiva, a vacina antirrábica pode ser encontrada gratuitamente nos centros de zoonoses e nas campanhas anti raiva geralmente no mês de agosto. Certifique-se que você e seus familiares também estejam vacinados da raiva. A raiva pode ser transmitida por
+      A partir de 3 meses de vida você já pode vacinar seu bichano contra a raiva, a vacina antirrábica pode ser encontrada gratuitamente nos centros de zoonoses e nas campanhas anti raiva geralmente no mês de agosto. Certifique-se que você e seus familiares também estejam vacinados da raiva. A raiva pode ser transmitida por
       mordidas, arranhões e até lambeduras, por isso se higienize bem ao ter contato com animais e caso seja ferido por um, lave com água corrente e procure um posto de saúde. Fique atento à mamíferos silvestres como morcegos, raposas, etc. Eles também podem contrair e transmitir raiva. 
-      Se identificar sintomas de raiva no seu bichano, isole-o de outras pessoas e animais imediatamente."
+      Se identificar sintomas de raiva no seu bichano, isole-o de outras pessoas e animais imediatamente.
   - text: |
-      "A vacina antirrábica é o meio mais eficiente de proteger você e seu bichano da raiva. Seu cão ou gato pode ser vacinado a partide de 3 meses de idade gratuitamente nos centros de zoonoses e nas campanhas de vacinação, geralmente em agosto.
+      A vacina antirrábica é o meio mais eficiente de proteger você e seu bichano da raiva. Seu cão ou gato pode ser vacinado a partide de 3 meses de idade gratuitamente nos centros de zoonoses e nas campanhas de vacinação, geralmente em agosto.
       A vacina deve ser reforçada anualmente para ter efeito. Você e seus familiares podem ser vacinados contra a raiva. Controle a área de convívio do seu pet e se certifique que outros animais estranhos não tenham acesso.
-      Controle o lixo e a comida, o que pode atrair animais contaminados. Se lave bem caso seja atacado por um animal e procure imediatamente um posto de saúde, em humanos a vacina também pode ser útil pós infecção."
+      Controle o lixo e a comida, o que pode atrair animais contaminados. Se lave bem caso seja atacado por um animal e procure imediatamente um posto de saúde, em humanos a vacina também pode ser útil pós infecção.
 
   utter_askaction/ask_symptoms_raiva:
   - text: |
-      "Os sintomas mais comums da raiva são: salivação, agressividade, parilisia dos membros, o som do latido fica diferente e ele pode ter dificuldade para comer e beber. Em estágio final, a doença ataca o sistem nervoso central causando paralisia, falta de coordenação, dificuldades para engolir, convulsões e espasmos."
+      Os sintomas mais comums da raiva são: salivação, agressividade, parilisia dos membros, o som do latido fica diferente e ele pode ter dificuldade para comer e beber. Em estágio final, a doença ataca o sistem nervoso central causando paralisia, falta de coordenação, dificuldades para engolir, convulsões e espasmos.
   - text: |
-      "A raiva tem estágio de desenvolvimento. No primeiro estágio é onde o animal pode estar mais agressivo, apresentando salivação, comportamento estranho, excitação. 
-      O estágio seguinte é a paralisia, podendo causar convulsões, espasmos, falta de coordenação e paralisia nas pernas. O latido do cão pode ficar estranho devido a paralisia nos músculos da garganta."
+      A raiva tem estágio de desenvolvimento. No primeiro estágio é onde o animal pode estar mais agressivo, apresentando salivação, comportamento estranho, excitação. 
+      O estágio seguinte é a paralisia, podendo causar convulsões, espasmos, falta de coordenação e paralisia nas pernas. O latido do cão pode ficar estranho devido a paralisia nos músculos da garganta.
   - text: |
-      "Animais com raiva geralmente demonstram comportamento estranho, repare no comportamento do seu pet. Uma característica bem comum em animais com raiva é a salivação intensa e agressividade. 
-      Em estágio inicial, fora a agressividade e salivação, também é comum que haja confusão, dificuldade para beber e comer e demência nos pets. Em estágio avançado da doença pode haver paralisia, espasmos musculares e convulsões"
+      Animais com raiva geralmente demonstram comportamento estranho, repare no comportamento do seu pet. Uma característica bem comum em animais com raiva é a salivação intensa e agressividade. 
+      Em estágio inicial, fora a agressividade e salivação, também é comum que haja confusão, dificuldade para beber e comer e demência nos pets. Em estágio avançado da doença pode haver paralisia, espasmos musculares e convulsões
   - text: |
-      "A vacina antirrábica é o meio mais eficiente de proteger você e seu bichano da raiva. Seu cão ou gato pode ser vacinado a partide de 3 meses de idade gratuitamente nos centros de zoonoses e nas campanhas de vacinação, geralmente em agosto.
+      A vacina antirrábica é o meio mais eficiente de proteger você e seu bichano da raiva. Seu cão ou gato pode ser vacinado a partide de 3 meses de idade gratuitamente nos centros de zoonoses e nas campanhas de vacinação, geralmente em agosto.
       A vacina deve ser reforçada anualmente para ter efeito. Você e seus familiares podem ser vacinados contra a raiva. Controle a área de convívio do seu pet e se certifique que outros animais estranhos não tenham acesso.
-      Controle o lixo e a comida, o que pode atrair animais contaminados. Se lave bem caso seja atacado por um animal e procure imediatamente um posto de saúde, em humanos a vacina também pode ser útil pós infecção."
+      Controle o lixo e a comida, o que pode atrair animais contaminados. Se lave bem caso seja atacado por um animal e procure imediatamente um posto de saúde, em humanos a vacina também pode ser útil pós infecção.
 
   utter_askaction/ask_treatments_raiva:
   - text: |
-      "Não existe tratamento para a doença, por isso é MUITO IMPORTANTE, PREVENIR!. Em caso de mordida e arranhões, lave bem com sabão e água corrente e procure ajuda em uma unidade de saúde
-      para vacinação e soroterapia."
+      Não existe tratamento para a doença, por isso é MUITO IMPORTANTE, PREVENIR!. Em caso de mordida e arranhões, lave bem com sabão e água corrente e procure ajuda em uma unidade de saúde
+      para vacinação e soroterapia.
 
   utter_askaction/ask_initial_info_leishmaniose:
   - text: |
-      "A leishmaniose é uma doença infecciosa, porém não contagiosa, transmitida pela picada do mosquito palha.
+      A leishmaniose é uma doença infecciosa, porém não contagiosa, transmitida pela picada do mosquito palha.
       Ela é muito comum em áreas tropicais como o Brasil. Há dois tipo de leishmaniose: Cutânea e Visceral, para a cutânea há cura, já para visceral há apenas tratamento, mas sem cura.
       A única maneira da doença passar do seu pet para você é se o mesmo mosquito picar vocês dois, fora isso não há risco de contágio direto e vocês podem conviver normalmente.
       Vacinar o seu pet a partir de 4 meses contra leishmaniose(R$180,00 a dose em média) é altamente recomendado apesar de não ser obrigatório.
-      Se proteger do mosquito palha higienizando a casa e tratando o lixo corretamente também é recomendado."
+      Se proteger do mosquito palha higienizando a casa e tratando o lixo corretamente também é recomendado.
   - text: |
-      "Então, a leishmaniose é uma das zoonoses(doenças transmissíveis de animais para pessoas) mais comuns no Brasil por ser uma região tropical.
+      Então, a leishmaniose é uma das zoonoses(doenças transmissíveis de animais para pessoas) mais comuns no Brasil por ser uma região tropical.
       A doença é transmitida pela picada do mosquito palha(aparência amarelada e com antenas) e para isso o mosquito precisa picar o animal infectado e depois picar a pessoa.
       Fora isso não há risco de contágio direto e vocês podem ter um convívio normal, inclusive adotar um pet com leishmaniose. Para a leishmaniose cutânea(que afeta apenas a pele) existe cura,
       mas para a leishmaniose visceral(que afeta os orgãos) não existe cura, apenas o tratamento. Já existe a vacina não obrigatória para a leishmaniose(mais ou menos R$180,00 a dose) para pets a partir de 4 meses.
-      Combater o mosquito palha, transmissor da doença, também é um dever de todos nós. tratando o lixo corretamento e higienizando a área."
+      Combater o mosquito palha, transmissor da doença, também é um dever de todos nós. tratando o lixo corretamento e higienizando a área.
   - text: |
-      "Sobre a leishmaniose: Essa é uma das zoonoses(doença trasmissível de animais para pessoas) mais comuns no Brasil.Transmitida pelo mosquito palha,
+      Sobre a leishmaniose: Essa é uma das zoonoses(doença trasmissível de animais para pessoas) mais comuns no Brasil.Transmitida pelo mosquito palha,
       para a doença passar do pet para você é necessário que o mosquito pique o animal infectado e depois pique você. Tirando esse caso, não há risco de contágio direto
       entre o pet e a pessoa. Infelizmente não há cura para leishmaniose visceral(que afeta os orgãos) mas já existe tratamento para prolongar a vida do pet e aliviar os sintomas.
       Para evitar a doença você pode vacinar o seu pet contra leishmaniose (R$180,00 a dose mais ou menos) e combater o mosquito palha retirando lixo, higienizando bem a área
-      e protegendo seu lar contra mosquitos em geral com telas e repelentes"
+      e protegendo seu lar contra mosquitos em geral com telas e repelentes
 
   utter_askaction/ask_prevent_leishmaniose:
   - text: |
-      "O meio mais seguro de proteger seu PET da leishmaniose(terceiro maior assassino parasitário do mundo) é através da vacinação.
+      O meio mais seguro de proteger seu PET da leishmaniose(terceiro maior assassino parasitário do mundo) é através da vacinação.
       Além das vacinas V8 e V10, que protegem os animais de mais de 7 doenças como a cinomose, hepatite canina e leptospirose. A vacinação contra leishmaniose é altamente recomendada
       a partir de 4 meses de vida do seu animal. Vacinas contra leishmaniose como a Leish-tec e Leishmune são opcionais e pagas (em torno de R$180,00) e muito necessária. Outros meios de evitar a leishmaniose é combater o mosquito palha,
       muito comuns em áreas úmidas e de mata. O mosquito gosta de sair depois do pôr do sol, então evitar passear com ele esse horário também é recomendado, proteger sua casa do mosquito com telas e repelentes é um boa ideia para manter o mosquito afastado.
-      Outras soluções são as coleiras repelente(muito recomendado pela OMS); cuidar do lixo, principalmente o orgânico(favorito do mosquito), e higienizar bem o ambiente retirando folhas, troncos e restos de vegetação."
+      Outras soluções são as coleiras repelente(muito recomendado pela OMS); cuidar do lixo, principalmente o orgânico(favorito do mosquito), e higienizar bem o ambiente retirando folhas, troncos e restos de vegetação.
   - text: |
-      "Para se prevenir da leishmaniose é sempre bom manter a vacinação dos pets em dia. Verifique se na carteirinha de vacinação constam as vacinas V8 ou V10,
+      Para se prevenir da leishmaniose é sempre bom manter a vacinação dos pets em dia. Verifique se na carteirinha de vacinação constam as vacinas V8 ou V10,
       principais responsáveis pelo combate à varias doenças como cinomose, coronavirose e adenovirose (gripe em cães), se não houver tente vaciná-los o quanto antes.
       A vacina contra leishmaniose como Leish-Tec são opcionais e um pouco mais caras(R$180,00 a dose em média), mas muito necessárias e eficientes. Fora a vacina, é preciso combater o
       mosquito palha(transmissor da doença), esses mosquitos geralmente têm hábitos noturnos então é bom proteger seu pet nesses horários, evitando passeios noturnos por exemplo. O mosquito palha também se prolifera
       em material orgânico, por isso é saudável tratar esse tipo de lixo na sua casa(folhas, restos vegetais, troncos,etc). As coleiras repelentes também ajudam bastante contra o mosquito palha além de outros insetos transmissores de doenças.
-      Também existem sprays repelentes, telas para janelas, mosquiteiros e outros vários meios de afastar o mosquito palha da sua casa e do seu pet."
+      Também existem sprays repelentes, telas para janelas, mosquiteiros e outros vários meios de afastar o mosquito palha da sua casa e do seu pet.
   - text: |
-      "A melhor prevenção contra leishmaniose é a vacinação(R$180,00 a dose) a partir de 4 meses de idade do seu animal. São 3 ou 4 doses mais o reforço anual.
+      A melhor prevenção contra leishmaniose é a vacinação(R$180,00 a dose) a partir de 4 meses de idade do seu animal. São 3 ou 4 doses mais o reforço anual.
       Para a doença ser transmitida do animal para você ou de outro animal para o seu é preciso que o mosquito palha(amarelado e com antenas) contaminado pique vocês.Portanto, combater o mosquito é essencial.
       Existe a coleira repelente, muito útil para afastar o mosquito. Dar banho no pet e manter a área dele higienizada contra lixo orgânico (folhas, restos vegetais, etc)também é muito importante. O mosquito palha sai a noite, então
-      evite deixar ele exposto depois do pôr do sol. Também tente proteger a sua casa de mosquitos com telas, repelentes, mosquiteiros, etc."
+      evite deixar ele exposto depois do pôr do sol. Também tente proteger a sua casa de mosquitos com telas, repelentes, mosquiteiros, etc.
 
   utter_askaction/ask_symptoms_leishmaniose:
   - text: |
-      "Existem dois tipos de leishmaniose: Cutânea e Visceral. Na leishmaniose cutânea, que afeta mais a pele, os sintomas são mais visíveis como lesões na pele
+      Existem dois tipos de leishmaniose: Cutânea e Visceral. Na leishmaniose cutânea, que afeta mais a pele, os sintomas são mais visíveis como lesões na pele
       e nas áreas mucosas como boca, focinho e no genitais, também pode aparecer um caroço na região da picada que pode se transformar em ferida. A ferida pode desaparecer sozinha depois de alguns meses ou então nem aparecer.
       A leishmaniose visceral tem sintomas parecidos com outras doenças como febre, fraqueza e perda de peso, por isso a importância de se levar em um veterinário quando houver esses sinais. Também pode ocorrer inchaço na área da barriga do animal e manchas na pele.
       Outros sintomas são diarreia, crescimento das unhas, queda de pelo, emagrecimento, sangue nas fezes e feridas na pelo. Apenas o veterinário pode dar o diagnóstico e tratamento, portanto procure ajuda o mais rápido possível.
-      "
+      
   - text: |
-      "O tipo mais perigoso de leishmaniose é a leishmaniose visceral, ela não tem cura e pode levar a morte. Por isso é importante diagnosticar seu animal o quanto antes com um especialista. Os principais sintomas desse tipo de leishmaniose são o crescimento das unhas,
+      O tipo mais perigoso de leishmaniose é a leishmaniose visceral, ela não tem cura e pode levar a morte. Por isso é importante diagnosticar seu animal o quanto antes com um especialista. Os principais sintomas desse tipo de leishmaniose são o crescimento das unhas,
       febre, caroço e feridas na região da picada, diarreia, fraqueza, perda de fome e de peso, descamação da pele e inchaço na região da barriga. Esse tipo de leishmaniose atinge vários orgãos do seu bichinho por isso podem aparecer vários sintomas, alguns deles parecidos com os de outras doenças,
-      por isso procure ajuda profissional o mais rápido possível para diagnóstico e tratamento adequados. Também existe a leishmaniose cutânea que atinge apenas a pele, essa é menos letal e existe cura. Seus sintomas são o surgimento de feridas na pele e de um caroço na região da picada."
+      por isso procure ajuda profissional o mais rápido possível para diagnóstico e tratamento adequados. Também existe a leishmaniose cutânea que atinge apenas a pele, essa é menos letal e existe cura. Seus sintomas são o surgimento de feridas na pele e de um caroço na região da picada.
 
   - text: |
-      "Na leishmaniose visceral, o tipo mais perigoso da doença, o animal pode ter febre e diarreia; também pode surgir inchaço na barriga no seu animal por conta do baço dilatado. Pode haver crescimento exagerado das unhas, manchas na pele e
+      Na leishmaniose visceral, o tipo mais perigoso da doença, o animal pode ter febre e diarreia; também pode surgir inchaço na barriga no seu animal por conta do baço dilatado. Pode haver crescimento exagerado das unhas, manchas na pele e
       aparição de feridas no animal entre outros sintomas. Não há cura para a leishmaniose visceral e seus sintomas são parecidos com o de outras doenças, por isso leve ao veterinário quando suspeitar que seu animal está com a doença pois ela pode ser fatal. Também existe a leishmaniose cutânea que
-      afeta apenas a pele, esse tipo há cura mas ainda é transmissível. Seus sintomas são aparaição de feridas e nódulos na pele, podendo haver o surgimento de um caroço com ferida na região da picada do mosquito."
+      afeta apenas a pele, esse tipo há cura mas ainda é transmissível. Seus sintomas são aparaição de feridas e nódulos na pele, podendo haver o surgimento de um caroço com ferida na região da picada do mosquito.
 
   utter_askaction/ask_treatments_leishmaniose:
   - text: |
-      "A doença tem tratamento para os humanos, que é gratuito e está disponível na rede de serviços do Sistema Único de Saúde (SUS).
+      A doença tem tratamento para os humanos, que é gratuito e está disponível na rede de serviços do Sistema Único de Saúde (SUS).
       90% dos casos, quando não tratados, evoluem para óbito, portanto, a população deve ser corretamente orientada.
       Os animais devem ser levados ao médico veterinário para orientação da conduta a ser tomada.
-      Lembrando que não exite cura para leishmaniose visceral para animais, apenas o tratamento e eutanásia."
+      Lembrando que não exite cura para leishmaniose visceral para animais, apenas o tratamento e eutanásia.
 
   utter_askaction/ask_initial_info_sarna:
   - text: |
-      "Doença de pele causada por ácaro (parasito) que é capaz de perfurar e penetrar a pele. Como a sarna é transmitida pelo ácaro, a transmissão
+      Doença de pele causada por ácaro (parasito) que é capaz de perfurar e penetrar a pele. Como a sarna é transmitida pelo ácaro, a transmissão
       pode ser feita tanto pelo contato direto quanto por objetos contaminados. É muito comum o ácaro em tecidos como roupa e cobertores, por isso higienize bem esses tecidos se 
-      você tem um pet. Expor esses objetos ao Sol também é muito bom para se prevenir do ácaro."
+      você tem um pet. Expor esses objetos ao Sol também é muito bom para se prevenir do ácaro.
 
   utter_askaction/ask_prevent_sarna:
   - text: |
-      "Para se prevenir da sarna é sempre bom evitar contato direto com animais com suspeita de sarna. Sempre higienize bem as roupas que você usa
+      Para se prevenir da sarna é sempre bom evitar contato direto com animais com suspeita de sarna. Sempre higienize bem as roupas que você usa
       quando está em contato com os pets(a sarna é causado pelo ácaro, portanto ele fica em roupas e tecidos).A sarna também passa de pessoa para pessoa pelo contato, então
       se você estiver com suspeita de sarna tente se afastar da escola ou trabalho e se isole ao máximo até os sintomas desaparecerem. Se seu animal estiver com suspeita de sarna, leve
-      ao veterinário o mais rápido possível, e se você também estiver com suspeita procure ajuda médica o mais rápido possível."
+      ao veterinário o mais rápido possível, e se você também estiver com suspeita procure ajuda médica o mais rápido possível.
 
   utter_askaction/ask_symptoms_sarna:
   - text: |
-        "Os sintomas da sarna são bem similares em humanos e animais. Além da coceira intensa, também aparecem feridas e lesões avermelhadas na pelo."
+        Os sintomas da sarna são bem similares em humanos e animais. Além da coceira intensa, também aparecem feridas e lesões avermelhadas na pelo.
 
    
   utter_askaction/ask_treatments_sarna:
   - text: |
-        "Depois do devido diagnóstico, o tratamento tanto para animais quanto para humanos é bem fácil. Com o auxilio de um profissional, o tratamento geralmente
-         se dá por remédios, pomadas e cremes."
+        Depois do devido diagnóstico, o tratamento tanto para animais quanto para humanos é bem fácil. Com o auxilio de um profissional, o tratamento geralmente
+         se dá por remédios, pomadas e cremes.
 
   utter_askaction/ask_initial_info_cinomose:
   - text: |
-      " A cinomose é uma doença causada por vírus e com baixa chance de cura.Ela afeta somente cachorros, principalmente os não vacinados.
+        A cinomose é uma doença causada por vírus e com baixa chance de cura.Ela afeta somente cachorros, principalmente os não vacinados.
         Essa é uma doença altamente contagiosa e se transmite por secreções como espirros e contato com nariz, boca, fezes e urina.
         Ela pode ser transmitida por contato direto e indireto com secreções de outros animais. A cinomose afeta o sistema nervoso central podendo causar
         paralisia e dificuldade para andar no cachorro, em estágio inicial ela causa diarreia e febre. Essa doença é gravíssima e possui baixa taxa de cura, por isso busque vacinar o seu cachorro
         com as vacinas V8 e V10 enquanto ainda são filhotes. Lembre-se de que apenas o veterinário pode dar o diagnótico e tratamento para a doença, por isso consulte um o quanto antes caso suspeite que
-        se cão está com cinomose."
+        se cão está com cinomose.
   utter_askaction/ask_symptoms_cinomose:
   - text: |
-        "Os sintomas iniciais da cinomose são muito parecidos com os de outras doenças: Febre, diarreia, apatia, falta de apetite. Porém, quando a doença atinge a fase nervosa os sintomas
-        costumam ser mais preocupantes como: paralisia, dificuldade de andar, tremores, falta de coordenação e convulsões.Lembre-se de que apenas o veterinário pode dar o diagnótico e tratamento para a doença, por isso consulte um o quanto antes caso suspeite que
-        se cão está com cinomose."
+        Os sintomas iniciais da cinomose são muito parecidos com os de outras doenças: Febre, diarreia, apatia, falta de apetite. Porém, quando a doença atinge a fase nervosa os sintomas costumam ser mais preocupantes como: paralisia, dificuldade de andar, tremores, falta de coordenação e convulsões.Lembre-se de que apenas o veterinário pode dar o diagnótico e tratamento para a doença, por isso consulte um o quanto antes caso suspeite que
+        se cão está com cinomose.
   utter_askaction/ask_prevent_cinomose: 
   - text: |
-      "Felizmente já existe vacina eficiente para a cinomose. Confira se a carteirinha de vacinação do seu cachorro têm as vacinas V8 ou V10, principais responsáveis por combater a cinomose.
-      Essa vacinas são dadas com o cachorro ainda filhote e contam com o reforço anual, mas caso você tenha esquecido, é perfeitamente possível vacinar seu cão já adulto. Nunca é tarde para se combater a cinomose."
+      Felizmente já existe vacina eficiente para a cinomose. Confira se a carteirinha de vacinação do seu cachorro têm as vacinas V8 ou V10, principais responsáveis por combater a cinomose.
+      Essa vacinas são dadas com o cachorro ainda filhote e contam com o reforço anual, mas caso você tenha esquecido, é perfeitamente possível vacinar seu cão já adulto. Nunca é tarde para se combater a cinomose.
 
   utter_askaction/ask_treatments_cinomose: 
   - text: |
-      "A cinomose tem pouquíssima chance de cura, mas caso o seu veterinário tenha diagnosticado seu cão com cinomose não se desespere pois ainda há tratamento.
+      A cinomose tem pouquíssima chance de cura, mas caso o seu veterinário tenha diagnosticado seu cão com cinomose não se desespere pois ainda há tratamento.
       Geralmente o tratamento é feito com medicamentos acompanhados para fortalecer o organismo dos cães e ajudá-los a combater a infecção e sobreviver à doença.
-      Ao identificar a presença do vírus nos cães, os veterinários podem solicitar alguns exames para avaliar os problemas e os tratamentos adequados para fortalecer o sistema imunológico dos cachorros, impedindo o desenvolvimento da doença."
+      Ao identificar a presença do vírus nos cães, os veterinários podem solicitar alguns exames para avaliar os problemas e os tratamentos adequados para fortalecer o sistema imunológico dos cachorros, impedindo o desenvolvimento da doença.
   
   utter_askaction/ask_initial_info_parvovirose:
   - text: |
-      " A parvovirose é uma doença viral causada pelo parvovírus, que acomete principalmente os cães filhotes e adultos não vacinados e debilitados.
+      A parvovirose é uma doença viral causada pelo parvovírus, que acomete principalmente os cães filhotes e adultos não vacinados e debilitados.
       Uma vez no organismo do cachorro, o vírus se reproduz e afeta principalmente as células do intestino. 
       Isso provoca quadros severos de vômitos e de diarreia. A depender do estado de saúde do paciente, se não tratada, a parvovirose pode até mesmo levar o indivíduo a óbito.
-      A doença é causa principalmente pelo contato com as fezes de um animal doente."
+      A doença é causa principalmente pelo contato com as fezes de um animal doente.
   utter_askaction/ask_symptoms_parvovirose:
   - text: |
-        "Alguns sintoma de cães com parvovirose são: diarreia, vômito, apatia, falta de apetite e perda de peso. Mas lembre-se que apenas o veterinário pode dar o diagnóstico da doença.
-        Ao suspeitar que seu amigo está com parvovirose, não perca tempo e procure imediatamente um veterinário. Por conta do ataque às células intestinais, com fortes vômitos e diarreias, a doença pode provocar uma rápida desidratação que pode, inclusive, levar o pet a óbito."
+        Alguns sintoma de cães com parvovirose são: diarreia, vômito, apatia, falta de apetite e perda de peso. Mas lembre-se que apenas o veterinário pode dar o diagnóstico da doença.
+        Ao suspeitar que seu amigo está com parvovirose, não perca tempo e procure imediatamente um veterinário. Por conta do ataque às células intestinais, com fortes vômitos e diarreias, a doença pode provocar uma rápida desidratação que pode, inclusive, levar o pet a óbito.
   utter_askaction/ask_prevent_parvovirose: 
   - text: |
-      "A melhor prevenção contra a parvovirose é a vacinação.A vacinação deve ser iniciada quanto antes, com o cachorro ainda filhote.
+      A melhor prevenção contra a parvovirose é a vacinação.A vacinação deve ser iniciada quanto antes, com o cachorro ainda filhote.
       Antes de terminar o protocolo vacinal, devemos evitar sair de casa com o cãozinho, evitar o contato dele com outros animais e realizar a limpeza e desinfecção adequada do ambiente e das superfícies com os quais ele terá contato.
-      Nessa fase e ao longo de toda a vida do cachorro, também é muito importante mantê-lo saudável, com dieta balanceada, vacinação, vermifugação e proteção contra ectoparasitas, rotina adequada, visitas regulares ao veterinário, entre outros cuidados."
+      Nessa fase e ao longo de toda a vida do cachorro, também é muito importante mantê-lo saudável, com dieta balanceada, vacinação, vermifugação e proteção contra ectoparasitas, rotina adequada, visitas regulares ao veterinário, entre outros cuidados.
 
   utter_askaction/ask_treatments_parvovirose: 
   - text: |
-      "O tratamento é iniciado antes mesmo de os exames definitivos ficarem prontos. Como se trata de um vírus, não há tratamentos específicos, mas é feito um tratamento de suporte, com a finalidade de reverter a desidratação, infecção, inflamação, etc.
-      A parvovirose possui uma alta taxa de letalidade. Quanto antes você levar seu amigo ao veterinário, maior a chance de ele se recuperar, já que a parvovirose canina tem cura."
+      O tratamento é iniciado antes mesmo de os exames definitivos ficarem prontos. Como se trata de um vírus, não há tratamentos específicos, mas é feito um tratamento de suporte, com a finalidade de reverter a desidratação, infecção, inflamação, etc.
+      A parvovirose possui uma alta taxa de letalidade. Quanto antes você levar seu amigo ao veterinário, maior a chance de ele se recuperar, já que a parvovirose canina tem cura.
 
   utter_askaction/ask_initial_info_fiv:
   - text: |
-      "Popularmente conhecida como aids felina, a doença é causada por um vírus da mesma família do HIV e, em seus estágios clínicos, tem sintomas semelhantes ao da imunodeficiência em humanos, embora não seja transmitida para nós.
-      uma das principais formas de contágio é por meio do contato da saliva de um gato infectado com o sangue de um bichano saudável.A infecção com FIV felina é mais provável em machos e de vida livre, o que indica a transmissão eficiente por ferimentos causados por mordidas."
+      Popularmente conhecida como aids felina, a doença é causada por um vírus da mesma família do HIV e, em seus estágios clínicos, tem sintomas semelhantes ao da imunodeficiência em humanos, embora não seja transmitida para nós.
+      uma das principais formas de contágio é por meio do contato da saliva de um gato infectado com o sangue de um bichano saudável.A infecção com FIV felina é mais provável em machos e de vida livre, o que indica a transmissão eficiente por ferimentos causados por mordidas.
   
   utter_askaction/ask_symptoms_fiv:
   - text: |
-        "Assim como ocorre no contágio do HIV, a FIV afeta os gatos de maneiras diferentes. Enquanto alguns pets apresentam mais rapidamente os sintomas após a infecção, outros podem passar anos assintomáticos.
-        Na fase aguda, os gatos podem apresentar anorexia, febre e linfadenopatia (aumento dos nódulos linfáticos)”. Já a fase latente é assintomática. Por fim, conforme o avanço da doença, começam a surgir as infecções secundárias decorrentes da imunodeficiência. Nesse estágio, os sinais clínicos são variados e inespecíficos, mas o que mais se observa são gengivoestomatite crônica, doenças oculares e alterações neurológicas."
+        Assim como ocorre no contágio do HIV, a FIV afeta os gatos de maneiras diferentes. Enquanto alguns pets apresentam mais rapidamente os sintomas após a infecção, outros podem passar anos assintomáticos.
+        Na fase aguda, os gatos podem apresentar anorexia, febre e linfadenopatia (aumento dos nódulos linfáticos)”. Já a fase latente é assintomática. Por fim, conforme o avanço da doença, começam a surgir as infecções secundárias decorrentes da imunodeficiência. Nesse estágio, os sinais clínicos são variados e inespecíficos, mas o que mais se observa são gengivoestomatite crônica, doenças oculares e alterações neurológicas.
   utter_askaction/ask_prevent_fiv: 
   - text: |
-      "Embora existam atualmente diversas pesquisas visando desenvolver uma vacina para a FIV, ela ainda não é uma realidade. Sendo assim, uma das melhores formas de prevenir a doença é a castração, que inibe tanto o comportamento agressivo quanto a tendência dos gatos de escaparem para a rua, onde podem se envolver em brigas com animais contaminados.
+      Embora existam atualmente diversas pesquisas visando desenvolver uma vacina para a FIV, ela ainda não é uma realidade. Sendo assim, uma das melhores formas de prevenir a doença é a castração, que inibe tanto o comportamento agressivo quanto a tendência dos gatos de escaparem para a rua, onde podem se envolver em brigas com animais contaminados.
       gatos com FIV podem conviver com outros gatos, desde que não briguem entre si. Por isso, é fundamental  fazer o teste em todos os bichanos da casa com regularidade a fim de detectar e controlar a doença.
-      Aliás, com suspeita de FIV felina ou não, nunca deixe de levar o seu amigo para um check-up completo pelo menos uma vez por ano com veterinários de confiança. Só assim você garante que qualquer alteração no organismo do pet seja identificada logo em seu estágio inicial."
+      Aliás, com suspeita de FIV felina ou não, nunca deixe de levar o seu amigo para um check-up completo pelo menos uma vez por ano com veterinários de confiança. Só assim você garante que qualquer alteração no organismo do pet seja identificada logo em seu estágio inicial.
 
   utter_askaction/ask_treatments_fiv: 
   - text: |
-      "O diagnóstico da FIV felina é feito por meio de exames laboratoriais, com destaque para o ELISA — teste que se baseia na reação antígeno-anticorpo desencadeada por enzimas.
+      O diagnóstico da FIV felina é feito por meio de exames laboratoriais, com destaque para o ELISA — teste que se baseia na reação antígeno-anticorpo desencadeada por enzimas.
       Assim como a Felv, a FIV felina ainda não tem cura. O tratamento é o suporte, e o mais importante é manter o gato o mais saudável possível, oferecendo ração de qualidade, cuidados higiênicos, vermifugação e acompanhamento veterinário.
-      É sempre bom lembrar, quanto antes for diagnosticada a doença e maiores forem os cuidados, mais chances o bichano terá de responder bem ao tratamento, ainda que isso não elimine a infecção. Não tem como prever a expectativa de vida de um gato com FIV, mas com cuidados adequados e sob condições ideais, eles podem viver por muitos anos."
+      É sempre bom lembrar, quanto antes for diagnosticada a doença e maiores forem os cuidados, mais chances o bichano terá de responder bem ao tratamento, ainda que isso não elimine a infecção. Não tem como prever a expectativa de vida de um gato com FIV, mas com cuidados adequados e sob condições ideais, eles podem viver por muitos anos.
   
   utter_askaction/ask_initial_info_carrapato:
   - text: |
-      "A doença do carrapato é uma infecção grave causada por hemoparasitas que atacam o sangue do cachorro e pode levar à morte. O carrapato raramente contamina gatos e seres humanos, mas não é impossível.
+      A doença do carrapato é uma infecção grave causada por hemoparasitas que atacam o sangue do cachorro e pode levar à morte. O carrapato raramente contamina gatos e seres humanos, mas não é impossível.
       Existem duas principais doenças do carrapato, as que atacam os glóbulos brancos(erliquiose) e a que ataca os glóbulos vermelhos(babesiose).
       Embora não exista vacina para a doença do carrapato, existe cura e tratamento e quanto antes um veterinário qualificado der o diagnóstico mais fácil é a recuperação do animal.
-      "
+      
   utter_askaction/ask_symptoms_carrapato:
   - text: |
-        "Em estágio inicial, a doença do carrapato pode apresentar sintomas como: hematomas, sangramento nas fezes, febre, apatia, perda de peso e pontinhos vermelhos pelo corpo.
+        Em estágio inicial, a doença do carrapato pode apresentar sintomas como: hematomas, sangramento nas fezes, febre, apatia, perda de peso e pontinhos vermelhos pelo corpo.
          Já em estágio avançado a o cachorro pode apresentar sinais como: febre, anorexia e convulsões.
-         Mas lembre-se de que apenas um veterinário pode confirmar um diagnóstico confiável."
+         Mas lembre-se de que apenas um veterinário pode confirmar um diagnóstico confiável.
   utter_askaction/ask_prevent_carrapato: 
   - text: |
-      "Como não exite vacina a melhor forma de prevenir a doença é evitando o contato com o carrapato. Para isso, uma dica é evitar áreas onde sabidamente há a presença desses ectoparasitas e sempre fazer uso de produtos contra pulgas e carrapatos no pet.
-      O uso coleiras contra os parasitas é uma ótima opção, além de realizar limpezas dos locais externos com produtos contra pulga e carrapatos também é importante"
+      Como não exite vacina a melhor forma de prevenir a doença é evitando o contato com o carrapato. Para isso, uma dica é evitar áreas onde sabidamente há a presença desses ectoparasitas e sempre fazer uso de produtos contra pulgas e carrapatos no pet.
+      O uso coleiras contra os parasitas é uma ótima opção, além de realizar limpezas dos locais externos com produtos contra pulga e carrapatos também é importante.
 
   utter_askaction/ask_treatments_carrapat: 
   - text: |
-      "O tratamento é feito com antibióticos e outros medicamentos que vão combater o agente causador da doença, e pode durar de 15 a 30 dias, sempre conduzido por um veterinário.
+      O tratamento é feito com antibióticos e outros medicamentos que vão combater o agente causador da doença, e pode durar de 15 a 30 dias, sempre conduzido por um veterinário.
       Em casos mais graves, pode ser necessário uma transfusão de sangue e outros cuidados para ajudar o cachorro a se recuperar. Nesses casos, o pet deve ficar internado e ter acompanhamento constante de profissionais.
-      Vale lembrar que a doença do carrapato é uma zoonose e que tanto a Babesiose quanto Erliquiose já foram detectadas em humanos, mas a transmissão ocorre somente pela picada do carrapato infectado e não pelo contato com o cão."
-
-        
+      Vale lembrar que a doença do carrapato é uma zoonose e que tanto a Babesiose quanto Erliquiose já foram detectadas em humanos, mas a transmissão ocorre somente pela picada do carrapato infectado e não pelo contato com o cão.
