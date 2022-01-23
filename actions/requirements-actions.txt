@@ -1,16 +1,8 @@
 numpy==1.19.5
 pydantic==1.8.2
-<<<<<<< HEAD
-beautifulsoup4==4.10.0
-=======
->>>>>>> f9b960072e456afeecbb35d9713fadc5c1870772
 pymongo==4.0.1
-pymongo[srv]
 pytz==2021.3
 scikit_learn==1.0.2
 SQLAlchemy==1.4.27
-<<<<<<< HEAD
 datetime
 pymongo[srv]
-=======
->>>>>>> f9b960072e456afeecbb35d9713fadc5c1870772

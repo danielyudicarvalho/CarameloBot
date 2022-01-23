@@ -14,7 +14,7 @@ services:
     volumes:
       - ./:/app
      
-    #public: true
+    public: true
     command:
       - run
       - --enable-api

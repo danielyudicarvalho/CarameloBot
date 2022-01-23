@@ -24,25 +24,18 @@ responses:
     - text: "Estou procurando..."
 
   utter_bot_purpose:
-    - text: "Eu posso responder sobre as seguintes questões: \n \n
+    - text: | 
+        Eu posso responder diversas questões, por exemplo:
+        - Como Adotar um cão/gato? 
+        - Como Doar um cão/gato?  
+        - Encontrei perdido e resgatei e agora? 
+        - Perdi meu cão/gato
+        - Preciso que alguém resgate um Cão/Gato abandonado
+        - calendário de vacinação
+        - Como posso ajudar?
         
-        - Adoção \n \n 
-
-        - Doação \n \n  
-
-        - Doenças \n \n 
-
-        - Veterinário \n \n 
-
-        - Castração \n \n 
-
-        - Denúncias \n \n 
-        
-        Também posso esclarecer dúvidas com relação ao resgate de animais ou te ajudar a encontrar seu pet perdido.\n \n
-        
-        Ah... e se quiser se voluntariar ou ajudar de alguma maneira, só me falar!!\n \n
-      
-        E caso eu não consiga resolver sua dúvida, posso chamar um humano para nos ajudar!"
+        Também posso esclarecer dúvidas sobre as doenças 🦟 mais comuns nos pets, indicar veterinários 👩‍⚕️ ou falar sobre castrações 😵.
+        Tem uma denúncia, eu te digo para quem ligar. E caso eu não consiga resolver sua dúvida, posso te encaminhar para a equipe de atendimento.
 
   utter_out_of_scope:
     - text: "Infelizmente não posso te ajudar com isso 😞\n \n
@@ -312,17 +305,12 @@ responses:
 #### Respostas do fluxo adoção
 
   utter_about_adopt:
-  - text: "Tenho algumas sugestões:\n \n
-
-      1) Escolha um animalzinho no site www.abrigodosbichos.com.br (Clique nas fotos e veja mais detalhes e os dados de contato do responsável pelo animal)
-      Entre em contato diretamente com o responsável pelo animal.\n \n
-
-      2) Vá até uma feirinha de adoção em sua cidade, veja www.abrigodosbichos.com.br/eventos.aspx (principalmente nos fins de semana)\n \n
-
-      Pode nos contatar acessando o site https://abrigodosbichos.com.br/contato.aspx que podemos te orientar melhor sobre menores custos.
+  - text: |
+      Você pode escolher um amiguinho direto pelo site aqui: site www.abrigodosbichos.com.br 
+      OU
+      você pode ir até uma feirinha de adoção em sua cidade, veja www.abrigodosbichos.com.br/eventos.aspx.
       
-      Mas se quiser, posso te mostrar os petzinhos aqui mesmo, gostaria de vê-los?
-      "
+      Eu também posso te mostrar os petzinhos aqui mesmo de acordo com as suas preferências...gostaria de vê-los?
 
   ### adopt_intent 
   utter_need_information:
