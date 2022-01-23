@@ -1,28 +1,13 @@
-from cgitb import text
 from typing import Any, Text, Dict, List
-from urllib import response
-from numpy import extract
-from pydantic import UrlSchemeError
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from sqlalchemy import null
-from rasa_sdk.events import AllSlotsReset
 from rasa_sdk.events import SlotSet
-from rasa_sdk.events import FollowupAction
-import urllib.request as urllib_request
-from urllib.request import urlopen
-import bs4
-from bs4 import BeautifulSoup
 from datetime import datetime
 import pytz
 import smtplib 
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-import pymongo
 from pymongo import MongoClient
-from sklearn.feature_extraction import image
-from .index_count import IndexCount
-indexCount = IndexCount()
 
 #================================================================== 
 # ActionUtterGreet - implementa uma função para cumprimentar
@@ -39,30 +24,34 @@ class ActionUtterGreet(Action):
         # Pega a última mensagem e alcança o nome público do usuário no telegram
         name = tracker.get_slot("name_slot")
         if not name:
+            # name = 'Filipe' # caso queira treinar no CLI, tirar essa linha do comentário e colocar as duas abaixo em comentário
             input_data=tracker.latest_message
-            name=input_data["metadata"]["message"]["from"]["first_name"]
-            SlotSet("name_slot", name)          # input_data=tracker.latest_message
+            name = input_data["metadata"]["message"]["from"]["first_name"]
         # Como o escopo dos usuários é limitado a campo grande, o horario de comparação fica o de lá
         timezone = pytz.timezone('America/Campo_Grande')
         hoje = datetime.now(timezone)
         hora_atual = hoje.hour
 
         # Mensagens para serem usadas no utterance
-        utter_bom_dia = "Oláá "+ name +" um bom dia ! 🌞 Como posso te ajudar? 😁"
+        utter_boa_madrugada = "Olá "+ name +" uma boa madruga ! 🌒 Como posso te ajudar? 😁" 
 
-        utter_boa_tarde = "Oláá "+ name +" uma boa tarde! 🌞 Como posso te ajudar? 😁"
+        utter_bom_dia = "Olá "+ name +" um bom dia ! 🌞 Como posso te ajudar? 😁"
 
-        utter_boa_noite = "Oláá "+ name +" uma boa noite! 🌚 Como posso te ajudar? 😁"    
+        utter_boa_tarde = "Olá "+ name +" uma boa tarde! 🌞 Como posso te ajudar? 😁"
+
+        utter_boa_noite = "Olá "+ name +" uma boa noite! 🌚 Como posso te ajudar? 😁"    
 
         # Verificação para cada tipo de mensagem
         if hora_atual < 12:
             dispatcher.utter_message(text=utter_bom_dia)
         elif hora_atual < 18:
             dispatcher.utter_message(text=utter_boa_tarde)
-        else:
+        elif hora_atual < 24:
             dispatcher.utter_message(text=utter_boa_noite)
+        else:
+            dispatcher.utter_message(text=utter_boa_madrugada)
 
-        return []
+        return [SlotSet("name_slot", name)]
 
 #================================================================== 
 # ActionSendEmail - implementa uma função para enviar email
@@ -75,7 +64,8 @@ def send_email(name, email, phone, how_to_help):
     sender_email = "abrigo.do.bicho.bot@gmail.com"       # Email do Remetente
     password = "Abrigo@bicho"                            # Senha do Remetente
     receiver_email = "abrigo.do.bicho.bot@gmail.com"     # Email do Destinatário / trocar para abrigodosbichos@abrigodosbichos.com.br após apresentações
-
+    
+    # Escopo da mensagem a ser enviada
     text = f"""
     Mais um voluntário para a causa :)
 
@@ -108,13 +98,8 @@ class ActionSendEmail(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # Pega a última mensagem e alcança o nome público do usuário no telegram
-        name = tracker.get_slot("name_slot")
-        if not name:
-            input_data=tracker.latest_message
-            name=input_data["metadata"]["message"]["from"]["first_name"]
-            SlotSet("name_slot", name)
         # pega os slots que irão compor a mensagem 
+        name = tracker.get_slot("name_slot")
         email = tracker.get_slot("email_slot")
         phone = tracker.get_slot("contact_number_slot")
         how_to_help = tracker.get_slot("how_to_help_slot")
@@ -136,20 +121,22 @@ class ActionSendWhats(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # Pega a última mensagem e alcança o nome público do usuário no telegram
+        
+        # pega os slots que irão compor a mensagem
         name = tracker.get_slot("name_slot")
-        if not name:
-            input_data=tracker.latest_message
-            name=input_data["metadata"]["message"]["from"]["first_name"]
-            SlotSet("name_slot", name)
         what_to_donate = tracker.get_slot("what_to_donate_slot")
+        
+        # normalização da mensagem para o link do whats
         reception_number = "67984062288" # Número da pessoa responsável por recepcionar o cliente
-        reception_text = f"Olá, meu nome é {name}, desejo ajudar doando: {what_to_donate}"      # Texto receptivo
+        reception_text = f"Olá, meu nome é {name}, desejo ajudar doando: {what_to_donate}"  # Texto receptivo
         reception_text = reception_text.replace(" ", "%20")
         link_whats = f"https://api.whatsapp.com/send?phone={reception_number}&text={reception_text}"
+        
+        # utterance do whats
         dispatcher.utter_message(text=f"Obrigado pelas informações {name}, clique no link abaixo para continuar a conversa com um humano :)\n")
         dispatcher.utter_message(text=f"{link_whats}")
-
+        
+        return []
 #================================================================== 
 # ActionSrapping - implementa uma função para enviar email
 # email personalizado
@@ -161,17 +148,20 @@ class ActionScrapping(Action):
     async def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
-
+        
+        # pega os slots que irão compor a busca no banco de dados
         size_slot = tracker.get_slot("size_slot")
         age_slot = tracker.get_slot("age_slot")
         animal_type_slot = tracker.get_slot("animal_type_slot")
         gender_slot = tracker.get_slot("gender_slot")
-
+        # Acesso ao bd 
         cluster = MongoClient("mongodb+srv://danielyudi:elysium4@cluster0.catne.mongodb.net/mydatabase?retryWrites=true&w=majority")
         db = cluster["mydatabase"]
         mycol = db["pets"]
+        # busca pela lista com as informações dos slots
         pets = list(mycol.find({"goal":"Adocao","size":size_slot,"age":age_slot,"animal_type":animal_type_slot,"gender":gender_slot}))
-     
+        
+        # lógica dos utters baseado na quantidade de pets encontrados
         if 0 < len(pets) <= 3 :
             index=0
             for pet in pets:
@@ -181,7 +171,6 @@ class ActionScrapping(Action):
                 dispatcher.utter_message(image=pet['photo'])
                 dispatcher.utter_message(text=pet['phone'])
                 dispatcher.utter_message(text=pet['email'])
-            
         elif len(pets) > 3:
             for i in range(0,3):
                 dispatcher.utter_message(text=pets[i]['link'])
@@ -201,6 +190,8 @@ class ActionScrapping(Action):
 # ActionAnswerDisease - implementa uma função para falar  
 # sobre as zoonoses
 #==================================================================
+
+# dicionario para definir a intent do usuário em relação ao faq de doenças
 QUESTION = {
      "prevenção": "prevent",
      "tratamentos":"treatments",
@@ -218,10 +209,12 @@ class ActionAnswerDisease(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
+        
+        # pega os slots que irão o faq das doenças
         disease_slot = tracker.get_slot("disease")
         question_slot = tracker.get_slot("question")
 
+        # logica para fazer a utterance das doenças
         if question_slot and QUESTION[question_slot]:
             utter_response_answer = 'utter_askaction/ask_{question}_{disease}'.format(disease=disease_slot,question=QUESTION[question_slot])
         else:
@@ -229,7 +222,7 @@ class ActionAnswerDisease(Action):
         
         dispatcher.utter_message(response=utter_response_answer)
 
-        return []
+        return [SlotSet("disease",None),SlotSet("question",None)]
 
 #================================================================== 
 # ActionsReset- implementa os resets 

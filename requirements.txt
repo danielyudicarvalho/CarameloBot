@@ -1,9 +1,0 @@
-beautifulsoup4==4.10.0
-numpy==1.21.2
-pydantic==1.9.0
-pymongo==4.0.1
-pytz==2021.3
-rasa==3.0.5
-rasa_sdk==3.0.3
-scikit_learn==1.0.2
-SQLAlchemy==1.4.27

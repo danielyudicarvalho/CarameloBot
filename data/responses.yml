@@ -24,25 +24,17 @@ responses:
     - text: "Estou procurando..."
 
   utter_bot_purpose:
-    - text: "Eu posso responder sobre as seguintes questões: \n \n
+    - text: | 
+        Eu posso responder diversas questões, por exemplo:
+        - Como Adotar um cão/gato? 
+        - Como Doar um cão/gato?  
+        - Encontrei perdido e resgatei e agora? 
+        - Perdi meu cão/gato
+        - Preciso que alguém resgate um Cão/Gato abandonado
+        - Como posso ajudar?
         
-        - Adoção \n \n 
-
-        - Doação \n \n  
-
-        - Doenças \n \n 
-
-        - Veterinário \n \n 
-
-        - Castração \n \n 
-
-        - Denúncias \n \n 
-        
-        Também posso esclarecer dúvidas com relação ao resgate de animais ou te ajudar a encontrar seu pet perdido.\n \n
-        
-        Ah... e se quiser se voluntariar ou ajudar de alguma maneira, só me falar!!\n \n
-      
-        E caso eu não consiga resolver sua dúvida, posso chamar um humano para nos ajudar!"
+        Também posso esclarecer dúvidas sobre as doenças 🦟 mais comuns nos pets, indicar veterinários 👩‍⚕️ ou falar sobre castrações 😵.
+        Tem uma denúncia, eu te digo para quem ligar. E caso eu não consiga resolver sua dúvida, posso te encaminhar para a equipe de atendimento.
 
   utter_out_of_scope:
     - text: "Infelizmente não posso te ajudar com isso 😞"
@@ -51,7 +43,7 @@ responses:
   - text: "Nesse caso peço que entre em contato com a instituição através do número 📞 (67) 98406-2288, envie um email 📧 para abrigodosbichos@abrigodosbichos.com.br ou acesse as nossas redes sociais." 
 
   utter_please_rephrase:
-    - text: "Desculpa, não consegui compreender peço que seja mais preciso na solicitação. 😵" 
+    - text: "Desculpa, não consegui compreender peço que seja mais preciso na mensagem. 😅" 
 
   utter_default:
     - text: "Nesse caso peço que entre em contato com a instituição através do número 📞 (67) 98406-2288, envie um email 📧 para abrigodosbichos@abrigodosbichos.com.br ou acesse as nossas redes sociais." 
@@ -63,25 +55,31 @@ responses:
         Que isso, estou aqui para ajudar 😊
     - text: |
         De nada, estou a disposição 😊
+ 
+  utter_gratefull: 
+    - text: |
+        O abrigo dos bichos agradece ❤
+    - text: |
+        Qualquer coisa estou a disposição 😊
 
 #### utters para os forms
   utter_ask_what_to_donate_slot:
   - text: "O que deseja doar?"
 
   utter_ask_name_slot:
-  - text: "Poderia me informar seu nome por favor?"
+  - text: "Poderia me informar seu nome completo, por favor?"
 
   utter_ask_contact_number_slot:
-  - text: "Poderia informar seu telefone pra contato por favor?"
+  - text: "Poderia informar seu telefone  pra contato 📞, por favor?"
 
   utter_ask_email_slot:
-  - text: "Por favor, me envie seu melhor email para contato por gentileza."
+  - text: "Por favor, me envie seu email para contato, por gentileza."
 
   utter_ask_how_to_help_slot:
-  - text: "Escreva como você pretende ajudar abaixo. "
+  - text: "Escreva abaixo como você pretende ajudar."
 
   utter_ask_animal_type_slot:
-  - text: "Gostaria de adotar gato 🐱 ou cachorro 🐶?"
+  - text: "Gostaria de adotar um gato 🐱 ou um cachorro 🐶?"
     buttons:
     - title: Gato
       payload: /inform_animal_type_intent{{"animal_type_entity":"Gato"}}
@@ -89,7 +87,7 @@ responses:
       payload: /inform_animal_type_intent{{"animal_type_entity":"Cao"}}
   
   utter_ask_size_slot:
-  - text: "Qual o porte ideal que você gostaria de adotar? 📏"
+  - text: "Qual porte do animal você gostaria ? 📏"
     buttons:
     - title: pequeno
       payload: /inform_size_intent{{"size_entity":"Pequeno"}}
@@ -99,7 +97,7 @@ responses:
       payload: /inform_size_intent{{"size_entity":"Grande"}}
 
   utter_ask_gender_slot:
-  - text: "Você prefere macho ou fêmea? 🚹🚺" 
+  - text: "Você deseja um macho ♂ ou uma fêmea ♀ ? " 
     buttons:
     - title: macho
       payload: /inform_gender_intent{{"gender_entity":"Macho"}}
@@ -120,55 +118,46 @@ responses:
 ##### FAQ 1
      
   utter_faq/ask_how_to_donate_animal:
-  - text:
-      "Temos vários interessados em adotar!\n \n
-       
-      Faça boas fotos do(s) animalzinho(s) (nítida, na altura do animal e que mostre o sentimento do animalzinho)\n \n
-       
+  - text: |
+      Temos vários interessados em adotar!
+      Faça boas fotos do(s) animalzinho(s) (nítida, na altura do animal e que mostre o sentimento do animalzinho) 
       Escolha como finalidade: 'Quero DOAR um Animal' no portal www.abrigodosbichos.com.br, clique em 'Login' no topo direito do site
-      Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!\n \n
+      Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!
        
-      Lembramos que o animalzinho (cão ou gato) a ser doado tem que estar saudável e sob a guarda de um responsável (não pode estar solto na rua).\n \n
-       
-      Também pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores) https://abrigodosbichos.com.br/eventos.aspx\n \n
-       
-      E não se esqueça, CAPRICHE NA FOTO ! Se possível coloque fitinha colorida no pescoço do animalzinho. A FOTO É O SUCESSO DA DOAÇÃO."
+      Lembramos que o animalzinho 🐱🐶 a ser doado tem que estar saudável e sob a guarda de um responsável (não pode estar solto na rua).
+      Também pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores) https://abrigodosbichos.com.br/eventos.aspx
+      E não se esqueça, CAPRICHE NA FOTO ! Se possível coloque fitinha colorida no pescoço do animalzinho. 📷📷
+      A FOTO É O SUCESSO DA DOAÇÃO.
 
   utter_faq/ask_found_and_rescued:
-    - text: 
-        "Se quer apenas tentar encontrar o verdadeiro dono, favor escolha a finalidade: 'Encontrei um animal e procuro o dono' no portal abrigodosbichos.com.br clique em 'Login' no topo direito do site.\n \n
+    - text: | 
+        Se quer apenas tentar encontrar o verdadeiro dono, favor escolha a finalidade: 'Encontrei um animal e procuro o dono' no portal abrigodosbichos.com.br clique em 'Login' no topo direito do site.
+        Caso não encontrar o verdadeiro dono, não queira ou não possa ficar com o animalzinho, temos vários interessados em adotar!       
+        Favor cadastra-lo também para doar no portal abrigodosbichos.com.br (clique em “Login” no topo direito do site).
          
-        Caso não encontrar o verdadeiro dono, não queira ou não possa ficar com o animalzinho, temos vários interessados em adotar!\n \n
+        Aguardamos o(s) cadastro(s) para enviarmos às nossas listas !
          
-        Favor cadastra-lo também para doar no portal abrigodosbichos.com.br (clique em “Login” no topo direito do site).\n \n
-         
-        Aguardamos o(s) cadastro(s) para enviarmos às nossas listas!\n \n
-         
-        Lembramos que o animalzinho a ser doado tem que estar saudável e sob a guarda de um responsável (não pode estar solto na rua).\n \n
-         
-        Capriche na foto! Ela é o sucesso do anúncio.\n \n
-         
-        Também caso não possa ficar com o animalzinho, pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores), veja  https://www.abrigodosbichos.com.br/eventos.aspx"
+        Lembramos que o animalzinho a ser doado tem que estar saudável e sob a guarda de um responsável (não pode estar solto na rua).         
+        Capriche na foto! Ela é o sucesso do anúncio. 📷📷
+        Também caso não possa ficar com o animalzinho, pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores), veja  https://www.abrigodosbichos.com.br/eventos.aspx
         
   utter_faq/ask_lost_pet:
-    - text: 
-        "Favor escolha a finalidade: 'Estou procurando meu animal perdido' no portal abrigodosbichos.com.br, clique em 'Login' no topo direito do site.\n \n
+    - text: |
+        "Favor escolha a finalidade: 'Estou procurando meu animal perdido' no portal abrigodosbichos.com.br, clique em 'Login' no topo direito do site.
+        Não esqueça da foto. Ela é fundamental para encontrar o animal (se não tiver foto, procure no google alguma parecida com ele).
          
-        Não esqueça da foto. Ela é fundamental para encontrar o animal (se não tiver foto, procure no google alguma parecida com ele).\n \n
+        Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!
          
-        Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!\n \n
-         
-        E lembre-se de contatar o Centro de Controle de Zoonoses caso eles encontrem o seu animalzinho!\n \n
-         
-        Segue o contato do Centro de Controle de Zoonoses: Telefone: (67) 3314-5000 / (67) 3314-5001 | E-mail: ccz@sesau.campogrande.ms.gov.br"
+        E lembre-se de contatar o Centro de Controle de Zoonoses caso eles encontrem o seu animalzinho!
+        Segue o contato do Centro de Controle de Zoonoses: 📞 Telefone : (67) 3314-5000 / (67) 3314-5001 | 📧 E-mail: ccz@sesau.campogrande.ms.gov.br"
 
   utter_faq/ask_need_rescue:
-    - text: 
-        "Atuamos em toda Campo Grande-MS e para casos de resgate, sempre dependemos de alguém no local da ocorrência que se disponha a ajudar e encaminhar o animalzinho a um veterinário mais próximo para os primeiros atendimentos.\n \n
+    - text: |
+        "Atuamos em toda Campo Grande-MS e para casos de resgate, sempre dependemos de alguém no local da ocorrência que se disponha a ajudar e encaminhar o animalzinho a um veterinário mais próximo para os primeiros atendimentos.
          
-        Para resgatá-lo(s), peça ajuda em um pet próximo.\n \n
+        Para resgatá-lo(s), peça ajuda em um pet próximo.
          
-        Após resgatar e estar saudável, pode cadastrar para doar no portal www.AbrigoDosBichos.com.br clique em 'Login' no topo direito do site, temos vários interessados em adotar animais saudáveis.\n \n
+        Após resgatar e estar saudável, pode cadastrar para doar no portal www.abrigodosbichos.com.br clique em 'Login' no topo direito do site, temos vários interessados em adotar animais saudáveis.
          
         Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!"
 
@@ -176,7 +165,7 @@ responses:
 
 ##### wanna_help_flow 
   utter_type_of_help:
-    - text: "Como você gostaria de nos ajudar? Fazendo uma doação ou se voluntariando?"
+    - text: "Como você gostaria de nos ajudar, fazendo uma doação ou se voluntariando?"
       buttons:
       - title: "Voluntário"
         payload: "/volunteer_intent"
@@ -184,7 +173,7 @@ responses:
         payload: "/donation_intent"
 
   utter_about_volunteering: 
-    - text:
+    - text: |
         Estamos procurando por voluntários que queiram fazer parte da nossa ONG, 
         atuando com colaborações em diversas áreas. Mesmo de longe, você pode contribuir de 
         alguma forma! É veterinário e ama cachorros? Você pode ajudar a responder dúvidas de nossos seguidores! 
@@ -196,33 +185,22 @@ responses:
   - text:
       Você pode nos ajudar de várias maneiras com dinheiro, ração, areia para gato.
   
-  utter_verify_information:
-  - text:
-      "Suas informações estão corretas?\n \n
-      
-      Nome: {name_slot}
-
-      Email: {email_slot}
-
-      Telefone: {contact_number_slot}
-
-      Descrição: {how_to_help_slot}"
-
   #### Respostas do fluxo de denuncias
   utter_faq/ask_report:
     - text: "Denuncie ⛔, dependemos de sua participação ! \n \n
             
-            Para fazer uma denúncia de maus tratos, ligue: DECAT, 190 ou 181, ou 193 bombeiros
+            Para fazer uma denúncia de maus tratos,📞 ligue : DECAT, 190 ou 181, ou 193 bombeiros
             
-            Vamos juntos diminuir o sofrimento animal. Denuncie!!"
+            Vamos juntos diminuir o sofrimento animal. Denuncie !"
   
   utter_faq/ask_veterinarian:
-    - text: "Se você está procurando atendimento veterinário com preços acessíveis te recomendamos os hospitais veterinários das Universidades. \n \n
+    - text: |
+        "Se você está procurando atendimento veterinário com preços acessíveis te recomendamos os hospitais veterinários das Universidades.
 
-            Atualmente as que mais indicamos são os da UCDB  (Seminário, Campo Grande - MS (67) 3312-3809) e da UFMS(Av. Sen. Filinto Müler, 2443 - Pioneiros, Campo Grande - MS, 79070-900(67) 3345-3610).
-            Eles atendem na parte da manhã até 11h e na parte da tarde até às 17h. \n \n
+        Atualmente as que mais indicamos são os da UCDB  (Seminário, Campo Grande - MS (67) 3312-3809) e da UFMS(Av. Sen. Filinto Müler, 2443 - Pioneiros, Campo Grande - MS, 79070-900(67) 3345-3610).
+        Eles atendem na parte da manhã até 11h e na parte da tarde até às 17h.
             
-            Se tiver mais dúvidas pode nos contatar. "
+        Se tiver mais dúvidas pode nos contatar. "
  
  #### Respostas do fluxo de castração
   utter_ask_castration:
@@ -264,28 +242,24 @@ responses:
 #### Respostas do fluxo adoção
 
   utter_about_adopt:
-  - text: "Tenho algumas sugestões:\n \n
+  - text: |
+      Tenho algumas sugestões:
 
       Escolha um animalzinho no site www.abrigodosbichos.com.br (Clique nas fotos e veja mais detalhes e os dados de contato do responsável pelo animal)
-      Entre em contato diretamente com o responsável pelo animal.\n \n
+      Entre em contato diretamente com o responsável pelo animal.
 
-      Vá até uma feirinha de adoção em sua cidade, veja www.abrigodosbichos.com.br/eventos.aspx (principalmente nos fins de semana)\n \n
-
-      Pode nos contatar acessando o site https://abrigodosbichos.com.br/contato.aspx que podemos te orientar melhor sobre menores custos.\n \n
+      Vá até uma feirinha de adoção em sua cidade, veja www.abrigodosbichos.com.br/eventos.aspx (principalmente nos fins de semana).
       
-      Se quiser, posso te mostrar os petzinhos aqui mesmo, gostaria de vê-los?
-      "
+      Pode nos contatar acessando o site https://abrigodosbichos.com.br/contato.aspx que podemos te orientar melhor sobre menores custos.
+      
+      OU se quiser, posso te mostrar os petzinhos aqui mesmo...gostaria de vê-los?
 
   ### adopt_intent 
   utter_need_information:
-  - text: "Ótimo 😍, vamos precisar de algumas informações:"
-
-
-  utter_confirm:
-  - text: "Suas informações estão corretas?"
+  - text: "Que ótimo 😍, vamos precisar de algumas informações"
   
   utter_about_adopt_with_diseases:
-  - text: "Apenas um aviso: alguns pets podem apresentar doenças como fiv felina ou leishmaniose, esses pets precisam de cuidados especiais 💕 para saber mais, só me perguntar, ok?"
+  - text: "Apenas um aviso: alguns pets podem apresentar doenças como fiv felina ou leishmaniose, esses pets precisam de cuidados especiais 💕 para saber mais, basta me perguntar, ok?"
  
 #### Respostas do fluxo de zoonoses
   utter_askaction/ask_initial_info_raiva:

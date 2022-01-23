@@ -41,7 +41,6 @@ intents:
   - inform_gender_macho_intent
   - inform_gender_female_intent
 
-
 #============
 # ENTITIES
 #============ 
@@ -61,7 +60,6 @@ entities:
   - disease
   - question
 
-
 #============
 # ACTIONS
 #============ 
@@ -75,7 +73,8 @@ actions:
   - utter_welcome
   - utter_anything_else
   - utter_how_can_i_help
-
+  - utter_gratefull
+  
 # Utters Fallback
   - utter_bot_purpose
   - utter_out_of_scope
@@ -123,7 +122,7 @@ slots:
 # volunteer_form
   name_slot:
     type: text
-    # initial_value: null
+    initial_value: null
     influence_conversation: false
     mappings:
       - type: from_text
@@ -216,7 +215,6 @@ slots:
       - type: from_entity
         entity: question
 
-
 #=======
 # FORMS
 #======= 
@@ -241,7 +239,6 @@ forms:
       - size_slot
       - age_slot
       - gender_slot
-
 
 session_config:
   session_expiration_time: 60

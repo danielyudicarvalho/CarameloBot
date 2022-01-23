@@ -11,7 +11,7 @@
 # https://rasa.com/docs/rasa/custom-actions
 
 action_endpoint:
-  url: "http://localhost:5055/webhook"
+  url: "https://server-bot-rasa-danielyudicarvalho.cloud.okteto.net/webhook"
 
 
 # Tracker store which is used to store the conversations.
@@ -26,9 +26,6 @@ action_endpoint:
 #    password: <password used for authentication>
 #    use_ssl: <whether or not the communication is encrypted, default false>
 
-
-telegram:
-  
 #tracker_store:
 #    type: mongod
 #    url: <url to your mongo instance, e.g. mongodb://localhost:27017>
