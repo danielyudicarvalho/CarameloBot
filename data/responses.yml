@@ -264,7 +264,7 @@ responses:
                 A partir de 80 dias de vida"
  
  #### Respostas do fluxo de castração
-  utter_faq/ask_castration:
+  utter_ask_castration:
     - text: "Bom, primeiro precisamos saber se o seu bichinho é macho ou fêmea."
       buttons:
       - title: "Macho"
