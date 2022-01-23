@@ -20,6 +20,7 @@ intents:
   - thank_you_intent
   - out_of_scope_intent
   - bot_purpose_intent
+  - human_service_intent
   
 # complemento da castração
   - ask_castration_intent
@@ -30,7 +31,6 @@ intents:
   - wanna_help_intent
   - volunteer_intent
   - donation_intent
-  - say_contact_number_intent
   
 # adoption_flow
   - adopt_intent
@@ -68,19 +68,29 @@ entities:
 
 actions:
 
-# Utters
-  - utter_goodbye
-  - utter_greet
+# Utters Gerais
   - utter_faq
+  - utter_greet
+  - utter_goodbye
+  - utter_welcome
   - utter_anything_else
   - utter_how_can_i_help
-  - utter_submit
+
+# Utters Fallback
   - utter_bot_purpose
   - utter_out_of_scope
+  - utter_human_service
+  - utter_please_rephrase
+  - utter_default
+
+# Utters Wanna_help_flow
   - utter_type_of_help
   - utter_about_volunteering
   - utter_what_to_donate
+
+# Utters Random
   - utter_ask_castration
+  - utter_submit
 
 # Action para utter customizada
   - action_utter_greet
@@ -113,14 +123,16 @@ slots:
 # volunteer_form
   name_slot:
     type: text
-    initial_value: null
+    # initial_value: null
     influence_conversation: false
     mappings:
       - type: from_text
         conditions:
-         - active_loop: volunteer_form
-           requested_slot: name_slot
-
+          - active_loop: volunteer_form
+            requested_slot: name_slot
+          - active_loop: donate_form
+            requested_slot: name_slot
+            
   email_slot:
     type: text
     initial_value: null
@@ -143,10 +155,14 @@ slots:
 
   contact_number_slot:
     type: text
+    initial_value: null
+    influence_conversation: false
     mappings:
-    - type: from_entity
-      entity: contact_number_entity
-
+    - type: from_text
+      conditions:
+        - active_loop: volunteer_form
+          requested_slot: contact_number_slot
+ 
 # donate_form
   what_to_donate_slot:
     type: text
@@ -157,7 +173,7 @@ slots:
         conditions:
          - active_loop: donate_form
            requested_slot: what_to_donate_slot
- 
+
 # lost_pet_form
   animal_type_slot:
     type: text
@@ -216,6 +232,7 @@ forms:
   
   donate_form:
     required_slots:
+      - name_slot
       - what_to_donate_slot
       
   pet_form:

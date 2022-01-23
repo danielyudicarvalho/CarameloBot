@@ -17,16 +17,6 @@ nlu:
     - noite
     - tudo bom?
 
-- intent: ask_castration_intent
-  examples: |
-    - Quero saber como funciona a castração
-    - Como funciona o processo de castração?
-    - Pode me dizer como funciona o processo de castração ?
-    - Como ocorre o processo de castração ?
-    - Conte-me como ocorre o processo de castração
-    - Processo de castração
-    - Castração
-
 - intent: thank_you_intent
   examples: |
     - obrigado
@@ -86,6 +76,15 @@ nlu:
     - como faço para adotar um animal? 
     - posso adotar um pet ?
     
+- intent: human_service_intent
+  examples: |
+    - Atendimento humano
+    - Eu quero atendimento humano
+    - Me passa para uma pessoa
+    - Quero falar com um atendente
+    - Quero um humano
+    - Quero falar com uma pessoa
+
 - intent: bot_purpose_intent
   examples: |
     - O que você faz?
@@ -104,12 +103,16 @@ nlu:
     - batatinha 1 2 3
     - Assistir series
     - Teste 123 teste 321
-    - Atendimento humano
-    - Eu quero atendimento humano
-    - Me passa para uma pessoa
-    - Quero falar com um atendente
-    - Quero um humano
-    - Quero falar com uma pessoa
+
+- intent: ask_castration_intent
+  examples: |
+    - Quero saber como funciona a castração
+    - Como funciona o processo de castração?
+    - Pode me dizer como funciona o processo de castração ?
+    - Como ocorre o processo de castração ?
+    - Conte-me como ocorre o processo de castração
+    - Processo de castração
+    - Castração
   
 ####### intents do wanna_help_flow 
 - intent: wanna_help_intent
@@ -148,11 +151,3 @@ nlu:
     - ajudar com areia
     - ajudar com dinheiro
 
-- intent: say_contact_number_intent
-  examples: |
-    - Numero para contato é [3829-3291](contact_number_entity)
-    - [99923134](contact_number_entity)
-    - [(20) 99090-1323](contact_number_entity)
-    - [22222-2222](contact_number_entity)
-    - é [(12) 3203-4999](contact_number_entity)
-    - [67 12345-6789](contact_number_entity)

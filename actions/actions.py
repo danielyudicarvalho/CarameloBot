@@ -37,22 +37,22 @@ class ActionUtterGreet(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         # Pega a última mensagem e alcança o nome público do usuário no telegram
-        # user_name = tracker.get_slot("name_slot")
-        # if not user_name:
-        #     input_data=tracker.latest_message
-        #     user_name=input_data["metadata"]["message"]["from"]["first_name"]
-        user_name = 'João'
+        name = tracker.get_slot("name_slot")
+        if not name:
+            input_data=tracker.latest_message
+            name=input_data["metadata"]["message"]["from"]["first_name"]
+            SlotSet("name_slot", name)          # input_data=tracker.latest_message
         # Como o escopo dos usuários é limitado a campo grande, o horario de comparação fica o de lá
         timezone = pytz.timezone('America/Campo_Grande')
         hoje = datetime.now(timezone)
         hora_atual = hoje.hour
 
         # Mensagens para serem usadas no utterance
-        utter_bom_dia = "Oláá "+ user_name +" um bom dia ! 🌞 Como posso te ajudar? 😁"
+        utter_bom_dia = "Oláá "+ name +" um bom dia ! 🌞 Como posso te ajudar? 😁"
 
-        utter_boa_tarde = "Oláá "+ user_name +" uma boa tarde! 🌞 Como posso te ajudar? 😁"
+        utter_boa_tarde = "Oláá "+ name +" uma boa tarde! 🌞 Como posso te ajudar? 😁"
 
-        utter_boa_noite = "Oláá "+ user_name +" uma boa noite! 🌚 Como posso te ajudar? 😁"    
+        utter_boa_noite = "Oláá "+ name +" uma boa noite! 🌚 Como posso te ajudar? 😁"    
 
         # Verificação para cada tipo de mensagem
         if hora_atual < 12:
@@ -113,6 +113,7 @@ class ActionSendEmail(Action):
         if not name:
             input_data=tracker.latest_message
             name=input_data["metadata"]["message"]["from"]["first_name"]
+            SlotSet("name_slot", name)
         # pega os slots que irão compor a mensagem 
         email = tracker.get_slot("email_slot")
         phone = tracker.get_slot("contact_number_slot")
@@ -120,10 +121,7 @@ class ActionSendEmail(Action):
 
         # Função responsável por enviar o email
         send_email(name, email, phone, how_to_help)
-
-        dispatcher.utter_message(text=f"""
-        Obrigado pelas informações {name}, encaminhei um email para o abrigo com seus dados!""")
-
+        dispatcher.utter_message(text=f"Obrigado pelas informações {name}, encaminhei um email para o abrigo com seus dados!")
         return []
  
 #================================================================== 
@@ -139,11 +137,11 @@ class ActionSendWhats(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         # Pega a última mensagem e alcança o nome público do usuário no telegram
-        # name = tracker.get_slot("name_slot")
-        # if not name:
-        #     input_data=tracker.latest_message
-        #     name=input_data["metadata"]["message"]["from"]["first_name"]
-        name = 'João'
+        name = tracker.get_slot("name_slot")
+        if not name:
+            input_data=tracker.latest_message
+            name=input_data["metadata"]["message"]["from"]["first_name"]
+            SlotSet("name_slot", name)
         what_to_donate = tracker.get_slot("what_to_donate_slot")
         reception_number = "67984062288" # Número da pessoa responsável por recepcionar o cliente
         reception_text = f"Olá, meu nome é {name}, desejo ajudar doando: {what_to_donate}"      # Texto receptivo
@@ -197,7 +195,7 @@ class ActionScrapping(Action):
             dispatcher.utter_message(text="Infelizmente não encontramos nenhum resultado para sua busca. Você pode fazer uma busca mais aprofundada nesse site:")
             dispatcher.utter_message(text="https://adotar.com.br/busca.aspx?cc=1484&cn=ms-campo-grande")
             
-        return [FollowupAction("action_reset_pet_slots"), FollowupAction("utter_anything_else")]
+        return []
 
 #================================================================== 
 # ActionAnswerDisease - implementa uma função para falar  
@@ -229,16 +227,13 @@ class ActionAnswerDisease(Action):
         else:
             utter_response_answer = 'utter_askaction/ask_initial_info_{disease}'.format(disease=disease_slot)
         
-        
         dispatcher.utter_message(response=utter_response_answer)
- 
 
         return []
 
-
 #================================================================== 
 # ActionsReset- implementa os resets 
-# sobre os resets 
+# nos slots do volunteer_form
 #==================================================================
 class ActionResetVolunteerSlots(Action):
 
@@ -249,9 +244,10 @@ class ActionResetVolunteerSlots(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         return [SlotSet("email_slot", None), SlotSet("contact_number_slot", None), SlotSet("how_to_help_slot", None)]
+
 #================================================================== 
 # ActionsReset- implementa os resets 
-# sobre os resets 
+# nos sots do pet_form
 #==================================================================
 class ActionResetPetSlots(Action):
 
@@ -262,9 +258,10 @@ class ActionResetPetSlots(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         return [SlotSet("animal_type_slot", None), SlotSet("size_slot", None), SlotSet("age_slot", None), SlotSet("gender_slot", None)]
+
 #================================================================== 
 # ActionsReset- implementa os resets 
-# sobre os resets 
+# nos slots do donate_form
 #==================================================================
 class ActionResetDonateSlot(Action):
 
@@ -276,6 +273,10 @@ class ActionResetDonateSlot(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         return [SlotSet("what_to_donate_slot", None)]
 
+#================================================================== 
+# ActionsReset- implementa os resets 
+# no slot do nome
+#==================================================================
 class ActionResetNameSlot(Action):
 
      def name(self) -> Text:

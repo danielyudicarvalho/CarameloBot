@@ -27,6 +27,7 @@ services:
       - all
     ports:
       - "5055:5055"
+      - "587:587"
     volumes:
       - "./actions:/app/actions"
 

@@ -2,44 +2,36 @@ version: "3.0"
 
 stories:
 
-# - story: Usuário gostaria de adotar um pet
-#   steps:
-#   - intent: greet_intent
-#   - action: action_utter_greet
-#   - intent: adopt_intent
-#   - action: utter_about_adopt
-#   - intent: affirm_intent 
-#   - action: utter_need_information 
-#   - action: pet_form
-#   - active_loop: pet_form
+- story: Usuário gostaria de adotar um pet
+  steps:
+  - intent: adopt_intent
+  - action: utter_about_adopt
+  - intent: affirm_intent 
+  - action: utter_need_information 
+  - action: pet_form
+  - active_loop: pet_form
 
-# - story: Usuário não gostaria de adotar um pet
-#   steps:
-#   - intent: greet_intent
-#   - action: action_utter_greet
-#   - intent: adopt_intent
-#   - action: utter_about_adopt
-#   - intent: deny_intent 
-#   - action: utter_anything_else
+- story: Usuário não gostaria de adotar um pet
+  steps:
+  - intent: adopt_intent
+  - action: utter_about_adopt
+  - intent: deny_intent 
+  - action: utter_anything_else
 
-# - story: Usuário gostaria de doar
-#   steps:
-#   - intent: greet_intent
-#   - action: action_utter_greet
-#   - intent: wanna_help_intent
-#   - action: utter_type_of_help
-#   - intent: donation_intent
-#   - action: utter_what_to_donate
-#   - action: donate_form
-#   - active_loop: donate_form
+- story: Usuário gostaria de doar
+  steps:
+  - intent: wanna_help_intent
+  - action: utter_type_of_help
+  - intent: donation_intent
+  - action: utter_what_to_donate
+  - action: donate_form
+  - active_loop: donate_form
   
-# - story: Usuário gostaria de voluntariar
-#   steps:
-#   - intent: greet_intent
-#   - action: action_utter_greet
-#   - intent: wanna_help_intent
-#   - action: utter_type_of_help
-#   - intent: volunteer_intent
-#   - action: utter_about_volunteering
-#   - action: volunteer_form
-#   - active_loop: volunteer_form
+- story: Usuário gostaria de voluntariar
+  steps:
+  - intent: wanna_help_intent
+  - action: utter_type_of_help
+  - intent: volunteer_intent
+  - action: utter_about_volunteering
+  - action: volunteer_form
+  - active_loop: volunteer_form 

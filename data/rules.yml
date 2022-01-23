@@ -11,6 +11,11 @@ rules:
   - action: utter_faq
   - action: utter_anything_else
 
+- rule: Usuário digita oi
+  steps:
+  - intent: greet_intent
+  - action: action_utter_greet
+
 - rule: Chatbot começa com o /start
   steps: 
   - intent: start
@@ -129,7 +134,9 @@ rules:
     - requested_slot: null
   - action: utter_searching
   - action: action_scrapping
-
+  - action: action_reset_pet_slots
+  - action: utter_anything_else
+  
 #---------------------------
 # Regras Fallback
 #---------------------------
@@ -137,6 +144,7 @@ rules:
   steps:
   - intent: out_of_scope_intent
   - action: utter_out_of_scope
+  - action: utter_anything_else
 
 - rule: Bot solicita para o usuário repetir quando estiver low NLU confidence
   steps:
@@ -148,3 +156,7 @@ rules:
   - intent: bot_purpose_intent
   - action: utter_bot_purpose
 
+- rule: Usúario deseja atendimento humano
+  steps:
+  - intent: human_service_intent
+  - action: utter_human_service

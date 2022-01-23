@@ -45,10 +45,10 @@ responses:
         E caso eu não consiga resolver sua dúvida, posso chamar um humano para nos ajudar!"
 
   utter_out_of_scope:
-    - text: "Infelizmente não posso te ajudar com isso 😞\n \n
-
-        Nesse caso peço que entre em contato com a instituição através do número 📞 (67) 98406-2288, envie um email 📧 para abrigodosbichos@abrigodosbichos.com.br ou acesse as nossas redes sociais."
+    - text: "Infelizmente não posso te ajudar com isso 😞"
     
+  utter_human_service:
+  - text: "Nesse caso peço que entre em contato com a instituição através do número 📞 (67) 98406-2288, envie um email 📧 para abrigodosbichos@abrigodosbichos.com.br ou acesse as nossas redes sociais." 
 
   utter_please_rephrase:
     - text: "Desculpa, não consegui compreender peço que seja mais preciso na solicitação. 😵" 
@@ -65,7 +65,6 @@ responses:
         De nada, estou a disposição 😊
 
 #### utters para os forms
- 
   utter_ask_what_to_donate_slot:
   - text: "O que deseja doar?"
 
@@ -233,7 +232,7 @@ responses:
         payload: '/ask_macho_castration'
       - title: "Fêmea"
         payload: '/ask_female_castration'
-
+        
   utter_ask_macho_castration:
     - text: "Nos machos, tanto em cães quanto em gatos, a operação é menos invasiva. Consiste na retirada dos testículos – o que implica numa redução expressiva de testosterona.
             É comum que após a castração o animal fique um pouco mais calmo e menos agitado que antes."
@@ -267,14 +266,14 @@ responses:
   utter_about_adopt:
   - text: "Tenho algumas sugestões:\n \n
 
-      1) Escolha um animalzinho no site www.abrigodosbichos.com.br (Clique nas fotos e veja mais detalhes e os dados de contato do responsável pelo animal)
+      Escolha um animalzinho no site www.abrigodosbichos.com.br (Clique nas fotos e veja mais detalhes e os dados de contato do responsável pelo animal)
       Entre em contato diretamente com o responsável pelo animal.\n \n
 
-      2) Vá até uma feirinha de adoção em sua cidade, veja www.abrigodosbichos.com.br/eventos.aspx (principalmente nos fins de semana)\n \n
+      Vá até uma feirinha de adoção em sua cidade, veja www.abrigodosbichos.com.br/eventos.aspx (principalmente nos fins de semana)\n \n
 
       Pode nos contatar acessando o site https://abrigodosbichos.com.br/contato.aspx que podemos te orientar melhor sobre menores custos.\n \n
       
-      3) Se quiser, posso te mostrar os petzinhos aqui mesmo, gostaria de vê-los?
+      Se quiser, posso te mostrar os petzinhos aqui mesmo, gostaria de vê-los?
       "
 
   ### adopt_intent 
