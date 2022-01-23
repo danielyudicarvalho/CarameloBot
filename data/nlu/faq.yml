@@ -43,33 +43,7 @@ nlu:
       - Meu pet desapareceu
       - Meu cachorro sumiu, ele é vira-lata caramelo, manda uma msg para mim
   
-  - intent: faq/ask_vaccine_dog
-    examples: |
-      - me fale sobre vacinas para cachorro
-      - quais vacinas devo dar no meu cachorro
-      - calendario de vacinação para cachorros
-      - quais vacinas devo dar no meu cachorro
-      - vacinação de cachorro
-      - quero saber de vacinas para cachorro
-      - quando vacinar meu cão
-      - vacinação para cães
-      - vacina para cão
-      - quando vacinar meus cães
-  
-  - intent: faq/ask_vaccine_cat
-    examples: |
-      - me fale sobre vacinas para gato
-      - quais vacinas devo dar no meu gato
-      - calendario de vacinação para gatos
-      - quais vacinas devo dar no meu gato
-      - vacinação de gato
-      - quero saber de vacinas para gato
-      - quando vacinar meu gato
-      - vacinação para gato
-      - vacina para gato
-      - quando vacinar meus gato
-      - como faço para vacinar meus gatos
-      - vacinação para gatos
+ 
 
   - intent: faq/ask_need_rescue
     examples: |
@@ -78,6 +52,7 @@ nlu:
       - machucou a perna
       - o gato está dolorido
       - tem um cachorro ferido
+      - preciso de resgate
       - encontrei um pet ferido
       - resgatei um animal machucado
       - cachorrinho atropelado
@@ -118,7 +93,34 @@ nlu:
       - o que eu faço quando meu bichinho morre?
       - qual número eu ligo quando meu animal morre?
       - com quem eu falor quando o bicho morre?
-
+  - intent: faq/ask_vaccine_dog
+    examples: |
+      - me fale sobre vacinas para cachorro
+      - quais vacinas devo dar no meu cachorro
+      - calendario de vacinação para cachorros
+      - quais vacinas devo dar no meu cachorro
+      - vacinação de cachorro
+      - quero saber de vacinas para cachorro
+      - quando vacinar meu cão
+      - vacinação para cães
+      - vacina para cão
+      - quando vacinar meus cães
+  
+  - intent: faq/ask_vaccine_cat
+    examples: |
+      - me fale sobre vacinas para gato
+      - quais vacinas devo dar no meu gato
+      - calendario de vacinação para gatos
+      - quais vacinas devo dar no meu gato
+      - vacinação de gato
+      - quero saber de vacinas para gato
+      - quando vacinar meu gato
+      - vacinação para gato
+      - vacina para gato
+      - quando vacinar meus gato
+      - como faço para vacinar meus gatos
+      - vacinação para gatos
+      
   - intent: faq/ask_collect_warn
     examples: |
       - posso enterrar meu proprio cachorro quando ele morrer?

@@ -3,14 +3,18 @@ services:
   bot-rasa:
     build:
       context: .
+
       dockerfile: images/bot.Dockerfile
+
+
     networks: 
       - all
     ports:
       - 5005:5005
     volumes:
       - ./:/app
-    public: true
+     
+    #public: true
     command:
       - run
       - --enable-api
@@ -22,7 +26,9 @@ services:
   server-bot-rasa:
     build:
       context: .
+
       dockerfile: images/server.Dockerfile
+
     networks: 
       - all
     ports:
@@ -33,3 +39,4 @@ services:
 networks:
   all:
     driver: bridge
+

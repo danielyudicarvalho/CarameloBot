@@ -47,7 +47,7 @@ rules:
   steps:
   - action: utter_anything_else
   - intent: deny_intent
-  - action: utter_goodbye
+  - action: utter_gratefull
 
 #---------------------------
 # Regras Ask
@@ -135,6 +135,7 @@ rules:
   - action: utter_searching
   - action: action_scrapping
   - action: action_reset_pet_slots
+  - action: utter_about_adopt_with_diseases
   - action: utter_anything_else
   
 #---------------------------

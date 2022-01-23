@@ -275,15 +275,16 @@ responses:
     - text: "Bom, primeiro precisamos saber se o seu bichinho é macho ou fêmea."
       buttons:
       - title: "Macho"
-        payload: 'faq/ask_macho_castration'
+        payload: 'ask_macho_castration'
       - title: "Fêmea"
-        payload: 'faq/ask_female_castration'
-  utter_faq/ask_macho_castration:
+        payload: 'ask_female_castration'
+
+  utter_ask_macho_castration:
     - text: "Nos machos, tanto em cães quanto em gatos, a operação é menos invasiva. Consiste na retirada dos testículos – o que implica numa redução expressiva de testosterona.
             É comum que após a castração o animal fique um pouco mais calmo e menos agitado que antes."
-  utter_faq/ask_female_castration:
+  utter_ask_female_castration:
     - text: "Já nas fêmeas – de ambas as espécies – é necessário realizar uma incisão no abdome para remoção do útero e dos ovários. O procedimento que reduz a produção de estrógeno e progesterona."
-  utter_faq/ask_when_castration:
+  utter_ask_when_castration:
     - text: "Em alguns casos, a castração pode ser feita ainda na fase de filhotes. Contudo, é interessante que o seu cão ou o gato já tenha tomado todas as vacinas. Este cuidado visa reduzir o risco de contaminação no ambiente hospitalar.
               Buscar orientação do médico veterinário de confiança sobre o seu caso é a melhor estratégia."
 
