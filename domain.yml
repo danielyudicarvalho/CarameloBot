@@ -40,6 +40,9 @@ intents:
   - inform_size_intent
   - inform_gender_macho_intent
   - inform_gender_female_intent
+  - quero um cachorro
+  - quero um gato
+  - desejo adotar um gatinho
 
 #============
 # ENTITIES
