@@ -76,6 +76,9 @@ nlu:
       - como faço para adotar um animal? 
       - posso adotar um pet ?
       - Como adotar um cão
+      - quero um cachorro
+      - quero um gato
+      - desejo adotar um gatinho
 
   - intent: human_service_intent
     examples: |

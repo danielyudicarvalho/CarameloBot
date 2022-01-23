@@ -12,6 +12,8 @@
 
 action_endpoint:
   url: "https://server-bot-rasa-danielyudicarvalho.cloud.okteto.net/webhook"
+  #url: http://localhost:5055/webhook
+
 
 
 # Tracker store which is used to store the conversations.

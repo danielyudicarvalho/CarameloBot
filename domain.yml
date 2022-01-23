@@ -92,6 +92,8 @@ actions:
 
 # Utters Random
   - utter_ask_castration
+  - utter_ask_macho_castration
+  - utter_ask_female_castration
   - utter_submit
 
 # Action para utter customizada

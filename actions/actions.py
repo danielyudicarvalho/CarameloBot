@@ -166,19 +166,19 @@ class ActionScrapping(Action):
             index=0
             for pet in pets:
                 index+=1
-                
-                dispatcher.utter_message(text="nome do pet: "+pet['name'])
+                dispatcher.utter_message(text='nome do pet: '+pet['name'])
                 dispatcher.utter_message(image=pet['photo'])
-                dispatcher.utter_message(text=pet['link'])
-                dispatcher.utter_message(text="telefone para contato: "+pet['phone'])
-                dispatcher.utter_message(text="email para contato: "+pet['email'][7:])
+                dispatcher.utter_message(text='LINK PARA ADOÇÃO: '+pet['link'])
+                dispatcher.utter_message(text='telefone para contato: '+pet['phone'])
+                dispatcher.utter_message(text='email para contato: '+pet['email'][7:])
+
         elif len(pets) > 3:
             for i in range(0,3):
-                dispatcher.utter_message(text=pets[i]['name'])
-                dispatcher.utter_message(image=pets[i]['photo'])
-                dispatcher.utter_message(text=pets[i]['link'])
-                dispatcher.utter_message(text="telefone para contato: "+pets[i]['phone'])
-                dispatcher.utter_message(text="email para contato: "+pets[i]['email'][7:])
+                dispatcher.utter_message(text='nome do pet: '+pet['name'])
+                dispatcher.utter_message(image=pet['photo'])
+                dispatcher.utter_message(text='LINK PARA ADOÇÃO: '+pet['link'])
+                dispatcher.utter_message(text='telefone para contato: '+pet['phone'])
+                dispatcher.utter_message(text='email para contato: '+pet['email'][7:])
             dispatcher.utter_message(text="Existem mais opções de pets, você pode procurar no site: ")
             dispatcher.utter_message(text="https://adotar.com.br/busca.aspx?cc=1484&cn=ms-campo-grande") 
         else:
