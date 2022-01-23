@@ -7,3 +7,4 @@ rasa==3.0.5
 rasa_sdk==3.0.3
 scikit_learn==1.0.2
 SQLAlchemy==1.4.27
+datetime

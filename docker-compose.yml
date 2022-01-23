@@ -3,12 +3,11 @@ services:
   bot-rasa:
     build:
       context: .
-      dockerfile: docker/bot.Dockerfile
-    container_name: rasa-pet
+      dockerfile: images/bot.Dockerfile
     networks: 
       - all
     ports:
-      - 5006:5005
+      - 5005:5005
     volumes:
       - ./:/app
     public: true
@@ -17,24 +16,20 @@ services:
       - --enable-api
       - --cors
       - "*"
+    depends_on:
+      - server-bot-rasa
 
   server-bot-rasa:
     build:
       context: .
-      dockerfile: docker/server.Dockerfile
-    container_name: rasa-actions
+      dockerfile: images/server.Dockerfile
     networks: 
       - all
     ports:
       - "5055:5055"
-      - "587:587"
     volumes:
       - "./actions:/app/actions"
-
-   
-
+  
 networks:
   all:
     driver: bridge
-    driver_opts:
-      com.docker.network.enable_ipv6: "true"

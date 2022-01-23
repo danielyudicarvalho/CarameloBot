@@ -3,10 +3,9 @@ urllib3==1.26.7
 numpy==1.19.5
 pydantic==1.8.2
 beautifulsoup4==4.10.0
-numpy==1.21.2
 pymongo==4.0.1
 pytz==2021.3
 scikit_learn==1.0.2
 SQLAlchemy==1.4.27
-email
-smtplib
+datetime
+pymongo[srv]
