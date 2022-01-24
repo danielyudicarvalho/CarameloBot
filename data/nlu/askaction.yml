@@ -56,6 +56,10 @@ nlu:
     - qual o [sintoma](question) da [fiv] felina(disease)?
     - qual a [prevenção](question) pra [fiv]felina(disease)?
     - [tratamento](question) para [fiv] felina(disease)?
+    - informações sobre [fiv] felina(disease)?
+    - qual o [prevenção](question) da [fiv] felina(disease)?
+    - [fiv]felina(disease)[prevenção](question)?
+    - [sintomas](question) para [fiv] felina(disease)?
     - como [prevenir](question) a [fiv] felina(disease)?
     - como [tratar](question) a [fiv] felina (disease)?
     - como [tratar](question) a [parvovirose](disease)?

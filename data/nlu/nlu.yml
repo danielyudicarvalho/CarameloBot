@@ -5,6 +5,11 @@ nlu:
   - intent: greet_intent
     examples: |
       - oi
+      - OI
+      - Oi
+      - Oie
+      - oi oi
+      - Oi Oi
       - oiiii
       - olá
       - eae
@@ -12,9 +17,6 @@ nlu:
       - bom dia
       - boa tarde
       - boa noite
-      - dia
-      - tarde
-      - noite
       - tudo bom?
       - e ae
       - oioi
@@ -34,6 +36,9 @@ nlu:
     examples: |
       - bye
       - tchau
+      - TCHAU
+      - Tchauuuuu
+      - Tchau
       - xau
       - adeus
       - flw
