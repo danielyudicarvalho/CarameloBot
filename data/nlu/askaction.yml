@@ -7,7 +7,6 @@ nlu:
 - regex: question
   examples: | 
     - /([A-Z a-z])/
-
 - lookup: disease
   examples: |
     - leishmaniose
@@ -17,7 +16,6 @@ nlu:
     - cinomose
     - fiv
     - carrapato
-
 - lookup: question
   examples: |
     - sintomas
@@ -26,7 +24,6 @@ nlu:
     - prevenir
     - tratar
     - sintoma
-
 - intent: askaction/ask_disease
   examples: |
     - me fale sobre [leishmaniose](disease)
@@ -55,12 +52,12 @@ nlu:
     - como [prevenir](question) a [cinomose](disease)?
     - o que devo fazer para [tratar](question) da [cinomose](disease)?
     - como posso o [tratamento](question) do meu animal para que ele não tenha [cinomose](disease)?
-    - como se [prevenir](question) para [fiv](disease)?
-    - qual o [sintoma](question) da [fiv](disease)?
-    - qual a [prevenção](question) pra [fiv](disease)?
-    - [tratamento](question) para [fiv](disease)?
-    - como [prevenir](question) a [fiv](disease)?
-    - como [tratar](question) a [fiv](disease)?
+    - como se [prevenir](question) para [fiv] felina(disease)?
+    - qual o [sintoma](question) da [fiv] felina(disease)?
+    - qual a [prevenção](question) pra [fiv]felina(disease)?
+    - [tratamento](question) para [fiv] felina(disease)?
+    - como [prevenir](question) a [fiv] felina(disease)?
+    - como [tratar](question) a [fiv] felina (disease)?
     - como [tratar](question) a [parvovirose](disease)?
     - como se [prevenir](question) para [parvovirose](disease)?
     - qual o [sintoma](question) da [parvovirose](disease)?

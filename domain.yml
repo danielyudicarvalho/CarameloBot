@@ -40,9 +40,6 @@ intents:
   - inform_size_intent
   - inform_gender_macho_intent
   - inform_gender_female_intent
-  - quero um cachorro
-  - quero um gato
-  - desejo adotar um gatinho
 
 #============
 # ENTITIES
@@ -127,7 +124,7 @@ slots:
 # volunteer_form
   name_slot:
     type: text
-    initial_value: null
+    # initial_value: null
     influence_conversation: false
     mappings:
       - type: from_text
@@ -181,6 +178,7 @@ slots:
 # lost_pet_form
   animal_type_slot:
     type: text
+    initial_value: null
     mappings:
     - type: from_entity
       entity: animal_type_entity
