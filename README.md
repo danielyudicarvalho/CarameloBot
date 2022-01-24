@@ -21,6 +21,19 @@ Um chatbot criado por discentes da Universidade Federal do Mato Grosso Do Sul pa
 # 📂 Documentação
  * Documentação do [Projeto](https://drive.google.com/drive/folders/1dRUavT9Ffybw4ubHF2y_UCjrheMY3YB9)
 ---
+# 📌 Funcionalidades
+|   Intenções   |   Intenções  |
+| ------------- | ------------ |
+| faq           | askAction    |
+| /start        | ask_disease  |
+| goodbye       | affirm       |
+| greet         | deny         |
+| ask_castration| thank_you    |
+| volunteer     | out_of_scope |
+| donation      | bot_purpose  |
+| adopt         | human_service|
+
+---
 # 📺 Tecnologias
  * 🍀 [MongoDB](https://www.mongodb.com/) 
  * 🤖 [Rasa](https://rasa.com/) 
@@ -50,9 +63,9 @@ Um chatbot criado por discentes da Universidade Federal do Mato Grosso Do Sul pa
 ---
 
 # 🐕 Caramelo team 
-- 👩‍💻 Anália Beatriz
+- 👩‍💻 [Anália Beatriz](https://www.linkedin.com/in/an%C3%A1lia-beatriz-ferreira-913532225/)
 - 👨‍💻 [Daniel Yudi Carvalho](https://www.linkedin.com/in/daniel-yudi-carvalho-608365a4/)
-- 👨‍💻 Filipe Camuso Fernandez
+- 👨‍💻 [Filipe Camuso Fernandez](https://www.linkedin.com/in/filipe-camuso-3437841a7/)
 - 👨‍💻 [João Paulo Wakugawa](https://www.linkedin.com/in/jpwakugawa/)
 - 👨‍💻 [Leonardo Felipe Oliveira Freitas](https://www.linkedin.com/in/leonardo-oliveira-freitas/)
 ---
