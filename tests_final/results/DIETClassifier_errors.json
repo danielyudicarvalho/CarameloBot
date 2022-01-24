@@ -1,0 +1,66 @@
+[
+  {
+    "text": "qual o procedimento para tratar a raiva?",
+    "entities": [
+      {
+        "start": 25,
+        "end": 31,
+        "value": "tratar",
+        "entity": "question"
+      },
+      {
+        "start": 34,
+        "end": 39,
+        "value": "raiva",
+        "entity": "question"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "question",
+        "start": 25,
+        "end": 31,
+        "confidence_entity": 0.9947803616523743,
+        "value": "tratar",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "disease",
+        "start": 34,
+        "end": 39,
+        "confidence_entity": 0.828848659992218,
+        "value": "raiva",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "qual o [sintoma] presente no vírus da raiva ?",
+    "entities": [
+      {
+        "start": 38,
+        "end": 43,
+        "value": "raiva",
+        "entity": "question"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "question",
+        "start": 8,
+        "end": 15,
+        "confidence_entity": 0.6820593476295471,
+        "value": "sintoma",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "disease",
+        "start": 38,
+        "end": 43,
+        "confidence_entity": 0.8057359457015991,
+        "value": "raiva",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

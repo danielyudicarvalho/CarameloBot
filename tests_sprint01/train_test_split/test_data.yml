@@ -1,0 +1,88 @@
+version: "3.0"
+nlu:
+- intent: faq/ask_how_to_volunteer
+  examples: |
+    - Quero ser voluntario
+- intent: faq/ask_how_to_help
+  examples: |
+    - Como posso ajudar vocês?
+- intent: faq/ask_found_and_rescued
+  examples: |
+    - Encontrei um gato de rua e quero ficar com ele
+- intent: faq/ask_castatration
+  examples: |
+    - Como funciona o processo de castração?
+- intent: faq/ask_veterinarian
+  examples: |
+    - Quero o contato do veterinario
+- intent: faq/ask_report
+  examples: |
+    - Gostaria de fazer uma denuncia de maus tratos
+- intent: faq/ask_vaccine
+  examples: |
+    - detalhes sobre vacina
+- intent: faq/ask_collect_warn
+  examples: |
+    - posso enterrar meu gato no quintal?
+- intent: faq/ask_collect
+  examples: |
+    - pra quem eu ligo quando meu gato morre?
+- intent: askaction/ask_disease
+  examples: |
+    - [tratamento](question) para [sarna](disease)?
+    - [tratamento](question) para [fiv](disease)?
+    - como [tratar](question) a [leishmaniose](disease)?
+    - fale sobre [sarna](disease)
+- intent: complaint_intent
+  examples: |
+    - Meu nome é Leonardo, meu rg é 123456 321, meu cpf é 123 456 789 10 , meu telefone é 1234 5678, minha denuncia é
+- intent: need_rescue_intent
+  examples: |
+    - Achei um pet que precisa de resgate
+- intent: say_description_intent
+  examples: |
+    - ele é isso e aquilo, tem o pelo alto e da raça tal
+- intent: adopt_intent
+  examples: |
+    - quero adotar
+- intent: inform_animal_type_intent
+  examples: |
+    - é um [gato](animal_type_entity)
+- intent: say_contact_number_intent
+  examples: |
+    - [(20) 99090-1323](contact_number_entity)
+- intent: goodbye_intent
+  examples: |
+    - adeus
+- intent: lost_my_pet_intent
+  examples: |
+    - Vocês podem me ajudar a achar meu [gato](animal_type_entity)?
+- intent: affirm_intent
+  examples: |
+    - confirmo
+- intent: deny_intent
+  examples: |
+    - n
+    - cancelo
+- intent: greet_intent
+  examples: |
+    - oiiii
+    - eae
+- regex: question
+  examples: |
+    - /([A-Z a-z])/
+- lookup: disease
+  examples: |
+    - leishmaniose
+    - raiva
+    - sarna
+    - toxoplasmose
+    - fiv
+- lookup: question
+  examples: |
+    - sintomas
+    - prevenção
+    - tratamento
+    - prevenir
+    - tratar
+    - sintoma

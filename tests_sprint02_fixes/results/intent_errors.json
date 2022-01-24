@@ -1,0 +1,42 @@
+[
+  {
+    "text": "tchau",
+    "intent": "goodbye_intent",
+    "intent_prediction": {
+      "name": "greet_intent",
+      "confidence": 0.6934911934510334
+    }
+  },
+  {
+    "text": "Numero para contato é 3829-3291",
+    "intent": "say_contact_number_intent",
+    "intent_prediction": {
+      "name": "faq",
+      "confidence": 0.2801611199512417
+    }
+  },
+  {
+    "text": "99923134",
+    "intent": "say_contact_number_intent",
+    "intent_prediction": {
+      "name": "faq",
+      "confidence": 0.2355694303297757
+    }
+  },
+  {
+    "text": "22222-2222",
+    "intent": "say_contact_number_intent",
+    "intent_prediction": {
+      "name": "faq",
+      "confidence": 0.2355694303297757
+    }
+  },
+  {
+    "text": "67 12345-6789",
+    "intent": "say_contact_number_intent",
+    "intent_prediction": {
+      "name": "out_of_scope_intent",
+      "confidence": 0.29729884383076133
+    }
+  }
+]

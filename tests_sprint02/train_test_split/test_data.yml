@@ -1,0 +1,110 @@
+version: "3.0"
+nlu:
+- intent: faq/ask_report
+  examples: |
+    - Gostaria de fazer uma denuncia de maus tratos
+    - Quero fazer uma denuncia
+- intent: faq/ask_collect_warn
+  examples: |
+    - Tem consequências se eu enterrar meu bicho por conta própria?
+- intent: faq/ask_lost_pet
+  examples: |
+    - Meu cachorro sumiu, ele é vira-lata caramelo, manda uma msg para mim
+- intent: faq/ask_veterinarian
+  examples: |
+    - Pode me passar o contato do veterinario ?
+    - Pode me passar o numero do veterinario ?
+- intent: faq/ask_how_to_donate_animal
+  examples: |
+    - doar
+    - procedimento de doacao
+- intent: faq/ask_collect
+  examples: |
+    - o que eu faço quando meu bichinho morre?
+    - meu pet morreu e agora?
+- intent: faq/ask_need_rescue
+  examples: |
+    - gatinho atropelado
+    - resgatei um animal machucado
+- intent: faq/ask_found_and_rescued
+  examples: |
+    - Resgatei um animal, o que devo fazer?
+    - Encontrei um gato de rua e quero ficar com ele
+- intent: askaction/ask_disease
+  examples: |
+    - como [tratar](question) a [sarna](disease)?
+    - o que é [leishmaniose](disease)
+    - qual o procedimento para [tratar](question) a [raiva](question)?
+    - qual o [sintoma](question) da [fiv](disease)?
+    - como é feito o [tratamento](question) da [raiva](disease)?
+    - [tratamento](question) para [parvovirose](disease)?
+    - me fale sobre [leishmaniose](disease)
+    - como [tratar](question) a [fiv](disease)?
+    - qual os [sintomas](question) da doença do [carrapato](disease)?
+- intent: adopt_intent
+  examples: |
+    - como eu adoto?
+- intent: human_service_intent
+  examples: |
+    - Quero falar com uma pessoa
+- intent: out_of_scope_intent
+  examples: |
+    - Teste 123 teste 321
+- intent: thank_you_intent
+  examples: |
+    - vlw
+    - muito obrigado
+- intent: bot_purpose_intent
+  examples: |
+    - o que posso perguntar?
+- intent: ask_castration_intent
+  examples: |
+    - Conte-me como ocorre o processo de castração
+- intent: donation_intent
+  examples: |
+    - dar dinheiro para ONG
+    - doacao de areia
+- intent: volunteer_intent
+  examples: |
+    - Quero fazer parte do voluntariado
+- intent: goodbye_intent
+  examples: |
+    - flw
+    - se cuida
+- intent: deny_intent
+  examples: |
+    - negativo
+    - jamais
+- intent: affirm_intent
+  examples: |
+    - confirmo
+    - afirmativo
+    - exato
+- intent: greet_intent
+  examples: |
+    - olá
+    - bom dia
+- intent: wanna_help_intent
+  examples: |
+    - Como posso ajudar vocês?
+    - Desejo ajudar de alguma maneira
+- regex: question
+  examples: |
+    - /([A-Z a-z])/
+- lookup: disease
+  examples: |
+    - leishmaniose
+    - raiva
+    - sarna
+    - parvovirose
+    - cinomose
+    - fiv
+    - carrapato
+- lookup: question
+  examples: |
+    - sintomas
+    - prevenção
+    - tratamento
+    - prevenir
+    - tratar
+    - sintoma

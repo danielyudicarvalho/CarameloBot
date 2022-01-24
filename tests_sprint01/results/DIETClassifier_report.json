@@ -1,0 +1,48 @@
+{
+  "contact_number_entity": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 12,
+    "confused_with": {}
+  },
+  "animal_type_entity": {
+    "precision": 1.0,
+    "recall": 0.9,
+    "f1-score": 0.9473684210526316,
+    "support": 10,
+    "confused_with": {}
+  },
+  "question": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 16,
+    "confused_with": {}
+  },
+  "disease": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 20,
+    "confused_with": {}
+  },
+  "micro avg": {
+    "precision": 1.0,
+    "recall": 0.9827586206896551,
+    "f1-score": 0.9913043478260869,
+    "support": 58
+  },
+  "macro avg": {
+    "precision": 1.0,
+    "recall": 0.975,
+    "f1-score": 0.986842105263158,
+    "support": 58
+  },
+  "weighted avg": {
+    "precision": 1.0,
+    "recall": 0.9827586206896551,
+    "f1-score": 0.9909255898366606,
+    "support": 58
+  }
+}

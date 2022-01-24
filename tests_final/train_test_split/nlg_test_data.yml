@@ -1,0 +1,76 @@
+version: "3.0"
+responses:
+  utter_faq/ask_report:
+  - text: |-
+      Denuncie ⛔, dependemos de sua participação ! 
+       
+
+      Para fazer uma denúncia de maus tratos,📞 ligue : DECAT, 190 ou 181, ou 193 bombeiros
+      Vamos juntos diminuir o sofrimento animal. Denuncie !
+  utter_faq/ask_collect_warn:
+  - text: |
+      Cuidado, pois enterrar o seu pet falecido no quintal trás riscos ambientais ao solo além de ser crime segundo o artigo 54 da Lei de Crimes Ambientais- Lei 9605/98.
+      Descartar em terrenos baudios, terreiros, matas e outros locais também é crime ambiental pois pode contaminar o solo e até o lençol freático, além de ser perigoso por pode contaminar o solo e trazer doenças. A pena pode chegar a multas de
+      R$500 a R$13 mil e até 4 anos de prisão. É muito mais fácil e seguro ligar para a Solurb ou para a prefeitura. Você também pode recorrer à serviços particulares de cremação caso queira.
+  - text: |
+      Evite descartar o corpo do seu pet falecido por conta própria, isso pode geral multas de R$500 a R$13 mil e pode dar até prisão. Isso porque o artigo 54 da Lei de Crimes Ambientais- Lei 9605/98 considera
+      isso crime ambiental. Descartar em terrenos baudios, matas, terreiros ou qualquer outro terreno também é crime além de você estar podendo contaminar o solo e atrair doenças.
+      Ligue para a Solurb ou para a prefeitura que eles te atenderão em até 24h, se seu pet vier a falecer em um clínica veterinária eles podem dar o devido tratamento ao corpo do bichano.
+  utter_faq/ask_lost_pet:
+  - text: |
+      "Favor escolha a finalidade: 'Estou procurando meu animal perdido' no portal abrigodosbichos.com.br, clique em 'Login' no topo direito do site.
+      Não esqueça da foto. Ela é fundamental para encontrar o animal (se não tiver foto, procure no google alguma parecida com ele).
+       
+      Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!
+       
+      E lembre-se de contatar o Centro de Controle de Zoonoses caso eles encontrem o seu animalzinho!
+      Segue o contato do Centro de Controle de Zoonoses: 📞 Telefone : (67) 3314-5000 / (67) 3314-5001 | 📧 E-mail: ccz@sesau.campogrande.ms.gov.br"
+  utter_faq/ask_veterinarian:
+  - text: |
+      "Se você está procurando atendimento veterinário com preços acessíveis te recomendamos os hospitais veterinários das Universidades.
+
+      Atualmente as que mais indicamos são os da UCDB  (Seminário, Campo Grande - MS (67) 3312-3809) e da UFMS(Av. Sen. Filinto Müler, 2443 - Pioneiros, Campo Grande - MS, 79070-900(67) 3345-3610).
+      Eles atendem na parte da manhã até 11h e na parte da tarde até às 17h.
+          
+      Se tiver mais dúvidas pode nos contatar. "
+  utter_faq/ask_how_to_donate_animal:
+  - text: |
+      Temos vários interessados em adotar!
+      Faça boas fotos do(s) animalzinho(s) (nítida, na altura do animal e que mostre o sentimento do animalzinho) 
+      Escolha como finalidade: 'Quero DOAR um Animal' no portal www.abrigodosbichos.com.br, clique em 'Login' no topo direito do site
+      Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!
+       
+      Lembramos que o animalzinho 🐱🐶 a ser doado tem que estar saudável e sob a guarda de um responsável (não pode estar solto na rua).
+      Também pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores) https://abrigodosbichos.com.br/eventos.aspx
+      E não se esqueça, CAPRICHE NA FOTO ! Se possível coloque fitinha colorida no pescoço do animalzinho. 📷📷
+      A FOTO É O SUCESSO DA DOAÇÃO.
+  utter_faq/ask_collect:
+  - text: |
+      Sabemos como é triste a dor de perder seu pet, mas caso isso venha a acontecer você precisa dar um destino correto ao corpinho dele.
+      A maneira mais segura de se fazer isso em Campo Grande é ligar para a Solurb, responsável pela higiene da cidade, através do número: 0800 6471005.
+      Eles darão o devido tratamento ao seu pet, mas lembre-se de que você precisa ensacar o corpinho dele antes. Você também pode ligar para a prefeitura e eles
+      encaminharão à Solurb.
+  - text: |
+      Se você infelizmente perdeu o seu bichano (cão ou gato) saiba que você precisar dar um destino correto ao corpo dele para que não haja risco as pessoas nem ao 
+      meio ambiente. Aqui em Campo Grande-MS quem é responsável por isso é a Solurb(0800 6471005). Ligue para eles que eles devem te atender em até 24h.
+      Seu seu pet morreu na clínica veterinária, eles podem encaminhar ao crematório. Exitem serviços de cremação para pets também caso queira um por conta própria.
+  utter_faq/ask_found_and_rescued:
+  - text: |
+      Se quer apenas tentar encontrar o verdadeiro dono, favor escolha a finalidade: 'Encontrei um animal e procuro o dono' no portal abrigodosbichos.com.br clique em 'Login' no topo direito do site.
+      Caso não encontrar o verdadeiro dono, não queira ou não possa ficar com o animalzinho, temos vários interessados em adotar!       
+      Favor cadastra-lo também para doar no portal abrigodosbichos.com.br (clique em “Login” no topo direito do site).
+       
+      Aguardamos o(s) cadastro(s) para enviarmos às nossas listas !
+       
+      Lembramos que o animalzinho a ser doado tem que estar saudável e sob a guarda de um responsável (não pode estar solto na rua).         
+      Capriche na foto! Ela é o sucesso do anúncio. 📷📷
+      Também caso não possa ficar com o animalzinho, pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores), veja  https://www.abrigodosbichos.com.br/eventos.aspx
+  utter_faq/ask_need_rescue:
+  - text: |
+      "Atuamos em toda Campo Grande-MS e para casos de resgate, sempre dependemos de alguém no local da ocorrência que se disponha a ajudar e encaminhar o animalzinho a um veterinário mais próximo para os primeiros atendimentos.
+       
+      Para resgatá-lo(s), peça ajuda em um pet próximo.
+       
+      Após resgatar e estar saudável, pode cadastrar para doar no portal www.abrigodosbichos.com.br clique em 'Login' no topo direito do site, temos vários interessados em adotar animais saudáveis.
+       
+      Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!"

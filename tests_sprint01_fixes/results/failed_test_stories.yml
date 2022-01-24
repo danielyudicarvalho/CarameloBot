@@ -1,0 +1,42 @@
+version: "3.0"
+stories:
+- story: Main > Resgate de pet (.\tests\test_stories.yml)
+  steps:
+  - intent: greet_intent
+  - action: utter_greet
+  - intent: lost_my_pet_intent
+  - action: utter_lost_pet
+  - active_loop: lost_pet_form
+  - slot_was_set:
+    - animal_type_slot: cachorro
+  - slot_was_set:
+    - description_slot: Perdi ele na manhã do sabado, ele se chama tody e é um labrador marrom
+  - slot_was_set:
+    - contact_number_slot: 1234-5678
+  - action: utter_submit  # predicted: action_default_fallback
+- story: Main > Usuario deseja adotar (.\tests\test_stories.yml)
+  steps:
+  - intent: greet_intent
+  - action: utter_greet
+  - intent: adopt_intent
+  - action: utter_preview_adopt
+  - action: utter_want_to_adopt
+  - intent: affirm_intent
+  - action: utter_ask_animal_type_slot  # predicted: action_default_fallback
+  - intent: inform_animal_type_intent
+    entities:
+    - animal_type_entity: gato
+  - slot_was_set:
+    - animal_type_slot: gato
+  - slot_was_set:
+    - animal_type_slot: gato
+  - action: utter_adopt_tips  # predicted: action_default_fallback
+- story: Main > Usuario pergunta algo fora do escopo (.\tests\test_stories.yml)
+  steps:
+  - intent: greet_intent
+  - action: utter_greet
+  - intent: out_of_scope_intent  # predicted: faq/ask_found_and_rescued: Quero pedir um uber, por favor
+  - action: utter_out_of_scope
+  - action: utter_anything_else
+  - intent: deny_intent
+  - action: utter_goodbye

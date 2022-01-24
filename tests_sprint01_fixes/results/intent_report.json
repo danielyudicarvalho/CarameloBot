@@ -1,0 +1,113 @@
+{
+  "adopt_intent": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 6,
+    "confused_with": {}
+  },
+  "inform_animal_type_intent": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5,
+    "confused_with": {}
+  },
+  "say_description_intent": {
+    "precision": 0.8571428571428571,
+    "recall": 1.0,
+    "f1-score": 0.923076923076923,
+    "support": 6,
+    "confused_with": {}
+  },
+  "bot_purpose_intent": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7,
+    "confused_with": {}
+  },
+  "askaction": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 20,
+    "confused_with": {}
+  },
+  "faq": {
+    "precision": 0.9516129032258065,
+    "recall": 1.0,
+    "f1-score": 0.9752066115702479,
+    "support": 59,
+    "confused_with": {}
+  },
+  "deny_intent": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10,
+    "confused_with": {}
+  },
+  "greet_intent": {
+    "precision": 0.9230769230769231,
+    "recall": 1.0,
+    "f1-score": 0.9600000000000001,
+    "support": 12,
+    "confused_with": {}
+  },
+  "goodbye_intent": {
+    "precision": 1.0,
+    "recall": 0.8333333333333334,
+    "f1-score": 0.9090909090909091,
+    "support": 6,
+    "confused_with": {
+      "greet_intent": 1
+    }
+  },
+  "say_contact_number_intent": {
+    "precision": 1.0,
+    "recall": 0.6666666666666666,
+    "f1-score": 0.8,
+    "support": 6,
+    "confused_with": {
+      "say_description_intent": 1,
+      "out_of_scope_intent": 1
+    }
+  },
+  "affirm_intent": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10,
+    "confused_with": {}
+  },
+  "lost_my_pet_intent": {
+    "precision": 1.0,
+    "recall": 0.625,
+    "f1-score": 0.7692307692307693,
+    "support": 8,
+    "confused_with": {
+      "faq": 3
+    }
+  },
+  "out_of_scope_intent": {
+    "precision": 0.8571428571428571,
+    "recall": 1.0,
+    "f1-score": 0.923076923076923,
+    "support": 6,
+    "confused_with": {}
+  },
+  "accuracy": 0.9627329192546584,
+  "macro avg": {
+    "precision": 0.9683827338914188,
+    "recall": 0.9326923076923077,
+    "f1-score": 0.943052472003521,
+    "support": 161
+  },
+  "weighted avg": {
+    "precision": 0.9658869481550308,
+    "recall": 0.9627329192546584,
+    "f1-score": 0.9598913339624806,
+    "support": 161
+  }
+}

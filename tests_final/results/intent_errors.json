@@ -1,0 +1,18 @@
+[
+  {
+    "text": "vlw",
+    "intent": "thank_you_intent",
+    "intent_prediction": {
+      "name": "goodbye_intent",
+      "confidence": 0.3771559130238189
+    }
+  },
+  {
+    "text": "tchau",
+    "intent": "goodbye_intent",
+    "intent_prediction": {
+      "name": "greet_intent",
+      "confidence": 0.5953767016867745
+    }
+  }
+]
