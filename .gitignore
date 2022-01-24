@@ -1,6 +1,6 @@
 # Rasa
 # models/
-results/
+
 story_graph.dot
 graph.html
 .rasa/cache
