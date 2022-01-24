@@ -1,4 +1,5 @@
-<p align="center"><img src = "./logoBot/logo.jpeg" style="border-radius:500px; height:500px; width:500px" /></p>
+<!-- <p align="center"><img src = "./logoBot/logo.jpeg" style="border-radius:500px; height:500px; width:500px" /></p> -->
+<p align="center"><img src = "https://github.com/danielyudicarvalho/sprint-5/blob/main/logoBot/logo.jpeg" width="500"></p>
 <h1 align="center">Caramelo Bot</h1>
 
 <h3 align="center">
@@ -18,18 +19,18 @@ Um chatbot criado por discentes da Universidade Federal do Mato Grosso Do Sul pa
   * O assistente virtual denominado Caramelo Bot, é capaz de auxiliar a ONG [Abrigo dos Bichos](https://abrigodosbichos.com.br/) no atendimento ao cliente, estando disponível 24 horas, atuando como uma alternativa mais rápida e prática na  solução de dúvidas e em guiar o usuário em procedimentos como adoção, voluntariado, perda de pet ou até mesmo em informar o canal responsável por receber denúncias em casos de maus-tratos.   
 ---
 # 📂 Documentação
- * Documentação do [Projeto](link_do_drive)
+ * Documentação do [Projeto](https://drive.google.com/drive/folders/1dRUavT9Ffybw4ubHF2y_UCjrheMY3YB9)
 ---
 # 📺 Tecnologias
- * [MongoDB](https://www.mongodb.com/) 🍀
- * [Rasa](https://rasa.com/) 🤖
- * [Python](https://www.python.org/) 🐍
- * [Ngrok](https://ngrok.com/) 🚇
- * [Docker](https://www.docker.com/) 🐳
- * [Kubernetes](https://kubernetes.io/pt-br/) ⚓
- * [Okteto](https://www.okteto.com/docs/getting-started/)
- * [Git](https://git-scm.com/doc)
- * [Jupyter Notebook](https://jupyter.org/)
+ * 🍀 [MongoDB](https://www.mongodb.com/) 
+ * 🤖 [Rasa](https://rasa.com/) 
+ * 🐍 [Python](https://www.python.org/) 
+ * 🚇 [Ngrok](https://ngrok.com/)
+ * 🐳 [Docker](https://www.docker.com/) 
+ * ⚓ [Kubernetes](https://kubernetes.io/pt-br/)
+ * ⚓ [Okteto](https://www.okteto.com/docs/getting-started/)
+ * 🐱 [Git](https://git-scm.com/doc) 
+ * 🪐 [Jupyter Notebook](https://jupyter.org/) 
 
 ---
 # 📚 Bibliotecas Utilizadas
@@ -49,7 +50,7 @@ Um chatbot criado por discentes da Universidade Federal do Mato Grosso Do Sul pa
 ---
 
 # 🐕 Caramelo team 
-- 👨‍💻 Anália Beatriz
+- 👩‍💻 Anália Beatriz
 - 👨‍💻 [Daniel Yudi Carvalho](https://www.linkedin.com/in/daniel-yudi-carvalho-608365a4/)
 - 👨‍💻 Filipe Camuso Fernandez
 - 👨‍💻 [João Paulo Wakugawa](https://www.linkedin.com/in/jpwakugawa/)
