@@ -2,29 +2,335 @@ version: "3.0"
 
 stories:
 
-- story: happy path
+- story: Usuário gostaria de adotar um pet
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - intent: adopt_intent
+  - action: utter_about_adopt
+  - intent: affirm_intent 
+  - action: utter_need_information 
+  - action: pet_form
+  - active_loop: pet_form
 
-- story: sad path 1
+- story: Usuário não gostaria de adotar um pet
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  - intent: adopt_intent
+  - action: utter_about_adopt
+  - intent: deny_intent 
+  - action: utter_anything_else
 
-- story: sad path 2
+- story: Usuário gostaria de doar
   steps:
-  - intent: greet
+  - intent: wanna_help_intent
+  - action: utter_type_of_help
+  - intent: donation_intent
+  - action: utter_what_to_donate
+  - action: donate_form
+  - active_loop: donate_form
+  
+- story: Usuário gostaria de voluntariar
+  steps:
+  - intent: wanna_help_intent
+  - action: utter_type_of_help
+  - intent: volunteer_intent
+  - action: utter_about_volunteering
+  - action: volunteer_form
+  - active_loop: volunteer_form 
+
+- story: Caminho feliz usuário adotando um pet a partir de um oi 
+  steps:
+  - intent: greet_intent
+  - action: action_utter_greet
+  - intent: adopt_intent
+  - action: utter_about_adopt
+  - intent: affirm_intent
+  - action: utter_need_information
+  - action: pet_form
+  - active_loop: pet_form
+  - slot_was_set:
+    - requested_slot: animal_type_slot
+  - slot_was_set:
+    - animal_type_slot: Cao
+  - slot_was_set:
+    - requested_slot: size_slot
+  - slot_was_set:
+    - size_slot: Pequeno
+  - slot_was_set:
+    - requested_slot: age_slot
+  - slot_was_set:
+    - age_slot: baby
+  - slot_was_set:
+    - requested_slot: gender_slot
+  - slot_was_set:
+    - gender_slot: Macho
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_searching
+  - action: action_scrapping
+  - action: action_reset_pet_slots
+  - slot_was_set:
+    - animal_type_slot: null
+  - slot_was_set:
+    - size_slot: null
+  - slot_was_set:
+    - age_slot: null
+  - slot_was_set:
+    - gender_slot: null
+  - action: utter_about_adopt_with_diseases
+  - action: utter_anything_else
+  - intent: deny_intent
+  - action: utter_gratefull
+  - intent: goodbye_intent
+  - action: utter_goodbye
+
+- story: Usuário quer adotar e quer adotar novamente
+  steps:
+  - intent: start
   - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
+  - action: utter_bot_purpose
+  - intent: adopt_intent
+  - action: utter_about_adopt
+  - intent: affirm_intent
+  - action: utter_need_information
+  - action: pet_form
+  - active_loop: pet_form
+  - slot_was_set:
+    - requested_slot: animal_type_slot
+  - slot_was_set:
+    - animal_type_slot: Gato
+  - slot_was_set:
+    - animal_type_slot: Gato
+  - slot_was_set:
+    - requested_slot: size_slot
+  - slot_was_set:
+    - size_slot: Pequeno
+  - slot_was_set:
+    - size_slot: Pequeno
+  - slot_was_set:
+    - requested_slot: age_slot
+  - slot_was_set:
+    - age_slot: baby
+  - slot_was_set:
+    - age_slot: baby
+  - slot_was_set:
+    - requested_slot: gender_slot
+  - slot_was_set:
+    - gender_slot: Macho
+  - slot_was_set:
+    - gender_slot: Macho
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_searching
+  - action: action_scrapping
+  - action: action_reset_pet_slots
+  - slot_was_set:
+    - animal_type_slot: null
+  - slot_was_set:
+    - size_slot: null
+  - slot_was_set:
+    - age_slot: null
+  - slot_was_set:
+    - gender_slot: null
+  - action: utter_about_adopt_with_diseases
+  - action: utter_anything_else
+  - intent: adopt_intent
+  - action: utter_about_adopt
+  - intent: affirm_intent
+  - action: utter_need_information
+  - action: pet_form
+  - active_loop: pet_form
+  - slot_was_set:
+    - requested_slot: animal_type_slot
+  - slot_was_set:
+    - animal_type_slot: Gato
+  - slot_was_set:
+    - animal_type_slot: Gato
+  - slot_was_set:
+    - requested_slot: size_slot
+  - slot_was_set:
+    - size_slot: Pequeno
+  - slot_was_set:
+    - size_slot: Pequeno
+  - slot_was_set:
+    - requested_slot: age_slot
+  - slot_was_set:
+    - age_slot: baby
+  - slot_was_set:
+    - age_slot: baby
+  - slot_was_set:
+    - requested_slot: gender_slot
+  - slot_was_set:
+    - gender_slot: Femea
+  - slot_was_set:
+    - gender_slot: Femea
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_searching
+  - action: action_scrapping
+  - action: action_reset_pet_slots
+  - slot_was_set:
+    - animal_type_slot: null
+  - slot_was_set:
+    - size_slot: null
+  - slot_was_set:
+    - age_slot: null
+  - slot_was_set:
+    - gender_slot: null
+  - action: utter_about_adopt_with_diseases
+  - action: utter_anything_else
+  - intent: deny_intent
+  - action: utter_gratefull
+  - intent: goodbye_intent
+  - action: utter_goodbye
+
+- story: Usuário pergunta sobre alguma doença
+  steps:
+  - intent: greet_intent
+  - action: action_utter_greet
+  - intent: askaction
+    entities:
+    - question: sintomas
+    - disease: sarna
+  - slot_was_set:
+    - disease: sarna
+  - slot_was_set:
+    - question: sintomas
+  - action: action_answer_disease
+  - action: utter_anything_else
+  - intent: askaction
+    entities:
+    - question: tratamento
+    - disease: sarna
+  - slot_was_set:
+    - question: tratamento
+  - action: action_answer_disease
+  - action: utter_anything_else
+  - intent: deny_intent
+  - action: utter_gratefull
+  - intent: goodbye_intent
+  - action: utter_goodbye
+
+- story: O usuário quer saber sobre castração
+  steps:
+  - intent: greet_intent
+  - action: action_utter_greet
+  - intent: ask_castration_intent
+  - action: utter_ask_castration
+  - intent: ask_female_castration
+  - action: utter_ask_female_castration
+  - action: utter_anything_else
+  - intent: deny_intent
+  - action: utter_gratefull
+  - intent: goodbye_intent
+  - action: utter_goodbye
+
+- story: Chama o faq duas vezes
+  steps:
+  - intent: greet_intent
+  - action: action_utter_greet
+  - intent: faq
+  - action: utter_faq
+  - action: utter_anything_else
+  - intent: affirm_intent
+  - action: utter_how_can_i_help
+  - intent: faq
+  - action: utter_faq
+  - action: utter_anything_else
+  - intent: deny_intent
+  - action: utter_gratefull
+  - intent: goodbye_intent
+  - action: utter_goodbye
+- story: interactive_story_1
+  steps:
+  - intent: greet_intent
+  - action: action_utter_greet
+  - intent: adopt_intent
+    entities:
+    - animal_type_entity: cachorrinho
+  - slot_was_set:
+    - animal_type_slot: cachorrinho
+  - action: utter_about_adopt
+  - intent: affirm_intent
+  - action: utter_need_information
+  - action: pet_form
+  - active_loop: pet_form
+  - slot_was_set:
+    - animal_type_slot: cachorrinho
+  - slot_was_set:
+    - requested_slot: size_slot
+  - slot_was_set:
+    - size_slot: Pequeno
+  - slot_was_set:
+    - size_slot: Pequeno
+  - slot_was_set:
+    - requested_slot: age_slot
+  - slot_was_set:
+    - age_slot: baby
+  - slot_was_set:
+    - age_slot: baby
+  - slot_was_set:
+    - requested_slot: gender_slot
+  - slot_was_set:
+    - gender_slot: Macho
+  - slot_was_set:
+    - gender_slot: Macho
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_searching
+  - action: action_scrapping
+  - action: action_reset_pet_slots
+  - slot_was_set:
+    - animal_type_slot: null
+  - slot_was_set:
+    - size_slot: null
+  - slot_was_set:
+    - age_slot: null
+  - slot_was_set:
+    - gender_slot: null
+  - action: utter_about_adopt_with_diseases
+  - action: utter_anything_else
+  - intent: affirm_intent
+  - action: utter_how_can_i_help
+  - intent: faq
+  - action: utter_faq
+  - action: utter_anything_else
+  - intent: askaction
+    entities:
+    - question: prevenir
+    - disease: leishmaniose
+  - slot_was_set:
+    - disease: leishmaniose
+  - slot_was_set:
+    - question: prevenir
+  - action: action_answer_disease
+  - slot_was_set:
+    - disease: null
+  - slot_was_set:
+    - question: null
+  - action: utter_anything_else
+  - intent: affirm_intent
+  - action: utter_how_can_i_help
+  - intent: askaction
+    entities:
+    - question: sintomas
+    - disease: raiva
+  - slot_was_set:
+    - disease: raiva
+  - slot_was_set:
+    - question: sintomas
+  - action: action_answer_disease
+  - slot_was_set:
+    - disease: null
+  - slot_was_set:
+    - question: null
+  - action: utter_anything_else
+  - intent: faq
+  - action: utter_faq
+  - action: utter_anything_else
+  - intent: goodbye_intent
+  - action: utter_goodbye
+  - intent: goodbye_intent
   - action: utter_goodbye

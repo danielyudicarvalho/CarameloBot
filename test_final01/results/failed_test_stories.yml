@@ -1,0 +1,106 @@
+version: "3.0"
+stories:
+- story: Usuario quer o contato do veterinario (./tests/test_stories.yml)
+  steps:
+  - user: |-
+      Quero o contato do veterinario
+  - action: utter_faq  # predicted: action_default_fallback
+  - action: utter_anything_else
+  - user: |-
+      Não
+  - action: utter_goodbye  # predicted: action_default_fallback
+  - user: |-
+      Muito obrigado
+  - action: utter_welcome  # predicted: action_default_fallback
+- story: Usuario quer informações sobre castração (./tests/test_stories.yml)
+  steps:
+  - intent: ask_castration_intent  # predicted: askaction: Como funciona a castração?
+  - action: utter_ask_castration
+  - intent: ask_female_castration  # predicted: goodbye_intent: Femêa
+  - action: utter_ask_female_castration
+  - action: utter_anything_else
+  - intent: deny_intent
+  - action: utter_goodbye  # predicted: utter_gratefull
+  - intent: thank_you_intent  # predicted: greet_intent: Valeu
+  - action: utter_welcome
+- story: Usuario deseja fazer uma denuncia (./tests/test_stories.yml)
+  steps:
+  - intent: faq
+  - action: utter_faq
+  - action: utter_anything_else
+  - intent: deny_intent
+  - action: utter_goodbye  # predicted: utter_gratefull
+  - intent: thank_you_intent
+  - action: utter_welcome
+- story: Usuario perdeu o pet (./tests/test_stories.yml)
+  steps:
+  - intent: faq
+  - action: utter_faq
+  - action: utter_anything_else
+  - intent: deny_intent
+  - action: utter_goodbye  # predicted: utter_gratefull
+  - intent: thank_you_intent
+  - action: utter_welcome
+- story: Usuario encontrou um perdido na rua (./tests/test_stories.yml)
+  steps:
+  - intent: faq
+  - action: utter_faq
+  - action: utter_anything_else
+  - intent: deny_intent
+  - action: utter_goodbye  # predicted: utter_gratefull
+  - intent: thank_you_intent
+  - action: utter_welcome
+- story: Usuario deseja saber os sintomas e tratamento de uma doença (./tests/test_stories.yml)
+  steps:
+  - intent: askaction
+    entities:
+    - question: sintomas
+    - disease: sarna
+  - slot_was_set:
+    - disease: sarna
+  - slot_was_set:
+    - question: sintomas
+  - slot_was_set:
+    - disease: sarna
+  - slot_was_set:
+    - question: sintomas
+  - action: action_answer_disease
+  - action: utter_anything_else
+  - intent: askaction
+    entities:
+    - question: tratamento
+    - disease: sarna
+  - slot_was_set:
+    - disease: sarna
+  - slot_was_set:
+    - question: tratamento
+  - slot_was_set:
+    - disease: sarna
+  - slot_was_set:
+    - question: tratamento
+  - action: action_answer_disease
+  - action: utter_anything_else
+  - intent: deny_intent
+  - action: utter_goodbye  # predicted: utter_gratefull
+  - intent: thank_you_intent  # predicted: greet_intent: Valeu
+  - action: utter_welcome
+- story: Usuario deseja saber os sintomas de uma doença (./tests/test_stories.yml)
+  steps:
+  - intent: askaction
+    entities:
+    - question: sintomas
+    - disease: cinomose
+  - slot_was_set:
+    - disease: cinomose
+  - slot_was_set:
+    - question: sintomas
+  - slot_was_set:
+    - disease: cinomose
+  - slot_was_set:
+    - question: sintomas
+  - action: action_answer_disease
+  - action: utter_anything_else
+  - intent: deny_intent
+  - action: utter_goodbye  # predicted: utter_gratefull
+  - intent: thank_you_intent
+  - action: utter_welcome

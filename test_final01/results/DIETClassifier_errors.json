@@ -1,0 +1,120 @@
+[
+  {
+    "text": "qual o procedimento para tratar a raiva?",
+    "entities": [
+      {
+        "start": 25,
+        "end": 31,
+        "value": "tratar",
+        "entity": "question"
+      },
+      {
+        "start": 34,
+        "end": 39,
+        "value": "raiva",
+        "entity": "question"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "question",
+        "start": 25,
+        "end": 31,
+        "confidence_entity": 0.9975833892822266,
+        "value": "tratar",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "disease",
+        "start": 34,
+        "end": 39,
+        "confidence_entity": 0.9702198505401611,
+        "value": "raiva",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "qual o [sintoma] presente no vírus da raiva ?",
+    "entities": [
+      {
+        "start": 38,
+        "end": 43,
+        "value": "raiva",
+        "entity": "question"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "question",
+        "start": 8,
+        "end": 15,
+        "confidence_entity": 0.7579347491264343,
+        "value": "sintoma",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "disease",
+        "start": 38,
+        "end": 43,
+        "confidence_entity": 0.9432083368301392,
+        "value": "raiva",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "[fiv]felina(disease)prevenção?",
+    "entities": [
+      {
+        "start": 20,
+        "end": 29,
+        "value": "prevenção",
+        "entity": "question"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "quando vacinar meu cão",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "animal_type_entity",
+        "start": 19,
+        "end": 22,
+        "confidence_entity": 0.9349810481071472,
+        "value": "cão",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "quero castrar gato",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "animal_type_entity",
+        "start": 14,
+        "end": 18,
+        "confidence_entity": 0.910721480846405,
+        "value": "gato",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "castramento de gato",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "animal_type_entity",
+        "start": 15,
+        "end": 19,
+        "confidence_entity": 0.9458174109458923,
+        "value": "gato",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]
