@@ -8,9 +8,9 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from pymongo import MongoClient
-
+MONGO_DB = {}
 #================================================================== 
-# ActionUtterGreet - implementa uma função para cumprimentar
+# ActionUtterGreet - implementa uma função para cumprimentar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
 # cumprimentos personalizados 
 #==================================================================
 class ActionUtterGreet(Action):
@@ -156,16 +156,16 @@ class ActionScrapping(Action):
         gender_slot = tracker.get_slot("gender_slot")
         
         # Normalização do animal do slot para fazer a busca no db
-        dog = ['cão','cachorro', 'Cão', 'caozinho','cadela', 'cachorra','Cachorro',"Cao",'Cadela','Cachorra','Caos','Cachorros','Cães']
+        dog = ['cão','cachorro', 'Cão', 'caozinho','cadela', 'cachorra','cachorinho', 'Cachorro',"Cao",'Cadela','Cachorra','Caos','Cachorros','Cães']
         cat = ['Gato','Gata', 'gatos','gatas','Gatos','Gatas','gatinhos','gatinhas','gatinha','gatinho','gato','gata']
 
         if animal_type_slot in dog:
             animal_type_slot = 'Cao'
         elif animal_type_slot in cat:
             animal_type_slot = 'Gato'
-
+        MONGO_DB={}
         # Acesso ao bd 
-        cluster = MongoClient("mongodb+srv://danielyudi:elysium4@cluster0.catne.mongodb.net/mydatabase?retryWrites=true&w=majority")
+        cluster = MongoClient(MONGO_DB)
         db = cluster["mydatabase"]
         mycol = db["pets"]
         # busca pela lista com as informações dos slots

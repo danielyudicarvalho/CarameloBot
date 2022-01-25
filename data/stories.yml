@@ -242,3 +242,95 @@ stories:
   - action: utter_gratefull
   - intent: goodbye_intent
   - action: utter_goodbye
+- story: interactive_story_1
+  steps:
+  - intent: greet_intent
+  - action: action_utter_greet
+  - intent: adopt_intent
+    entities:
+    - animal_type_entity: cachorrinho
+  - slot_was_set:
+    - animal_type_slot: cachorrinho
+  - action: utter_about_adopt
+  - intent: affirm_intent
+  - action: utter_need_information
+  - action: pet_form
+  - active_loop: pet_form
+  - slot_was_set:
+    - animal_type_slot: cachorrinho
+  - slot_was_set:
+    - requested_slot: size_slot
+  - slot_was_set:
+    - size_slot: Pequeno
+  - slot_was_set:
+    - size_slot: Pequeno
+  - slot_was_set:
+    - requested_slot: age_slot
+  - slot_was_set:
+    - age_slot: baby
+  - slot_was_set:
+    - age_slot: baby
+  - slot_was_set:
+    - requested_slot: gender_slot
+  - slot_was_set:
+    - gender_slot: Macho
+  - slot_was_set:
+    - gender_slot: Macho
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_searching
+  - action: action_scrapping
+  - action: action_reset_pet_slots
+  - slot_was_set:
+    - animal_type_slot: null
+  - slot_was_set:
+    - size_slot: null
+  - slot_was_set:
+    - age_slot: null
+  - slot_was_set:
+    - gender_slot: null
+  - action: utter_about_adopt_with_diseases
+  - action: utter_anything_else
+  - intent: affirm_intent
+  - action: utter_how_can_i_help
+  - intent: faq
+  - action: utter_faq
+  - action: utter_anything_else
+  - intent: askaction
+    entities:
+    - question: prevenir
+    - disease: leishmaniose
+  - slot_was_set:
+    - disease: leishmaniose
+  - slot_was_set:
+    - question: prevenir
+  - action: action_answer_disease
+  - slot_was_set:
+    - disease: null
+  - slot_was_set:
+    - question: null
+  - action: utter_anything_else
+  - intent: affirm_intent
+  - action: utter_how_can_i_help
+  - intent: askaction
+    entities:
+    - question: sintomas
+    - disease: raiva
+  - slot_was_set:
+    - disease: raiva
+  - slot_was_set:
+    - question: sintomas
+  - action: action_answer_disease
+  - slot_was_set:
+    - disease: null
+  - slot_was_set:
+    - question: null
+  - action: utter_anything_else
+  - intent: faq
+  - action: utter_faq
+  - action: utter_anything_else
+  - intent: goodbye_intent
+  - action: utter_goodbye
+  - intent: goodbye_intent
+  - action: utter_goodbye

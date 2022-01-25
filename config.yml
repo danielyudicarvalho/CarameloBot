@@ -16,7 +16,7 @@ pipeline:
   max_ngram: 4
 
 - name: DIETClassifier
-  epochs: 100
+  epochs: 200
   constrain_similarities: True
   model_confidence: softmax
 
@@ -28,7 +28,7 @@ pipeline:
 - name: SklearnIntentClassifier
 
 - name: ResponseSelector
-  epochs: 100
+  epochs: 200
   retrieval_intent: faq
   constrain_similarities: True
 
@@ -40,7 +40,7 @@ policies:
   enable_fallback_prediction: True
 
 - name: TEDPolicy
-  epochs: 100
+  epochs: 200
   constrain_similarities: True
   model_confidence: softmax
   max_history: 5
