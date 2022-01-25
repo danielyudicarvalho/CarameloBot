@@ -52,16 +52,16 @@ nlu:
     - como [prevenir](question) a [cinomose](disease)?
     - o que devo fazer para [tratar](question) da [cinomose](disease)?
     - como posso o [tratamento](question) do meu animal para que ele não tenha [cinomose](disease)?
-    - como se [prevenir](question) para [fiv] felina(disease)?
-    - qual o [sintoma](question) da [fiv] felina(disease)?
-    - qual a [prevenção](question) pra [fiv]felina(disease)?
-    - [tratamento](question) para [fiv] felina(disease)?
-    - informações sobre [fiv] felina(disease)?
-    - qual o [prevenção](question) da [fiv] felina(disease)?
-    - [fiv]felina(disease)[prevenção](question)?
-    - [sintomas](question) para [fiv] felina(disease)?
-    - como [prevenir](question) a [fiv] felina(disease)?
-    - como [tratar](question) a [fiv] felina (disease)?
+    - como se [prevenir](question) para [fiv](disease) felina?
+    - qual o [sintoma](question) da [fiv](disease) felina?
+    - qual a [prevenção](question) pra [fiv](disease) felina?
+    - [tratamento](question) para [fiv](disease) felina?
+    - informações sobre [fiv](disease) felina?
+    - qual o [prevenção](question) da [fiv](disease) felina?
+    - [prevenção](question) [fiv](disease) felina?
+    - [sintomas](question) para [fiv](disease) felina?
+    - como [prevenir](question) a [fiv](disease) felina?
+    - como [tratar](question) a [fiv](disease) felina?
     - como [tratar](question) a [parvovirose](disease)?
     - como se [prevenir](question) para [parvovirose](disease)?
     - qual o [sintoma](question) da [parvovirose](disease)?

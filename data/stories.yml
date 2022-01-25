@@ -242,3 +242,11 @@ stories:
   - action: utter_gratefull
   - intent: goodbye_intent
   - action: utter_goodbye
+
+- story: Usuário fala oi e xau
+  steps:
+  - intent: greet_intent
+  - action: action_utter_greet
+  - intent: goodbye_intent
+  - action: utter_goodbye
+  

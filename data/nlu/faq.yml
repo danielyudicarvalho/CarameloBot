@@ -91,7 +91,9 @@ nlu:
       - o que eu faço quando meu bichinho morre?
       - qual número eu ligo quando meu animal morre?
       - com quem eu falor quando o bicho morre?
-
+      - meu cachorro morreu
+      - meu gato morreu
+      
   - intent: faq/ask_vaccine_dog
     examples: |
       - me fale sobre vacinas para [cachorro](animal_type_entity)

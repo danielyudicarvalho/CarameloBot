@@ -33,8 +33,8 @@ responses:
         - Preciso que alguém resgate um Cão/Gato abandonado
         - Como posso ajudar?
         
-        Também posso esclarecer dúvidas sobre as doenças 🦟 mais comuns nos pets, indicar veterinários 👩‍⚕️ ou falar sobre castrações 😵.
-        Tem uma denúncia, eu te digo para quem ligar. E caso eu não consiga resolver sua dúvida, posso te encaminhar para a equipe de atendimento.
+        Também posso esclarecer dúvidas sobre as doenças mais comuns nos pets 🏥, indicar veterinários 👩‍⚕️ ou falar sobre castrações 😵.
+        Tem uma denúncia, eu te digo para quem ligar. E caso eu não consiga resolver sua dúvida, você pode pedir por atendimento humano 👩‍🔧.
 
   utter_out_of_scope:
     - text: "Infelizmente não posso te ajudar com isso 😞"
@@ -118,25 +118,29 @@ responses:
   - text: |
       Temos vários interessados em adotar!
       Faça boas fotos do(s) animalzinho(s) (nítida, na altura do animal e que mostre o sentimento do animalzinho) 
-      Escolha como finalidade: 'Quero DOAR um Animal' no portal www.abrigodosbichos.com.br, clique em 'Login' no topo direito do site
+      Escolha como finalidade: 'Quero doar um animal' no portal www.abrigodosbichos.com.br, clique em 'Login' no topo direito do site.
       Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!
        
       Lembramos que o animalzinho 🐱🐶 a ser doado tem que estar saudável e sob a guarda de um responsável (não pode estar solto na rua).
       Também pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores) https://abrigodosbichos.com.br/eventos.aspx
+      
       E não se esqueça, CAPRICHE NA FOTO ! Se possível coloque fitinha colorida no pescoço do animalzinho. 📷📷
+      
       A FOTO É O SUCESSO DA DOAÇÃO.
 
   utter_faq/ask_found_and_rescued:
     - text: | 
-        Se quer apenas tentar encontrar o verdadeiro dono, favor escolha a finalidade: 'Encontrei um animal e procuro o dono' no portal abrigodosbichos.com.br clique em 'Login' no topo direito do site.
+        Se quiser apenas tentar encontrar o verdadeiro dono, favor escolha a finalidade: 'Encontrei um animal e procuro o dono' no portal abrigodosbichos.com.br clique em 'Login' no topo direito do site.
+        
         Caso não encontrar o verdadeiro dono, não queira ou não possa ficar com o animalzinho, temos vários interessados em adotar!       
+        
         Favor cadastra-lo também para doar no portal abrigodosbichos.com.br (clique em “Login” no topo direito do site).
          
-        Aguardamos o(s) cadastro(s) para enviarmos às nossas listas !
+        Aguardamos o(s) cadastro(s) para enviarmos às nossas listas!
          
         Lembramos que o animalzinho a ser doado tem que estar saudável e sob a guarda de um responsável (não pode estar solto na rua).         
         Capriche na foto! Ela é o sucesso do anúncio. 📷📷
-        Também caso não possa ficar com o animalzinho, pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores), veja  https://www.abrigodosbichos.com.br/eventos.aspx
+        Também caso não possa ficar com o animalzinho, pode levá-lo a uma feirinha de adoção mais próxima (mas combine antes com os organizadores), veja em https://www.abrigodosbichos.com.br/eventos.aspx
         
   utter_faq/ask_lost_pet:
     - text: |
@@ -146,7 +150,8 @@ responses:
         Aguardamos o cadastro para enviarmos às nossas listas e divulgarmos!
          
         E lembre-se de contatar o Centro de Controle de Zoonoses caso eles encontrem o seu animalzinho!
-        Segue o contato do Centro de Controle de Zoonoses: 📞 Telefone : (67) 3314-5000 / (67) 3314-5001 | 📧 E-mail: ccz@sesau.campogrande.ms.gov.br
+        Segue o contato do Centro de Controle de Zoonoses: 
+        📞 Telefone : (67) 3314-5000 / (67) 3314-5001 | 📧 E-mail: ccz@sesau.campogrande.ms.gov.br
 
   utter_faq/ask_need_rescue:
     - text: |
@@ -180,24 +185,27 @@ responses:
 
   utter_what_to_donate:
   - text:
-      Você pode nos ajudar de várias maneiras com dinheiro, ração, areia para gato.
+      Você pode nos ajudar de várias maneiras com capital, ração, areia para os gato, entre outros.
   
   #### Respostas do fluxo de denuncias
   utter_faq/ask_report:
-    - text: "Denuncie ⛔, dependemos de sua participação ! \n \n
-            
-            Para fazer uma denúncia de maus tratos,📞 ligue : DECAT, 190 ou 181, ou 193 bombeiros
-            
-            Vamos juntos diminuir o sofrimento animal. Denuncie !"
+    - text: |
+        Para fazer uma denúncia de maus tratos ligue 
+        
+        📞 DECAT, 190 (Policia), 181(Denuncia), ou 193 (Bombeiros) 
+        
+        ⚠️ Dependemos de sua participação! Vamos juntos diminuir o sofrimento dos animais. Denuncie!
   
   utter_faq/ask_veterinarian:
     - text: |
         Se você está procurando atendimento veterinário com preços acessíveis te recomendamos os hospitais veterinários das Universidades.
-
-        Atualmente as que mais indicamos são os da UCDB (Seminário, Campo Grande - MS 📞 (67) 3312-3809) e da UFMS(Av. Sen. Filinto Müler, 2443 - Pioneiros, Campo Grande - MS, 79070-900 📞 (67) 3345-3610).
-        Eles atendem na parte da manhã até 11h e na parte da tarde até às 17h.
-            
-        Se tiver mais dúvidas pode nos contatar.
+        Atualmente as que mais indicamos são os da UCDB (Seminário, Campo Grande - MS)
+        📞 (67) 3312-3809 
+        e da UFMS(Av. Sen. Filinto Müler, 2443 - Pioneiros, Campo Grande - MS, 79070-900)
+        📞 (67) 3345-3610)
+        
+        Eles atendem na parte da manhã até 11h e na parte da tarde até às 17h.    
+        Se tiver mais dúvidas só pedir atendimento humano.
  
  #### Respostas do fluxo de castração
   utter_ask_castration:
@@ -213,7 +221,7 @@ responses:
             É comum que após a castração o animal fique um pouco mais calmo e menos agitado que antes."
             
   utter_ask_female_castration:
-    - text: "Já nas fêmeas – de ambas as espécies – é necessário realizar uma incisão no abdome para remoção do útero e dos ovários. O procedimento que reduz a produção de estrógeno e progesterona."
+    - text: "Nas fêmeas – de ambas as espécies – é necessário realizar uma incisão no abdome para remoção do útero e dos ovários. O procedimento que reduz a produção de estrógeno e progesterona."
     
 ##### OUTROS
 
@@ -222,44 +230,46 @@ responses:
     - text: |
         Esse é o calendário para vacinação de gatos:
             V3, V4 ou V5
-                3 doses(de 3 meses)
-                A partir de 45 dias
-                R$60,00 a R$100,00 a dose
+                - 3 doses(de 3 meses)
+                - A partir de 45 dias
+                - R$60,00 a R$100,00 a dose
             Antirrábica
-                Dose única
-                A partir de 4 meses de vida
-                R$50,00 ou gratuita nas campanhas de vacinação
-                Obrigatória
+                - Dose única
+                - A partir de 4 meses de vida
+                - R$50,00 ou gratuita nas campanhas de vacinação
+                - Obrigatória
 
   utter_faq/ask_vaccine_dog:
     - text: |
-        Esse é o calendário para vacinação de cachorros:
+        Esse é o calendário 📅 para vacinação de cachorros:
             V8 ou V10
-                4 a 6 doses(de 3 a 4 semanas de intervalo)
-                A partir de 45 dias de vida do cão
-                R$60,00 à R$100,00 a dose
+                - 4 a 6 doses(de 3 a 4 semanas de intervalo)
+                - A partir de 45 dias de vida do cão
+                - R$60,00 à R$100,00 a dose
             Antirrábica
-                Dose única
-                A partir de 4 meses de vida
-                R$50,00 ou gratuita nas campanhas de vacinação
-                Obrigatória
+                - Dose única
+                - A partir de 4 meses de vida
+                - R$50,00 ou gratuita nas campanhas de vacinação
+                - Obrigatória
             Para leishmaniose
-                3 a 4 doses (21 dias de intervalo)
-                A partir de 4 meses
-                De R$100,00 à R$200,00 a dose
+                - 3 a 4 doses (21 dias de intervalo)
+                - A partir de 4 meses
+                - De R$100,00 à R$200,00 a dose
             Para Giardíase
-                2 doses (2 a 4 semanas de intervalo)
-                A partir de 80 dias de vida
-                R$70,00 a dose
+                - 2 doses (2 a 4 semanas de intervalo)
+                - A partir de 80 dias de vida
+                - R$70,00 a dose
             Para gripe Canina
-                1 ou 2 doses (dependendo do tipo de vacina aplicada)
-                A partir de R$100,00 a dose
-                A partir de 80 dias de vida
- 
+                - 1 ou 2 doses (dependendo do tipo de vacina aplicada)
+                - A partir de R$100,00 a dose
+                - A partir de 80 dias de vida
+  
   utter_faq/ask_collect:
   - text: |
           Sabemos como é triste a dor de perder seu pet, mas caso isso venha a acontecer você precisa dar um destino correto ao corpinho dele.
+          
           A maneira mais segura de se fazer isso em Campo Grande é ligar para a Solurb, responsável pela higiene da cidade, através do número: 0800 6471005.
+          
           Eles darão o devido tratamento ao seu pet, mas lembre-se de que você precisa ensacar o corpinho dele antes. Você também pode ligar para a prefeitura e eles
           encaminharão à Solurb.
   - text: |
@@ -269,6 +279,7 @@ responses:
   utter_faq/ask_collect_warn:
   - text: |
           Cuidado, pois enterrar o seu pet falecido no quintal trás riscos ambientais ao solo além de ser crime segundo o artigo 54 da Lei de Crimes Ambientais- Lei 9605/98.
+          
           Descartar em terrenos baudios, terreiros, matas e outros locais também é crime ambiental pois pode contaminar o solo e até o lençol freático, além de ser perigoso por pode contaminar o solo e trazer doenças. A pena pode chegar a multas de
           R$500 a R$13 mil e até 4 anos de prisão. É muito mais fácil e seguro ligar para a Solurb ou para a prefeitura. Você também pode recorrer à serviços particulares de cremação caso queira.
   - text: |
@@ -280,11 +291,11 @@ responses:
 
   utter_about_adopt:
   - text: |
-      Você pode escolher um amiguinho direto pelo site aqui: site www.abrigodosbichos.com.br 
-      OU
-      você pode ir até uma feirinha de adoção em sua cidade, veja www.abrigodosbichos.com.br/eventos.aspx.
+      Você pode escolher um amiguinho direto pelo site: www.abrigodosbichos.com.br 
+      Ou
+      você pode optar por ir até uma feirinha de adoção em sua cidade, veja em www.abrigodosbichos.com.br/eventos.aspx.
       
-      Eu também posso te mostrar os petzinhos aqui mesmo de acordo com as suas preferências...gostaria de vê-los?
+      Eu também posso te mostrar os animaizinhos aqui mesmo de acordo com as suas preferências...gostaria de vê-los?
 
   ### adopt_intent 
   utter_need_information:

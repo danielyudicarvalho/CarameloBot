@@ -80,7 +80,6 @@ actions:
   - utter_out_of_scope
   - utter_human_service
   - utter_please_rephrase
-  - utter_default
 
 # Utters Wanna_help_flow
   - utter_type_of_help

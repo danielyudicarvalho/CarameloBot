@@ -1,5 +1,5 @@
 <!-- <p align="center"><img src = "./logoBot/logo.jpeg" style="border-radius:500px; height:500px; width:500px" /></p> -->
-<p align="center"><img src = "https://github.com/danielyudicarvalho/sprint-5/blob/main/logoBot/logo.jpeg" width="500"></p>
+<p align="center"><img src = "https://github.com/danielyudicarvalho/sprint-5/blob/main/assets/logo.jpeg" width="500"></p>
 <h1 align="center">Caramelo Bot</h1>
 
 <h3 align="center">

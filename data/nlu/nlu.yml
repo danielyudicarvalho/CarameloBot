@@ -8,18 +8,8 @@ nlu:
       - OI
       - Oi
       - Oie
-      - oi oi
-      - Oi Oi
-      - oiiii
       - olá
-      - oi
-      - OI
-      - Oi
-      - Oie
-      - oi oi
-      - Oi Oi
       - oiiii
-      - olá
       - eae
       - hi
       - bom dia
@@ -29,6 +19,7 @@ nlu:
       - e ae
       - oioi
       - salve
+
   - intent: thank_you_intent
     examples: |
       - obrigado
@@ -38,22 +29,22 @@ nlu:
       - vlw
       - gracias
       - thanks
+      - joia
+
   - intent: goodbye_intent
     examples: |
       - bye
       - tchau
-      - TCHAU
-      - Tchauuuuu
-      - Tchau
       - xau
       - adeus
       - flw
-      - até mais
+      - até mais 
       - ate
       - bjs
       - se cuida
       - te vejo dps
       - até uma proxima
+
   - intent: affirm_intent
     examples: |
       - s
@@ -67,7 +58,7 @@ nlu:
       - afirmativo
       - certo
       - ok
-      
+
   - intent: deny_intent
     examples: |
       - n
@@ -93,6 +84,7 @@ nlu:
       - quero um [cachorro](animal_type_entity)
       - quero um [gato](animal_type_entity)
       - desejo adotar um [gatinho](animal_type_entity)
+  
   - intent: human_service_intent
     examples: |
       - Atendimento humano
@@ -101,6 +93,8 @@ nlu:
       - Quero falar com um atendente
       - Quero falar com uma pessoa
       - Quero um humano
+      - Quero atendimento humano
+
   - intent: bot_purpose_intent
     examples: |
       - O que você faz?

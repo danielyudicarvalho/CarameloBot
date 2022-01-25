@@ -8,7 +8,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from pymongo import MongoClient
-MONGO_DB = {}
+from .secrets import secrets
 #================================================================== 
 # ActionUtterGreet - implementa uma função para fazer
 # cumprimentos personalizados 
@@ -33,23 +33,23 @@ class ActionUtterGreet(Action):
         hora_atual = hoje.hour
 
         # Mensagens para serem usadas no utterance
-        utter_boa_madrugada = "Olá "+ name +" uma boa madruga ! 🌒 Como posso te ajudar? 😁" 
+        utter_boa_madrugada = "Olá "+ name +" uma boa madrugada! Como posso ajudá-lo? 😁" 
 
-        utter_bom_dia = "Olá "+ name +" um bom dia ! 🌞 Como posso te ajudar? 😁"
+        utter_bom_dia = "Olá "+ name +" bom dia! Como posso ajudá-lo? 😁"
 
-        utter_boa_tarde = "Olá "+ name +" uma boa tarde! 🌞 Como posso te ajudar? 😁"
+        utter_boa_tarde = "Olá "+ name +" boa tarde! Como posso ajudá-lo? 😁"
 
-        utter_boa_noite = "Olá "+ name +" uma boa noite! 🌚 Como posso te ajudar? 😁"    
+        utter_boa_noite = "Olá "+ name +" boa noite! Como posso ajudá-lo? 😁"    
 
         # Verificação para cada tipo de mensagem
+        if hora_atual < 5 :
+            dispatcher.utter_message(text=utter_boa_madrugada)
         if hora_atual < 12:
             dispatcher.utter_message(text=utter_bom_dia)
         elif hora_atual < 18:
             dispatcher.utter_message(text=utter_boa_tarde)
         elif hora_atual < 24:
             dispatcher.utter_message(text=utter_boa_noite)
-        else:
-            dispatcher.utter_message(text=utter_boa_madrugada)
 
         return [SlotSet("name_slot", name)]
 
@@ -61,9 +61,9 @@ class ActionUtterGreet(Action):
 def send_email(name, email, phone, how_to_help):
     port = 587                                       # Porta na qual é feita a comunicação
 
-    sender_email = ""       # Email do Remetente
-    password = ""                            # Senha do Remetente
-    receiver_email = ""     # Email do Destinatário / trocar para abrigodosbichos@abrigodosbichos.com.br após apresentações
+    sender_email = secrets['BOT_EMAIL']       # Email do Remetente
+    password = secrets['BOT_EMAIL_PASSWORD']           # Senha do Remetente
+    receiver_email = secrets['EMAIL_ABRIGO']     # Email do Destinatário / trocar para abrigodosbichos@abrigodosbichos.com.br após apresentações
     
     # Escopo da mensagem a ser enviada
     text = f"""
@@ -127,7 +127,7 @@ class ActionSendWhats(Action):
         what_to_donate = tracker.get_slot("what_to_donate_slot")
         
         # normalização da mensagem para o link do whats
-        reception_number = "" # Número da pessoa responsável por recepcionar o cliente
+        reception_number = secrets['WHATSAPP'] # Número da pessoa responsável por recepcionar o cliente
         reception_text = f"Olá, meu nome é {name}, desejo ajudar doando: {what_to_donate}"  # Texto receptivo
         reception_text = reception_text.replace(" ", "%20")
         link_whats = f"https://api.whatsapp.com/send?phone={reception_number}&text={reception_text}"
@@ -163,9 +163,8 @@ class ActionScrapping(Action):
             animal_type_slot = 'Cao'
         elif animal_type_slot in cat:
             animal_type_slot = 'Gato'
-        MONGO_DB={}
         # Acesso ao bd 
-        cluster = MongoClient(MONGO_DB)
+        cluster = MongoClient(secrets['CLUSTER'])
         db = cluster["mydatabase"]
         mycol = db["pets"]
         # busca pela lista com as informações dos slots
