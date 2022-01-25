@@ -29,7 +29,6 @@ nlu:
       - e ae
       - oioi
       - salve
-
   - intent: thank_you_intent
     examples: |
       - obrigado
@@ -39,7 +38,6 @@ nlu:
       - vlw
       - gracias
       - thanks
-
   - intent: goodbye_intent
     examples: |
       - bye
@@ -56,7 +54,6 @@ nlu:
       - se cuida
       - te vejo dps
       - até uma proxima
-
   - intent: affirm_intent
     examples: |
       - s
@@ -96,7 +93,6 @@ nlu:
       - quero um [cachorro](animal_type_entity)
       - quero um [gato](animal_type_entity)
       - desejo adotar um [gatinho](animal_type_entity)
-
   - intent: human_service_intent
     examples: |
       - Atendimento humano
@@ -105,7 +101,6 @@ nlu:
       - Quero falar com um atendente
       - Quero falar com uma pessoa
       - Quero um humano
-
   - intent: bot_purpose_intent
     examples: |
       - O que você faz?
@@ -115,7 +110,6 @@ nlu:
       - propósito
       - o que posso perguntar?
       - o que você pode fazer?
-
   - intent: out_of_scope_intent
     examples: |
       - Quero uma pizza
@@ -124,7 +118,6 @@ nlu:
       - batatinha 1 2 3
       - Assistir series
       - Teste 123 teste 321
-
   - intent: ask_castration_intent
     examples: |
       - Quero saber como funciona a castração
@@ -168,7 +161,6 @@ nlu:
       - Como posso me voluntariar?
       - Quero auxiliar com meu tempo
       - Quero fazer parte do voluntariado
-
   - intent: donation_intent
     examples: |
       - quero doar dinheiro
@@ -178,4 +170,3 @@ nlu:
       - doar medicamento
       - ajudar com areia
       - ajudar com dinheiro
-

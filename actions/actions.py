@@ -10,7 +10,7 @@ from email.mime.text import MIMEText
 from pymongo import MongoClient
 MONGO_DB = {}
 #================================================================== 
-# ActionUtterGreet - implementa uma função para cumprimentar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
+# ActionUtterGreet - implementa uma função para fazer
 # cumprimentos personalizados 
 #==================================================================
 class ActionUtterGreet(Action):
@@ -61,9 +61,9 @@ class ActionUtterGreet(Action):
 def send_email(name, email, phone, how_to_help):
     port = 587                                       # Porta na qual é feita a comunicação
 
-    sender_email = "abrigo.do.bicho.bot@gmail.com"       # Email do Remetente
-    password = "Abrigo@bicho"                            # Senha do Remetente
-    receiver_email = "abrigo.do.bicho.bot@gmail.com"     # Email do Destinatário / trocar para abrigodosbichos@abrigodosbichos.com.br após apresentações
+    sender_email = ""       # Email do Remetente
+    password = ""                            # Senha do Remetente
+    receiver_email = ""     # Email do Destinatário / trocar para abrigodosbichos@abrigodosbichos.com.br após apresentações
     
     # Escopo da mensagem a ser enviada
     text = f"""
@@ -127,7 +127,7 @@ class ActionSendWhats(Action):
         what_to_donate = tracker.get_slot("what_to_donate_slot")
         
         # normalização da mensagem para o link do whats
-        reception_number = "67984062288" # Número da pessoa responsável por recepcionar o cliente
+        reception_number = "" # Número da pessoa responsável por recepcionar o cliente
         reception_text = f"Olá, meu nome é {name}, desejo ajudar doando: {what_to_donate}"  # Texto receptivo
         reception_text = reception_text.replace(" ", "%20")
         link_whats = f"https://api.whatsapp.com/send?phone={reception_number}&text={reception_text}"
@@ -232,6 +232,7 @@ class ActionAnswerDisease(Action):
 
         return [SlotSet("disease",None),SlotSet("question",None)]
 
+
 #================================================================== 
 # ActionsReset- implementa os resets 
 # nos slots do volunteer_form
@@ -278,6 +279,7 @@ class ActionResetDonateSlot(Action):
 # ActionsReset- implementa os resets 
 # no slot do nome
 #==================================================================
+
 class ActionResetNameSlot(Action):
 
      def name(self) -> Text:
