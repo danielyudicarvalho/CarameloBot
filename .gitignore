@@ -1,12 +1,12 @@
 # Rasa
-models/
-results/
+# models/
+
 story_graph.dot
 graph.html
 .rasa/cache
 actions/__pycache__
-docker-compose.yml
-Dockerfile
+# docker-compose.yml
+# Dockerfile
 index.html
 .ipynb
 .csv

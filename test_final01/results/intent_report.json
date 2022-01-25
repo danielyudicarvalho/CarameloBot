@@ -1,0 +1,129 @@
+{
+  "wanna_help_intent": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 12,
+    "confused_with": {}
+  },
+  "faq": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 88,
+    "confused_with": {}
+  },
+  "donation_intent": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7,
+    "confused_with": {}
+  },
+  "out_of_scope_intent": {
+    "precision": 1.0,
+    "recall": 0.8333333333333334,
+    "f1-score": 0.9090909090909091,
+    "support": 6,
+    "confused_with": {
+      "adopt_intent": 1
+    }
+  },
+  "greet_intent": {
+    "precision": 0.7692307692307693,
+    "recall": 0.5882352941176471,
+    "f1-score": 0.6666666666666667,
+    "support": 17,
+    "confused_with": {
+      "goodbye_intent": 7
+    }
+  },
+  "affirm_intent": {
+    "precision": 0.9166666666666666,
+    "recall": 1.0,
+    "f1-score": 0.9565217391304348,
+    "support": 11,
+    "confused_with": {}
+  },
+  "adopt_intent": {
+    "precision": 0.9090909090909091,
+    "recall": 1.0,
+    "f1-score": 0.9523809523809523,
+    "support": 10,
+    "confused_with": {}
+  },
+  "human_service_intent": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 6,
+    "confused_with": {}
+  },
+  "thank_you_intent": {
+    "precision": 1.0,
+    "recall": 0.42857142857142855,
+    "f1-score": 0.6,
+    "support": 7,
+    "confused_with": {
+      "greet_intent": 2,
+      "goodbye_intent": 1
+    }
+  },
+  "bot_purpose_intent": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7,
+    "confused_with": {}
+  },
+  "ask_castration_intent": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 14,
+    "confused_with": {}
+  },
+  "askaction": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 48,
+    "confused_with": {}
+  },
+  "volunteer_intent": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8,
+    "confused_with": {}
+  },
+  "deny_intent": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10,
+    "confused_with": {}
+  },
+  "goodbye_intent": {
+    "precision": 0.6190476190476191,
+    "recall": 0.9285714285714286,
+    "f1-score": 0.742857142857143,
+    "support": 14,
+    "confused_with": {
+      "greet_intent": 1
+    }
+  },
+  "accuracy": 0.9509433962264151,
+  "macro avg": {
+    "precision": 0.9476023976023975,
+    "recall": 0.9185807656395892,
+    "f1-score": 0.9218344940084072,
+    "support": 265
+  },
+  "weighted avg": {
+    "precision": 0.9581804987465364,
+    "recall": 0.9509433962264151,
+    "f1-score": 0.9488053865740493,
+    "support": 265
+  }
+}

@@ -1,0 +1,22 @@
+version: "3.0"
+nlu:
+- intent: greet_intent
+  examples: |
+    - ola
+- intent: adopt_intent
+  examples: |
+    - quero um [cachorrinho](animal_type_entity)
+- intent: affirm_intent
+  examples: |
+    - sim
+- intent: faq
+  examples: |
+    - quero castrar meu cachorro
+    - vacinar
+- intent: askaction
+  examples: |
+    - [prevenir](question) [leishmaniose](disease)
+    - quais os [sintomas](question) da [raiva](disease)
+- intent: goodbye_intent
+  examples: |
+    - tchau

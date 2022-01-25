@@ -21,62 +21,43 @@ nlu:
   - intent: faq/ask_found_and_rescued
     examples: |
       - Peguei um cachorrinho na rua, o que eu faço?
-      - Encontrei um gato de rua e quero ficar com ele
+      - Encontrei um [gato](animal_type_entity) de rua e quero ficar com ele
       - Resgatei um animal de rua e agora?
       - Encontrei perdido e resgatei e agora?
       - Resgatei um animal, o que devo fazer?
       - Encontrei um animal perdido, o que eu faço?
       - Eu encontrei um animal na rua, o que eu faço?
       - Resgatei um cachorro de rua e agora? 
-      - Encontrei um gato perdido na rua, o que devo fazer?
+      - Encontrei um [gato](animal_type_entity) perdido na rua, o que devo fazer?
       - O que eu faço? Encontrei um animal perdido na rua
       - Encontrei um cachorro na rua, o que devo fazer ?
 
   - intent: faq/ask_lost_pet
     examples: |
-      - Perdi meu gato
+      - Perdi meu [gato](animal_type_entity)
       - Perdi meu cachorro
       - Perdi meu pet
       - Perdi meu cachorro, o que eu faço?
-      - Vocês podem me ajudar a achar meu gato?
-      - Meu gato sumiu
+      - Vocês podem me ajudar a achar meu [gato](animal_type_entity)?
+      - Meu [gato](animal_type_entity) sumiu
       - Meu pet desapareceu
       - Meu cachorro sumiu, ele é vira-lata caramelo, manda uma msg para mim
-
+  
   - intent: faq/ask_need_rescue
     examples: |
       - ferido
       - machucado
       - machucou a perna
-      - o gato está dolorido
+      - o [gato](animal_type_entity) está dolorido
       - tem um cachorro ferido
+      - preciso de resgate
       - encontrei um pet ferido
       - resgatei um animal machucado
       - cachorrinho atropelado
       - gatinho atropelado 
+      - Preciso que alguém resgate um [gato](animal_type_entity) abandonado
 
 ##### FAQ 2
-
-  - intent: faq/ask_castration
-    examples: |
-      - Quero saber como funciona a castração
-      - Como funciona o processo de castração?
-      - Pode me dizer como funciona o processo de castração ?
-      - Como ocorre o processo de castração ?
-      - Conte-me como ocorre o processo de castração
-      - Processo de castração
-      - Castração
-
-  - intent: faq/ask_when_castration
-    examples: |
-      - Quando castrar?
-      - Qual a idade ideal para castrar
-      - Quando devo castrar?
-      - Qual a melhor época para castrar
-      - Que época é melhor para castrar
-      - Com que idade devo castrar meu cachorro?
-      - Com que idade devo castrar meu gato?
-
 
   - intent: faq/ask_veterinarian
     examples: |
@@ -87,6 +68,7 @@ nlu:
       - Quero entrar em contato com o veterinario
       - Pode me passar o numero do veterinario ?
       - Contato do veterinario
+      - atendimento veterinário
 
   - intent: faq/ask_report
     examples: |
@@ -101,20 +83,48 @@ nlu:
   - intent: faq/ask_collect
     examples: |
       - o que fazer quando meu cachorro morrer?
-      - o que fazer quando meu gato morrer?
+      - o que fazer quando meu [gato](animal_type_entity) morrer?
       - como proceder quando meu pet morre?
       - meu pet morreu e agora?
       - com quem eu falor quando meu cachorro morre?
-      - pra quem eu ligo quando meu gato morre?
+      - pra quem eu ligo quando meu [gato](animal_type_entity) morre?
       - o que eu faço quando meu bichinho morre?
       - qual número eu ligo quando meu animal morre?
       - com quem eu falor quando o bicho morre?
 
+  - intent: faq/ask_vaccine_dog
+    examples: |
+      - me fale sobre vacinas para [cachorro](animal_type_entity)
+      - quais vacinas devo dar no meu [cachorro](animal_type_entity)
+      - calendario de vacinação para [cachorros](animal_type_entity)
+      - quais vacinas devo dar no meu [cachorro](animal_type_entity)
+      - vacinação de [cachorro](animal_type_entity)
+      - quero saber de vacinas para [cachorro](animal_type_entity)
+      - quando vacinar meu cão
+      - vacinação para [cães](animal_type_entity)
+      - vacina para [cão](animal_type_entity)
+      - quando vacinar meus [cães](animal_type_entity)
+  
+  - intent: faq/ask_vaccine_cat
+    examples: |
+      - me fale sobre vacinas para [gato](animal_type_entity)
+      - quais vacinas devo dar no meu [gato](animal_type_entity)
+      - calendario de vacinação para gatos
+      - quais vacinas devo dar no meu [gato](animal_type_entity)
+      - vacinação de [gato](animal_type_entity)
+      - quero saber de vacinas para [gato](animal_type_entity)
+      - quando vacinar meu [gato](animal_type_entity)
+      - vacinação para [gato](animal_type_entity)
+      - vacina para [gato](animal_type_entity)
+      - quando vacinar meus [gato](animal_type_entity)
+      - como faço para vacinar meus gatos
+      - vacinação para gatos
+      
   - intent: faq/ask_collect_warn
     examples: |
       - posso enterrar meu proprio cachorro quando ele morrer?
-      - posso enterrar meu próprio gato quando ele morrer?
+      - posso enterrar meu próprio [gato](animal_type_entity) quando ele morrer?
       - E se eu enterrar meu proprio pet no quintal
       - posso enterrar meu cachorro no meu quintal?
-      - posso enterrar meu gato no quintal?
+      - posso enterrar meu [gato](animal_type_entity) no quintal?
       - Tem consequências se eu enterrar meu bicho por conta própria?

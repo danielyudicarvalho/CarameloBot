@@ -1,4 +1,8 @@
-bs4==0.0.1
-urllib3==1.26.7
 numpy==1.19.5
 pydantic==1.8.2
+pymongo==4.0.1
+pytz==2021.3
+scikit_learn==1.0.2
+SQLAlchemy==1.4.27
+datetime
+pymongo[srv]

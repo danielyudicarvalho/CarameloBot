@@ -1,0 +1,147 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+
+  - story: Usuario saudo o bot
+    steps:
+      - user: |
+          Bom dia
+        intent: greet_intent
+      - action: action_utter_greet
+  
+  #Fluxo de Veterinario (teste)
+  - story: Usuario quer o contato do veterinario
+    steps:
+      - user: |
+          Quero o contato do veterinario
+      - action: utter_faq
+      - action: utter_anything_else
+      - user: |
+          Não
+      - action: utter_goodbye
+      - user: |
+          Muito obrigado
+      - action: utter_welcome
+
+  #Fluxo de Castração (teste)
+  - story: Usuario quer informações sobre castração
+    steps:
+      - user: |
+          Como funciona a castração?
+        intent: ask_castration_intent
+      - action: utter_ask_castration
+      - user: |
+          Femêa
+        intent: ask_female_castration
+      - action: utter_ask_female_castration
+      - action: utter_anything_else
+      - user: |
+          Não
+        intent: deny_intent
+      - action: utter_goodbye
+      - user: |
+          Valeu
+        intent: thank_you_intent
+      - action: utter_welcome
+
+  #Fluxo de Denuncia (teste)
+  - story: Usuario deseja fazer uma denuncia
+    steps:
+      - user: |
+          Quero fazer uma denuncia
+        intent: faq
+      - action: utter_faq
+      - action: utter_anything_else
+      - user: |
+          Não
+        intent: deny_intent
+      - action: utter_goodbye
+      - user: |
+          Obrigado
+        intent: thank_you_intent
+      - action: utter_welcome
+
+  #Fluxo de Perdi o Pet e Resgatei um pet (teste)
+  - story: Usuario perdeu o pet
+    steps:
+      - user: |
+          Perdi o meu pet
+        intent: faq
+      - action: utter_faq
+      - action: utter_anything_else
+      - user: |
+          Não
+        intent: deny_intent
+      - action: utter_goodbye
+      - user: |
+          Obrigado
+        intent: thank_you_intent
+      - action: utter_welcome
+
+  - story: Usuario encontrou um perdido na rua
+    steps:
+      - user: |   
+          Resgatei um cachorro de rua e agora? 
+        intent: faq
+      - action: utter_faq
+      - action: utter_anything_else
+      - user: |
+          Não
+        intent: deny_intent
+      - action: utter_goodbye
+      - user: |
+          Obrigado
+        intent: thank_you_intent
+      - action: utter_welcome
+
+  #Fluxo de Doença Sarna (teste)
+  - story: Usuario deseja saber os sintomas e tratamento de uma doença
+    steps:
+      - user: |
+          Quais são os [sintomas]{"entity": "question"} da [sarna]{"entity": "disease"} ? 
+        intent: askaction
+      - slot_was_set:
+        - disease: sarna
+      - slot_was_set:
+        - question: sintomas
+      - action: action_answer_disease
+      - action: utter_anything_else
+      - user: |
+          Quais o [tratamento]{"entity": "question"} da [sarna]{"entity": "disease"} ? 
+        intent: askaction
+      - slot_was_set:
+        - disease: sarna
+      - slot_was_set:
+        - question: tratamento
+      - action: action_answer_disease
+      - action: utter_anything_else
+      - user: |
+          Negativo
+        intent: deny_intent
+      - action: utter_goodbye
+      - user: |
+          Valeu
+        intent: thank_you_intent
+      - action: utter_welcome
+
+  #Fluxo de Doença Cinomose (teste)
+  - story: Usuario deseja saber os sintomas de uma doença
+    steps:
+      - user: |
+          Quais são os [sintomas]{"entity": "question"} da [cinomose]{"entity": "disease"} ? 
+        intent: askaction
+      - slot_was_set:
+        - disease: cinomose
+      - slot_was_set:
+        - question: sintomas
+      - action: action_answer_disease
+      - action: utter_anything_else
+      - user: |
+          Negativo
+        intent: deny_intent
+      - action: utter_goodbye
+      - user: |
+          Obrigado
+        intent: thank_you_intent
+      - action: utter_welcome
