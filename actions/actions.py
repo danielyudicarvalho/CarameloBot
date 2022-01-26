@@ -164,7 +164,7 @@ class ActionScrapping(Action):
         elif animal_type_slot in cat:
             animal_type_slot = 'Gato'
         # Acesso ao bd 
-        cluster = MongoClient(secrets['CLUSTER'])
+        cluster = MongoClient(secrets['MONGO_DB'])
         db = cluster["mydatabase"]
         mycol = db["pets"]
         # busca pela lista com as informações dos slots

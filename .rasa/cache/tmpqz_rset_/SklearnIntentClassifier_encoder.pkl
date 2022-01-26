@@ -1,0 +1,1 @@
+{"py/object": "numpy.ndarray", "dtype": "<U21", "values": ["adopt_intent", "affirm_intent", "ask_castration_intent", "askaction", "bot_purpose_intent", "deny_intent", "donation_intent", "faq", "goodbye_intent", "greet_intent", "human_service_intent", "out_of_scope_intent", "thank_you_intent", "volunteer_intent", "wanna_help_intent"]}
