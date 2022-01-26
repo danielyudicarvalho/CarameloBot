@@ -1,175 +1,246 @@
 version: "3.0"
 
+#=========
+# INTENTS
+#========= 
+
 intents:
-  - olá
-  - despedida
-  - agradecimento
-  - voluntariar
-  - bot_challenge
 
+# intents de faq/askaction ou /
+  - faq
+  - askaction
+  - ask_disease
+  - start
 
+# intents gerais
+  - goodbye_intent
+  - greet_intent
+  - deny_intent
+  - affirm_intent
+  - thank_you_intent
+  - out_of_scope_intent
+  - bot_purpose_intent
+  - human_service_intent
+  
+# complemento da castração
+  - ask_castration_intent
+  - ask_macho_castration
+  - ask_female_castration
+
+# wanna_help_flow
+  - wanna_help_intent
+  - volunteer_intent
+  - donation_intent
+  
+# adoption_flow
+  - adopt_intent
+  - inform_animal_type_intent
+  - inform_gender_intent
+  - inform_age_intent
+  - inform_size_intent
+  - inform_gender_macho_intent
+  - inform_gender_female_intent
+
+#============
+# ENTITIES
+#============ 
+
+entities:
+
+# pet_form
+  - animal_type_entity
+  - size_entity
+  - age_entity
+  - gender_entity
+  
+# volunteer_form
+  - contact_number_entity
+  
+# entidades do ask_disease 
+  - disease
+  - question
+
+#============
+# ACTIONS
+#============ 
+
+actions:
+
+# Utters Gerais
+  - utter_faq
+  - utter_greet
+  - utter_goodbye
+  - utter_welcome
+  - utter_anything_else
+  - utter_how_can_i_help
+  - utter_gratefull
+  
+# Utters Fallback
+  - utter_bot_purpose
+  - utter_out_of_scope
+  - utter_human_service
+  - utter_please_rephrase
+
+# Utters Wanna_help_flow
+  - utter_type_of_help
+  - utter_about_volunteering
+  - utter_what_to_donate
+
+# Utters Random
+  - utter_ask_castration
+  - utter_ask_macho_castration
+  - utter_ask_female_castration
+  - utter_submit
+
+# Action para utter customizada
+  - action_utter_greet
+  
+# Actions do askaction
+  - action_answer_disease
+  - action_answer_disease_treatment
+  - action_answer_disease_symptoms
+  - action_answer_disease_prevent
+  
+# Actions do voluntariado e doação
+  - action_send_email
+  - action_send_whats
+
+# Actions da adoção
+  - action_scrapping
+
+# Actions que resetam slots
+  - action_reset_volunteer_slots
+  - action_reset_pet_slots
+  - action_reset_name_slot
+  - action_reset_donate_slot
+
+#============ 
+# SLOTS
+#============
 
 slots:
-  name:
+
+# volunteer_form
+  name_slot:
+    type: text
+    # initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: volunteer_form
+            requested_slot: name_slot
+          - active_loop: donate_form
+            requested_slot: name_slot
+            
+  email_slot:
     type: text
     initial_value: null
     influence_conversation: false
     mappings:
       - type: from_text
         conditions:
-            requested_slot: name
+         - active_loop: volunteer_form
+           requested_slot: email_slot
 
-  phone:
-    type: number
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-           requested_slot: phone
-
-  email:
+  how_to_help_slot:
     type: text
     initial_value: null
     influence_conversation: false
     mappings:
       - type: from_text
         conditions:
-           requested_slot: email
+         - active_loop: volunteer_form
+           requested_slot: how_to_help_slot
+
+  contact_number_slot:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+    - type: from_text
+      conditions:
+        - active_loop: volunteer_form
+          requested_slot: contact_number_slot
+ 
+# donate_form
+  what_to_donate_slot:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: donate_form
+           requested_slot: what_to_donate_slot
+
+# lost_pet_form
+  animal_type_slot:
+    type: text
+    initial_value: null
+    mappings:
+    - type: from_entity
+      entity: animal_type_entity
   
-  address:
+  size_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: size_entity
+
+  age_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: age_entity
+  
+  gender_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: gender_entity
+
+# slots para askaction
+  disease:
     type: text
     initial_value: null
     influence_conversation: false
     mappings:
-      - type: from_text
-        conditions:
-           requested_slot: address
-
-  rg:
-    type: number
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-           requested_slot: rg
-
-  cpf:
-    type: number
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-           requested_slot: cpf
-
-  cep:
-    type: number
-    initial_value: null
-    influence_conversation: false
-    mappings:
-      - type: from_text
-        conditions:
-           requested_slot: cep
+      - type: from_entity
+        entity: disease
   
+  question:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: question
 
+#=======
+# FORMS
+#======= 
 
 forms:
+  
   volunteer_form:
     required_slots:
-      - name
-      - phone
-      - email
-      - address
+      - name_slot
+      - email_slot
+      - contact_number_slot
+      - how_to_help_slot
   
-  adoption_form:
+  donate_form:
     required_slots:
-      - name
-      - rg
-      - cpf
-      - address
-      - email
-      - cep
-      - phone
-
-
-responses:
-  utter_greet:
-  - text: | 
-      "Oi Oi ^_^"
-  - text: | 
-      "Olá tudo bom?"
-  - text: | 
-      "Olá"
-  - text: | 
-      "Opa, tudo bom?"
-  - text: | 
-      "Olaaa"
-  
-  utter_presentation:
-  - text: | 
-      "Sou um bot à serviço da ONG abrigo dos bichos. Como poderia ajudar?"
-  - text: | 
-      "Sou um bot criado para a ONG Abrigo dos Bichos, eu ajudo nas adoções e doações para nosso amigos PET. Como posso ajudar? "
-  - text: | 
-      "Sou um bot feito para melhor te ajudar com doações e adoções na ONG amigos dos Bichos. Do que precisa?"
-  - text: | 
-      "Opa, tudo bom?"
-  - text: | 
-      "Olaaa"
-    
-  utter_goodbye:
-  - text: | 
-      "Adeus, bom falar com vocês. Espero ter ajudado"
-  - text: | 
-      "Até mais. Espero ter te ajudado. ^_^"
-  - text: | 
-      "Até logo, espero ter ajudado você"
-
-  utter_welcome:
-  - text: | 
-      "De nada, estou aqui para isso ^_^"
-  - text: | 
-      "Que isso, estou aqui para ajudar"
-  - text: | 
-      "De nada, estou a disposição"
-  
-  utter_gratefull:
-  - text: | 
-      "Muito feliz por você querer nos ajudar. Toda ajuda é bem vinda ^_^"
-  - text: | 
-      "Muitíssimo obrigado pela sua boa intenção, gostamos muito da ajuda de todos"
-  - text: | 
-      "Muito grato por você entrar nessa missão com a gente, sempre precisamos de boas pessoas como você"
-
-  utter_ask_name:
-  - text: "poderia informar seu nome completo por favor?"
-
-  utter_ask_phone:
-  - text: "poderia informar seu telefone pra contato por favor?"
-
-  utter_ask_email:
-  - text: "Por favor, nos envie seu melhor email para contato por gentileza"
-
-  utter_ask_rg:
-  - text: "Por favor, nos informe seu RG para o formulário de adoção"
-
-  utter_ask_cpf:
-  - text: "Por favor, nos informe seu CPF para o formulário de adoção"
-
-  utter_ask_cpf:
-  - text: "Por favor, nos informe seu CEP para o formulário de adoção"
-
-  utter_ask_address:
-  - text: "Poderia, por gentileza, nos informar seu endereço?"
-  
-  
-
-
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+      - name_slot
+      - what_to_donate_slot
+      
+  pet_form:
+    required_slots:
+      - animal_type_slot
+      - size_slot
+      - age_slot
+      - gender_slot
 
 session_config:
   session_expiration_time: 60

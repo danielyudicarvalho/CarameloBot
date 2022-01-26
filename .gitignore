@@ -1,11 +1,13 @@
 # Rasa
-models/
-results/
+# models/
+actions/secrets.py
 story_graph.dot
 graph.html
 actions/__pycache__
-docker-compose.yml
-Dockerfile
+credentials.yml
+endpoints.yml
+# docker-compose.yml
+# Dockerfile
 index.html
 *.db*
 

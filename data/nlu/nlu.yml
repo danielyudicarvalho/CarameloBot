@@ -1,0 +1,166 @@
+version: "3.0"
+
+nlu:
+####### intents gerais
+  - intent: greet_intent
+    examples: |
+      - oi
+      - OI
+      - Oi
+      - Oie
+      - olá
+      - oiiii
+      - eae
+      - hi
+      - bom dia
+      - boa tarde
+      - boa noite
+      - tudo bom?
+      - e ae
+      - oioi
+      - salve
+
+  - intent: thank_you_intent
+    examples: |
+      - obrigado
+      - valeu
+      - é isso aí
+      - muito obrigado
+      - vlw
+      - gracias
+      - thanks
+      - joia
+
+  - intent: goodbye_intent
+    examples: |
+      - bye
+      - tchau
+      - xau
+      - adeus
+      - flw
+      - até mais 
+      - ate
+      - bjs
+      - se cuida
+      - te vejo dps
+      - até uma proxima
+
+  - intent: affirm_intent
+    examples: |
+      - s
+      - sim
+      - confirmo
+      - afirmo
+      - claro
+      - exato
+      - isso mesmo
+      - correto
+      - afirmativo
+      - certo
+      - ok
+
+  - intent: deny_intent
+    examples: |
+      - n
+      - não
+      - nao
+      - errado
+      - nenhum
+      - nunca
+      - jamais
+      - nego
+      - cancelo
+      - negativo
+      
+  - intent: adopt_intent
+    examples: |
+      - adotar
+      - adoção
+      - quero adotar 
+      - como eu adoto? 
+      - como faço para adotar um animal? 
+      - posso adotar um pet ?
+      - Como adotar um [cão](animal_type_entity)
+      - quero um [cachorro](animal_type_entity)
+      - quero um [gato](animal_type_entity)
+      - desejo adotar um [gatinho](animal_type_entity)
+  
+  - intent: human_service_intent
+    examples: |
+      - Atendimento humano
+      - Eu quero atendimento humano
+      - Me passa para uma pessoa
+      - Quero falar com um atendente
+      - Quero falar com uma pessoa
+      - Quero um humano
+      - Quero atendimento humano
+
+  - intent: bot_purpose_intent
+    examples: |
+      - O que você faz?
+      - Qual seu objetivo
+      - Pra que você serve?
+      - Quais suas opções?
+      - propósito
+      - o que posso perguntar?
+      - o que você pode fazer?
+  - intent: out_of_scope_intent
+    examples: |
+      - Quero uma pizza
+      - Adotar um papagaio
+      - Montar numa capivara
+      - batatinha 1 2 3
+      - Assistir series
+      - Teste 123 teste 321
+  - intent: ask_castration_intent
+    examples: |
+      - Quero saber como funciona a castração
+      - Como funciona o processo de castração?
+      - Pode me dizer como funciona o processo de castração ?
+      - Como ocorre o processo de castração ?
+      - Conte-me como ocorre o processo de castração
+      - Processo de castração
+      - Castração
+      - quero castrar cachorro
+      - quero castrar gato
+      - quero castrar
+      - como funciona castração
+      - como funciona castramento
+      - castração de cachorro
+      - castramento de gato
+    
+####### intents do wanna_help_flow 
+  - intent: wanna_help_intent
+    examples: |
+      - Eu quero ajudar
+      - Quero ajudar
+      - Gostaria de ajudar
+      - Como posso ajudar vocês?
+      - O que eu posso fazer para ajudar?
+      - Como eu ajudo vocês? 
+      - O que eu consigo fazer para ajuda-los?
+      - Como ajudo o abrigo? 
+      - Como posso auxiliar? 
+      - O que posso fazer para ajudar a ong?
+      - Como eu poderia ajudar?
+      - Desejo ajudar de alguma maneira
+      
+  - intent: volunteer_intent
+    examples: |
+      - Voluntário
+      - voluntario
+      - Quero ser voluntário
+      - Gostaria de voluntariar
+      - Como faço para voluntariar
+      - Como posso me voluntariar?
+      - Quero auxiliar com meu tempo
+      - Quero fazer parte do voluntariado
+  - intent: donation_intent
+    examples: |
+      - quero doar dinheiro
+      - doacao de areia
+      - doar ração para cachorro
+      - dar dinheiro para ONG
+      - doar medicamento
+      - ajudar com areia
+      - ajudar com dinheiro
