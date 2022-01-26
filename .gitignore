@@ -3,24 +3,31 @@
 actions/secrets.py
 story_graph.dot
 graph.html
+.rasa/cache
 actions/__pycache__
 credentials.yml
 endpoints.yml
 # docker-compose.yml
 # Dockerfile
 index.html
+.ipynb
+.csv
+*.ipynb
+*.csv
 *.db*
+.rasa
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-
+*.pyc
 # C extensions
 *.so
 
 # Distribution / packaging
 .Python
+notebooks/
 build/
 develop-eggs/
 dist/
@@ -140,3 +147,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Node dependencies
+node_modules/
+
+# Okteto
+.stignore
+
