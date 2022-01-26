@@ -35,12 +35,7 @@ services:
       - "5055:5055"
     volumes:
       - "./actions:/app/actions"
-<<<<<<< HEAD
-   
-
-=======
   
->>>>>>> develop
 networks:
   all:
     driver: bridge
