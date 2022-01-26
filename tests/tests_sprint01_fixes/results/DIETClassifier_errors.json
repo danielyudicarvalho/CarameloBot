@@ -1,0 +1,26 @@
+[
+  {
+    "text": "Vocês podem me ajudar a achar meu gato?",
+    "entities": [
+      {
+        "start": 34,
+        "end": 38,
+        "value": "gato",
+        "entity": "animal_type_entity"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Meu gato sumiu",
+    "entities": [
+      {
+        "start": 4,
+        "end": 8,
+        "value": "gato",
+        "entity": "animal_type_entity"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

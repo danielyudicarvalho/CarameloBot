@@ -1,0 +1,162 @@
+version: "3.0"
+nlu:
+- intent: faq/ask_how_to_volunteer
+  examples: |
+    - voluntario
+    - Como posso voluntariar?
+- intent: faq/ask_how_to_help
+  examples: |
+    - O que eu posso fazer para ajudar?
+    - Quero ajudar
+    - Gostaria de ajudar
+- intent: faq/ask_found_and_rescued
+  examples: |
+    - Peguei um cachorrinho na rua, o que eu faço?
+    - Encontrei perdido e resgatei e agora?
+    - Resgatei um animal de rua e agora?
+- intent: faq/ask_castatration
+  examples: |
+    - Quero saber como funciona a castração
+    - Pode me passar como funciona o processo de castração ?
+    - Como ocorre o processo de castração ?
+- intent: faq/ask_veterinarian
+  examples: |
+    - Pode me mandar o contato do veterinario ?
+    - Onde posso conseguir o contato do veterinario ?
+    - Pode me passar o contato do veterinario ?
+- intent: faq/ask_report
+  examples: |
+    - Gostaria de fazer uma denuncia
+    - Quero fazer uma denuncia de maus tratos
+    - Quero fazer uma denuncia
+- intent: faq/ask_vaccine
+  examples: |
+    - quero saber sobre vacina
+    - como faço para vacinar
+    - como vacinar?
+- intent: faq/ask_collect_warn
+  examples: |
+    - posso enterrar meu cachorro no meu quintal?
+    - posso enterrar meu próprio gato quando ele morrer?
+    - Tem consequências se eu enterrar meu bicho por conta própria?
+    - E se eu enterrar meu proprio pet no quintal
+    - posso enterrar meu proprio cachorro quando ele morrer?
+- intent: faq/ask_collect
+  examples: |
+    - o que eu faço quando meu bichinho morre?
+    - o que fazer quando meu gato morrer?
+    - o que fazer quando meu cachorro morrer?
+    - qual número eu ligo quando meu animal morre?
+    - meu pet morreu e agora?
+    - com quem eu falor quando meu cachorro morre?
+    - como proceder quando meu pet morre?
+    - com quem eu falor quando o bicho morre?
+- intent: askaction/ask_disease
+  examples: |
+    - como [prevenir](question) a [fiv](disease)?
+    - qual os [sintomas](question) da [raiva](disease)?
+    - como [prevenir](question) a [toxoplasmose](disease)?
+    - como se [prevenir](question) para [fiv](disease)?
+    - o que você sabe sobre [toxoplasmose](disease)?
+    - me dê informações sobre [raiva](disease)
+    - você sabe qual a [prevenção](question) para [toxoplasmose](disease)?
+    - como se [prevenir](question) para [leishmaniose](disease)?
+    - qual a [prevenção](question) pra [fiv](disease)?
+    - qual o [sintoma](question) da [sarna](disease)?
+    - quais os [sintomas](question) da [leishmaniose](disease)?
+    - me fale sobre [leishmaniose](disease)
+    - qual a [prevenção](question) pra [raiva](disease)?
+    - como [tratar](question) a [fiv](disease)?
+    - quais os [tratamentos](question) para [sarna](disease)?
+    - qual o [sintoma](question) da [fiv](disease)?
+- intent: need_rescue_intent
+  examples: |
+    - Preciso que alguém resgate um Cão abandonado
+    - Tem um gato abandonado aqui, alguem pode vir resgatar?
+- intent: say_description_intent
+  examples: |
+    - ele é branco e preto tem uma mancha no nariz e pelo baixo
+    - ele é um vira-lata caramelo e atende pelo nome camaro amarelo
+- intent: adopt_intent
+  examples: |
+    - como eu adoto?
+    - adotar
+    - adoção
+- intent: inform_animal_type_intent
+  examples: |
+    - [cachorro](animal_type_entity)
+    - é um [cachorro](animal_type_entity)
+    - [gato](animal_type_entity)
+- intent: say_contact_number_intent
+  examples: |
+    - é [(12) 3203-4999](contact_number_entity)
+    - [22222-2222](contact_number_entity)
+    - [99923134](contact_number_entity)
+    - Numero para contato é [3829-3291](contact_number_entity)
+- intent: goodbye_intent
+  examples: |
+    - tchau
+    - flw
+    - bye
+    - até mais
+    - xau
+- intent: lost_my_pet_intent
+  examples: |
+    - Meu [cachorro](animal_type_entity) sumiu, ele é vira-lata caramelo, manda uma msg para [0000-0000](contact_number_entity)
+    - Perdi meu pet
+    - Meu [gato](animal_type_entity) sumiu
+    - Meu pet desapareceu
+    - Perdi meu [gato](animal_type_entity)
+    - Perdi meu [cachorro](animal_type_entity), o que eu faço?
+    - Perdi meu [cachorro](animal_type_entity)
+- intent: affirm_intent
+  examples: |
+    - isso mesmo
+    - sim
+    - afirmativo
+    - correto
+    - certo
+    - s
+    - afirmo
+    - exato
+    - claro
+- intent: deny_intent
+  examples: |
+    - nao
+    - errado
+    - não
+    - nego
+    - jamais
+    - nunca
+    - negativo
+    - nenhum
+- intent: greet_intent
+  examples: |
+    - dia
+    - boa tarde
+    - oi
+    - tarde
+    - hi
+    - bom dia
+    - boa noite
+    - noite
+    - tudo bom?
+    - olá
+- regex: question
+  examples: |
+    - /([A-Z a-z])/
+- lookup: disease
+  examples: |
+    - leishmaniose
+    - raiva
+    - sarna
+    - toxoplasmose
+    - fiv
+- lookup: question
+  examples: |
+    - sintomas
+    - prevenção
+    - tratamento
+    - prevenir
+    - tratar
+    - sintoma

@@ -1,0 +1,50 @@
+[
+  {
+    "text": "tchau",
+    "intent": "goodbye_intent",
+    "intent_prediction": {
+      "name": "greet_intent",
+      "confidence": 0.6980769026814232
+    }
+  },
+  {
+    "text": "Perdi meu cachorro, o que eu faço?",
+    "intent": "lost_my_pet_intent",
+    "intent_prediction": {
+      "name": "faq",
+      "confidence": 0.40119447314595325
+    }
+  },
+  {
+    "text": "Vocês podem me ajudar a achar meu gato?",
+    "intent": "lost_my_pet_intent",
+    "intent_prediction": {
+      "name": "faq",
+      "confidence": 0.4054813332815632
+    }
+  },
+  {
+    "text": "Meu cachorro sumiu, ele é vira-lata caramelo, manda uma msg para 0000-0000",
+    "intent": "lost_my_pet_intent",
+    "intent_prediction": {
+      "name": "faq",
+      "confidence": 0.26485687653508405
+    }
+  },
+  {
+    "text": "Numero para contato é 3829-3291",
+    "intent": "say_contact_number_intent",
+    "intent_prediction": {
+      "name": "say_description_intent",
+      "confidence": 0.1975686915910633
+    }
+  },
+  {
+    "text": "67 12345-6789",
+    "intent": "say_contact_number_intent",
+    "intent_prediction": {
+      "name": "out_of_scope_intent",
+      "confidence": 0.2716920406040291
+    }
+  }
+]

@@ -1,0 +1,45 @@
+version: "3.0"
+responses:
+  utter_faq/ask_how_to_volunteer:
+  - text: Estamos procurando por voluntários de todo o Brasil que queiram fazer parte da nossa ONG, atuando com eventuais colaborações em diversas áreas. Mesmo de longe, você poderá contribuir de alguma forma! É veterinário e ama totós? Você pode ajudar a responder dúvidas de nossos seguidores! Entende de legislação? As dicas de um advogado são muito bem-vindas! Faz fotos ou vídeos? Temos conteúdos incríveis que precisam de mãos habilidosas de um editor e das lentes de um fotógrafo. Gostaria de se voluntariar?
+  utter_faq/ask_how_to_help:
+  - text: Opa, você pode nos ajudar de duas formas, seja fazendo doações ou voluntariando. Qual você prefere?
+  utter_faq/ask_found_and_rescued:
+  - text: Quando o animal é recolhido, a primeira coisa a ser feita é levá-lo ao veterinário. Claro, você pode dar água, comida, um banho, se ele estiver “sujinho”, mas, em alguns casos, os animais apresentam feridas por baixos dos pelos emaranhados, machucados, contusões e outras complicações, pois nunca sabemos quanto tempo ele passou nas ruas. Isso pode lhe render uma boa mordida/arranhada se não tiver cuidado. Ele pode estar doente e necessita de exames para uma avaliação do que será melhor para o caso dele. Por isso, leve o bichinho a um Veterinário de sua confiança. JAMAIS medique um animal por conta própria, muitos medicamentos de uso humano podem intoxicar e até levar o animal a óbito, só um profissional pode lhe dizer do que ele precisa.
+  utter_faq/ask_vaccine:
+  - text: |
+      A vacinação garante a imunização e segurança do seu pet, além de impedir o contágio de seus respectivos donos, por isso levar o pet para uma primeira consulta com o veterinário e seguir à risca o calendário de vacinação estabelecido por ele é essencial para que o animal fique sempre protegido.
+      Ressaltando que o calendário apresentado é um exemplo, contate o veterinário mais próximo para uma orientação detalhada.
+      Calendário de vacinação (cachorro):
+      1,5 meses - Primeira vacina (V8 ou V10)
+      2 meses - Polivalente (V8 ou V10/ Gripe canina / Giardíase)
+      3 meses - Reforço da polivalente (V8 ou V10)
+      4 meses - Vacina da raiva
+      Anualmente - Reforço da polivalente e da raiva
+      Calendário de vacinação (gato):
+      1,5 meses - Desparasitar o  gato para que a vacinação primária seja efetuada futuramente
+      2 meses - Teste de leucemia, teste de imunodeficiência e dose da tríplice
+      2,5 meses - Vacina contra a leucemia felina
+      3 meses - Reforço da vacina trivalente
+      3,5 meses - Reforço da vacina da leucemia.
+      4 meses - Vacina da raiva.
+      Anualmente - Reforço da trivalente, da leucemia  da raiva
+  utter_faq/ask_collect_warn:
+  - text: |
+      " Cuidado, pois enterrar o seu pet falecido no quintal trás riscos ambientais ao solo além de ser crime segundo o artigo 54 da Lei de Crimes Ambientais- Lei 9605/98.
+        Descartar em terrenos baudios, terreiros, matas e outros locais também é crime ambiental pois pode contaminar o solo e até o lençol freático, além de ser perigoso por pode contaminar o solo e trazer doenças. A pena pode chegar a multas de
+        R$500 a R$13 mil e até 4 anos de prisão. É muito mais fácil e seguro ligar para a Solurb ou para a prefeitura. Você também pode recorrer à serviços particulares de cremação caso queira."
+  - text: |
+      "Evite descartar o corpo do seu pet falecido por conta própria, isso pode geral multas de R$500 a R$13 mil e pode dar até prisão. Isso porque o artigo 54 da Lei de Crimes Ambientais- Lei 9605/98 considera
+      isso crime ambiental. Descartar em terrenos baudios, matas, terreiros ou qualquer outro terreno também é crime além de você estar podendo contaminar o solo e atrair doenças.
+      Ligue para a Solurb ou para a prefeitura que eles te atenderão em até 24h, se seu pet vier a falecer em um clínica veterinária eles podem dar o devido tratamento ao corpo do bichano."
+  utter_faq/ask_collect:
+  - text: |
+      "Sabemos como é triste a dor de perder seu pet, mas caso isso venha a acontecer você precisa dar um destino correto ao corpinho dele.
+      A maneira mais segura de se fazer isso em Campo Grande é ligar para a Solurb, responsável pela higiene da cidade, através do número: 0800 6471005.
+      Eles darão o devido tratamento ao seu pet, mas lembre-se de que você precisa ensacar o corpinho dele antes. Você também pode ligar para a prefeitura e eles
+      encaminharão à Solurb."
+  - text: |
+      "Se você infelizmente perdeu o seu bichano (cão ou gato) saiba que você precisar dar um destino correto ao corpo dele para que não haja risco as pessoas nem ao 
+      meio ambiente. Aqui em Campo Grande-MS quem é responsável por isso é a Solurb(0800 6471005). Ligue para eles que eles devem te atender em até 24h.
+      Seu seu pet morreu na clínica veterinária, eles podem encaminhar ao crematório. Exitem serviços de cremação para pets também caso queira um por conta própria."

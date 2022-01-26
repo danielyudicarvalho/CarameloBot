@@ -1,0 +1,56 @@
+[
+  {
+    "text": "Quais são os sintomas da sarna ?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 21,
+        "value": "sintomas",
+        "entity": "question"
+      },
+      {
+        "start": 25,
+        "end": 30,
+        "value": "sarna",
+        "entity": "disease"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Quais o tratamento da sarna ?",
+    "entities": [
+      {
+        "start": 8,
+        "end": 18,
+        "value": "tratamento",
+        "entity": "question"
+      },
+      {
+        "start": 22,
+        "end": 27,
+        "value": "sarna",
+        "entity": "disease"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Quais são os sintomas da cinomose ?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 21,
+        "value": "sintomas",
+        "entity": "question"
+      },
+      {
+        "start": 25,
+        "end": 33,
+        "value": "cinomose",
+        "entity": "disease"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

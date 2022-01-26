@@ -1,0 +1,165 @@
+version: "3.0"
+stories:
+- story: Usuário nao gostaria de adotar um pet (.\tests\test_stories.yml)
+  steps:
+  - intent: adopt_intent
+  - action: utter_about_adopt
+  - intent: deny_intent
+  - action: utter_anything_else  # predicted: action_default_fallback
+  - intent: deny_intent
+  - action: utter_goodbye
+- story: Usuario sauda o bot (.\tests\test_stories.yml)
+  steps:
+  - intent: greet_intent
+  - action: utter_greet  # predicted: action_utter_greet
+  - action: action_listen  # predicted: action_default_fallback
+- story: Usuario quer adotar (.\tests\test_stories.yml)
+  steps:
+  - intent: greet_intent
+  - action: action_utter_greet
+  - intent: adopt_intent
+  - action: utter_about_adopt
+  - intent: affirm_intent
+  - action: utter_need_information
+  - action: pet_form
+  - active_loop: pet_form
+  - user: |-
+      Cao
+  - slot_was_set:
+    - animal_type_slot: Cao
+  - action: action_listen  # predicted: action_default_fallback
+  - user: |-
+      Pequeno
+  - slot_was_set:
+    - size_slot: Pequeno
+  - action: action_listen  # predicted: action_default_fallback
+  - user: |-
+      baby
+  - slot_was_set:
+    - age_slot: baby
+  - action: action_listen  # predicted: action_default_fallback
+  - user: |-
+      Macho
+  - slot_was_set:
+    - gender_slot: Macho
+  - action: utter_searching  # predicted: action_default_fallback
+  - action: action_scrapping  # predicted: action_default_fallback
+  - action: action_reset_pet_slots  # predicted: action_default_fallback
+  - action: utter_anything_else  # predicted: action_default_fallback
+  - intent: deny_intent
+  - action: utter_goodbye
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: thank_you_intent  # predicted: faq/ask_when_castration: Muito Obrigado
+  - action: utter_welcome  # predicted: action_default_fallback
+- story: Usuario quer o contato do veterinario (.\tests\test_stories.yml)
+  steps:
+  - intent: greet  # predicted: greet_intent: Olá
+  - action: utter_greet  # predicted: action_default_fallback
+  - action: action_listen  # predicted: action_default_fallback
+  - user: |-
+      Quero o contato do veterinario
+  - action: utter_faq  # predicted: action_default_fallback
+  - action: utter_anything_else  # predicted: action_listen
+  - intent: deny_intent
+  - action: utter_goodbye
+  - intent: thank_you_intent  # predicted: faq/ask_when_castration: Muito obrigado
+  - action: utter_welcome  # predicted: action_default_fallback
+- story: Usuario quer informações sobre castração (.\tests\test_stories.yml)
+  steps:
+  - intent: greet_intent
+  - action: action_utter_greet
+  - intent: ask_castration_intent  # predicted: faq/ask_castration: Como funciona a castração?
+  - action: utter_ask_castration  # predicted: action_default_fallback
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: ask_female_castration  # predicted: out_of_scope_intent: Femêa
+  - action: utter_ask_female_castration  # predicted: action_default_fallback
+  - action: utter_anything_else  # predicted: action_default_fallback
+  - intent: deny_intent
+  - action: utter_goodbye
+  - intent: thank_you_intent  # predicted: faq/ask_lost_pet: Valeu
+  - action: utter_welcome  # predicted: action_default_fallback
+- story: Usuario deseja fazer uma denuncia (.\tests\test_stories.yml)
+  steps:
+  - intent: greet_intent
+  - action: action_utter_greet
+  - intent: faq
+  - action: utter_faq
+  - action: utter_anything_else  # predicted: action_listen
+  - intent: deny_intent
+  - action: utter_goodbye
+  - intent: thank_you_intent  # predicted: volunteer_intent: Obrigado
+  - action: utter_welcome  # predicted: action_default_fallback
+- story: Usuario perdeu o pet mas encontrou um perdido na rua (.\tests\test_stories.yml)
+  steps:
+  - intent: greet_intent
+  - action: action_utter_greet
+  - intent: faq
+  - action: utter_faq
+  - action: utter_anything_else  # predicted: action_listen
+  - intent: affirm_intent
+  - action: utter_how_can_i_help
+  - intent: faq
+  - action: utter_faq
+  - action: utter_anything_else  # predicted: action_listen
+  - intent: deny_intent
+  - action: utter_goodbye
+  - intent: thank_you_intent  # predicted: volunteer_intent: Obrigado
+  - action: utter_welcome  # predicted: action_default_fallback
+- story: Usuario deseja saber os sintomas e tratamento de uma doença (.\tests\test_stories.yml)
+  steps:
+  - intent: greet_intent
+  - action: action_utter_greet
+  - intent: askaction
+    entities:
+    - question: sintomas
+    - disease: sarna
+  - slot_was_set:
+    - disease: sarna
+  - slot_was_set:
+    - question: sintomas
+  - slot_was_set:
+    - disease: sarna
+  - slot_was_set:
+    - question: sintomas
+  - action: action_answer_disease
+  - action: utter_anything_else  # predicted: action_listen
+  - intent: askaction
+    entities:
+    - question: tratamento
+    - disease: sarna
+  - slot_was_set:
+    - disease: sarna
+  - slot_was_set:
+    - question: tratamento
+  - slot_was_set:
+    - disease: sarna
+  - slot_was_set:
+    - question: tratamento
+  - action: action_answer_disease
+  - action: utter_anything_else  # predicted: action_listen
+  - intent: deny_intent
+  - action: utter_goodbye
+  - intent: thank_you_intent  # predicted: faq/ask_lost_pet: Valeu
+  - action: utter_welcome  # predicted: action_default_fallback
+- story: Usuario deseja saber os sintomas de uma doença (.\tests\test_stories.yml)
+  steps:
+  - intent: greet_intent
+  - action: action_utter_greet
+  - intent: askaction
+    entities:
+    - question: sintomas
+    - disease: cinomose
+  - slot_was_set:
+    - disease: cinomose
+  - slot_was_set:
+    - question: sintomas
+  - slot_was_set:
+    - disease: cinomose
+  - slot_was_set:
+    - question: sintomas
+  - action: action_answer_disease
+  - action: utter_anything_else  # predicted: action_listen
+  - intent: deny_intent
+  - action: utter_goodbye
+  - intent: thank_you_intent  # predicted: volunteer_intent: Obrigado
+  - action: utter_welcome  # predicted: action_default_fallback

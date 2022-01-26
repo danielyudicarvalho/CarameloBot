@@ -1,0 +1,62 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+- story: Main
+  steps:
+  - user: |
+      Oi
+    intent: greet
+  - action: utter_greet
+  - checkpoint: next_flow
+
+- story: Perdeu o pet e o bot pergunta todas as informações
+  steps:
+    - user: |
+        Perdi meu pet
+      intent: lost_my_pet_intent
+    - action: utter_lost_pet
+    - active_loop: lost_pet_form
+    - slot_was_set:
+      - animal_type_slot: gato
+    - slot_was_set:
+      - description_slot: Estou desecrevendo o gato nesse slot bla-bla-bla
+    - slot_was_set:
+      - contact_number_slot: 3782-4123
+    - action: utter_submit
+
+- story: Usuario deseja adotar
+  steps:
+    - checkpoint: next_flow
+    - user: |
+        Quero adotar
+      intent: adopt_intent
+    - action: utter_preview_adopt
+    - action: utter_want_to_adopt
+    - user: |
+        Sim
+      intent: affirm_intent 
+    - action: utter_ask_animal_type_slot
+    - user: |
+        [gato](animal_type_entity)
+      intent: inform_animal_type_intent
+    - slot_was_set:
+      - animal_type_slot: gato
+    - action: utter_adopt_tips
+
+- story: Usuario nao deseja adotar
+  steps:
+    - checkpoint: next_flow
+    - user: |
+        Quero adotar
+      intent: adopt_intent
+    - action: utter_preview_adopt
+    - action: utter_want_to_adopt
+    - user: |
+        Não
+      intent: deny_intent
+    - action: utter_anything_else
+    - user: |
+        Não
+      intent: deny_intent
+    - action: utter_goodbye

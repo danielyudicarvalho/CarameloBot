@@ -1,0 +1,14 @@
+[
+  {
+    "text": "gato",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "gato",
+        "entity": "animal_type_entity"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

@@ -1,0 +1,95 @@
+version: "3.0"
+nlu:
+- intent: faq/ask_how_to_volunteer
+  examples: |
+    - Quero ser voluntario
+    - Quero fazer parte do voluntariado
+- intent: faq/ask_how_to_help
+  examples: |
+    - O que eu consigo fazer para ajuda-los?
+- intent: faq/ask_found_and_rescued
+  examples: |
+    - Encontrei perdido e resgatei e agora?
+- intent: faq/ask_report
+  examples: |
+    - Gostaria de fazer uma denuncia de maus tratos
+- intent: faq/ask_vaccine
+  examples: |
+    - como funciona a vacinação ?
+- intent: faq/ask_collect_warn
+  examples: |
+    - posso enterrar meu cachorro no meu quintal?
+    - posso enterrar meu gato no quintal?
+- intent: faq/ask_castration
+  examples: |
+    - Como funciona o processo de castração?
+- intent: faq/ask_veterinarian
+  examples: |
+    - Quero o contato do veterinario
+- intent: faq/ask_collect
+  examples: |
+    - como proceder quando meu pet morre?
+    - com quem eu falor quando o bicho morre?
+- intent: askaction/ask_disease
+  examples: |
+    - como [tratar](question) a [fiv](disease)?
+    - qual os [sintomas](question) da [raiva](disease)?
+    - qual o [sintoma](question) da [sarna](disease)?
+    - como [tratar](question) a [leishmaniose](disease)?
+- intent: inform_animal_type_intent
+  examples: |
+    - [gato](animal_type_entity)
+- intent: goodbye_intent
+  examples: |
+    - até mais
+- intent: out_of_scope_intent
+  examples: |
+    - Teste 123 teste 321
+    - Assistir series
+- intent: say_contact_number_intent
+  examples: |
+    - [22222-2222](contact_number_entity)
+- intent: say_description_intent
+  examples: |
+    - ele é um vira-lata caramelo e atende pelo nome camaro amarelo
+- intent: adopt_intent
+  examples: |
+    - quero adotar
+- intent: bot_purpose_intent
+  examples: |
+    - Pra que você serve?
+    - Qual seu objetivo
+- intent: lost_my_pet_intent
+  examples: |
+    - Perdi meu pet
+- intent: affirm_intent
+  examples: |
+    - certo
+    - sim
+- intent: deny_intent
+  examples: |
+    - nego
+    - nao
+- intent: greet_intent
+  examples: |
+    - noite
+    - oi
+    - boa noite
+- regex: question
+  examples: |
+    - /([A-Z a-z])/
+- lookup: disease
+  examples: |
+    - leishmaniose
+    - raiva
+    - sarna
+    - toxoplasmose
+    - fiv
+- lookup: question
+  examples: |
+    - sintomas
+    - prevenção
+    - tratamento
+    - prevenir
+    - tratar
+    - sintoma

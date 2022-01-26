@@ -120,7 +120,8 @@ nlu:
       - Como funciona o processo de castracao?
       - Pode me dizer como funciona o processo de castração ?
       - Como ocorre o processo de castração ?
-      - Como ocorre o processo de castracao ?
+      - Como ocorre o pro
+      cesso de castracao ?
       - Conte-me como ocorre o processo de castração
       - Conte-me como ocorre o processo de castracao
       - Processo de castração
@@ -133,6 +134,14 @@ nlu:
       - como funciona castramento
       - castração de cachorro
       - castramento de gato
+      - quero castrar meu cachorro
+      - quero castrar meu gato
+      - castracao para cachorro
+      - castracao para gato
+      - castração para cachorro
+      - castração para gato
+      - castracao
+      - castração
     
 ####### intents do wanna_help_flow 
   - intent: wanna_help_intent

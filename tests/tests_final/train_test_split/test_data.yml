@@ -1,0 +1,111 @@
+version: "3.0"
+nlu:
+- intent: faq/ask_report
+  examples: |
+    - Denuncia
+    - Quero fazer uma denuncia de maus tratos
+- intent: faq/ask_collect_warn
+  examples: |
+    - posso enterrar meu proprio cachorro quando ele morrer?
+- intent: faq/ask_lost_pet
+  examples: |
+    - Meu gato sumiu
+- intent: faq/ask_veterinarian
+  examples: |
+    - Onde posso conseguir o contato do veterinario ?
+    - Contato do veterinario
+- intent: faq/ask_how_to_donate_animal
+  examples: |
+    - detalhes da doação
+    - procedimento de doacao
+- intent: faq/ask_collect
+  examples: |
+    - o que fazer quando meu gato morrer?
+    - o que fazer quando meu cachorro morrer?
+- intent: faq/ask_found_and_rescued
+  examples: |
+    - Encontrei um gato de rua e quero ficar com ele
+    - O que eu faço? Encontrei um animal perdido na rua
+- intent: faq/ask_need_rescue
+  examples: |
+    - cachorrinho atropelado
+    - machucou a perna
+- intent: askaction/ask_disease
+  examples: |
+    - qual o [sintoma](question) da doença do [carrapato](disease)?
+    - me fale sobre [leishmaniose](disease)
+    - quais os [sintomas](question) da [leishmaniose](disease)?
+    - qual os [sintomas](question) da doença do [carrapato](disease)?
+    - o que você sabe sobre [cinomose](disease)?
+    - como se [prevenir](question) para [parvovirose](disease)?
+    - quais são os [sintomas](question) que meu animal pode sentir se estiver com [cinomose](disease)?
+    - qual a [prevenção](question) pra [parvovirose](disease)?
+    - qual a [prevenção](question) pra [carrapato](disease)?
+- intent: human_service_intent
+  examples: |
+    - Atendimento humano
+- intent: out_of_scope_intent
+  examples: |
+    - Teste 123 teste 321
+- intent: thank_you_intent
+  examples: |
+    - thanks
+    - muito obrigado
+- intent: adopt_intent
+  examples: |
+    - Como adotar um cão
+- intent: bot_purpose_intent
+  examples: |
+    - o que posso perguntar?
+- intent: ask_castration_intent
+  examples: |
+    - Conte-me como ocorre o processo de castração
+    - Processo de castração
+- intent: donation_intent
+  examples: |
+    - quero doar dinheiro
+- intent: volunteer_intent
+  examples: |
+    - Quero ser voluntário
+    - Como posso me voluntariar?
+- intent: goodbye_intent
+  examples: |
+    - até mais
+    - adeus
+- intent: deny_intent
+  examples: |
+    - negativo
+    - não
+- intent: affirm_intent
+  examples: |
+    - sim
+    - isso mesmo
+- intent: greet_intent
+  examples: |
+    - tudo bom?
+    - bom dia
+- intent: wanna_help_intent
+  examples: |
+    - Desejo ajudar de alguma maneira
+    - Como eu poderia ajudar?
+    - O que eu consigo fazer para ajuda-los?
+- regex: question
+  examples: |
+    - /([A-Z a-z])/
+- lookup: disease
+  examples: |
+    - leishmaniose
+    - raiva
+    - sarna
+    - parvovirose
+    - cinomose
+    - fiv
+    - carrapato
+- lookup: question
+  examples: |
+    - sintomas
+    - prevenção
+    - tratamento
+    - prevenir
+    - tratar
+    - sintoma

@@ -1,0 +1,72 @@
+version: "3.0"
+stories:
+- story: Usuario sauda o bot (.\tests\test_stories.yml)
+  steps:
+  - intent: greet_intent
+  - action: utter_greet  # predicted: action_utter_greet
+- story: Usuario quer adotar (.\tests\test_stories.yml)
+  steps:
+  - intent: greet_intent
+  - action: action_utter_greet
+  - intent: adopt_intent
+  - action: utter_about_adopt
+  - intent: affirm_intent
+  - action: utter_need_information
+  - action: pet_form
+  - active_loop: pet_form
+  - user: |-
+      Cao
+  - slot_was_set:
+    - animal_type_slot: Cao
+  - action: action_listen  # predicted: action_default_fallback
+  - user: |-
+      Pequeno
+  - slot_was_set:
+    - size_slot: Pequeno
+  - action: action_listen  # predicted: action_default_fallback
+  - user: |-
+      baby
+  - slot_was_set:
+    - age_slot: baby
+  - action: action_listen  # predicted: action_default_fallback
+  - user: |-
+      Macho
+  - slot_was_set:
+    - gender_slot: Macho
+  - action: utter_searching  # predicted: action_default_fallback
+  - action: action_scrapping  # predicted: action_default_fallback
+  - action: action_reset_pet_slots  # predicted: action_default_fallback
+  - action: utter_anything_else  # predicted: action_default_fallback
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: deny_intent
+  - action: utter_goodbye
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: thank_you_intent
+  - action: utter_welcome
+  - action: action_listen  # predicted: action_default_fallback
+- story: Usuario quer o contato do veterinario (.\tests\test_stories.yml)
+  steps:
+  - intent: greet  # predicted: greet_intent: Olá
+  - action: utter_greet  # predicted: action_default_fallback
+  - intent: faq/ask_veterinarian
+  - action: utter_faq
+  - action: utter_anything_else
+  - user: |-
+      Não
+  - action: utter_goodbye  # predicted: action_default_fallback
+  - user: |-
+      Muito obrigado
+  - action: utter_welcome  # predicted: action_default_fallback
+- story: Usuario quer informações sobre castração (.\tests\test_stories.yml)
+  steps:
+  - intent: greet_intent
+  - action: action_utter_greet
+  - intent: ask_castration_intent  # predicted: askaction: Como funciona a castração?
+  - action: utter_ask_castration
+  - intent: ask_female_castration  # predicted: goodbye_intent: Femêa
+  - action: utter_ask_female_castration
+  - action: utter_anything_else
+  - intent: deny_intent
+  - action: utter_goodbye
+  - intent: thank_you_intent
+  - action: utter_welcome

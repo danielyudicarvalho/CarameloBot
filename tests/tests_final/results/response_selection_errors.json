@@ -1,0 +1,354 @@
+[
+  {
+    "text": "me fale sobre leishmaniose",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "o que é leishmaniose",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "quais os sintomas da leishmaniose?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "qual a prevenção para leishmaniose ?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "qual o tratamento disponivel para leishmaniose ?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "como se prevenir da leishmaniose?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "como tratar o animal com leishmaniose?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "me dê informações sobre raiva",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "qual os sintomas da raiva?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "qual a prevenção pra raiva?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "como é feito o tratamento da raiva?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "como previnir a raiva?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "qual o procedimento para tratar a raiva?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "qual o [sintoma] presente no vírus da raiva ?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "fale sobre sarna",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "como tratar a sarna?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "qual o sintoma presente na sarna?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "tratamento para sarna?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "como se prevenir para sarna?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "o que devo fazer como prevenção meu animal com sarna?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "o que você sabe sobre cinomose?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "quais são os sintomas que meu animal pode sentir se estiver com cinomose?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "você sabe qual a prevenção para cinomose?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "como prevenir a cinomose?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "o que devo fazer para tratar da cinomose?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "como posso o tratamento do meu animal para que ele não tenha cinomose?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "como se prevenir para fiv?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "qual o sintoma da fiv?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "qual a prevenção pra fiv?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "tratamento para fiv?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "como prevenir a fiv?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "como tratar a fiv?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "como tratar a parvovirose?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "como se prevenir para parvovirose?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "qual o sintoma da parvovirose?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "qual a prevenção pra parvovirose?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "tratamento para parvovirose?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "como prevenir a parvovirose?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "qual os sintomas da doença do carrapato?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "quais os tratamentos para carrapato?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "você sabe qual a prevenção para carrapato?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "como se prevenir da doença do carrapato?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "qual o sintoma da doença do carrapato?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "qual a prevenção pra carrapato?",
+    "intent_response_key_target": "askaction/ask_disease",
+    "intent_response_key_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  }
+]

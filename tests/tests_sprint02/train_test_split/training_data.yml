@@ -1,0 +1,242 @@
+version: "3.0"
+nlu:
+- intent: faq/ask_report
+  examples: |
+    - Como faço uma denuncia de maus tratos ?
+    - Denuncia
+    - Quero fazer uma denuncia de maus tratos
+    - Gostaria de fazer uma denuncia
+- intent: faq/ask_collect_warn
+  examples: |
+    - E se eu enterrar meu proprio pet no quintal
+    - posso enterrar meu próprio gato quando ele morrer?
+    - posso enterrar meu proprio cachorro quando ele morrer?
+    - posso enterrar meu cachorro no meu quintal?
+    - posso enterrar meu gato no quintal?
+- intent: faq/ask_lost_pet
+  examples: |
+    - Meu pet desapareceu
+    - Meu gato sumiu
+    - Perdi meu cachorro
+    - Perdi meu cachorro, o que eu faço?
+    - Perdi meu pet
+    - Vocês podem me ajudar a achar meu gato?
+    - Perdi meu gato
+- intent: faq/ask_veterinarian
+  examples: |
+    - Quero entrar em contato com o veterinario
+    - Quero o contato do veterinario
+    - atendimento veterinário
+    - Pode me mandar o contato do veterinario ?
+    - Contato do veterinario
+    - Onde posso conseguir o contato do veterinario ?
+- intent: faq/ask_how_to_donate_animal
+  examples: |
+    - quero doar
+    - detalhes da doação
+    - como faço para doar?
+    - resgatei e quero doar
+    - fazer doação
+    - doacao
+    - desejo doar um pet
+- intent: faq/ask_collect
+  examples: |
+    - pra quem eu ligo quando meu gato morre?
+    - o que fazer quando meu cachorro morrer?
+    - como proceder quando meu pet morre?
+    - com quem eu falor quando o bicho morre?
+    - qual número eu ligo quando meu animal morre?
+    - o que fazer quando meu gato morrer?
+    - com quem eu falor quando meu cachorro morre?
+- intent: faq/ask_need_rescue
+  examples: |
+    - o gato está dolorido
+    - Preciso que alguém resgate um gato abandonado
+    - ferido
+    - encontrei um pet ferido
+    - machucado
+    - cachorrinho atropelado
+    - tem um cachorro ferido
+    - machucou a perna
+- intent: faq/ask_found_and_rescued
+  examples: |
+    - Encontrei perdido e resgatei e agora?
+    - Peguei um cachorrinho na rua, o que eu faço?
+    - Encontrei um gato perdido na rua, o que devo fazer?
+    - Encontrei um animal perdido, o que eu faço?
+    - Eu encontrei um animal na rua, o que eu faço?
+    - O que eu faço? Encontrei um animal perdido na rua
+    - Resgatei um animal de rua e agora?
+    - Encontrei um cachorro na rua, o que devo fazer ?
+    - Resgatei um cachorro de rua e agora?
+- intent: askaction/ask_disease
+  examples: |
+    - qual o [sintoma] presente no vírus da [raiva](question) ?
+    - como [previnir](question) a [raiva](disease)?
+    - fale sobre [sarna](disease)
+    - o que você sabe sobre [cinomose](disease)?
+    - você sabe qual a [prevenção](question) para [cinomose](disease)?
+    - como se [prevenir](question) da [leishmaniose](disease)?
+    - qual a [prevenção](question) pra [raiva](disease)?
+    - como [prevenir](question) a [fiv](disease)?
+    - qual o [sintoma](question) presente na [sarna](disease)?
+    - como [tratar](question) o animal com [leishmaniose](disease)?
+    - qual o [sintoma](question) da [parvovirose](disease)?
+    - como se [prevenir](question) para [fiv](disease)?
+    - qual os [sintomas](question) da [raiva](disease)?
+    - qual a [prevenção](question) pra [parvovirose](disease)?
+    - o que devo fazer como [prevenção](question) meu animal com [sarna](disease)?
+    - como se [prevenir](question) para [sarna](disease)?
+    - como se [prevenir](question) da doença do [carrapato](disease)?
+    - qual a [prevenção](question) para [leishmaniose](disease) ?
+    - você sabe qual a [prevenção](question) para [carrapato](disease)?
+    - quais os [tratamentos](question) para [carrapato](disease)?
+    - como [prevenir](question) a [cinomose](disease)?
+    - qual a [prevenção](question) pra [fiv](disease)?
+    - qual a [prevenção](question) pra [carrapato](disease)?
+    - como [prevenir](question) a [parvovirose](disease)?
+    - [tratamento](question) para [sarna](disease)?
+    - me dê informações sobre [raiva](disease)
+    - o que devo fazer para [tratar](question) da [cinomose](disease)?
+    - quais os [sintomas](question) da [leishmaniose](disease)?
+    - qual o [tratamento](question) disponivel para [leishmaniose](disease) ?
+    - qual o [sintoma](question) da doença do [carrapato](disease)?
+    - como [tratar](question) a [parvovirose](disease)?
+    - [tratamento](question) para [fiv](disease)?
+    - como posso o [tratamento](question) do meu animal para que ele não tenha [cinomose](disease)?
+    - quais são os [sintomas](question) que meu animal pode sentir se estiver com [cinomose](disease)?
+    - como se [prevenir](question) para [parvovirose](disease)?
+- intent: adopt_intent
+  examples: |
+    - como faço para adotar um animal?
+    - posso adotar um pet ?
+    - adoção
+    - quero adotar
+    - adotar
+- intent: human_service_intent
+  examples: |
+    - Atendimento humano
+    - Quero um humano
+    - Quero falar com um atendente
+    - Me passa para uma pessoa
+    - Eu quero atendimento humano
+- intent: out_of_scope_intent
+  examples: |
+    - Adotar um papagaio
+    - Montar numa capivara
+    - Assistir series
+    - batatinha 1 2 3
+    - Quero uma pizza
+- intent: thank_you_intent
+  examples: |
+    - valeu
+    - obrigado
+    - thanks
+    - é isso aí
+    - gracias
+- intent: bot_purpose_intent
+  examples: |
+    - Quais suas opções?
+    - propósito
+    - Pra que você serve?
+    - o que você pode fazer?
+    - O que você faz?
+    - Qual seu objetivo
+- intent: ask_castration_intent
+  examples: |
+    - Como ocorre o processo de castração ?
+    - Castração
+    - Quero saber como funciona a castração
+    - Processo de castração
+    - Pode me dizer como funciona o processo de castração ?
+    - Como funciona o processo de castração?
+- intent: donation_intent
+  examples: |
+    - doar medicamento
+    - doar ração para cachorro
+    - quero doar dinheiro
+    - ajudar com dinheiro
+    - ajudar com areia
+- intent: volunteer_intent
+  examples: |
+    - Quero ser voluntário
+    - Como posso me voluntariar?
+    - Gostaria de voluntariar
+    - voluntario
+    - Como faço para voluntariar
+    - Voluntário
+    - Quero auxiliar com meu tempo
+- intent: goodbye_intent
+  examples: |
+    - bye
+    - te vejo dps
+    - bjs
+    - tchau
+    - adeus
+    - xau
+    - ate
+    - até mais
+- intent: deny_intent
+  examples: |
+    - errado
+    - nunca
+    - não
+    - n
+    - nego
+    - nenhum
+    - cancelo
+    - nao
+- intent: affirm_intent
+  examples: |
+    - sim
+    - isso mesmo
+    - correto
+    - ok
+    - certo
+    - s
+    - afirmo
+    - claro
+- intent: greet_intent
+  examples: |
+    - oi
+    - oiiii
+    - noite
+    - tudo bom?
+    - tarde
+    - boa tarde
+    - hi
+    - eae
+    - boa noite
+    - dia
+- intent: wanna_help_intent
+  examples: |
+    - Gostaria de ajudar
+    - O que eu consigo fazer para ajuda-los?
+    - Como ajudo o abrigo?
+    - Como eu ajudo vocês?
+    - O que posso fazer para ajudar a ong?
+    - O que eu posso fazer para ajudar?
+    - Quero ajudar
+    - Como posso auxiliar?
+    - Eu quero ajudar
+    - Como eu poderia ajudar?
+- regex: question
+  examples: |
+    - /([A-Z a-z])/
+- lookup: disease
+  examples: |
+    - leishmaniose
+    - raiva
+    - sarna
+    - parvovirose
+    - cinomose
+    - fiv
+    - carrapato
+- lookup: question
+  examples: |
+    - sintomas
+    - prevenção
+    - tratamento
+    - prevenir
+    - tratar
+    - sintoma

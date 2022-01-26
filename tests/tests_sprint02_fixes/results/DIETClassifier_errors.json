@@ -1,0 +1,37 @@
+[
+  {
+    "text": "qual o procedimento para tratar a raiva?",
+    "entities": [
+      {
+        "start": 25,
+        "end": 31,
+        "value": "tratar",
+        "entity": "question"
+      },
+      {
+        "start": 34,
+        "end": 39,
+        "value": "raiva",
+        "entity": "question"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "question",
+        "start": 25,
+        "end": 31,
+        "confidence_entity": 0.9897957444190979,
+        "value": "tratar",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "disease",
+        "start": 34,
+        "end": 39,
+        "confidence_entity": 0.5771844387054443,
+        "value": "raiva",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]
